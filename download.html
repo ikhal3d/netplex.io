@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Download & install — Netplex</title>
+<meta name="description" content="Run Netplex your way: import the virtual appliance, flash the bare-metal Ubuntu image, or run the install script. Up and running in minutes." />
+<link rel="stylesheet" href="assets/site.css" />
+<link rel="stylesheet" href="assets/landing.css" />
+<script>(function(){try{var t=localStorage.getItem('netplex.theme');var a=localStorage.getItem('netplex.accent');if(t&&t!=='midnight')document.documentElement.dataset.theme=t;if(a&&a!=='orange')document.documentElement.dataset.accent=a;}catch(e){}})();</script>
+<style>
+  .page-head { padding: 70px 0 6px; text-align: center; }
+  .page-head h1 { font-size: 50px; letter-spacing: -0.04em; margin-bottom: 14px; }
+  .page-head h1 .accent { color: var(--accent); }
+  .page-head p { font-size: 18px; color: var(--text-3); max-width: 600px; margin: 0 auto; }
+
+  /* install tabs */
+  .dl-tabs { display: inline-flex; gap: 4px; background: var(--surface-2); border: 1px solid var(--border); border-radius: 999px; padding: 4px; margin-top: 28px; }
+  .dl-tabs button { font-size: 13.5px; font-weight: 500; color: var(--text-3); padding: 8px 18px; border-radius: 999px; transition: all .15s; display: flex; align-items: center; gap: 7px; }
+  .dl-tabs button svg { width: 15px; height: 15px; }
+  .dl-tabs button.on { background: var(--accent); color: var(--accent-ink); }
+
+  /* DMG-style install window */
+  .dmg-stage { display: flex; justify-content: center; margin-top: 34px; }
+  .dmg-scale { transform-origin: top center; }
+  .dmg { width: 660px; border-radius: var(--r-4); overflow: hidden; border: 1px solid var(--border-strong); box-shadow: var(--shadow-pop); background: var(--surface-1); }
+  .dmg-bar { display: flex; align-items: center; gap: 8px; height: 40px; padding: 0 14px; background: var(--surface-2); border-bottom: 1px solid var(--border-soft); }
+  .dmg-bar .lights { display: flex; gap: 7px; }
+  .dmg-bar .lights i { width: 11px; height: 11px; border-radius: 50%; display: block; }
+  .dmg-bar .lights i:nth-child(1){ background:#ff5f57; } .dmg-bar .lights i:nth-child(2){ background:#febc2e; } .dmg-bar .lights i:nth-child(3){ background:#28c840; }
+  .dmg-bar .title { font-size: 12.5px; color: var(--text-3); margin-left: 8px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .dmg-bar .meta { margin-left: auto; font-family: var(--font-mono); font-size: 10.5px; color: var(--text-4); }
+  .dmg-body { position: relative; height: 300px;
+    background:
+      radial-gradient(circle at 1px 1px, var(--canvas-circuit-dot) 1px, transparent 0) 0 0 / 22px 22px,
+      var(--surface-canvas); }
+  .dmg-pane { position: absolute; inset: 0; opacity: 0; pointer-events: none; transition: opacity .25s var(--ease-out); }
+  .dmg-pane.on { opacity: 1; pointer-events: auto; }
+  .dmg-svg { position: absolute; inset: 0; width: 660px; height: 300px; overflow: visible; }
+  /* icons */
+  .ic-tile { position: absolute; width: 150px; text-align: center; }
+  .ic-glyph { width: 88px; height: 88px; margin: 0 auto 10px; border-radius: 20px; display: grid; place-items: center; position: relative; }
+  .ic-glyph svg { width: 46px; height: 46px; }
+  .ic-name { font-size: 13px; font-weight: 600; color: var(--text-1); }
+  .ic-sub { font-family: var(--font-mono); font-size: 10px; color: var(--text-4); margin-top: 3px; }
+  .ic-file .ic-glyph { background: linear-gradient(160deg, var(--surface-3), var(--surface-2)); border: 1px solid var(--border-strong); color: var(--accent); }
+  .ic-target .ic-glyph { background: var(--surface-2); border: 1px dashed var(--border-bright); color: var(--text-3); }
+  .arrow-flow { stroke: var(--accent); stroke-width: 2.4; fill: none; stroke-linecap: round; stroke-dasharray: 1 11; animation: amarch 1s linear infinite; }
+  @keyframes amarch { to { stroke-dashoffset: -24; } }
+  .arrow-base { stroke: var(--border-bright); stroke-width: 1.4; fill: none; stroke-dasharray: 5 6; }
+  /* sliding ghost */
+  .ghost { position: absolute; width: 40px; height: 40px; left: -20px; top: -20px; border-radius: 11px;
+    background: color-mix(in srgb, var(--accent) 20%, var(--surface-2)); border: 1px solid var(--accent);
+    display: grid; place-items: center; color: var(--accent); opacity: .92; }
+  .ghost svg { width: 22px; height: 22px; }
+  .dmg-hint { position: absolute; bottom: 14px; left: 0; right: 0; text-align: center; font-size: 12.5px; color: var(--text-4); }
+  .dmg-hint .mono { color: var(--text-3); }
+  /* script pane */
+  .scriptbox { position: absolute; inset: 28px; background: var(--surface-canvas); border: 1px solid var(--border); border-radius: var(--r-3); padding: 20px 22px; font-family: var(--font-mono); font-size: 13px; line-height: 1.9; }
+  .scriptbox .pr { color: var(--accent); } .scriptbox .cm { color: var(--text-4); } .scriptbox .ok { color: var(--ok); } .scriptbox .cy { color: var(--info); }
+
+  /* download cards */
+  .dl-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 44px; }
+  .dl-card { background: var(--surface-1); border: 1px solid var(--border); border-radius: var(--r-4); padding: 24px; display: flex; flex-direction: column; }
+  .dl-card.rec { border-color: var(--accent); position: relative; }
+  .dl-card.rec .rectag { position: absolute; top: -11px; left: 22px; background: var(--accent); color: var(--accent-ink); font-size: 10.5px; font-weight: 600; padding: 3px 11px; border-radius: 999px; }
+  .dl-ic { width: 46px; height: 46px; border-radius: var(--r-3); background: var(--surface-2); border: 1px solid var(--border); display: grid; place-items: center; color: var(--accent); margin-bottom: 16px; }
+  .dl-ic svg { width: 24px; height: 24px; }
+  .dl-card h3 { font-size: 18px; margin-bottom: 7px; }
+  .dl-card p { font-size: 14px; color: var(--text-3); line-height: 1.5; flex: 1; }
+  .dl-spec { display: flex; gap: 8px; flex-wrap: wrap; margin: 16px 0; }
+  .dl-spec .chip { font-family: var(--font-mono); font-size: 10.5px; }
+  .dl-card .btn { width: 100%; justify-content: center; }
+  .dl-note { font-size: 11.5px; color: var(--text-4); margin-top: 10px; text-align: center; }
+
+  /* steps */
+  .run-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 44px; }
+  .run-step { position: relative; }
+  .run-step .n { font-family: var(--font-mono); font-size: 13px; color: var(--accent); font-weight: 600; margin-bottom: 12px; }
+  .run-step h3 { font-size: 18px; margin-bottom: 8px; }
+  .run-step p { font-size: 14.5px; color: var(--text-3); line-height: 1.55; }
+  .run-step p .mono { font-size: 12.5px; color: var(--text-2); }
+  .run-arrow { position: absolute; top: 8px; right: -22px; color: var(--border-bright); }
+  .run-arrow svg { width: 22px; height: 22px; }
+
+  @media (max-width: 760px){
+    .page-head h1 { font-size: 36px; }
+    .dl-cards, .run-steps { grid-template-columns: 1fr; }
+    .run-arrow { display: none; }
+    .dmg-scale { transform: scale(0.56); }
+  }
+</style>
+</head>
+<body>
+<div class="gridbg"></div>
+<div class="content">
+
+<nav class="nav">
+  <div class="wrap">
+    <a href="index.html" class="brand"><span class="mark"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1.4 L22.6 6.5 L12 11.6 L1.4 6.5 Z" stroke="currentColor" stroke-width="1.8"/><path d="M1.4 11.9 L12 17 L22.6 11.9" stroke="currentColor" stroke-width="1.8"/><path d="M1.4 17.1 L12 22.2 L22.6 17.1" stroke="currentColor" stroke-width="1.8"/></svg></span><span class="wm">netplex<span class="dotmark">.</span></span><span class="ver">beta</span></a>
+    <div class="navlinks">
+      <a href="index.html">Product</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="roadmap.html">Roadmap</a>
+      <a href="about.html">About</a>
+      <a href="docs.html">Docs</a>
+      <a href="community.html">Community</a>
+    </div>
+    <div class="navactions">
+      <a href="#" class="btn btn-ghost" data-ext>Sign in</a>
+      <button class="ap-trigger" data-appearance-trigger aria-label="Appearance" title="Appearance"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996C20.146 15.21 22 13.36 22 11.04 22 6.038 17.5 2 12 2z"/></svg></button>
+      <a href="download.html" class="btn btn-primary">Get Netplex</a>
+      <button class="menu-toggle" aria-label="Menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    </div>
+  </div>
+</nav>
+
+<div class="page-head wrap">
+  <span class="eyebrow" style="display:block;margin-bottom:14px">Download & install</span>
+  <h1>Run Netplex <span class="accent">your way.</span></h1>
+  <p>No cloud account required. Import the appliance, flash the bare-metal image, or run the one-line installer — then open your browser. Pick a path:</p>
+  <div class="dl-tabs">
+    <button class="on" data-tab="appliance"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 16V8a2 2 0 0 0-1-1.7l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.7l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.3 7l8.7 5 8.7-5M12 22V12"/></svg>Appliance</button>
+    <button data-tab="iso"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2.6"/></svg>Bare-metal ISO</button>
+    <button data-tab="script"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 7l4 5-4 5M13 17h6"/></svg>Install script</button>
+  </div>
+</div>
+
+<section style="padding-top:6px">
+  <div class="wrap">
+    <div class="dmg-stage"><div class="dmg-scale">
+      <div class="dmg">
+        <div class="dmg-bar">
+          <span class="lights"><i></i><i></i><i></i></span>
+          <span class="title" id="dmgTitle">Netplex 1.0 — Virtual Appliance</span>
+          <span class="meta" id="dmgMeta">2 items</span>
+        </div>
+        <div class="dmg-body">
+
+          <!-- APPLIANCE -->
+          <div class="dmg-pane on" data-pane="appliance">
+            <svg class="dmg-svg" viewBox="0 0 660 300" preserveAspectRatio="none">
+              <path class="arrow-base" d="M205 150 C 320 70, 430 70, 470 138"/>
+              <path class="arrow-flow" d="M205 150 C 320 70, 430 70, 470 138"/>
+              <path class="arrow-flow" d="M470 138 l 12 -2 M470 138 l 2 12" />
+            </svg>
+            <div class="ic-tile ic-file" style="left:55px;top:96px">
+              <div class="ic-glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 16V8a2 2 0 0 0-1-1.7l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.7l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.3 7l8.7 5 8.7-5M12 22V12"/></svg></div>
+              <div class="ic-name">Netplex.ova</div>
+              <div class="ic-sub">1.9 GB</div>
+            </div>
+            <div class="ghost" data-path="appliance"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 16V8a2 2 0 0 0-1-1.7l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.7l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.3 7l8.7 5 8.7-5M12 22V12"/></svg></div>
+            <div class="ic-tile ic-target" style="left:455px;top:96px">
+              <div class="ic-glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 20h8M12 17v3"/><rect x="6" y="7" width="6" height="4" rx="1"/></svg></div>
+              <div class="ic-name">VirtualBox · VMware</div>
+              <div class="ic-sub">double-click to import</div>
+            </div>
+            <div class="dmg-hint">Drag <span class="mono">Netplex.ova</span> onto your hypervisor — or just double-click it.</div>
+          </div>
+
+          <!-- ISO -->
+          <div class="dmg-pane" data-pane="iso">
+            <svg class="dmg-svg" viewBox="0 0 660 300" preserveAspectRatio="none">
+              <path class="arrow-base" d="M205 150 C 320 70, 430 70, 470 138"/>
+              <path class="arrow-flow" d="M205 150 C 320 70, 430 70, 470 138"/>
+              <path class="arrow-flow" d="M470 138 l 12 -2 M470 138 l 2 12" />
+            </svg>
+            <div class="ic-tile ic-file" style="left:55px;top:96px">
+              <div class="ic-glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2.6"/></svg></div>
+              <div class="ic-name">netplex-26.04.iso</div>
+              <div class="ic-sub">3.4 GB</div>
+            </div>
+            <div class="ghost" data-path="iso"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2.6"/></svg></div>
+            <div class="ic-tile ic-target" style="left:455px;top:96px">
+              <div class="ic-glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 5h2M10 18h4"/></svg></div>
+              <div class="ic-name">USB drive</div>
+              <div class="ic-sub">flash · then boot</div>
+            </div>
+            <div class="dmg-hint">Flash to a USB stick with <span class="mono">balenaEtcher</span>, boot the host, install Ubuntu 26.04 + Netplex.</div>
+          </div>
+
+          <!-- SCRIPT -->
+          <div class="dmg-pane" data-pane="script">
+            <div class="scriptbox">
+<span class="cm"># On an existing Ubuntu 24.04 / 26.04 host with /dev/kvm</span>
+<span class="pr">$</span> curl -fsSL <span class="cy">https://get.netplex.io</span> | sh
+<span class="cm"># pulls signed images, sets up OVS + services…</span>
+<span class="ok">✓ netplex up</span> — open <span class="cy">http://localhost:8080</span>
+            </div>
+            <div class="dmg-hint">One line. The installer handles KVM, Open vSwitch and every service for you.</div>
+          </div>
+
+        </div>
+      </div>
+    </div></div>
+
+    <p style="text-align:center;font-size:12.5px;color:var(--text-4);margin-top:18px">Beta builds drop here at soft launch — links below are placeholders for now.</p>
+
+    <!-- download option cards -->
+    <div class="dl-cards">
+      <div class="dl-card rec">
+        <span class="rectag">Easiest</span>
+        <div class="dl-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 16V8a2 2 0 0 0-1-1.7l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.7l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.3 7l8.7 5 8.7-5M12 22V12"/></svg></div>
+        <h3>Virtual Appliance</h3>
+        <p>A ready-to-run <span class="mono">.ova</span> for VirtualBox or VMware. Import, start, open your browser. Best for trying Netplex on your laptop.</p>
+        <div class="dl-spec"><span class="chip">.ova · 1.9 GB</span><span class="chip">VirtualBox</span><span class="chip">VMware</span></div>
+        <a href="#" data-ext class="btn btn-primary"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>Download .ova</a>
+        <div class="dl-note">SHA-256 <span class="mono">a1f3…9c20</span></div>
+      </div>
+      <div class="dl-card">
+        <div class="dl-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2.6"/></svg></div>
+        <h3>Bare-metal ISO</h3>
+        <p>A full Ubuntu 26.04 LTS image with Netplex preinstalled. Flash to USB, boot the host, get native KVM performance for big labs.</p>
+        <div class="dl-spec"><span class="chip">.iso · 3.4 GB</span><span class="chip">Ubuntu 26.04</span><span class="chip">x86-64</span></div>
+        <a href="#" data-ext class="btn btn-outline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>Download .iso</a>
+        <div class="dl-note">SHA-256 <span class="mono">7b80…41de</span></div>
+      </div>
+      <div class="dl-card">
+        <div class="dl-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 7l4 5-4 5M13 17h6"/></svg></div>
+        <h3>Install script</h3>
+        <p>Already on Ubuntu with <span class="mono">/dev/kvm</span>? One line installs everything — services, OVS, signed images — and starts it.</p>
+        <div class="dl-spec"><span class="chip">curl | sh</span><span class="chip">Docker</span><span class="chip">apt</span></div>
+        <a href="#" data-ext class="btn btn-outline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>View the docs</a>
+        <div class="dl-note">get.netplex.io</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INSTALL & RUN STEPS -->
+<section style="background:var(--surface-1);border-top:1px solid var(--border-soft);border-bottom:1px solid var(--border-soft)">
+  <div class="wrap">
+    <span class="eyebrow sec-eyebrow">Up and running in minutes</span>
+    <h2 class="sec" style="font-size:30px">Three steps. No CLI required.</h2>
+    <div class="run-steps">
+      <div class="run-step">
+        <div class="n">01</div>
+        <h3>Get it</h3>
+        <p>Download the appliance or ISO above. The appliance imports into VirtualBox/VMware; the ISO flashes to a USB stick.</p>
+        <span class="run-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </div>
+      <div class="run-step">
+        <div class="n">02</div>
+        <h3>Start it</h3>
+        <p>Boot the VM or host. Netplex's services come up self-healing and supervised — nothing to configure, nothing to babysit.</p>
+        <span class="run-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </div>
+      <div class="run-step">
+        <div class="n">03</div>
+        <h3>Open the browser</h3>
+        <p>Go to the host's address, sign in, and start building. Import an EVE-NG lab to land straight in a working topology.</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:40px">
+      <a href="index.html" class="btn btn-outline btn-lg">See what you'll be building →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="index.html" class="brand"><span class="mark"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1.4 L22.6 6.5 L12 11.6 L1.4 6.5 Z" stroke="currentColor" stroke-width="1.8"/><path d="M1.4 11.9 L12 17 L22.6 11.9" stroke="currentColor" stroke-width="1.8"/><path d="M1.4 17.1 L12 22.2 L22.6 17.1" stroke="currentColor" stroke-width="1.8"/></svg></span><span class="wm">netplex<span class="dotmark">.</span></span></a>
+        <p>The distributed, API-first network emulation platform. Beautiful, in your browser, worth paying for.</p>
+      </div>
+      <div class="foot-col"><h4>Product</h4><a href="index.html">Features</a><a href="pricing.html">Pricing</a><a href="roadmap.html">Roadmap</a><a href="download.html">Download</a></div>
+      <div class="foot-col"><h4>Resources</h4><a href="docs.html">Docs</a><a href="community.html">Community</a><a href="#" data-ext>Status</a><a href="#" data-ext>Changelog</a></div>
+      <div class="foot-col"><h4>Company</h4><a href="about.html">About</a><a href="#" data-ext>Contact</a></div>
+      <div class="foot-col"><h4>Legal</h4><a href="legal.html#privacy">Privacy</a><a href="legal.html#terms">Terms</a><a href="legal.html#disclaimer">Disclaimer</a></div>
+    </div>
+    <div class="foot-bottom"><span>© 2026 Netplex. All rights reserved.</span><span class="mono">v1.0 · built for engineers</span></div>
+  </div>
+</footer>
+
+</div>
+<script src="assets/appearance.js"></script>
+<script>
+/* sliding ghost along the arrow path (drag animation) */
+var DRAG_PATH = 'path("M205 150 C 320 70, 430 70, 470 138")';
+document.querySelectorAll('.ghost').forEach(function(g){
+  g.style.offsetPath = DRAG_PATH;
+  g.style.offsetRotate = '0deg';
+  g.animate([
+    { offsetDistance: '0%', opacity: 0 },
+    { offsetDistance: '6%', opacity: 0.95, offset: 0.12 },
+    { offsetDistance: '88%', opacity: 0.95, offset: 0.8 },
+    { offsetDistance: '100%', opacity: 0 }
+  ], { duration: 2600, iterations: Infinity, easing: 'cubic-bezier(.5,0,.5,1)' });
+});
+
+/* tabs */
+var TITLES = {
+  appliance: ['Netplex 1.0 — Virtual Appliance', '2 items'],
+  iso:       ['Netplex 1.0 — Bare-metal Image', '2 items'],
+  script:    ['Netplex 1.0 — Install', 'terminal']
+};
+var tabs = document.querySelectorAll('.dl-tabs button');
+var panes = document.querySelectorAll('.dmg-pane');
+tabs.forEach(function(t){
+  t.addEventListener('click', function(){
+    var id = t.dataset.tab;
+    tabs.forEach(function(x){ x.classList.toggle('on', x===t); });
+    panes.forEach(function(p){ p.classList.toggle('on', p.dataset.pane===id); });
+    document.getElementById('dmgTitle').textContent = TITLES[id][0];
+    document.getElementById('dmgMeta').textContent = TITLES[id][1];
+  });
+});
+document.querySelectorAll('[data-ext]').forEach(function(a){ a.addEventListener('click',function(e){e.preventDefault();}); });
+</script>
+</body>
+</html>

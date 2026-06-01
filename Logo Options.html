@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Netplex — logo options</title>
+<link rel="stylesheet" href="assets/site.css" />
+<style>
+  body { background: #07080a; }
+  .head { max-width: 900px; margin: 0 auto; padding: 56px 28px 8px; }
+  .head .eyebrow { display:block; margin-bottom: 14px; }
+  .head h1 { font-size: 32px; letter-spacing: -0.03em; margin-bottom: 12px; }
+  .head p { color: var(--text-3); font-size: 16px; max-width: 680px; }
+  .grid { max-width: 980px; margin: 36px auto 0; padding: 0 28px 100px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  .opt { background: var(--surface-1); border: 1px solid var(--border); border-radius: var(--r-4); padding: 26px; transition: border-color .15s; }
+  .opt:hover { border-color: var(--border-bright); }
+  .opt-top { display: flex; align-items: center; gap: 22px; }
+  .opt-mark { width: 72px; height: 72px; border-radius: 18px; background: var(--accent); color: var(--accent-ink); display: grid; place-items: center; flex-shrink: 0; }
+  .opt-mark svg { width: 42px; height: 42px; }
+  .opt-mark.dark { background: var(--surface-3); color: var(--accent); border: 1px solid var(--border-strong); }
+  .opt-id { font-family: var(--font-mono); font-size: 12px; color: var(--accent); }
+  .opt-name { font-size: 18px; font-weight: 600; letter-spacing: -0.01em; margin: 4px 0 4px; }
+  .opt-desc { font-size: 13.5px; color: var(--text-3); line-height: 1.45; }
+  .opt-lockups { display: flex; align-items: center; gap: 26px; margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--border-soft); flex-wrap: wrap; }
+  .lk { display: flex; align-items: center; gap: 9px; }
+  .lk .m { width: 26px; height: 26px; border-radius: 6px; background: var(--accent); color: var(--accent-ink); display: grid; place-items: center; }
+  .lk .m svg { width: 15px; height: 15px; }
+  .lk .w { font-size: 19px; font-weight: 600; letter-spacing: -0.02em; }
+  .lk .w .d { color: var(--accent); }
+  .lk.lg .m { width: 34px; height: 34px; border-radius: 8px; } .lk.lg .m svg { width: 20px; height: 20px; } .lk.lg .w { font-size: 25px; }
+  .lk.mono .m { background: transparent; color: var(--accent); }
+  @media (max-width: 720px){ .grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="head">
+  <span class="eyebrow">Netplex · logo marks</span>
+  <h1>Six directions for the mark</h1>
+  <p>Each conveys multiplexing / network fabric and keeps the <strong style="color:var(--text-1)">netplex<span style="color:var(--accent)">.</span></strong> wordmark. Shown large, then small in the real nav lockup. Tell me which one (or which to refine) and I'll roll it across every page.</p>
+</div>
+<div class="grid" id="grid"></div>
+
+<script>
+var MARKS = {
+  mux: '<g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7.5 6 L15 9.5 V14.5 L7.5 18 Z"/><path d="M2.5 7.8 H7.5M2.5 12 H7.5M2.5 16.2 H7.5M15 12 H21.5"/></g><g fill="currentColor"><circle cx="2.6" cy="7.8" r="1.3"/><circle cx="2.6" cy="12" r="1.3"/><circle cx="2.6" cy="16.2" r="1.3"/><circle cx="21.4" cy="12" r="1.3"/></g>',
+  hub: '<g stroke="currentColor" stroke-width="1.6" opacity="0.75"><path d="M12 12 L12 3.6M12 12 L19.6 8.6M12 12 L16.8 18.4M12 12 L7.2 18.4M12 12 L4.4 8.6"/></g><g fill="currentColor"><circle cx="12" cy="12" r="2.5"/><circle cx="12" cy="3.6" r="1.8"/><circle cx="19.6" cy="8.6" r="1.8"/><circle cx="16.8" cy="18.4" r="1.8"/><circle cx="7.2" cy="18.4" r="1.8"/><circle cx="4.4" cy="8.6" r="1.8"/></g>',
+  fabric: '<g stroke="currentColor" stroke-width="1.4" opacity="0.6"><path d="M8 6.5 L5 17.5M8 6.5 L12 17.5M8 6.5 L19 17.5M16 6.5 L5 17.5M16 6.5 L12 17.5M16 6.5 L19 17.5"/></g><g fill="currentColor"><circle cx="8" cy="6.5" r="1.9"/><circle cx="16" cy="6.5" r="1.9"/><circle cx="5" cy="17.5" r="1.8"/><circle cx="12" cy="17.5" r="1.8"/><circle cx="19" cy="17.5" r="1.8"/></g>',
+  enn: '<g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18.5 L6 6 L18 18.5 L18 5.5"/></g><g fill="currentColor"><circle cx="6" cy="5.8" r="2.1"/><circle cx="6" cy="18.4" r="2.1"/><circle cx="18" cy="5.6" r="2.1"/><circle cx="18" cy="18.4" r="2.1"/></g>',
+  rings: '<g fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="8.5" cy="12" r="5.4"/><circle cx="15.5" cy="12" r="5.4"/></g><g fill="currentColor"><circle cx="8.5" cy="12" r="1.7"/><circle cx="15.5" cy="12" r="1.7"/></g>',
+  stack: '<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"><path d="M12 3.5 L20 7.5 L12 11.5 L4 7.5 Z"/><path d="M4 12 L12 16 L20 12"/><path d="M4 16.3 L12 20.3 L20 16.3"/></g>'
+};
+var OPTS = [
+  { id:'01', key:'mux',    name:'Multiplexer', desc:'The literal engineering mux symbol — many inputs converge into one. Reads as "multi-plex" instantly.' },
+  { id:'02', key:'hub',    name:'Hub & spoke', desc:'A central node fanning out to five — multiplexing as a star. Friendly, balanced, scales down well.' },
+  { id:'03', key:'fabric', name:'Spine-leaf fabric', desc:'A bipartite Clos mesh — the actual shape of a switching fabric. Most "networky" of the set.' },
+  { id:'04', key:'enn',    name:'Monogram N', desc:'A letter "N" drawn as a node path. Most brandable / app-icon friendly, distinct at tiny sizes.' },
+  { id:'05', key:'rings',  name:'Interlocked', desc:'Two linked rings — "plex" as connection. Simplest, most logo-like, least literal.' },
+  { id:'06', key:'stack',  name:'Stacked planes', desc:'Isometric layers — distributed hosts stacked into one. Leans on the multi-host story.' }
+];
+function svg(inner, vb){ return '<svg viewBox="0 0 24 24">'+inner+'</svg>'; }
+document.getElementById('grid').innerHTML = OPTS.map(function(o){
+  var m = MARKS[o.key];
+  return '<div class="opt"><div class="opt-top">'+
+    '<div class="opt-mark">'+svg(m)+'</div>'+
+    '<div><div class="opt-id">'+o.id+'</div><div class="opt-name">'+o.name+'</div><div class="opt-desc">'+o.desc+'</div></div>'+
+    '</div>'+
+    '<div class="opt-lockups">'+
+      '<div class="lk lg"><span class="m">'+svg(m)+'</span><span class="w">netplex<span class="d">.</span></span></div>'+
+      '<div class="lk"><span class="m">'+svg(m)+'</span><span class="w">netplex<span class="d">.</span></span></div>'+
+      '<div class="lk mono"><span class="m">'+svg(m)+'</span><span class="w">netplex<span class="d">.</span></span></div>'+
+    '</div></div>';
+}).join('');
+</script>
+</body>
+</html>

@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Netplex — the network lab, reborn. Distributed. API-first. In your browser.</title>
+<meta name="description" content="A distributed, API-first network emulation platform with a canvas you'll actually want to look at. Everything EVE-NG, PNETLAB, GNS3 and Containerlab miss." />
+<link rel="stylesheet" href="assets/site.css" />
+<link rel="stylesheet" href="assets/landing.css" />
+<script>/* no-flash: apply saved theme/accent before paint */(function(){try{var t=localStorage.getItem('netplex.theme');var a=localStorage.getItem('netplex.accent');if(t&&t!=='midnight')document.documentElement.dataset.theme=t;if(a&&a!=='orange')document.documentElement.dataset.accent=a;}catch(e){}})();</script>
+</head>
+<body>
+<div class="gridbg"></div>
+<div class="content">
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="wrap">
+    <a href="index.html" class="brand"><span class="mark"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1.4 L22.6 6.5 L12 11.6 L1.4 6.5 Z" stroke="currentColor" stroke-width="1.8"/><path d="M1.4 11.9 L12 17 L22.6 11.9" stroke="currentColor" stroke-width="1.8"/><path d="M1.4 17.1 L12 22.2 L22.6 17.1" stroke="currentColor" stroke-width="1.8"/></svg></span><span class="wm">netplex<span class="dotmark">.</span></span><span class="ver">beta</span></a>
+    <div class="navlinks">
+      <a href="index.html" class="active">Product</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="roadmap.html">Roadmap</a>
+      <a href="about.html">About</a>
+      <a href="docs.html">Docs</a>
+      <a href="community.html">Community</a>
+    </div>
+    <div class="navactions">
+      <a href="#" class="btn btn-ghost" data-ext>Sign in</a>
+      <button class="ap-trigger" data-appearance-trigger aria-label="Appearance" title="Appearance"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996C20.146 15.21 22 13.36 22 11.04 22 6.038 17.5 2 12 2z"/></svg></button>
+      <a href="download.html" class="btn btn-primary">Get Netplex</a>
+      <button class="menu-toggle" aria-label="Menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap"><div class="h-grid">
+    <div>
+      <span class="pill accent h-pill"><span class="dot"></span><span id="heroPill">Now in open beta · v1.0</span></span>
+      <h1 class="h-title" id="heroTitle">Build network labs <span class="accent">in your browser.</span></h1>
+      <p class="h-sub" id="heroSub">A distributed, API-first network emulator with a canvas you'll actually want to look at — and a free tier that's genuinely useful.</p>
+      <p class="h-stat" id="heroStat">EVE-NG was free and ugly. Netplex is <b>beautiful, distributed and worth paying for.</b></p>
+      <div class="h-cta">
+        <a href="download.html" class="btn btn-primary btn-lg">Get Netplex free<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="#compare" class="btn btn-outline btn-lg">Why switch?</a>
+      </div>
+      <div class="h-chips">
+        <span class="chip">25 nodes free</span>
+        <span class="chip">No client to install</span>
+        <span class="chip">Import .unl / .gns3project</span>
+      </div>
+    </div>
+    <div class="topo-frame">
+      <div class="win">
+        <div class="win-toolbar">
+          <div class="seg"><button class="on">Curve</button><button>Ortho</button><button>Line</button></div>
+          <span class="flowtog"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>Flow</span>
+        </div>
+        <div class="topo-wrap"><div id="heroTopo"></div></div>
+      </div>
+    </div>
+  </div></div>
+</header>
+
+<!-- STAT BAND -->
+<div class="statband"><div class="wrap">
+  <div class="statcell"><div class="n">$0<span style="font-size:18px;color:var(--text-4)">/forever</span></div><div class="l">Free tier</div></div>
+  <div class="statcell"><div class="n"><span class="mono">VXLAN</span></div><div class="l">Multi-host fabric</div></div>
+  <div class="statcell"><div class="n">6</div><div class="l">Built-in themes</div></div>
+  <div class="statcell"><div class="n"><span class="mono">1-click</span></div><div class="l">EVE / GNS3 import</div></div>
+</div></div>
+
+<!-- COMPARISON -->
+<section id="compare">
+  <div class="wrap">
+    <span class="eyebrow sec-eyebrow">Everything they miss</span>
+    <h2 class="sec">The old tools got you this far.<br/><span class="accent">Netplex fixes the rest.</span></h2>
+    <p class="sec-sub">EVE-NG, PNETLAB, GNS3 and Containerlab are good tools we've all used. This is an honest scorecard — <span style="color:var(--ok)">✓</span> full, <span style="color:var(--warn)">–</span> partial, <span style="color:var(--err)">✗</span> none.</p>
+    <div style="overflow-x:auto">
+    <table class="cmp">
+      <thead>
+        <tr>
+          <th>&nbsp;</th>
+          <th>EVE-NG</th>
+          <th>PNETLAB</th>
+          <th>GNS3</th>
+          <th>Containerlab</th>
+          <th class="us">Netplex</th>
+        </tr>
+      </thead>
+      <tbody id="cmpBody"></tbody>
+    </table>
+    </div>
+    <p class="cmp-note">Migration is one click: import your <span class="mono">.unl</span>, <span class="mono">.gns3project</span> or containerlab YAML and keep building — no <span class="mono">fixpermissions</span>, no image juggling.</p>
+  </div>
+</section>
+
+<!-- CANVAS + THEMES -->
+<section style="background:var(--surface-1);border-top:1px solid var(--border-soft);border-bottom:1px solid var(--border-soft)">
+  <div class="wrap">
+    <div class="showcase">
+      <div class="sc-text">
+        <span class="eyebrow sec-eyebrow">The canvas is the product</span>
+        <h2>A topology you'll actually<br/><span class="accent">want to look at.</span></h2>
+        <p>Premium, flat, dark-first. Drag nodes, draw links in four styles, annotate, and watch live packet flow stream across the fabric — all on a circuit-board canvas built for engineers reading dense screens at 2am.</p>
+        <ul class="sc-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Curve · Arc · Ortho · Straight links, parallel links fan out</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Live link flow — see traffic move, not invented Gbps numbers</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Export to SVG, PNG (2×) or JSON, Visio/draw.io-friendly</li>
+        </ul>
+      </div>
+      <div class="topo-frame">
+        <div class="win">
+          <div class="win-bar"><div class="lights"><i></i><i></i><i></i></div><span class="title">ENT-CAMPUS-WAN · topology</span></div>
+          <div class="topo-wrap"><div id="canvasTopo"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:80px">
+      <span class="eyebrow sec-eyebrow">Six themes, one product</span>
+      <h2 class="sec" style="font-size:32px">Recolour the entire app —<br/><span class="accent">panels, canvas, nodes and all.</span></h2>
+      <p class="sec-sub">Three dark, three light. Every theme defines a complete token set, so the whole interface — not just the background — moves with it. Pick a UI accent too: orange, blue, green or magenta.</p>
+      <div class="themes-grid" id="themesGrid"></div>
+    </div>
+  </div>
+</section>
+
+<!-- DISTRIBUTED FABRIC -->
+<section>
+  <div class="wrap">
+    <div class="showcase flip">
+      <div class="sc-text">
+        <span class="eyebrow sec-eyebrow">Distributed by design</span>
+        <h2>Two machines.<br/><span class="accent">One topology.</span></h2>
+        <p>The headline differentiator. A single lab spans several cheap PCs — Netplex stitches their virtual switches together with VXLAN tunnels, so a link between nodes on different machines just works. Big labs no longer need a big server.</p>
+        <ul class="sc-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Scheduler places nodes by free CPU / RAM across hosts</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>A host dropping degrades only its nodes — the lab keeps running</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Each host gets a colour; nodes glow to show where they live</li>
+        </ul>
+      </div>
+      <div>
+        <div class="win" style="padding:26px 24px;background:var(--surface-1)">
+          <div id="fabric"></div>
+          <p style="text-align:center;font-size:12.5px;color:var(--text-4);margin-top:18px">The link doesn't care which machine a node lives on.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMAGE PIPELINE -->
+<section style="background:var(--surface-1);border-top:1px solid var(--border-soft);border-bottom:1px solid var(--border-soft)">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow sec-eyebrow">The image pipeline</span>
+      <h2 class="sec">Drop an image. <span class="accent">Walk away.</span></h2>
+      <p class="sec-sub">EVE-NG made you SSH in, juggle files and run <span class="mono">fixpermissions</span>. Netplex does the whole thing — convert, set permissions, organise, boot-test — and shows you every step. No CLI.</p>
+    </div>
+    <div class="win" style="margin-top:40px;padding:26px 26px 28px;background:var(--surface-0)">
+      <div id="pipeline"></div>
+    </div>
+    <div class="bento" style="grid-template-columns:repeat(3,1fr);margin-top:24px">
+      <div class="feat"><h3>Auto-classify</h3><p>Matches the upload against 138 device kinds across 67 vendors and gives it a human name — never <span class="mono">vios-adventerprisek9-m.SPA…</span></p></div>
+      <div class="feat"><h3>Disk-guarded</h3><p>Refuses an upload before it fills your disk: "Only 8.2 GB free — needs ≥10 GB." A precise, actionable message, never a stack trace.</p></div>
+      <div class="feat"><h3>Boot-tested</h3><p>Every image boots headless before it's marked Ready. If it fails, you get what happened, why, and what to do — plus "email me the fix."</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONSOLES + API -->
+<section>
+  <div class="wrap">
+    <div class="showcase">
+      <div class="sc-text">
+        <span class="eyebrow sec-eyebrow">Integrated consoles</span>
+        <h2>No PuTTY. No SecureCRT.<br/><span class="accent">Just talk to your nodes.</span></h2>
+        <p>Dockable, tabbed, tiled consoles right in the browser — pop them into their own window, theme them like your favourite terminal, and <strong style="color:var(--text-1)">type once to send to every selected session</strong>.</p>
+        <ul class="sc-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Group-send / broadcast across sessions</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>8 colour schemes, syntax highlighting, snippet bar</li>
+        </ul>
+      </div>
+      <div class="topo-frame">
+        <div class="win term-win">
+          <div class="term-tabs"><span class="term-tab on">CORE-1</span><span class="term-tab">DIST-1</span><span class="term-tab">DIST-2</span><span class="term-tab">+3</span></div>
+          <div class="body">
+<span class="dim"># broadcasting to 4 sessions</span>  <span class="gs">group-send · 4</span>
+<span class="pr">CORE-1#</span> show ip interface brief
+<span class="dim">Interface         IP-Address      Status</span>
+GigabitEthernet0/0  10.10.0.1     <span class="ok">up</span>
+GigabitEthernet0/1  10.10.0.5     <span class="ok">up</span>
+TenGigE1/1          10.20.1.1     <span class="ok">up</span>
+<span class="pr">CORE-1#</span> <span class="cy">show vxlan tunnel</span>
+vni 1010  src host-01  dst host-02  <span class="ok">active</span>
+<span class="pr">CORE-1#</span> <span style="opacity:.6">▍</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="api-grid" style="margin-top:80px">
+      <div class="code-win win">
+        <div class="win-bar"><div class="lights"><i></i><i></i><i></i></div><span class="title">main.tf</span></div>
+        <div class="body"><span class="cm"># Labs as code — wired to your pipeline</span>
+<span class="kw">resource</span> <span class="st">"netplex_lab"</span> <span class="st">"campus"</span> {
+  name  = <span class="st">"ENT-CAMPUS-WAN"</span>
+  <span class="kw">import</span> = <span class="st">"./campus.unl"</span>   <span class="cm"># your EVE lab</span>
+  hosts = [<span class="st">"lab-rig"</span>, <span class="st">"media-pc"</span>]
+}
+
+<span class="cm">$</span> <span class="fn">netplex</span> apply
+<span class="cm">→ 12 nodes scheduled across 2 hosts ✓</span></div>
+      </div>
+      <div class="sc-text">
+        <span class="eyebrow sec-eyebrow">API-first</span>
+        <h2>Everything the UI does<br/><span class="accent">is an API call.</span></h2>
+        <p>Drive Netplex from your own tooling. A documented REST + WebSocket API, a CLI, SDKs, and first-class infrastructure-as-code — the automation story EVE-NG never had.</p>
+        <div class="api-logos">
+          <span class="chip">CLI</span><span class="chip">Terraform</span><span class="chip">Ansible</span><span class="chip">Kubernetes</span><span class="chip">Jenkins / CI</span><span class="chip">Git-as-code</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING TEASER -->
+<section style="background:var(--surface-1);border-top:1px solid var(--border-soft);border-bottom:1px solid var(--border-soft)">
+  <div class="wrap center">
+    <span class="eyebrow sec-eyebrow">Pricing</span>
+    <h2 class="sec">Start free. <span class="accent">Pay when you scale.</span></h2>
+    <p class="sec-sub">No artificial cripple-ware. The product is great at every tier — paid unlocks scale, teams and automation.</p>
+    <div class="tiers" style="text-align:left">
+      <div class="tier">
+        <div class="nm">Free</div>
+        <div class="price">$0</div>
+        <div class="desc">Bigger than EVE Community — and far prettier.</div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>25 nodes · 3 labs</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Integrated consoles</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Read-only API</li>
+        </ul>
+      </div>
+      <div class="tier feat">
+        <div class="tier-badge">Most popular</div>
+        <div class="nm">Pro</div>
+        <div class="price">$15<span>/mo</span></div>
+        <div class="desc">Unlimited everything, for one engineer.</div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Unlimited nodes & labs</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Up to 3 hosts (fabric)</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Full API · Terraform · Ansible</li>
+        </ul>
+      </div>
+      <div class="tier">
+        <div class="nm">Team</div>
+        <div class="price">$12<span>/user</span></div>
+        <div class="desc">Real-time collaboration for crews.</div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Up to 10 hosts</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Multi-user editing</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Classroom mode (basic)</li>
+        </ul>
+      </div>
+      <div class="tier">
+        <div class="nm">Enterprise</div>
+        <div class="price">Custom</div>
+        <div class="desc">Institutes, SSO, SLA & HA.</div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Unlimited hosts + HA</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Full classroom + LMS</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>SSO · audit · named contact</li>
+        </ul>
+      </div>
+    </div>
+    <p style="margin-top:26px;font-size:14px;color:var(--text-3)">Students free with a school email · <a href="pricing.html" style="color:var(--accent)">See full pricing →</a></p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="ctaband">
+  <div class="wrap">
+    <h2>Stop tolerating <span class="accent">the old tools.</span></h2>
+    <p>Import your EVE-NG lab, get Pro free for 60 days, and never run <span class="mono">fixpermissions</span> again.</p>
+    <div style="display:flex;gap:13px;justify-content:center;flex-wrap:wrap">
+      <a href="download.html" class="btn btn-primary btn-lg">Get Netplex free<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="roadmap.html" class="btn btn-outline btn-lg">See the roadmap</a>
+    </div>
+    <p style="font-size:13px;margin-top:18px;color:var(--text-4)">Free forever for 25 nodes · no credit card</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="index.html" class="brand"><span class="mark"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1.4 L22.6 6.5 L12 11.6 L1.4 6.5 Z" stroke="currentColor" stroke-width="1.8"/><path d="M1.4 11.9 L12 17 L22.6 11.9" stroke="currentColor" stroke-width="1.8"/><path d="M1.4 17.1 L12 22.2 L22.6 17.1" stroke="currentColor" stroke-width="1.8"/></svg></span><span class="wm">netplex<span class="dotmark">.</span></span></a>
+        <p>The distributed, API-first network emulation platform. Beautiful, in your browser, worth paying for.</p>
+      </div>
+      <div class="foot-col"><h4>Product</h4><a href="index.html">Features</a><a href="pricing.html">Pricing</a><a href="roadmap.html">Roadmap</a><a href="download.html">Download</a></div>
+      <div class="foot-col"><h4>Resources</h4><a href="docs.html">Docs</a><a href="community.html">Community</a><a href="#" data-ext>Status</a><a href="#" data-ext>Changelog</a></div>
+      <div class="foot-col"><h4>Company</h4><a href="about.html">About</a><a href="#" data-ext>Contact</a></div>
+      <div class="foot-col"><h4>Legal</h4><a href="legal.html#privacy">Privacy</a><a href="legal.html#terms">Terms</a><a href="legal.html#disclaimer">Disclaimer</a></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Netplex. All rights reserved.</span>
+      <span class="mono">v1.0 · built for engineers</span>
+    </div>
+  </div>
+</footer>
+
+</div>
+
+<script src="assets/topology.js"></script>
+<script src="assets/showcase.js"></script>
+<script src="assets/appearance.js"></script>
+<script>
+/* rotating hero — fresh message every reload */
+var HERO = [
+  { p:"Now in open beta · v1.0", t:'Build network labs <span class="accent">in your browser.</span>', s:"A distributed, API-first network emulator with a canvas you'll actually want to look at — and a free tier that's genuinely useful.", st:'EVE-NG was free and ugly. Netplex is <b>beautiful, distributed and worth paying for.</b>' },
+  { p:"The network lab, reborn", t:'The best emulator was free and ugly.<br/><span class="accent">Now it\u2019s worth paying for.</span>', s:"Premium, flat, dark-first. Six themes, a canvas editor, integrated consoles and a distributed fabric — all in the browser.", st:'No client to install. <b>No fixpermissions. Ever.</b>' },
+  { p:"Distributed by design", t:'One topology.<br/><span class="accent">Many cheap PCs.</span>', s:"Span a single lab across several hosts over VXLAN. The headline differentiator EVE-NG, PNETLAB and GNS3 never had.", st:'Big labs <b>no longer need a big server.</b>' },
+  { p:"Migrate in one click", t:'Bring your EVE-NG lab.<br/><span class="accent">Leave the pain.</span>', s:"Import .unl, .gns3project and containerlab YAML instantly. No fixpermissions, no image juggling, no external terminals.", st:'Switch and get <b>Pro free for 60 days.</b>' },
+  { p:"API-first emulation", t:'Labs as code.<br/><span class="accent">Wired to your pipeline.</span>', s:"CLI, SDKs, Terraform, Ansible, Kubernetes and CI. Everything the UI does is a documented API call.", st:'The automation story <b>EVE-NG never had.</b>' },
+  { p:"Built for engineers at 2am", t:'Dense, fast,<br/><span class="accent">and actually pretty.</span>', s:"Six themes, a circuit-board canvas, integrated consoles and live packet flow. Reliability over DRM zeal.", st:'Every error tells you <b>what, why, and what to do next.</b>' }
+];
+(function(){ var v=HERO[Math.floor(Math.random()*HERO.length)];
+  document.getElementById('heroPill').textContent=v.p;
+  document.getElementById('heroTitle').innerHTML=v.t;
+  document.getElementById('heroSub').textContent=v.s;
+  document.getElementById('heroStat').innerHTML=v.st;
+})();
+
+/* comparison rows: '' = miss(✗), 'mid' = partial, 'ck' = has it */
+var ICO_X='<span class="ico x"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M18 6L6 18M6 6l12 12"/></svg></span>';
+var ICO_CK='<span class="ico ck"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg></span>';
+var ICO_MID='<span class="ico mid"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14"/></svg></span>';
+function cell(v){ return v==='ck'?ICO_CK : v==='mid'?ICO_MID : ICO_X; }
+var ROWS = [
+  ['Premium, flat, modern UI',                  '',    'mid', 'mid', ''   ],
+  ['Fully browser-based — zero local client',   'mid', 'mid', '',    ''   ],
+  ['Distributed fabric — one lab, many hosts',  '',    '',    'mid', ''   ],
+  ['No manual fixpermissions / image juggling', '',    'mid', 'mid', 'ck' ],
+  ['API · Terraform · Ansible · CI',            'mid', 'mid', 'ck',  'ck' ],
+  ['Real-time multi-user collaboration',        '',    '',    '',    ''   ],
+  ['Live link-flow visualisation',              '',    '',    '',    ''   ],
+  ['One-click EVE-NG / GNS3 import',            '',    '',    '',    ''   ]
+];
+(function(){
+  var b=document.getElementById('cmpBody');
+  b.innerHTML = ROWS.map(function(r){
+    return '<tr><td>'+r[0]+'</td>'+
+      '<td>'+cell(r[1])+'</td>'+
+      '<td>'+cell(r[2])+'</td>'+
+      '<td>'+cell(r[3])+'</td>'+
+      '<td>'+cell(r[4])+'</td>'+
+      '<td class="col-us">'+ICO_CK+'</td></tr>';
+  }).join('');
+})();
+
+buildTopology(document.getElementById('heroTopo'));
+buildTopology(document.getElementById('canvasTopo'));
+buildFabric(document.getElementById('fabric'));
+buildPipeline(document.getElementById('pipeline'));
+buildThemes(document.getElementById('themesGrid'));
+/* homepage theme tiles apply the theme live */
+document.querySelectorAll('#themesGrid .theme-tile').forEach(function(tile){
+  tile.style.cursor='pointer';
+  tile.addEventListener('click',function(){ var n=tile.querySelector('.tt-name'); if(n&&window.Appearance) window.Appearance.setTheme(n.textContent.trim().toLowerCase()); });
+});
+document.querySelectorAll('[data-ext]').forEach(function(a){ a.addEventListener('click',function(e){e.preventDefault();}); });
+</script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Roadmap — Netplex</title>
+<meta name="description" content="What's shipping now, next and later. Public and transparent, tied to community feature-request votes." />
+<link rel="stylesheet" href="assets/site.css" />
+<link rel="stylesheet" href="assets/landing.css" />
+<script>(function(){try{var t=localStorage.getItem('netplex.theme');var a=localStorage.getItem('netplex.accent');if(t&&t!=='midnight')document.documentElement.dataset.theme=t;if(a&&a!=='orange')document.documentElement.dataset.accent=a;}catch(e){}})();</script>
+<style>
+  .page-head { padding: 70px 0 8px; text-align: center; }
+  .page-head h1 { font-size: 50px; letter-spacing: -0.04em; margin-bottom: 14px; }
+  .page-head h1 .accent { color: var(--accent); }
+  .page-head p { font-size: 18px; color: var(--text-3); max-width: 600px; margin: 0 auto; }
+  .rm-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 16px; align-items: start; }
+  .rm-col { }
+  .rm-colhead { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; padding-bottom: 14px; border-bottom: 1px solid var(--border); }
+  .rm-colhead .lbl { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; }
+  .rm-colhead .lbl.now { color: var(--accent); } .rm-colhead .lbl.next { color: var(--info); } .rm-colhead .lbl.later { color: var(--text-3); }
+  .rm-colhead .cnt { font-family: var(--font-mono); font-size: 11px; color: var(--text-4); margin-left: auto; }
+  .rm-card { background: var(--surface-1); border: 1px solid var(--border); border-radius: var(--r-3); padding: 16px 18px; margin-bottom: 12px; transition: border-color .15s, transform .15s; }
+  .rm-card:hover { border-color: var(--border-bright); transform: translateY(-2px); }
+  .rm-card .top { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 8px; }
+  .rm-card h3 { font-size: 15px; letter-spacing: -0.01em; }
+  .rm-card p { font-size: 13.5px; color: var(--text-3); line-height: 1.5; }
+  .rm-vote { display: inline-flex; align-items: center; gap: 5px; font-family: var(--font-mono); font-size: 11px; color: var(--text-3); background: var(--surface-2); border: 1px solid var(--border); border-radius: 999px; padding: 3px 9px; flex-shrink: 0; cursor: pointer; transition: all .15s; }
+  .rm-vote:hover { border-color: var(--accent); color: var(--accent); }
+  .rm-vote svg { width: 11px; height: 11px; }
+  .st-pill { font-family: var(--font-mono); font-size: 9.5px; letter-spacing: 0.06em; text-transform: uppercase; padding: 2px 7px; border-radius: 999px; font-weight: 500; }
+  .st-shipped { color: var(--ok); background: var(--ok-soft); } .st-beta { color: var(--accent); background: var(--accent-soft); }
+  .st-building { color: var(--info); background: var(--info-soft); } .st-planned { color: var(--text-3); background: var(--surface-2); }
+  @media (max-width: 860px){ .rm-cols { grid-template-columns: 1fr; } .page-head h1 { font-size: 36px; } }
+</style>
+</head>
+<body>
+<div class="gridbg"></div>
+<div class="content">
+
+<nav class="nav">
+  <div class="wrap">
+    <a href="index.html" class="brand"><span class="mark"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1.4 L22.6 6.5 L12 11.6 L1.4 6.5 Z" stroke="currentColor" stroke-width="1.8"/><path d="M1.4 11.9 L12 17 L22.6 11.9" stroke="currentColor" stroke-width="1.8"/><path d="M1.4 17.1 L12 22.2 L22.6 17.1" stroke="currentColor" stroke-width="1.8"/></svg></span><span class="wm">netplex<span class="dotmark">.</span></span><span class="ver">beta</span></a>
+    <div class="navlinks">
+      <a href="index.html">Product</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="roadmap.html" class="active">Roadmap</a>
+      <a href="about.html">About</a>
+      <a href="docs.html">Docs</a>
+      <a href="community.html">Community</a>
+    </div>
+    <div class="navactions">
+      <a href="#" class="btn btn-ghost" data-ext>Sign in</a>
+      <button class="ap-trigger" data-appearance-trigger aria-label="Appearance" title="Appearance"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996C20.146 15.21 22 13.36 22 11.04 22 6.038 17.5 2 12 2z"/></svg></button>
+      <a href="download.html" class="btn btn-primary">Get Netplex</a>
+      <button class="menu-toggle" aria-label="Menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    </div>
+  </div>
+</nav>
+
+<div class="page-head wrap">
+  <span class="eyebrow" style="display:block;margin-bottom:14px">Public roadmap</span>
+  <h1>What we're building, <span class="accent">in the open.</span></h1>
+  <p>Now, Next and Later — tied to community feature-request votes. We're honest about uncertainty; dates are intentions, not promises.</p>
+</div>
+
+<section style="padding-top:36px">
+  <div class="wrap">
+    <div class="rm-cols">
+      <div class="rm-col">
+        <div class="rm-colhead"><span class="lbl now">Now · soft launch</span><span class="cnt" id="cnt-now"></span></div>
+        <div id="col-now"></div>
+      </div>
+      <div class="rm-col">
+        <div class="rm-colhead"><span class="lbl next">Next</span><span class="cnt" id="cnt-next"></span></div>
+        <div id="col-next"></div>
+      </div>
+      <div class="rm-col">
+        <div class="rm-colhead"><span class="lbl later">Later</span><span class="cnt" id="cnt-later"></span></div>
+        <div id="col-later"></div>
+      </div>
+    </div>
+    <div class="card" style="margin-top:28px;display:flex;align-items:center;gap:20px;flex-wrap:wrap">
+      <div style="flex:1;min-width:260px">
+        <h3 style="font-size:17px;margin-bottom:6px">Want something on this board?</h3>
+        <p style="color:var(--text-3);font-size:14.5px;margin:0">Feature requests are voted in the community forum — the top of the list shapes what we build next.</p>
+      </div>
+      <a href="#" data-ext class="btn btn-outline">Open the forum</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="index.html" class="brand"><span class="mark"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1.4 L22.6 6.5 L12 11.6 L1.4 6.5 Z" stroke="currentColor" stroke-width="1.8"/><path d="M1.4 11.9 L12 17 L22.6 11.9" stroke="currentColor" stroke-width="1.8"/><path d="M1.4 17.1 L12 22.2 L22.6 17.1" stroke="currentColor" stroke-width="1.8"/></svg></span><span class="wm">netplex<span class="dotmark">.</span></span></a>
+        <p>The distributed, API-first network emulation platform. Beautiful, in your browser, worth paying for.</p>
+      </div>
+      <div class="foot-col"><h4>Product</h4><a href="index.html">Features</a><a href="pricing.html">Pricing</a><a href="roadmap.html">Roadmap</a><a href="download.html">Download</a></div>
+      <div class="foot-col"><h4>Resources</h4><a href="docs.html">Docs</a><a href="community.html">Community</a><a href="#" data-ext>Status</a><a href="#" data-ext>Changelog</a></div>
+      <div class="foot-col"><h4>Company</h4><a href="about.html">About</a><a href="#" data-ext>Contact</a></div>
+      <div class="foot-col"><h4>Legal</h4><a href="legal.html#privacy">Privacy</a><a href="legal.html#terms">Terms</a><a href="legal.html#disclaimer">Disclaimer</a></div>
+    </div>
+    <div class="foot-bottom"><span>© 2026 Netplex. All rights reserved.</span><span class="mono">v1.0 · built for engineers</span></div>
+  </div>
+</footer>
+
+</div>
+<script src="assets/appearance.js"></script>
+<script>
+var ITEMS = {
+  now: [
+    { t:'Studio + canvas editor', s:'Drag, link, annotate, export. Six themes, four link styles.', st:'shipped', v:412 },
+    { t:'Automated image pipeline', s:'Convert, permissions, organise, boot-test — no fixpermissions.', st:'shipped', v:388 },
+    { t:'Integrated consoles + group-send', s:'Tabbed, tiled, pop-out terminals with broadcast.', st:'shipped', v:301 },
+    { t:'EVE-NG / GNS3 import', s:'One-click .unl, .gns3project and containerlab YAML.', st:'beta', v:356 },
+    { t:'Single + small-cluster fabric', s:'VXLAN stitching across 2–3 hosts.', st:'beta', v:274 }
+  ],
+  next: [
+    { t:'Cross-platform hosts', s:'Run the Netplex compute agent on Windows & macOS, not just Linux — same fabric, any machine. Target: end of 2026.', st:'building', v:289 },
+    { t:'Terraform + Ansible providers', s:'First-class IaC for topology-as-code.', st:'building', v:233 },
+    { t:'Classroom mode', s:'Instructor/student, grading, seat management.', st:'building', v:198 },
+    { t:'Signed image marketplace', s:'Share and pull community device images.', st:'planned', v:176 },
+    { t:'Guacamole GUI consoles', s:'RDP/VNC desktops for GUI appliances.', st:'planned', v:142 },
+    { t:'Larger clusters + mobile polish', s:'10+ hosts, tablet-friendly canvas.', st:'planned', v:119 }
+  ],
+  later: [
+    { t:'Kubernetes Operator', s:'Run labs as native k8s resources.', st:'planned', v:164 },
+    { t:'Full GitOps', s:'PR-driven topology changes, drift detection.', st:'planned', v:131 },
+    { t:'AI assist', s:'Topology suggestions and troubleshooting.', st:'planned', v:208 },
+    { t:'Advanced QoS labs', s:'Live delay/jitter/loss study tooling.', st:'planned', v:97 },
+    { t:'Managed cloud offering', s:'Hosted Netplex with one-click clusters.', st:'planned', v:188 }
+  ]
+};
+var STLABEL = { shipped:'Shipped', beta:'Beta', building:'Building', planned:'Planned' };
+function render(col, items){
+  var host=document.getElementById('col-'+col);
+  host.innerHTML = items.map(function(it){
+    return '<div class="rm-card"><div class="top"><span class="st-pill st-'+it.st+'">'+STLABEL[it.st]+'</span>'+
+      '<button class="rm-vote"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 19V5M5 12l7-7 7 7"/></svg>'+it.v+'</button></div>'+
+      '<h3>'+it.t+'</h3><p>'+it.s+'</p></div>';
+  }).join('');
+  document.getElementById('cnt-'+col).textContent = items.length + ' items';
+}
+render('now', ITEMS.now); render('next', ITEMS.next); render('later', ITEMS.later);
+document.querySelectorAll('.rm-vote').forEach(function(b){
+  b.addEventListener('click', function(){
+    if(b.dataset.voted){ return; }
+    b.dataset.voted='1';
+    var n=parseInt(b.textContent.trim(),10)+1; b.lastChild.textContent=n;
+    b.style.color='var(--accent)'; b.style.borderColor='var(--accent)';
+  });
+});
+document.querySelectorAll('[data-ext]').forEach(function(a){ a.addEventListener('click',function(e){e.preventDefault();}); });
+</script>
+</body>
+</html>
