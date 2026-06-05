@@ -67,16 +67,16 @@
     </div>
     <div class="topo-frame">
       <div class="win">
-        <div class="win-bar"><div class="lights"><i></i><i></i><i></i></div><span class="title">ENT-CAMPUS-WAN · topology</span><span class="right"><span class="pill" style="font-size:11px;padding:3px 10px"><span class="dot"></span>Running</span></span></div>
+        <div class="win-bar"><div class="lights"><i></i><i></i><i></i></div><span class="title">ENT-CAMPUS-WAN · topology</span><span class="right"><span class="pill ok" style="font-size:11px;padding:3px 10px"><span class="dot"></span>Running</span></span></div>
         <div class="topo-wrap"><div id="heroTopo"></div></div>
       </div>
     </div>
   </div></div>
 </header>
 
-<!-- CATCHY PHRASES MARQUEE -->
+<!-- CATCHY PHRASES ROTATOR -->
 <div class="phrase-band">
-  <div class="marquee" id="marquee"></div>
+  <div class="phrase-rotator" id="phraseRotator"></div>
 </div>
 
 <!-- VENDOR WALL -->
@@ -359,7 +359,7 @@ buildTopology(document.getElementById('heroTopo'));
 buildFabric(document.getElementById('fabric'));
 buildVendors(document.getElementById('vendorWall'));
 
-/* catchy-phrase marquee (login hero taglines) */
+/* catchy-phrase rotator */
 var PHRASES = [
   'Emulate. Automate. <span class="accent">Ship.</span>',
   'Stop setting up labs. <span class="accent">Start engineering.</span>',
@@ -373,10 +373,28 @@ var PHRASES = [
   'Real packets. <span class="accent">Real vendors.</span>'
 ];
 (function(){
-  var m=document.getElementById('marquee');
-  if(!m) return;
-  var one = PHRASES.map(function(p){ return '<span class="ph">'+p+'<span class="sep"></span></span>'; }).join('');
-  m.innerHTML = one + one; /* duplicated for seamless loop */
+  var el = document.getElementById('phraseRotator');
+  if (!el) return;
+  var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  /* shuffle */
+  var arr = PHRASES.slice();
+  for (var i = arr.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = arr[i]; arr[i] = arr[j]; arr[j] = t; }
+  var idx = 0;
+  function show(i) {
+    el.classList.remove('is-shown');
+    if (reduced) {
+      el.innerHTML = arr[i];
+      el.classList.add('is-shown');
+    } else {
+      setTimeout(function() { el.innerHTML = arr[i]; el.classList.add('is-shown'); }, 200);
+    }
+  }
+  show(0);
+  var timer = setInterval(function() {
+    if (document.hidden) return;
+    idx = (idx + 1) % arr.length;
+    show(idx);
+  }, 3500);
 })();
 
 /* pricing teaser: Monthly / Annual toggle (mirrors the pricing page) */

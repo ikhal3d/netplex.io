@@ -265,15 +265,9 @@
 .bill-toggle button.on { background: var(--accent); color: var(--accent-ink); }
 .bill-save { font-size: 12px; color: var(--ok); margin-left: 10px; font-weight: 600; font-family: var(--font-mono); }
 
-/* ── Catchy-phrase marquee band ── */
-.phrase-band { border-top: 1px solid var(--border-soft); border-bottom: 1px solid var(--border-soft); background: var(--surface-0); overflow: hidden; padding: 18px 0; position: relative; z-index: 1; }
-.phrase-band::before, .phrase-band::after { content: ''; position: absolute; top: 0; bottom: 0; width: 120px; z-index: 2; pointer-events: none; }
-.phrase-band::before { left: 0; background: linear-gradient(90deg, var(--surface-0), transparent); }
-.phrase-band::after { right: 0; background: linear-gradient(270deg, var(--surface-0), transparent); }
-.marquee { display: flex; gap: 0; width: max-content; animation: marquee-scroll 38s linear infinite; }
-.phrase-band:hover .marquee { animation-play-state: paused; }
-.marquee .ph { display: inline-flex; align-items: center; gap: 14px; padding: 0 30px; font-family: var(--font-display); font-weight: 600; font-size: 19px; letter-spacing: -0.01em; color: var(--text-2); white-space: nowrap; }
-.marquee .ph .accent { color: var(--accent); }
-.marquee .ph .sep { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); opacity: 0.55; flex-shrink: 0; }
-@keyframes marquee-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-@media (prefers-reduced-motion: reduce){ .marquee { animation: none; } }
+/* ── Catchy-phrase rotator band ── */
+.phrase-band { border-top: 1px solid var(--border-soft); border-bottom: 1px solid var(--border-soft); background: var(--surface-0); padding: 18px 0; position: relative; z-index: 1; display: flex; align-items: center; justify-content: center; min-height: 59px; }
+.phrase-rotator { font-family: var(--font-display); font-weight: 600; font-size: 19px; letter-spacing: -0.01em; color: var(--text-2); text-align: center; opacity: 0; transform: translateY(6px); transition: opacity 400ms ease, transform 400ms ease; }
+.phrase-rotator.is-shown { opacity: 1; transform: translateY(0); }
+.phrase-rotator .accent { color: var(--accent); }
+@media (prefers-reduced-motion: reduce){ .phrase-rotator, .phrase-rotator.is-shown { transition: none; transform: none; } }
