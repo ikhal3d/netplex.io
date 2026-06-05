@@ -199,6 +199,7 @@
   .showcase.flip .sc-text { order: 0; }
   .h-title { font-size: 42px; }
   .topo { transform: scale(0.84); transform-origin: top center; }
+  .topo-wrap { overflow: hidden; height: 319px; } /* 380 * 0.84 — clips dead layout space */
   .bento, .themes-grid { grid-template-columns: 1fr 1fr; }
   .tiers { grid-template-columns: 1fr 1fr; }
   .statband .wrap { grid-template-columns: 1fr 1fr; }
@@ -209,6 +210,7 @@
   .h-title { font-size: 34px; }
   .h-sub { font-size: 16px; }
   .topo { transform: scale(0.62); transform-origin: top center; }
+  .topo-wrap { height: 236px; } /* 380 * 0.62 */
   .bento, .themes-grid, .tiers { grid-template-columns: 1fr; }
   .fab { grid-template-columns: 1fr; gap: 0; }
   .fab-gap { height: 54px; transform: rotate(90deg); }
