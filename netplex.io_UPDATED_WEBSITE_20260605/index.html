@@ -4,9 +4,8 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>netplex. - the modern network lab. Emulate. Automate. Ship.</title>
-<meta name="description" content="The modern network lab - distributed digital twin, execution and automation. Built in Australia by network engineers for engineers who've outgrown EVE-NG." />
+<meta name="description" content="netplex. is a distributed network digital twin, execution and automation platform - built in Australia by network engineers for engineers who've outgrown EVE-NG. Emulate. Automate. Ship." />
 <link rel="icon" href="assets/favicon.svg" />
-<link rel="canonical" href="https://netplex.io/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="netplex." />
 <meta property="og:title" content="netplex. - the modern network lab" />
@@ -17,17 +16,10 @@
 <meta name="twitter:title" content="netplex. - the modern network lab" />
 <meta name="twitter:description" content="Emulate. Automate. Ship. The modern network lab, built in Australia by network engineers." />
 <meta name="twitter:image" content="https://netplex.io/assets/og.png" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Quicksand:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Quicksand:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" /></noscript>
 <link rel="stylesheet" href="assets/site.css" />
 <link rel="stylesheet" href="assets/landing.css" />
 <link rel="stylesheet" href="assets/pages.css" />
 <script>/* no-flash: apply saved theme/accent before paint */(function(){try{var t=localStorage.getItem('netplex.theme');var a=localStorage.getItem('netplex.accent');if(t&&t!=='midnight')document.documentElement.dataset.theme=t;if(a&&a!=='orange')document.documentElement.dataset.accent=a;}catch(e){}})();</script>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://netplex.io/#organization","name":"netplex.","url":"https://netplex.io","logo":{"@type":"ImageObject","url":"https://netplex.io/assets/og.png"},"description":"The modern network lab - distributed network digital twin, execution and automation platform. Built in Australia by network engineers.","foundingLocation":{"@type":"Place","addressCountry":"AU"}},{"@type":"WebSite","@id":"https://netplex.io/#website","url":"https://netplex.io","name":"netplex.","publisher":{"@id":"https://netplex.io/#organization"}},{"@type":"SoftwareApplication","name":"netplex.","applicationCategory":"NetworkingApplication","operatingSystem":"Linux","url":"https://netplex.io","description":"The modern network lab - distributed digital twin, execution and automation. Built in Australia for engineers who've outgrown EVE-NG.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}]}
-</script>
 </head>
 <body>
 <div class="gridbg"></div>
@@ -75,16 +67,16 @@
     </div>
     <div class="topo-frame">
       <div class="win">
-        <div class="win-bar"><div class="lights"><i></i><i></i><i></i></div><span class="title">ENT-CAMPUS-WAN · topology</span><span class="right"><span class="pill ok" style="font-size:11px;padding:3px 10px"><span class="dot"></span>Running</span></span></div>
+        <div class="win-bar"><div class="lights"><i></i><i></i><i></i></div><span class="title">ENT-CAMPUS-WAN · topology</span><span class="right"><span class="pill" style="font-size:11px;padding:3px 10px"><span class="dot"></span>Running</span></span></div>
         <div class="topo-wrap"><div id="heroTopo"></div></div>
       </div>
     </div>
   </div></div>
 </header>
 
-<!-- CATCHY PHRASES ROTATOR -->
+<!-- CATCHY PHRASES MARQUEE -->
 <div class="phrase-band">
-  <div class="phrase-rotator" id="phraseRotator"></div>
+  <div class="marquee" id="marquee"></div>
 </div>
 
 <!-- VENDOR WALL -->
@@ -367,7 +359,7 @@ buildTopology(document.getElementById('heroTopo'));
 buildFabric(document.getElementById('fabric'));
 buildVendors(document.getElementById('vendorWall'));
 
-/* catchy-phrase rotator */
+/* catchy-phrase marquee (login hero taglines) */
 var PHRASES = [
   'Emulate. Automate. <span class="accent">Ship.</span>',
   'Stop setting up labs. <span class="accent">Start engineering.</span>',
@@ -381,28 +373,10 @@ var PHRASES = [
   'Real packets. <span class="accent">Real vendors.</span>'
 ];
 (function(){
-  var el = document.getElementById('phraseRotator');
-  if (!el) return;
-  var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  /* shuffle */
-  var arr = PHRASES.slice();
-  for (var i = arr.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = arr[i]; arr[i] = arr[j]; arr[j] = t; }
-  var idx = 0;
-  function show(i) {
-    el.classList.remove('is-shown');
-    if (reduced) {
-      el.innerHTML = arr[i];
-      el.classList.add('is-shown');
-    } else {
-      setTimeout(function() { el.innerHTML = arr[i]; el.classList.add('is-shown'); }, 200);
-    }
-  }
-  show(0);
-  var timer = setInterval(function() {
-    if (document.hidden) return;
-    idx = (idx + 1) % arr.length;
-    show(idx);
-  }, 3500);
+  var m=document.getElementById('marquee');
+  if(!m) return;
+  var one = PHRASES.map(function(p){ return '<span class="ph">'+p+'<span class="sep"></span></span>'; }).join('');
+  m.innerHTML = one + one; /* duplicated for seamless loop */
 })();
 
 /* pricing teaser: Monthly / Annual toggle (mirrors the pricing page) */
