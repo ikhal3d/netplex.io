@@ -5,9 +5,83 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Netplex — the network lab, reborn. Distributed. API-first. In your browser.</title>
 <meta name="description" content="A distributed, API-first network emulation platform with a canvas you'll actually want to look at. Everything EVE-NG, PNETLAB, GNS3 and Containerlab miss." />
+<meta name="robots" content="index, follow" />
+<meta name="keywords" content="network emulation, network simulation, network lab, network emulator, EVE-NG alternative, GNS3 alternative, Containerlab alternative, PNETLAB alternative, distributed network emulator, API-first network lab, browser-based network lab, virtual network lab" />
+<link rel="canonical" href="https://netplex.io/" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://netplex.io/" />
+<meta property="og:site_name" content="Netplex" />
+<meta property="og:title" content="Netplex — the network lab, reborn. Distributed. API-first. In your browser." />
+<meta property="og:description" content="A distributed, API-first network emulation platform with a canvas you'll actually want to look at. Everything EVE-NG, PNETLAB, GNS3 and Containerlab miss." />
+<meta property="og:image" content="https://netplex.io/assets/og.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Netplex — the network lab, reborn." />
+<meta name="twitter:description" content="A distributed, API-first network emulation platform with a canvas you'll actually want to look at. Everything EVE-NG, PNETLAB, GNS3 and Containerlab miss." />
+<meta name="twitter:image" content="https://netplex.io/assets/og.png" />
+<meta name="theme-color" content="#0a0a0f" />
 <link rel="stylesheet" href="assets/site.css" />
 <link rel="stylesheet" href="assets/landing.css" />
 <script>/* no-flash: apply saved theme/accent before paint */(function(){try{var t=localStorage.getItem('netplex.theme');var a=localStorage.getItem('netplex.accent');if(t&&t!=='midnight')document.documentElement.dataset.theme=t;if(a&&a!=='orange')document.documentElement.dataset.accent=a;}catch(e){}})();</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://netplex.io/#organization",
+      "name": "Netplex",
+      "url": "https://netplex.io/",
+      "description": "Makers of Netplex, a distributed API-first network emulation platform."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://netplex.io/#website",
+      "url": "https://netplex.io/",
+      "name": "Netplex",
+      "description": "A distributed, API-first network emulation platform with a canvas you'll actually want to look at.",
+      "publisher": { "@id": "https://netplex.io/#organization" },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://netplex.io/docs.html?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://netplex.io/#app",
+      "name": "Netplex",
+      "alternateName": ["network emulator", "network simulation platform", "network lab"],
+      "applicationCategory": "NetworkApplication",
+      "operatingSystem": "Linux, Web Browser",
+      "description": "Distributed, API-first network emulation platform. Build network labs in your browser — import EVE-NG (.unl) and GNS3 (.gns3project) topologies, run virtual routers and switches, and automate everything with a REST API. A modern alternative to EVE-NG, PNETLAB, GNS3 and Containerlab.",
+      "url": "https://netplex.io/",
+      "downloadUrl": "https://netplex.io/download.html",
+      "screenshot": "https://netplex.io/assets/og.png",
+      "featureList": [
+        "Browser-based network canvas",
+        "Import EVE-NG and GNS3 topologies",
+        "REST API and CLI automation",
+        "25 nodes free forever",
+        "Virtual router and switch support",
+        "Multi-user collaboration"
+      ],
+      "offers": {
+        "@type": "Offer",
+        "name": "Free",
+        "price": "0",
+        "priceCurrency": "USD",
+        "description": "25 nodes, unlimited labs, no client required — free forever."
+      },
+      "publisher": { "@id": "https://netplex.io/#organization" }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="gridbg"></div>
@@ -16,9 +90,9 @@
 <!-- NAV -->
 <nav class="nav">
   <div class="wrap">
-    <a href="index.html" class="brand"><span class="mark"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1.4 L22.6 6.5 L12 11.6 L1.4 6.5 Z" stroke="currentColor" stroke-width="1.8"/><path d="M1.4 11.9 L12 17 L22.6 11.9" stroke="currentColor" stroke-width="1.8"/><path d="M1.4 17.1 L12 22.2 L22.6 17.1" stroke="currentColor" stroke-width="1.8"/></svg></span><span class="wm">netplex<span class="dotmark">.</span></span><span class="ver">beta</span></a>
+    <a href="/" class="brand"><span class="mark"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1.4 L22.6 6.5 L12 11.6 L1.4 6.5 Z" stroke="currentColor" stroke-width="1.8"/><path d="M1.4 11.9 L12 17 L22.6 11.9" stroke="currentColor" stroke-width="1.8"/><path d="M1.4 17.1 L12 22.2 L22.6 17.1" stroke="currentColor" stroke-width="1.8"/></svg></span><span class="wm">netplex<span class="dotmark">.</span></span><span class="ver">beta</span></a>
     <div class="navlinks">
-      <a href="index.html" class="active">Product</a>
+      <a href="/" class="active">Product</a>
       <a href="pricing.html">Pricing</a>
       <a href="roadmap.html">Roadmap</a>
       <a href="about.html">About</a>
@@ -298,10 +372,10 @@ vni 1010  src host-01  dst host-02  <span class="ok">active</span>
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-brand">
-        <a href="index.html" class="brand"><span class="mark"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1.4 L22.6 6.5 L12 11.6 L1.4 6.5 Z" stroke="currentColor" stroke-width="1.8"/><path d="M1.4 11.9 L12 17 L22.6 11.9" stroke="currentColor" stroke-width="1.8"/><path d="M1.4 17.1 L12 22.2 L22.6 17.1" stroke="currentColor" stroke-width="1.8"/></svg></span><span class="wm">netplex<span class="dotmark">.</span></span></a>
+        <a href="/" class="brand"><span class="mark"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1.4 L22.6 6.5 L12 11.6 L1.4 6.5 Z" stroke="currentColor" stroke-width="1.8"/><path d="M1.4 11.9 L12 17 L22.6 11.9" stroke="currentColor" stroke-width="1.8"/><path d="M1.4 17.1 L12 22.2 L22.6 17.1" stroke="currentColor" stroke-width="1.8"/></svg></span><span class="wm">netplex<span class="dotmark">.</span></span></a>
         <p>The distributed, API-first network emulation platform. Beautiful, in your browser, worth paying for.</p>
       </div>
-      <div class="foot-col"><h4>Product</h4><a href="index.html">Features</a><a href="pricing.html">Pricing</a><a href="roadmap.html">Roadmap</a><a href="download.html">Download</a></div>
+      <div class="foot-col"><h4>Product</h4><a href="/">Features</a><a href="pricing.html">Pricing</a><a href="roadmap.html">Roadmap</a><a href="download.html">Download</a></div>
       <div class="foot-col"><h4>Resources</h4><a href="docs.html">Docs</a><a href="community.html">Community</a><a href="#" data-ext>Status</a><a href="#" data-ext>Changelog</a></div>
       <div class="foot-col"><h4>Company</h4><a href="about.html">About</a><a href="#" data-ext>Contact</a></div>
       <div class="foot-col"><h4>Legal</h4><a href="legal.html#privacy">Privacy</a><a href="legal.html#terms">Terms</a><a href="legal.html#disclaimer">Disclaimer</a></div>

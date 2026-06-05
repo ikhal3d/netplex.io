@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /Hero Directions.html
+Disallow: /Logo Options.html
+
+Sitemap: https://netplex.io/sitemap.xml
