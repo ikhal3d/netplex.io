@@ -209,8 +209,8 @@
   .hero { padding: 52px 0 36px; }
   .h-title { font-size: 34px; }
   .h-sub { font-size: 16px; }
-  .topo { transform: scale(0.62); transform-origin: top center; }
-  .topo-wrap { height: 236px; } /* 380 * 0.62 */
+  .topo { width: 660px; max-width: none; transform: scale(0.5); transform-origin: top left; }
+  .topo-wrap { height: 190px; } /* 380 * 0.5 — natural 660px width, scaled uniformly */
   .bento, .themes-grid, .tiers { grid-template-columns: 1fr; }
   .fab { grid-template-columns: 1fr; gap: 0; }
   .fab-gap { height: 54px; transform: rotate(90deg); }
