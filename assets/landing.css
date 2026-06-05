@@ -215,8 +215,11 @@
   .fab { grid-template-columns: 1fr; gap: 0; }
   .fab-gap { height: 54px; transform: rotate(90deg); }
   .ctaband h2 { font-size: 32px; }
-  .cmp { font-size: 12.5px; }
+  .cmp { font-size: 12.5px; min-width: 540px; }
   .cmp th, .cmp td { padding: 10px 8px; }
+  .cmp thead th { white-space: nowrap; }
+  .cmp th:first-child, .cmp td:first-child { position: sticky; left: 0; background: var(--surface-0); z-index: 2; }
+  .cmp thead th:first-child { z-index: 3; }
 }
 @media (max-width: 420px) {
   .statband .wrap { grid-template-columns: 1fr; }
