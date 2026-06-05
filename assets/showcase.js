@@ -1,5 +1,5 @@
 /* ──────────────────────────────────────────────────────────────
-   Netplex.io — product showcase builders
+   Netplex.io - product showcase builders
    buildFabric()   : two physical hosts stitched into one topology
    buildPipeline() : the image pipeline stepper (no CLI)
    buildThemes()   : 6 live theme preview tiles
@@ -100,9 +100,9 @@
       return '<div class="theme-tile">' +
         '<div class="tt-mock" style="background:' + t.bg + ';border-color:' + t.bd + '">' +
           '<div class="tt-bar" style="background:' + t.s1 + ';border-color:' + t.bd + '">' +
-            '<span class="tt-dot" style="background:#ff6e36"></span>' +
+            '<span class="tt-dot" style="background:#ff7a45"></span>' +
             '<span class="tt-line" style="background:' + t.t2 + ';width:34px"></span>' +
-            '<span class="tt-btn" style="background:#ff6e36"></span>' +
+            '<span class="tt-btn" style="background:#ff7a45"></span>' +
           '</div>' +
           '<div class="tt-body">' +
             '<div class="tt-card" style="background:' + t.s2 + ';border-color:' + t.bd + '"><span class="tt-chip" style="background:#1ba0d7"></span><span class="tt-tx" style="background:' + t.tx + '"></span></div>' +

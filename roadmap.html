@@ -3,26 +3,22 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Roadmap — Netplex</title>
+<title>Roadmap - netplex.</title>
 <meta name="description" content="What's shipping now, next and later. Public and transparent, tied to community feature-request votes." />
-<meta name="robots" content="index, follow" />
-<meta name="keywords" content="Netplex roadmap, network emulator roadmap, network lab features, distributed fabric roadmap, network emulation upcoming features, API-first lab planned features" />
-<link rel="canonical" href="https://netplex.io/roadmap.html" />
+<link rel="icon" href="assets/favicon.svg" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://netplex.io/roadmap.html" />
-<meta property="og:site_name" content="Netplex" />
-<meta property="og:title" content="Roadmap — Netplex" />
-<meta property="og:description" content="What's shipping now, next and later. Public and transparent, tied to community feature-request votes." />
+<meta property="og:site_name" content="netplex." />
+<meta property="og:title" content="netplex. - the modern network lab" />
+<meta property="og:description" content="Emulate. Automate. Ship. A distributed network digital twin, execution and automation platform, built in Australia for engineers who've outgrown EVE-NG." />
 <meta property="og:image" content="https://netplex.io/assets/og.png" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
+<meta property="og:url" content="https://netplex.io/" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Roadmap — Netplex" />
-<meta name="twitter:description" content="What's shipping now, next and later. Public and transparent, tied to community feature-request votes." />
+<meta name="twitter:title" content="netplex. - the modern network lab" />
+<meta name="twitter:description" content="Emulate. Automate. Ship. The modern network lab, built in Australia by network engineers." />
 <meta name="twitter:image" content="https://netplex.io/assets/og.png" />
-<meta name="theme-color" content="#0a0a0f" />
 <link rel="stylesheet" href="assets/site.css" />
 <link rel="stylesheet" href="assets/landing.css" />
+<link rel="stylesheet" href="assets/pages.css" />
 <script>(function(){try{var t=localStorage.getItem('netplex.theme');var a=localStorage.getItem('netplex.accent');if(t&&t!=='midnight')document.documentElement.dataset.theme=t;if(a&&a!=='orange')document.documentElement.dataset.accent=a;}catch(e){}})();</script>
 <style>
   .page-head { padding: 70px 0 8px; text-align: center; }
@@ -43,9 +39,27 @@
   .rm-vote { display: inline-flex; align-items: center; gap: 5px; font-family: var(--font-mono); font-size: 11px; color: var(--text-3); background: var(--surface-2); border: 1px solid var(--border); border-radius: 999px; padding: 3px 9px; flex-shrink: 0; cursor: pointer; transition: all .15s; }
   .rm-vote:hover { border-color: var(--accent); color: var(--accent); }
   .rm-vote svg { width: 11px; height: 11px; }
-  .st-pill { font-family: var(--font-mono); font-size: 9.5px; letter-spacing: 0.06em; text-transform: uppercase; padding: 2px 7px; border-radius: 999px; font-weight: 500; }
-  .st-shipped { color: var(--ok); background: var(--ok-soft); } .st-beta { color: var(--accent); background: var(--accent-soft); }
-  .st-building { color: var(--info); background: var(--info-soft); } .st-planned { color: var(--text-3); background: var(--surface-2); }
+  .st-pill { font-family: var(--font-mono); font-size: 9.5px; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 9px 3px 7px; border-radius: 999px; font-weight: 600; color: #fff; display: inline-flex; align-items: center; gap: 5px; }
+  .st-pill::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: #fff; flex-shrink: 0; }
+  .st-shipped { background: var(--ok); } .st-beta { background: var(--accent); }
+  .st-building { background: var(--info); } .st-planned { background: var(--muted); }
+  .reqboard { margin-top: 32px; border: 1px solid var(--border); border-radius: var(--r-4); background: var(--surface-1); padding: 26px; }
+  .reqboard .eyebrow { display:block; margin-bottom: 10px; }
+  .reqboard h3 { font-size: 22px; letter-spacing: -0.02em; margin-bottom: 6px; }
+  .reqboard .rsub { font-size: 14.5px; color: var(--text-3); margin-bottom: 18px; max-width: 600px; }
+  .reqform { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
+  .reqform input { flex: 1; min-width: 220px; background: var(--surface-0); border: 1px solid var(--border); border-radius: var(--r-2); padding: 11px 14px; color: var(--text-1); font-family: inherit; font-size: 14.5px; }
+  .reqform input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+  .reqlist { display: flex; flex-direction: column; gap: 8px; }
+  .reqitem { display: flex; align-items: center; gap: 14px; padding: 12px 14px; background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--r-3); }
+  .reqitem .rtext { flex: 1; font-size: 14.5px; color: var(--text-1); }
+  .reqitem .rmeta { font-size: 11.5px; color: var(--text-4); margin-top: 2px; }
+  .reqvote { display: inline-flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; min-width: 52px; padding: 6px 0; border: 1px solid var(--border); border-radius: var(--r-2); background: var(--surface-1); cursor: pointer; transition: all .15s; flex-shrink: 0; }
+  .reqvote:hover { border-color: var(--accent); }
+  .reqvote svg { width: 14px; height: 14px; color: var(--text-3); }
+  .reqvote .vn { font-family: var(--font-mono); font-size: 14px; font-weight: 600; color: var(--text-1); }
+  .reqvote.voted { background: var(--accent-soft); border-color: var(--accent); }
+  .reqvote.voted svg, .reqvote.voted .vn { color: var(--accent); }
   @media (max-width: 860px){ .rm-cols { grid-template-columns: 1fr; } .page-head h1 { font-size: 36px; } }
 </style>
 </head>
@@ -55,19 +69,20 @@
 
 <nav class="nav">
   <div class="wrap">
-    <a href="/" class="brand"><span class="mark"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1.4 L22.6 6.5 L12 11.6 L1.4 6.5 Z" stroke="currentColor" stroke-width="1.8"/><path d="M1.4 11.9 L12 17 L22.6 11.9" stroke="currentColor" stroke-width="1.8"/><path d="M1.4 17.1 L12 22.2 L22.6 17.1" stroke="currentColor" stroke-width="1.8"/></svg></span><span class="wm">netplex<span class="dotmark">.</span></span><span class="ver">beta</span></a>
+    <a href="index.html" class="brand"><span class="mark"><svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><g stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 19 L27 32 M14 32 L27 32 M14 45 L27 32"/><path d="M37 32 L52 32"/><circle cx="32" cy="32" r="5"/></g><circle cx="14" cy="19" r="3" fill="currentColor"/><circle cx="14" cy="32" r="3" fill="currentColor"/><circle cx="14" cy="45" r="3" fill="currentColor"/><circle cx="52" cy="32" r="3.4" fill="currentColor"/></svg></span><span class="wm">netplex<span class="dotmark">.</span></span><span class="ver">v1.0</span></a>
     <div class="navlinks">
-      <a href="/">Product</a>
+      <a href="product.html">Product</a>
+      <a href="download.html">Download</a>
       <a href="pricing.html">Pricing</a>
+      <a href="kb.html">Knowledge Base</a>
+      <a href="forums.html">Forums</a>
       <a href="roadmap.html" class="active">Roadmap</a>
-      <a href="about.html">About</a>
-      <a href="docs.html">Docs</a>
-      <a href="community.html">Community</a>
+      <a href="support.html">Support</a>
     </div>
     <div class="navactions">
       <a href="#" class="btn btn-ghost" data-ext>Sign in</a>
       <button class="ap-trigger" data-appearance-trigger aria-label="Appearance" title="Appearance"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996C20.146 15.21 22 13.36 22 11.04 22 6.038 17.5 2 12 2z"/></svg></button>
-      <a href="download.html" class="btn btn-primary">Get Netplex</a>
+      <a href="download.html" class="btn btn-primary">Get netplex.</a>
       <button class="menu-toggle" aria-label="Menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
     </div>
   </div>
@@ -76,7 +91,7 @@
 <div class="page-head wrap">
   <span class="eyebrow" style="display:block;margin-bottom:14px">Public roadmap</span>
   <h1>What we're building, <span class="accent">in the open.</span></h1>
-  <p>Now, Next and Later — tied to community feature-request votes. We're honest about uncertainty; dates are intentions, not promises.</p>
+  <p>Now, Next and Later - tied to community feature-request votes. We're honest about uncertainty; dates are intentions, not promises.</p>
 </div>
 
 <section style="padding-top:36px">
@@ -95,12 +110,15 @@
         <div id="col-later"></div>
       </div>
     </div>
-    <div class="card" style="margin-top:28px;display:flex;align-items:center;gap:20px;flex-wrap:wrap">
-      <div style="flex:1;min-width:260px">
-        <h3 style="font-size:17px;margin-bottom:6px">Want something on this board?</h3>
-        <p style="color:var(--text-3);font-size:14.5px;margin:0">Feature requests are voted in the community forum — the top of the list shapes what we build next.</p>
-      </div>
-      <a href="#" data-ext class="btn btn-outline">Open the forum</a>
+    <div class="reqboard">
+      <span class="eyebrow">Community demand</span>
+      <h3>Request a feature. <span style="color:var(--accent)">Watch it climb.</span></h3>
+      <p class="rsub">Tell us what to build next, and upvote what matters to you. The most-wanted rises to the top and shapes the board above - the counter is the demand.</p>
+      <form id="reqForm" class="reqform">
+        <input id="reqInput" type="text" maxlength="90" placeholder="e.g. BGP route-leak lab template, NETCONF support, IPv6 templates…" />
+        <button type="submit" class="btn btn-primary">Request it</button>
+      </form>
+      <div id="reqList" class="reqlist"></div>
     </div>
   </div>
 </section>
@@ -109,31 +127,33 @@
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-brand">
-        <a href="/" class="brand"><span class="mark"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1.4 L22.6 6.5 L12 11.6 L1.4 6.5 Z" stroke="currentColor" stroke-width="1.8"/><path d="M1.4 11.9 L12 17 L22.6 11.9" stroke="currentColor" stroke-width="1.8"/><path d="M1.4 17.1 L12 22.2 L22.6 17.1" stroke="currentColor" stroke-width="1.8"/></svg></span><span class="wm">netplex<span class="dotmark">.</span></span></a>
-        <p>The distributed, API-first network emulation platform. Beautiful, in your browser, worth paying for.</p>
+        <a href="index.html" class="brand"><span class="mark"><svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><g stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 19 L27 32 M14 32 L27 32 M14 45 L27 32"/><path d="M37 32 L52 32"/><circle cx="32" cy="32" r="5"/></g><circle cx="14" cy="19" r="3" fill="currentColor"/><circle cx="14" cy="32" r="3" fill="currentColor"/><circle cx="14" cy="45" r="3" fill="currentColor"/><circle cx="52" cy="32" r="3.4" fill="currentColor"/></svg></span><span class="wm">netplex<span class="dotmark">.</span></span></a>
+        <p>The modern network lab - a distributed digital twin, execution and automation platform. Emulate. Automate. Ship.</p>
+        <span class="au-badge" style="margin-top:16px"><span class="cross"><i></i><i></i><i></i><i style="margin-left:1px"></i></span> Made in Australia</span>
       </div>
-      <div class="foot-col"><h4>Product</h4><a href="/">Features</a><a href="pricing.html">Pricing</a><a href="roadmap.html">Roadmap</a><a href="download.html">Download</a></div>
-      <div class="foot-col"><h4>Resources</h4><a href="docs.html">Docs</a><a href="community.html">Community</a><a href="#" data-ext>Status</a><a href="#" data-ext>Changelog</a></div>
-      <div class="foot-col"><h4>Company</h4><a href="about.html">About</a><a href="#" data-ext>Contact</a></div>
+      <div class="foot-col"><h4>Product</h4><a href="product.html">Features</a><a href="download.html">Download</a><a href="pricing.html">Pricing</a><a href="roadmap.html">Roadmap</a></div>
+      <div class="foot-col"><h4>Resources</h4><a href="kb.html">Knowledge Base</a><a href="faq.html">FAQ</a><a href="forums.html">Forums</a><a href="support.html">Support</a></div>
+      <div class="foot-col"><h4>Company</h4><a href="about.html">About</a><a href="contact.html">Contact</a><a href="brand.html">Brand kit</a></div>
       <div class="foot-col"><h4>Legal</h4><a href="legal.html#privacy">Privacy</a><a href="legal.html#terms">Terms</a><a href="legal.html#disclaimer">Disclaimer</a></div>
     </div>
-    <div class="foot-bottom"><span>© 2026 Netplex. All rights reserved.</span><span class="mono">v1.0 · built for engineers</span></div>
+    <div class="foot-bottom"><span>© 2026 netplex. · Designed &amp; built in Australia.</span><span class="mono">v1.0 · built for engineers</span></div>
   </div>
 </footer>
 
 </div>
 <script src="assets/appearance.js"></script>
+<script src="assets/nav.js"></script>
 <script>
 var ITEMS = {
   now: [
     { t:'Studio + canvas editor', s:'Drag, link, annotate, export. Six themes, four link styles.', st:'shipped', v:412 },
-    { t:'Automated image pipeline', s:'Convert, permissions, organise, boot-test — no fixpermissions.', st:'shipped', v:388 },
+    { t:'Automated image pipeline', s:'Convert, permissions, organise, boot-test - no fixpermissions.', st:'shipped', v:388 },
     { t:'Integrated consoles + group-send', s:'Tabbed, tiled, pop-out terminals with broadcast.', st:'shipped', v:301 },
     { t:'EVE-NG / GNS3 import', s:'One-click .unl, .gns3project and containerlab YAML.', st:'beta', v:356 },
-    { t:'Single + small-cluster fabric', s:'VXLAN stitching across 2–3 hosts.', st:'beta', v:274 }
+    { t:'Single + small-cluster fabric', s:'VXLAN stitching across 2-3 hosts.', st:'beta', v:274 }
   ],
   next: [
-    { t:'Cross-platform hosts', s:'Run the Netplex compute agent on Windows & macOS, not just Linux — same fabric, any machine. Target: end of 2026.', st:'building', v:289 },
+    { t:'Cross-platform hosts', s:'Run the netplex compute agent on Windows & macOS, not just Linux - same fabric, any machine. Target: end of 2026.', st:'building', v:289 },
     { t:'Terraform + Ansible providers', s:'First-class IaC for topology-as-code.', st:'building', v:233 },
     { t:'Classroom mode', s:'Instructor/student, grading, seat management.', st:'building', v:198 },
     { t:'Signed image marketplace', s:'Share and pull community device images.', st:'planned', v:176 },
@@ -145,7 +165,7 @@ var ITEMS = {
     { t:'Full GitOps', s:'PR-driven topology changes, drift detection.', st:'planned', v:131 },
     { t:'AI assist', s:'Topology suggestions and troubleshooting.', st:'planned', v:208 },
     { t:'Advanced QoS labs', s:'Live delay/jitter/loss study tooling.', st:'planned', v:97 },
-    { t:'Managed cloud offering', s:'Hosted Netplex with one-click clusters.', st:'planned', v:188 }
+    { t:'Managed cloud offering', s:'Hosted netplex with one-click clusters.', st:'planned', v:188 }
   ]
 };
 var STLABEL = { shipped:'Shipped', beta:'Beta', building:'Building', planned:'Planned' };
@@ -168,6 +188,53 @@ document.querySelectorAll('.rm-vote').forEach(function(b){
   });
 });
 document.querySelectorAll('[data-ext]').forEach(function(a){ a.addEventListener('click',function(e){e.preventDefault();}); });
+
+/* ── Community feature-request demand board ── */
+(function(){
+  var SEED = [
+    { id:'ipv6-templates', t:'IPv6-first lab templates', v:147 },
+    { id:'netconf', t:'NETCONF / YANG model support', v:131 },
+    { id:'route-leak', t:'BGP route-leak troubleshooting lab', v:118 },
+    { id:'srv6', t:'SRv6 / segment routing nodes', v:96 },
+    { id:'macos-agent', t:'macOS compute agent', v:88 },
+    { id:'dark-export', t:'Export topology to dark-mode PDF', v:54 }
+  ];
+  var KEY='netplex.requests';
+  function load(){ try{ return JSON.parse(localStorage.getItem(KEY))||{}; }catch(e){ return {}; } }
+  function save(s){ try{ localStorage.setItem(KEY, JSON.stringify(s)); }catch(e){} }
+  var state = load(); // { id: {t, v, voted, user} }
+  // merge seeds
+  SEED.forEach(function(s){ if(!state[s.id]) state[s.id]={ t:s.t, v:s.v, voted:false }; });
+  var list=document.getElementById('reqList');
+  function render(){
+    var arr=Object.keys(state).map(function(k){ return Object.assign({id:k}, state[k]); });
+    arr.sort(function(a,b){ return b.v-a.v; });
+    list.innerHTML=arr.map(function(r){
+      return '<div class="reqitem">'+
+        '<button class="reqvote'+(r.voted?' voted':'')+'" data-id="'+r.id+'">'+
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 19V5M5 12l7-7 7 7"/></svg>'+
+          '<span class="vn">'+r.v+'</span></button>'+
+        '<div><div class="rtext">'+r.t+'</div>'+(r.user?'<div class="rmeta">requested by you</div>':'')+'</div>'+
+      '</div>';
+    }).join('');
+    list.querySelectorAll('.reqvote').forEach(function(b){
+      b.addEventListener('click', function(){
+        var id=b.dataset.id, r=state[id]; if(!r) return;
+        if(r.voted){ r.voted=false; r.v--; } else { r.voted=true; r.v++; }
+        save(state); render();
+      });
+    });
+  }
+  document.getElementById('reqForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var inp=document.getElementById('reqInput'); var txt=(inp.value||'').trim();
+    if(txt.length<4) return;
+    var id='u-'+Date.now();
+    state[id]={ t:txt, v:1, voted:true, user:true };
+    save(state); inp.value=''; render();
+  });
+  render();
+})();
 </script>
 </body>
 </html>

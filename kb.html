@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Knowledge Base - netplex.</title>
+<meta name="description" content="The netplex. Knowledge Base - install, build your first lab, migrate from EVE-NG, the image pipeline, automation, classroom and licensing." />
+<link rel="icon" href="assets/favicon.svg" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="netplex." />
+<meta property="og:title" content="netplex. - the modern network lab" />
+<meta property="og:description" content="Emulate. Automate. Ship. A distributed network digital twin, execution and automation platform, built in Australia for engineers who've outgrown EVE-NG." />
+<meta property="og:image" content="https://netplex.io/assets/og.png" />
+<meta property="og:url" content="https://netplex.io/" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="netplex. - the modern network lab" />
+<meta name="twitter:description" content="Emulate. Automate. Ship. The modern network lab, built in Australia by network engineers." />
+<meta name="twitter:image" content="https://netplex.io/assets/og.png" />
+<link rel="stylesheet" href="assets/site.css" />
+<link rel="stylesheet" href="assets/landing.css" />
+<link rel="stylesheet" href="assets/pages.css" />
+<script>(function(){try{var t=localStorage.getItem('netplex.theme');var a=localStorage.getItem('netplex.accent');if(t&&t!=='midnight')document.documentElement.dataset.theme=t;if(a&&a!=='orange')document.documentElement.dataset.accent=a;}catch(e){}})();</script>
+</head>
+<body>
+<div class="gridbg"></div>
+<div class="content">
+
+<nav class="nav">
+  <div class="wrap">
+    <a href="index.html" class="brand"><span class="mark"><svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><g stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 19 L27 32 M14 32 L27 32 M14 45 L27 32"/><path d="M37 32 L52 32"/><circle cx="32" cy="32" r="5"/></g><circle cx="14" cy="19" r="3" fill="currentColor"/><circle cx="14" cy="32" r="3" fill="currentColor"/><circle cx="14" cy="45" r="3" fill="currentColor"/><circle cx="52" cy="32" r="3.4" fill="currentColor"/></svg></span><span class="wm">netplex<span class="dotmark">.</span></span><span class="ver">v1.0</span></a>
+    <div class="navlinks">
+      <a href="product.html">Product</a>
+      <a href="download.html">Download</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="kb.html" class="active">Knowledge Base</a>
+      <a href="forums.html">Forums</a>
+      <a href="roadmap.html">Roadmap</a>
+      <a href="support.html">Support</a>
+    </div>
+    <div class="navactions">
+      <a href="#" class="btn btn-ghost" data-ext>Sign in</a>
+      <button class="ap-trigger" data-appearance-trigger aria-label="Appearance" title="Appearance"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996C20.146 15.21 22 13.36 22 11.04 22 6.038 17.5 2 12 2z"/></svg></button>
+      <a href="download.html" class="btn btn-primary">Get netplex.</a>
+      <button class="menu-toggle" aria-label="Menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    </div>
+  </div>
+</nav>
+
+<div class="page-head wrap">
+  <span class="eyebrow" style="display:block;margin-bottom:14px">Knowledge Base</span>
+  <h1>Everything, <span class="accent">documented.</span></h1>
+  <p class="lede">Install, build your first lab, migrate from EVE-NG, and drive netplex. by API. Search, or browse by topic.</p>
+  <div class="kb-search">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+    <input id="kbSearch" type="text" placeholder="Search the Knowledge Base…" autocomplete="off" />
+    <span class="kbd">/</span>
+  </div>
+</div>
+
+<section style="padding-top:34px">
+  <div class="wrap">
+    <div class="kb-layout">
+      <aside class="kb-side" id="kbSide"></aside>
+      <main id="kbMain"></main>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="index.html" class="brand"><span class="mark"><svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><g stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 19 L27 32 M14 32 L27 32 M14 45 L27 32"/><path d="M37 32 L52 32"/><circle cx="32" cy="32" r="5"/></g><circle cx="14" cy="19" r="3" fill="currentColor"/><circle cx="14" cy="32" r="3" fill="currentColor"/><circle cx="14" cy="45" r="3" fill="currentColor"/><circle cx="52" cy="32" r="3.4" fill="currentColor"/></svg></span><span class="wm">netplex<span class="dotmark">.</span></span></a>
+        <p>The modern network lab - a distributed digital twin, execution and automation platform. Emulate. Automate. Ship.</p>
+        <span class="au-badge" style="margin-top:16px"><span class="cross"><i></i><i></i><i></i><i style="margin-left:1px"></i></span> Made in Australia</span>
+      </div>
+      <div class="foot-col"><h4>Product</h4><a href="product.html">Features</a><a href="download.html">Download</a><a href="pricing.html">Pricing</a><a href="roadmap.html">Roadmap</a></div>
+      <div class="foot-col"><h4>Resources</h4><a href="kb.html">Knowledge Base</a><a href="faq.html">FAQ</a><a href="forums.html">Forums</a><a href="support.html">Support</a></div>
+      <div class="foot-col"><h4>Company</h4><a href="about.html">About</a><a href="contact.html">Contact</a><a href="brand.html">Brand kit</a></div>
+      <div class="foot-col"><h4>Legal</h4><a href="legal.html#privacy">Privacy</a><a href="legal.html#terms">Terms</a><a href="legal.html#disclaimer">Disclaimer</a></div>
+    </div>
+    <div class="foot-bottom"><span>© 2026 netplex. · Designed &amp; built in Australia.</span><span class="mono">v1.0 · built for engineers</span></div>
+  </div>
+</footer>
+
+</div>
+<script src="assets/kb-content.js"></script>
+<script src="assets/appearance.js"></script>
+<script src="assets/nav.js"></script>
+<script>
+var CATS = window.KB.CATS;
+var side = document.getElementById('kbSide');
+var main = document.getElementById('kbMain');
+var search = document.getElementById('kbSearch');
+
+function artById(cid, aid){
+  var c = CATS.filter(function(x){return x.id===cid;})[0];
+  if(!c) return null;
+  var a = c.articles.filter(function(x){return x.id===aid;})[0];
+  return a ? {cat:c, art:a} : null;
+}
+
+function renderSide(activeCat){
+  var html = '<div class="grp">Topics</div>';
+  CATS.forEach(function(c){
+    html += '<a href="#'+c.id+'" class="'+(c.id===activeCat?'active':'')+'"><span class="ico">'+c.icon+'</span>'+c.title+'</a>';
+  });
+  side.innerHTML = html;
+}
+
+function renderIndex(){
+  renderSide(null);
+  var html = '<div class="kb-cats">';
+  CATS.forEach(function(c){
+    var links = c.articles.map(function(a){
+      return '<a href="#'+c.id+'/'+a.id+'">'+a.title+'</a>';
+    }).join('');
+    html += '<div class="kb-cat"><div class="kc-ic">'+c.icon+'</div>'+
+      '<h3>'+c.title+'</h3><p>'+c.desc+'</p>'+
+      '<div class="kc-links">'+links+'</div>'+
+      '<span class="kc-count">'+c.articles.length+' article'+(c.articles.length>1?'s':'')+'</span></div>';
+  });
+  html += '</div>';
+  main.innerHTML = html;
+}
+
+function renderArticle(cid, aid){
+  var hit = artById(cid, aid);
+  if(!hit){ renderIndex(); return; }
+  renderSide(cid);
+  var c = hit.cat, a = hit.art;
+  // prev/next within category
+  var idx = c.articles.indexOf(a);
+  var prev = c.articles[idx-1], next = c.articles[idx+1];
+  var footNav = '<div class="kb-foot-nav">';
+  footNav += prev ? '<a href="#'+c.id+'/'+prev.id+'"><span class="dir">← Previous</span>'+prev.title+'</a>' : '<span></span>';
+  footNav += next ? '<a href="#'+c.id+'/'+next.id+'" style="text-align:right"><span class="dir">Next →</span>'+next.title+'</a>' : '<span></span>';
+  footNav += '</div>';
+  main.innerHTML = '<article class="kb-article">'+
+    '<div class="kb-bread"><a href="#">Knowledge Base</a><span class="sep">/</span><a href="#'+c.id+'">'+c.title+'</a></div>'+
+    '<h1>'+a.title+'</h1>'+
+    '<div class="meta"><span class="tag">'+a.tag+'</span><span>'+a.read+' read</span><span>Updated Jun 2026</span></div>'+
+    '<div class="kb-body">'+a.body+'</div>'+
+    footNav+
+  '</article>';
+  window.scrollTo(0,0);
+}
+
+function renderCategory(cid){
+  var c = CATS.filter(function(x){return x.id===cid;})[0];
+  if(!c){ renderIndex(); return; }
+  renderSide(cid);
+  var rows = c.articles.map(function(a){
+    return '<a href="#'+c.id+'/'+a.id+'" class="kb-cat" style="display:block;margin-bottom:12px"><h3>'+a.title+'</h3><p style="margin:0">'+a.tag+' · '+a.read+' read</p></a>';
+  }).join('');
+  main.innerHTML = '<div class="kb-bread"><a href="#">Knowledge Base</a><span class="sep">/</span>'+c.title+'</div>'+
+    '<h2 class="sec" style="font-size:26px;margin-bottom:6px">'+c.title+'</h2>'+
+    '<p class="sec-sub" style="margin-bottom:24px">'+c.desc+'</p>'+rows;
+  window.scrollTo(0,0);
+}
+
+function route(){
+  var h = location.hash.replace(/^#/,'');
+  if(!h){ renderIndex(); return; }
+  var parts = h.split('/');
+  if(parts.length>=2) renderArticle(parts[0], parts[1]);
+  else renderCategory(parts[0]);
+}
+window.addEventListener('hashchange', route);
+
+/* search */
+function renderSearch(q){
+  renderSide(null);
+  var ql = q.toLowerCase();
+  var results = [];
+  CATS.forEach(function(c){
+    c.articles.forEach(function(a){
+      var hay = (a.title+' '+a.tag+' '+c.title+' '+a.body).toLowerCase();
+      if(hay.indexOf(ql)>-1) results.push({c:c,a:a});
+    });
+  });
+  if(!results.length){
+    main.innerHTML = '<p class="sec-sub">No results for <strong style="color:var(--text-1)">"'+q+'"</strong>. Try the <a href="forums.html" style="color:var(--accent)">forums</a>.</p>';
+    return;
+  }
+  main.innerHTML = '<p class="kb-bread">'+results.length+' result'+(results.length>1?'s':'')+' for "'+q+'"</p>'+
+    results.map(function(r){
+      return '<a href="#'+r.c.id+'/'+r.a.id+'" class="kb-cat" style="display:block;margin-bottom:12px"><h3>'+r.a.title+'</h3><p style="margin:0">'+r.c.title+' · '+r.a.tag+' · '+r.a.read+' read</p></a>';
+    }).join('');
+}
+search.addEventListener('input', function(){
+  var q = this.value.trim();
+  if(q.length>=2) renderSearch(q);
+  else route();
+});
+document.addEventListener('keydown', function(e){
+  if(e.key==='/' && document.activeElement!==search){ e.preventDefault(); search.focus(); }
+});
+
+route();
+</script>
+</body>
+</html>

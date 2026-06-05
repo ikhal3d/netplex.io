@@ -3,62 +3,44 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Pricing — Netplex</title>
-<meta name="description" content="Start free forever. Upgrade for unlimited nodes, distributed fabric, automation and teams. Built to take EVE-NG's customers." />
-<meta name="robots" content="index, follow" />
-<meta name="keywords" content="Netplex pricing, network emulator free tier, network lab cost, free network simulation, EVE-NG pricing alternative, GNS3 alternative cost, network emulation subscription" />
-<link rel="canonical" href="https://netplex.io/pricing.html" />
+<title>Pricing - netplex. · Community free, Pro $199/yr, Classroom, Enterprise</title>
+<meta name="description" content="Five tiers. Community is free forever. Pro is a single seat with the complete automation toolbox for $199/year - cheaper than EVE-NG Pro, with snapshots, git backup and an API it can't sell you." />
+<link rel="icon" href="assets/favicon.svg" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://netplex.io/pricing.html" />
-<meta property="og:site_name" content="Netplex" />
-<meta property="og:title" content="Pricing — Netplex" />
-<meta property="og:description" content="Start free forever. Upgrade for unlimited nodes, distributed fabric, automation and teams. Built to take EVE-NG's customers." />
+<meta property="og:site_name" content="netplex." />
+<meta property="og:title" content="netplex. - the modern network lab" />
+<meta property="og:description" content="Emulate. Automate. Ship. A distributed network digital twin, execution and automation platform, built in Australia for engineers who've outgrown EVE-NG." />
 <meta property="og:image" content="https://netplex.io/assets/og.png" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
+<meta property="og:url" content="https://netplex.io/" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Pricing — Netplex" />
-<meta name="twitter:description" content="Start free forever. Upgrade for unlimited nodes, distributed fabric, automation and teams. Built to take EVE-NG's customers." />
+<meta name="twitter:title" content="netplex. - the modern network lab" />
+<meta name="twitter:description" content="Emulate. Automate. Ship. The modern network lab, built in Australia by network engineers." />
 <meta name="twitter:image" content="https://netplex.io/assets/og.png" />
-<meta name="theme-color" content="#0a0a0f" />
 <link rel="stylesheet" href="assets/site.css" />
 <link rel="stylesheet" href="assets/landing.css" />
+<link rel="stylesheet" href="assets/pages.css" />
 <script>(function(){try{var t=localStorage.getItem('netplex.theme');var a=localStorage.getItem('netplex.accent');if(t&&t!=='midnight')document.documentElement.dataset.theme=t;if(a&&a!=='orange')document.documentElement.dataset.accent=a;}catch(e){}})();</script>
 <style>
-  .page-head { padding: 70px 0 8px; text-align: center; }
-  .page-head h1 { font-size: 50px; letter-spacing: -0.04em; margin-bottom: 14px; text-wrap: balance; }
-  .page-head h1 .accent { color: var(--accent); }
-  .page-head p { font-size: 18px; color: var(--text-3); max-width: 580px; margin: 0 auto; }
-  .bill-toggle { display: inline-flex; align-items: center; gap: 4px; background: var(--surface-2); border: 1px solid var(--border); border-radius: 999px; padding: 4px; margin-top: 28px; }
-  .bill-toggle button { font-size: 13.5px; font-weight: 500; color: var(--text-3); padding: 8px 18px; border-radius: 999px; transition: all .15s; }
+  .bill-toggle { display: inline-flex; align-items: center; gap: 4px; background: var(--surface-2); border: 1px solid var(--border); border-radius: 999px; padding: 4px; margin-top: 26px; }
+  .bill-toggle button { font-size: 13.5px; font-weight: 500; color: var(--text-3); padding: 8px 18px; border-radius: 999px; transition: all .15s; cursor: pointer; }
   .bill-toggle button.on { background: var(--accent); color: var(--accent-ink); }
   .bill-save { font-size: 12px; color: var(--ok); margin-left: 10px; font-weight: 500; }
-  .founder { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; margin-top: 8px; padding: 22px 26px;
-    border: 1px solid var(--accent); border-radius: var(--r-4); background: var(--accent-soft); position: relative; overflow: hidden; }
-  .founder::before { content: ''; position: absolute; inset: 0; pointer-events: none; opacity: 0.5;
-    background: radial-gradient(circle at 1px 1px, var(--canvas-circuit-dot) 1px, transparent 0) 0 0 / 20px 20px; }
-  .founder .fbadge { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase;
-    color: var(--accent-ink); background: var(--accent); border-radius: 999px; padding: 5px 12px; font-weight: 600; flex-shrink: 0; z-index: 1; }
-  .founder .fmain { flex: 1; min-width: 260px; z-index: 1; }
-  .founder .fmain h3 { font-size: 20px; margin-bottom: 6px; letter-spacing: -0.02em; }
-  .founder .fmain p { font-size: 14.5px; color: var(--text-2); margin: 0; line-height: 1.5; }
-  .founder .fcount { text-align: center; z-index: 1; }
-  .founder .fcount .num { font-family: var(--font-mono); font-size: 30px; font-weight: 600; color: var(--accent); line-height: 1; }
-  .founder .fcount .lbl { display: block; font-size: 11px; color: var(--text-3); margin-top: 4px; }
-  .founder .btn { z-index: 1; }
-  .matrix { width: 100%; border-collapse: collapse; margin-top: 28px; font-size: 14px; }
-  .matrix th, .matrix td { padding: 13px 14px; border-bottom: 1px solid var(--border-soft); text-align: center; }
+  .tier .pricing-row { display: flex; align-items: baseline; gap: 2px; }
+  .tier .suf { font-size: 13px; color: var(--text-4); font-weight: 400; }
+  .tier .save-note { font-size: 11.5px; color: var(--ok); margin-top: 4px; min-height: 16px; }
+  .matrix { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 13.5px; }
+  .matrix th, .matrix td { padding: 12px 12px; border-bottom: 1px solid var(--border-soft); text-align: center; }
   .matrix th:first-child, .matrix td:first-child { text-align: left; color: var(--text-2); font-weight: 500; }
-  .matrix thead th { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-4); }
+  .matrix thead th { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-4); }
   .matrix thead th.us { color: var(--accent); }
   .matrix .grp td { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-4); background: var(--surface-1); padding-top: 18px; }
   .matrix .col-us { background: var(--accent-soft); }
-  .matrix td.mono, .matrix td .mono { font-family: var(--font-mono); font-size: 13px; }
+  .matrix td.mono, .matrix td .mono { font-family: var(--font-mono); font-size: 12.5px; }
   .matrix .ck { color: var(--ok); } .matrix .x { color: var(--text-dim); }
   .faq { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 40px; margin-top: 40px; }
   .faq h3 { font-size: 16px; margin-bottom: 6px; }
   .faq p { font-size: 14.5px; color: var(--text-3); line-height: 1.55; }
-  @media (max-width: 760px){ .faq { grid-template-columns: 1fr; } .page-head h1 { font-size: 36px; } .matrix { font-size: 12px; } .matrix th, .matrix td { padding: 10px 7px; } }
+  @media (max-width: 760px){ .faq { grid-template-columns: 1fr; } .matrix { font-size: 12px; } .matrix th, .matrix td { padding: 9px 6px; } }
 </style>
 </head>
 <body>
@@ -67,109 +49,125 @@
 
 <nav class="nav">
   <div class="wrap">
-    <a href="/" class="brand"><span class="mark"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1.4 L22.6 6.5 L12 11.6 L1.4 6.5 Z" stroke="currentColor" stroke-width="1.8"/><path d="M1.4 11.9 L12 17 L22.6 11.9" stroke="currentColor" stroke-width="1.8"/><path d="M1.4 17.1 L12 22.2 L22.6 17.1" stroke="currentColor" stroke-width="1.8"/></svg></span><span class="wm">netplex<span class="dotmark">.</span></span><span class="ver">beta</span></a>
+    <a href="index.html" class="brand"><span class="mark"><svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><g stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 19 L27 32 M14 32 L27 32 M14 45 L27 32"/><path d="M37 32 L52 32"/><circle cx="32" cy="32" r="5"/></g><circle cx="14" cy="19" r="3" fill="currentColor"/><circle cx="14" cy="32" r="3" fill="currentColor"/><circle cx="14" cy="45" r="3" fill="currentColor"/><circle cx="52" cy="32" r="3.4" fill="currentColor"/></svg></span><span class="wm">netplex<span class="dotmark">.</span></span><span class="ver">v1.0</span></a>
     <div class="navlinks">
-      <a href="/">Product</a>
+      <a href="product.html">Product</a>
+      <a href="download.html">Download</a>
       <a href="pricing.html" class="active">Pricing</a>
+      <a href="kb.html">Knowledge Base</a>
+      <a href="forums.html">Forums</a>
       <a href="roadmap.html">Roadmap</a>
-      <a href="about.html">About</a>
-      <a href="docs.html">Docs</a>
-      <a href="community.html">Community</a>
+      <a href="support.html">Support</a>
     </div>
     <div class="navactions">
       <a href="#" class="btn btn-ghost" data-ext>Sign in</a>
       <button class="ap-trigger" data-appearance-trigger aria-label="Appearance" title="Appearance"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996C20.146 15.21 22 13.36 22 11.04 22 6.038 17.5 2 12 2z"/></svg></button>
-      <a href="download.html" class="btn btn-primary">Get Netplex</a>
+      <a href="download.html" class="btn btn-primary">Get netplex.</a>
       <button class="menu-toggle" aria-label="Menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
     </div>
   </div>
 </nav>
 
-<div class="page-head wrap">
+<div class="page-head center wrap">
   <span class="eyebrow" style="display:block;margin-bottom:14px">Pricing</span>
   <h1>Start free. <span class="accent">Pay when you scale.</span></h1>
-  <p>No artificial cripple-ware — the product is great at every tier. Paid unlocks scale, teams and automation. Cancel anytime.</p>
+  <p class="lede">No artificial cripple-ware - the product is great at every tier. Pro is a single seat with the complete automation toolbox. Enterprise adds the organisational layer.</p>
   <div class="bill-toggle">
     <button id="billMonthly" class="on">Monthly</button>
     <button id="billAnnual">Annual</button>
   </div>
-  <span class="bill-save" id="billSave" style="visibility:hidden">2 months free</span>
+  <span class="bill-save" id="billSave" style="visibility:hidden">≈ 2 months free</span>
 </div>
 
-<section style="padding-top:40px">
+<section style="padding-top:36px">
   <div class="wrap">
-    <div class="founder">
-      <span class="fbadge">★ Founders · first 100</span>
-      <div class="fmain">
-        <h3>Join early — lock your price for life.</h3>
-        <p>The first <strong style="color:var(--text-1)">100 paying users</strong> keep their subscription fee fixed forever, and get <strong style="color:var(--text-1)">unlimited access to every feature we ever ship</strong> — including everything on the roadmap. No upgrades, no upsells, ever.</p>
-      </div>
-      <div class="fcount"><span class="num" id="seatsLeft">100</span><span class="lbl">seats left</span></div>
-      <a href="download.html" class="btn btn-primary">Claim a founder seat</a>
-    </div>
-
-    <div class="tiers">
+    <div class="tiers5">
+      <!-- COMMUNITY -->
       <div class="tier">
-        <div class="nm">Free</div>
-        <div class="price">$0</div>
-        <div class="desc">Bigger than EVE Community — and far prettier. Free forever.</div>
+        <div class="nm">Community</div>
+        <div class="pricing-row"><span class="price">$0</span></div>
+        <div class="save-note">Free, forever</div>
+        <div class="desc">For CCNA study &amp; EVE-NG Community migrants.</div>
         <a href="download.html" class="btn btn-outline" style="width:100%;justify-content:center;margin-bottom:6px">Get started</a>
         <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>25 nodes per lab · 3 labs</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>1 host</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Integrated consoles</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Read-only API</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Community forum</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>20 nodes per lab</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>1 live lab</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Canvas · live terminal · capture</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>API included (read)</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>10 Mbps per link</li>
         </ul>
       </div>
+      <!-- PLUS -->
+      <div class="tier">
+        <div class="nm">Plus</div>
+        <div class="pricing-row"><span class="price price-val" data-m="$9.99" data-a="$99">$9.99</span><span class="suf" data-ms="/mo" data-as="/yr">/mo</span></div>
+        <div class="save-note" data-m="&nbsp;" data-a="Save $20 a year">&nbsp;</div>
+        <div class="desc">CCNA students who need more headroom.</div>
+        <a href="download.html" class="btn btn-outline" style="width:100%;justify-content:center;margin-bottom:6px">Start free trial</a>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Everything in Community</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>50 nodes per lab</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Per-node snapshots</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>100 Mbps per link (settable)</li>
+        </ul>
+      </div>
+      <!-- PRO -->
       <div class="tier feat">
         <div class="tier-badge">Most popular</div>
         <div class="nm">Pro</div>
-        <div class="price"><span class="price-val" data-m="15" data-a="12">$15</span><span>/mo</span></div>
-        <div class="desc">Unlimited everything, for one engineer.</div>
+        <div class="pricing-row"><span class="price price-val" data-m="$19.99" data-a="$199">$19.99</span><span class="suf" data-ms="/mo" data-as="/yr">/mo</span></div>
+        <div class="save-note" data-m="Single seat · full toolbox" data-a="Save $40 a year · single seat">Single seat · full toolbox</div>
+        <div class="desc">You're automating - CCNP/CCIE &amp; working engineers.</div>
         <a href="download.html" class="btn btn-primary" style="width:100%;justify-content:center;margin-bottom:6px">Start free trial</a>
         <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Unlimited nodes & labs</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Up to 3 hosts (fabric)</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Full API · Terraform · Ansible</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Git auto-sync · backups</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Email support (48h)</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>1,000 nodes per lab</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Scoped API keys · Terraform · Ansible</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Full tc/netem QoS · no platform cap</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Git auto-backup · cloud templates</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>MicroVM (Kata / Firecracker)</li>
         </ul>
       </div>
+      <!-- CLASSROOM -->
       <div class="tier">
-        <div class="nm">Team</div>
-        <div class="price"><span class="price-val" data-m="12" data-a="10">$12</span><span>/user</span></div>
-        <div class="desc">Real-time collaboration. Min 5 users.</div>
-        <a href="#" data-ext class="btn btn-outline" style="width:100%;justify-content:center;margin-bottom:6px">Start free trial</a>
+        <div class="nm">Classroom</div>
+        <div class="pricing-row"><span class="price price-val" data-m="$49.99" data-a="$449">$49.99</span><span class="suf" data-ms="/inst." data-as="/inst.">/inst.</span></div>
+        <div class="save-note" data-m="$9 / student / year at 50" data-a="$449/yr · $9 per student">$9 / student / year at 50</div>
+        <div class="desc">Instructors &amp; training centres.</div>
+        <a href="contact.html" class="btn btn-outline" style="width:100%;justify-content:center;margin-bottom:6px">Talk to us</a>
         <ul>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Everything in Pro</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Up to 10 hosts</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Real-time multi-user editing</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Classroom mode (basic)</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Priority support</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>1 lab per student pod (isolated)</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Roster management</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Freeze · reset · grade</li>
         </ul>
       </div>
+      <!-- ENTERPRISE -->
       <div class="tier">
         <div class="nm">Enterprise</div>
-        <div class="price">Custom</div>
-        <div class="desc">Institutes & orgs. Site or per-seat.</div>
-        <a href="#" data-ext class="btn btn-outline" style="width:100%;justify-content:center;margin-bottom:6px">Talk to us</a>
+        <div class="pricing-row"><span class="price">Talk</span></div>
+        <div class="save-note">Subscription or perpetual</div>
+        <div class="desc">Enterprises, MSSPs &amp; carriers.</div>
+        <a href="contact.html" class="btn btn-outline" style="width:100%;justify-content:center;margin-bottom:6px">Contact sales</a>
         <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Unlimited hosts + HA</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>SSO · audit · RBAC</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Full classroom + LMS, grading</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Data residency · SAMBA/SSH/S3</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>SLA + named contact</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Unlimited nodes &amp; labs (soft OOM guard)</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>admin:* &amp; team-scoped keys · SSO</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Multi-tenant namespaces · audit log</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Compute cluster · S3 / self-hosted git</li>
         </ul>
       </div>
     </div>
 
-    <div class="card" style="margin-top:22px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;border-color:rgba(255,110,54,0.28);background:var(--accent-soft)">
+    <div class="card" style="margin-top:22px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;border-color:var(--accent-line);background:var(--accent-soft)">
       <div style="flex:1;min-width:280px">
         <h3 style="font-size:18px;margin-bottom:6px">Switching from EVE-NG, PNETLAB or GNS3?</h3>
-        <p style="color:var(--text-3);font-size:14.5px;margin:0">Import a lab and get <strong style="color:var(--text-1)">Pro free for 60 days</strong> — plus a founder-tier lifetime discount during soft launch. Students are <strong style="color:var(--text-1)">free</strong> with a verified school email.</p>
+        <p style="color:var(--text-3);font-size:14.5px;margin:0">EVE-NG Pro is <strong style="color:var(--text-1)">~$160/year, MAC-locked, no snapshots, no git backup, no API</strong>. netplex. Pro is $199/year, runs anywhere, and has all of it. Import your <span class="mono" style="color:var(--text-1)">.unl</span> in 30 seconds. Students are <strong style="color:var(--text-1)">free</strong> with a verified school email.</p>
       </div>
       <a href="download.html" class="btn btn-primary">Import your lab</a>
+    </div>
+
+    <div class="au-strip" style="margin-top:18px">
+      <span class="au-badge"><span class="cross"><i></i><i></i><i></i><i style="margin-left:1px"></i></span> Proudly Australian</span>
+      <span>Enterprise anchors: <strong style="color:var(--text-2)">$4,999</strong> (≤ 5 instructors / 50 users) · <strong style="color:var(--text-2)">$9,999</strong> (≤ 20 / 200) · custom above.</span>
     </div>
   </div>
 </section>
@@ -180,25 +178,31 @@
     <h2 class="sec" style="font-size:30px">Every feature, side by side.</h2>
     <div style="overflow-x:auto">
     <table class="matrix">
-      <thead><tr><th>&nbsp;</th><th>Free</th><th>Pro</th><th>Team</th><th class="us">Enterprise</th></tr></thead>
+      <thead><tr><th>&nbsp;</th><th>Community</th><th>Plus</th><th>Pro</th><th>Classroom</th><th class="us">Enterprise</th></tr></thead>
       <tbody>
-        <tr class="grp"><td colspan="5">Scale</td></tr>
-        <tr><td>Nodes per lab</td><td class="mono">25</td><td class="mono col-us-skip">∞</td><td class="mono">∞</td><td class="mono col-us">∞</td></tr>
-        <tr><td>Concurrent labs</td><td class="mono">3</td><td class="mono">∞</td><td class="mono">∞</td><td class="mono col-us">∞</td></tr>
-        <tr><td>Distributed hosts</td><td class="mono">1</td><td class="mono">3</td><td class="mono">10</td><td class="mono col-us">∞ + HA</td></tr>
-        <tr class="grp"><td colspan="5">Automation</td></tr>
-        <tr><td>REST + WebSocket API</td><td class="mono">read</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck col-us">✓ + audit</td></tr>
-        <tr><td>Terraform · Ansible · k8s · CI</td><td class="x">—</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck col-us">✓</td></tr>
-        <tr><td>Git topology-as-code</td><td class="mono">1 repo</td><td class="mono">multi</td><td class="mono">multi</td><td class="mono col-us">multi</td></tr>
-        <tr class="grp"><td colspan="5">Collaboration</td></tr>
-        <tr><td>Share & real-time editing</td><td class="x">—</td><td class="mono">read-only</td><td class="ck">✓</td><td class="ck col-us">✓ + SSO</td></tr>
-        <tr><td>Classroom mode</td><td class="x">—</td><td class="x">—</td><td class="mono">basic</td><td class="ck col-us">✓ grading + LMS</td></tr>
-        <tr class="grp"><td colspan="5">Support</td></tr>
-        <tr><td>Channel</td><td class="mono">Forum</td><td class="mono">Email 48h</td><td class="mono">Priority</td><td class="mono col-us">SLA + contact</td></tr>
-        <tr><td>Backup / Git auto-sync</td><td class="x">—</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck col-us">✓ + S3</td></tr>
+        <tr class="grp"><td colspan="6">Scale</td></tr>
+        <tr><td>Nodes per lab</td><td class="mono">20</td><td class="mono">50</td><td class="mono">1,000</td><td class="mono">1,000</td><td class="mono col-us">∞</td></tr>
+        <tr><td>Live labs</td><td class="mono">1</td><td class="mono">1</td><td class="mono">1</td><td class="mono">1 / pod</td><td class="mono col-us">∞ *</td></tr>
+        <tr><td>Bandwidth cap per link</td><td class="mono">10 Mbps</td><td class="mono">100 Mbps</td><td class="mono">None</td><td class="mono">None</td><td class="mono col-us">None</td></tr>
+        <tr class="grp"><td colspan="6">Automation</td></tr>
+        <tr><td>Scoped API keys</td><td class="mono">read</td><td class="mono">read</td><td class="mono">read/write</td><td class="mono">read/write</td><td class="mono col-us">+ admin · audit</td></tr>
+        <tr><td>Terraform · Ansible</td><td class="x">-</td><td class="x">-</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck col-us">✓</td></tr>
+        <tr><td>Full tc/netem QoS suite</td><td class="x">-</td><td class="mono">cap only</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck col-us">✓</td></tr>
+        <tr><td>Git auto-backup on stop</td><td class="x">-</td><td class="x">-</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck col-us">✓ + S3</td></tr>
+        <tr><td>Cloud topology templates</td><td class="x">-</td><td class="x">-</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck col-us">✓</td></tr>
+        <tr><td>MicroVM (Kata / Firecracker)</td><td class="x">-</td><td class="x">-</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck col-us">✓</td></tr>
+        <tr class="grp"><td colspan="6">Teaching &amp; organisation</td></tr>
+        <tr><td>Isolated student pods</td><td class="x">-</td><td class="x">-</td><td class="x">-</td><td class="ck">✓</td><td class="ck col-us">✓</td></tr>
+        <tr><td>Freeze · reset · grade</td><td class="x">-</td><td class="x">-</td><td class="x">-</td><td class="ck">✓</td><td class="ck col-us">✓</td></tr>
+        <tr><td>SSO · multi-tenant · audit log</td><td class="x">-</td><td class="x">-</td><td class="x">-</td><td class="x">-</td><td class="ck col-us">✓</td></tr>
+        <tr><td>Compute cluster</td><td class="x">-</td><td class="x">-</td><td class="x">-</td><td class="x">-</td><td class="ck col-us">✓</td></tr>
+        <tr class="grp"><td colspan="6">Licence &amp; support</td></tr>
+        <tr><td>Licence model</td><td class="mono">Free</td><td class="mono">Sub</td><td class="mono">Sub</td><td class="mono">Sub</td><td class="mono col-us">Sub or perpetual</td></tr>
+        <tr><td>Support channel</td><td class="mono">Forums</td><td class="mono">Forums</td><td class="mono">Email</td><td class="mono">Priority</td><td class="mono col-us">SLA + contact</td></tr>
       </tbody>
     </table>
     </div>
+    <p style="margin-top:14px;font-size:12.5px;color:var(--text-4)">* Enterprise concurrent labs are unlimited - the orchestrator tracks resource usage and warns at 80% RAM, never hard-blocking a legitimate workload.</p>
   </div>
 </section>
 
@@ -207,12 +211,12 @@
     <span class="eyebrow sec-eyebrow">Questions</span>
     <h2 class="sec" style="font-size:30px">Pricing, answered.</h2>
     <div class="faq">
-      <div><h3>Is the free tier time-limited?</h3><p>No — free is free forever. 25 nodes and 3 labs is a genuinely useful ceiling, bigger than EVE Community's practical limit.</p></div>
-      <div><h3>Monthly or annual?</h3><p>Both. Annual gives you two months free. EVE Pro is annual-only and clunky — monthly is our wedge.</p></div>
-      <div><h3>What counts as a "host"?</h3><p>A physical or virtual machine running the Netplex compute agent. The distributed fabric stitches them together over VXLAN.</p></div>
-      <div><h3>Do you cripple paid features?</h3><p>Never. Every tier gets the full canvas, consoles and image pipeline. Paid unlocks scale, teams and automation — not basic usability.</p></div>
-      <div><h3>Free for students?</h3><p>Yes. Verify with a school email for free individual access. Institutes get steep per-seat classroom bundles.</p></div>
-      <div><h3>Will licensing ever lock my running lab?</h3><p>No. A licensing blip never hard-locks a running lab — there's a grace window. Reliability beats DRM zeal.</p></div>
+      <div><h3>Why pay when EVE-NG has a free Community?</h3><p>You don't have to - netplex. Community is also free, and already better. You pay for what EVE-NG can't sell you: snapshots, git auto-backup, Terraform, Ansible, QoS simulation and cloud templates.</p></div>
+      <div><h3>Is the Community tier time-limited?</h3><p>No - free is free forever. 20 nodes and a live lab is a genuinely useful ceiling for routing &amp; switching certification study.</p></div>
+      <div><h3>What does Pro hold back?</h3><p>Nothing. Pro is a single-seat licence, so there's no reason to cripple it - you get the complete automation toolbox. Enterprise adds the organisational layer (SSO, multi-tenant, audit, cluster).</p></div>
+      <div><h3>Why is there a 10 Mbps cap on Community?</h3><p>It's intentional, gentle friction. Routing and switching study doesn't need throughput; serious QoS or WAN simulation does - and that's a Plus/Pro conversation.</p></div>
+      <div><h3>How does Classroom maths work?</h3><p>$449/year ÷ 50 students = $9/student/year - one training-budget line item, cheaper than a single EVE-NG Pro licence for the whole class.</p></div>
+      <div><h3>Will a licence blip lock my running lab?</h3><p>No. Enterprise uses MAC + TPM fingerprinting with a 30-day grace period on hardware migration. Reliability beats DRM zeal.</p></div>
     </div>
   </div>
 </section>
@@ -220,10 +224,10 @@
 <section class="ctaband" style="border-top:1px solid var(--border-soft)">
   <div class="wrap">
     <h2>Ready when <span class="accent">you are.</span></h2>
-    <p>Start on the free tier in minutes — no credit card.</p>
+    <p>Start on the free Community tier in minutes - no credit card.</p>
     <div style="display:flex;gap:13px;justify-content:center;flex-wrap:wrap">
-      <a href="download.html" class="btn btn-primary btn-lg">Get Netplex free</a>
-      <a href="roadmap.html" class="btn btn-outline btn-lg">See the roadmap</a>
+      <a href="download.html" class="btn btn-primary btn-lg">Get netplex. free</a>
+      <a href="contact.html" class="btn btn-outline btn-lg">Talk to sales</a>
     </div>
   </div>
 </section>
@@ -232,32 +236,41 @@
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-brand">
-        <a href="/" class="brand"><span class="mark"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1.4 L22.6 6.5 L12 11.6 L1.4 6.5 Z" stroke="currentColor" stroke-width="1.8"/><path d="M1.4 11.9 L12 17 L22.6 11.9" stroke="currentColor" stroke-width="1.8"/><path d="M1.4 17.1 L12 22.2 L22.6 17.1" stroke="currentColor" stroke-width="1.8"/></svg></span><span class="wm">netplex<span class="dotmark">.</span></span></a>
-        <p>The distributed, API-first network emulation platform. Beautiful, in your browser, worth paying for.</p>
+        <a href="index.html" class="brand"><span class="mark"><svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><g stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 19 L27 32 M14 32 L27 32 M14 45 L27 32"/><path d="M37 32 L52 32"/><circle cx="32" cy="32" r="5"/></g><circle cx="14" cy="19" r="3" fill="currentColor"/><circle cx="14" cy="32" r="3" fill="currentColor"/><circle cx="14" cy="45" r="3" fill="currentColor"/><circle cx="52" cy="32" r="3.4" fill="currentColor"/></svg></span><span class="wm">netplex<span class="dotmark">.</span></span></a>
+        <p>The modern network lab - a distributed digital twin, execution and automation platform. Emulate. Automate. Ship.</p>
+        <span class="au-badge" style="margin-top:16px"><span class="cross"><i></i><i></i><i></i><i style="margin-left:1px"></i></span> Made in Australia</span>
       </div>
-      <div class="foot-col"><h4>Product</h4><a href="/">Features</a><a href="pricing.html">Pricing</a><a href="roadmap.html">Roadmap</a><a href="download.html">Download</a></div>
-      <div class="foot-col"><h4>Resources</h4><a href="docs.html">Docs</a><a href="community.html">Community</a><a href="#" data-ext>Status</a><a href="#" data-ext>Changelog</a></div>
-      <div class="foot-col"><h4>Company</h4><a href="about.html">About</a><a href="#" data-ext>Contact</a></div>
+      <div class="foot-col"><h4>Product</h4><a href="product.html">Features</a><a href="download.html">Download</a><a href="pricing.html">Pricing</a><a href="roadmap.html">Roadmap</a></div>
+      <div class="foot-col"><h4>Resources</h4><a href="kb.html">Knowledge Base</a><a href="faq.html">FAQ</a><a href="forums.html">Forums</a><a href="support.html">Support</a></div>
+      <div class="foot-col"><h4>Company</h4><a href="about.html">About</a><a href="contact.html">Contact</a><a href="brand.html">Brand kit</a></div>
       <div class="foot-col"><h4>Legal</h4><a href="legal.html#privacy">Privacy</a><a href="legal.html#terms">Terms</a><a href="legal.html#disclaimer">Disclaimer</a></div>
     </div>
-    <div class="foot-bottom"><span>© 2026 Netplex. All rights reserved.</span><span class="mono">v1.0 · built for engineers</span></div>
+    <div class="foot-bottom"><span>© 2026 netplex. · Designed &amp; built in Australia.</span><span class="mono">v1.0 · built for engineers</span></div>
   </div>
 </footer>
 
 </div>
 <script src="assets/appearance.js"></script>
+<script src="assets/nav.js"></script>
 <script>
 var bm=document.getElementById('billMonthly'), ba=document.getElementById('billAnnual'), bs=document.getElementById('billSave');
 function setBill(annual){
   bm.classList.toggle('on',!annual); ba.classList.toggle('on',annual);
   bs.style.visibility = annual ? 'visible' : 'hidden';
   document.querySelectorAll('.price-val').forEach(function(el){
-    el.textContent = '$' + (annual ? el.dataset.a : el.dataset.m);
+    el.textContent = annual ? el.dataset.a : el.dataset.m;
+  });
+  document.querySelectorAll('.save-note[data-a]').forEach(function(el){
+    el.innerHTML = annual ? el.dataset.a : el.dataset.m;
+    el.style.color = annual ? 'var(--accent)' : 'var(--ok)';
+    el.style.fontWeight = annual ? '700' : '600';
+  });
+  document.querySelectorAll('.suf').forEach(function(el){
+    el.textContent = annual ? el.dataset.as : el.dataset.ms;
   });
 }
 bm.addEventListener('click',function(){setBill(false);});
 ba.addEventListener('click',function(){setBill(true);});
-document.querySelectorAll('[data-ext]').forEach(function(a){ a.addEventListener('click',function(e){e.preventDefault();}); });
 </script>
 </body>
 </html>

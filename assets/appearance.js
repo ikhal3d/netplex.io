@@ -1,7 +1,7 @@
 /* ──────────────────────────────────────────────────────────────
-   Netplex.io — Appearance picker (Theme + Accent), mirrors the app.
+   Netplex.io - Appearance picker (Theme + Accent), mirrors the app.
    Retints the whole live site and persists to localStorage so the
-   visitor's choice carries across every page — priming them for the
+   visitor's choice carries across every page - priming them for the
    product. Toggle the gear ([data-appearance-trigger]) in the nav.
    ────────────────────────────────────────────────────────────── */
 (function () {
@@ -14,7 +14,7 @@
     { id: 'obsidian', name: 'Obsidian', bg: 'linear-gradient(135deg,#1a1a1f 0%,#050507 100%)', bd: '#313138' }
   ];
   var ACCENTS = [
-    { id: 'orange',  hex: '#ff6e36' },
+    { id: 'orange',  hex: '#ff7a45' },
     { id: 'blue',    hex: '#3d8bff' },
     { id: 'green',   hex: '#2fb574' },
     { id: 'magenta', hex: '#e0529c' },
@@ -63,7 +63,7 @@
       '<div class="ap-label">Theme</div><div class="ap-themes">' + themesHtml + '</div>' +
       '<div class="ap-divider"></div>' +
       '<div class="ap-label">Accent</div><div class="ap-accents">' + accHtml + '</div>' +
-      '<div class="ap-note">Violet is reserved for voice across Netplex.</div>' +
+      '<div class="ap-note">Your theme &amp; accent follow you across netplex.</div>' +
       '<button class="btn btn-outline ap-reset">Reset to defaults</button>';
     document.body.appendChild(scrim);
     document.body.appendChild(panel);
@@ -87,8 +87,9 @@
 
   function init() {
     build();
+    panel.addEventListener('click', function (e) { e.stopPropagation(); });
     document.querySelectorAll('[data-appearance-trigger]').forEach(function (b) {
-      b.addEventListener('click', function (e) { e.preventDefault(); toggle(); });
+      b.addEventListener('click', function (e) { e.preventDefault(); e.stopPropagation(); toggle(); });
     });
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);

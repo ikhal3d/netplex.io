@@ -1,9 +1,9 @@
 /* ──────────────────────────────────────────────────────────────
-   Netplex.io — reusable mini topology snippet
+   Netplex.io - reusable mini topology snippet
    Matches the real product: compact landscape node cards (role-hued
    icon badge + name/IP + status dot, selected node accent-ringed),
    dashed curved links with flowing packets and small interface
-   labels. No throughput numbers — link colour = relative activity.
+   labels. No throughput numbers - link colour = relative activity.
    ────────────────────────────────────────────────────────────── */
 (function (global) {
   var GLYPH = {
@@ -15,16 +15,16 @@
     host: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4" width="19" height="12.5" rx="1.5"/><path d="M8.5 20.5h7M12 16.5v4"/></svg>'
   };
 
-  // node defs within a 540×370 canvas. landscape cards 108×36.
+  // node defs within a 660×380 canvas. landscape cards 108×36.
   var NODES = [
-    { id: 'isp1',  x: 6,   y: 56,  role: 'router',   hue: '#84b135', nm: 'ISP-1',     ip: '203.0.113.1' },
-    { id: 'isp2',  x: 6,   y: 278, role: 'router',   hue: '#84b135', nm: 'ISP-2',     ip: '198.51.100.1' },
-    { id: 'fwa',   x: 156, y: 30,  role: 'firewall', hue: '#ee5a55', nm: 'FW-EDGE-A',  ip: '10.0.1.1' },
-    { id: 'fwb',   x: 156, y: 300, role: 'firewall', hue: '#ee5a55', nm: 'FW-EDGE-B',  ip: '10.0.2.1' },
-    { id: 'core',  x: 216, y: 167, role: 'switchL3', hue: '#1ba0d7', nm: 'CORE-1',     ip: '10.10.0.1', sel: true },
-    { id: 'dist1', x: 410, y: 44,  role: 'switchL2', hue: '#1ba0d7', nm: 'DIST-1',     ip: '10.20.1.1' },
-    { id: 'dist2', x: 410, y: 300, role: 'switchL2', hue: '#1ba0d7', nm: 'DIST-2',     ip: '10.20.2.1' },
-    { id: 'web',   x: 410, y: 167, role: 'server',   hue: '#a78bfa', nm: 'WEB-SRV',    ip: '10.40.0.6' }
+    { id: 'isp1',  x: 10,  y: 60,  role: 'router',   hue: '#84b135', nm: 'ISP-1',     ip: '203.0.113.1' },
+    { id: 'isp2',  x: 10,  y: 286, role: 'router',   hue: '#84b135', nm: 'ISP-2',     ip: '198.51.100.1' },
+    { id: 'fwa',   x: 192, y: 32,  role: 'firewall', hue: '#ee5a55', nm: 'FW-EDGE-A',  ip: '10.0.1.1' },
+    { id: 'fwb',   x: 192, y: 312, role: 'firewall', hue: '#ee5a55', nm: 'FW-EDGE-B',  ip: '10.0.2.1' },
+    { id: 'core',  x: 300, y: 173, role: 'switchL3', hue: '#1ba0d7', nm: 'CORE-1',     ip: '10.10.0.1', sel: true },
+    { id: 'dist1', x: 520, y: 48,  role: 'switchL2', hue: '#1ba0d7', nm: 'DIST-1',     ip: '10.20.1.1' },
+    { id: 'dist2', x: 520, y: 312, role: 'switchL2', hue: '#1ba0d7', nm: 'DIST-2',     ip: '10.20.2.1' },
+    { id: 'web',   x: 520, y: 173, role: 'server',   hue: '#a78bfa', nm: 'WEB-SRV',    ip: '10.40.0.6' }
   ];
   var NW = 108, NH = 38;
   var byId = {};
@@ -79,7 +79,7 @@
         paths += '<path d="' + d + '" stroke="' + k.col + '" stroke-width="1.2" fill="none" opacity="0.5"/>';
       }
     });
-    var svg = '<svg viewBox="0 0 540 370" preserveAspectRatio="none">' + paths + '</svg>';
+    var svg = '<svg viewBox="0 0 660 380" preserveAspectRatio="none">' + paths + '</svg>';
 
     var ifaceHtml = '';
     IFACES.forEach(function (f) {
@@ -106,8 +106,7 @@
       '<span><i style="background:var(--accent)"></i>mgmt</span>' +
       '<span><i style="background:var(--traffic-idle)"></i>idle</span>' +
       '</div>';
-    var minimap = '<div class="minimap"></div>';
 
-    host.innerHTML = svg + nodesHtml + ifaceHtml + hud + legend + minimap;
+    host.innerHTML = svg + nodesHtml + ifaceHtml + hud + legend;
   };
 })(window);

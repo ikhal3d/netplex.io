@@ -4,7 +4,7 @@
    a flat, modern, premium marketing layout. Dark-first. One warm
    orange accent. Geist for UI, JetBrains Mono for data/eyebrows.
    ────────────────────────────────────────────────────────────── */
-@import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Quicksand:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 :root {
   /* Surfaces — Midnight */
@@ -28,10 +28,11 @@
   --text-4: #595d66;
   --text-dim: #3a3d45;
 
-  /* Accent — warm orange (default). Everything derives from --accent + --accent-ink,
-     so the accent picker only needs to set those two. */
-  --accent: #ff6e36;
+  /* Accent — warm orange (locked brand: #ff7a45). Everything derives from --accent
+     + --accent-ink, so the accent picker only needs to set those two. */
+  --accent: #ff7a45;
   --accent-ink: #1a0b04;
+  --accent-line: color-mix(in srgb, var(--accent) 30%, transparent);
   --accent-2: color-mix(in srgb, var(--accent) 82%, #ffffff);
   --accent-press: color-mix(in srgb, var(--accent) 84%, #000000);
   --accent-soft: color-mix(in srgb, var(--accent) 13%, transparent);
@@ -61,6 +62,7 @@
   --role-ap:       #e8b24a;
 
   --font-ui: "Geist", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "Quicksand", "Geist", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", monospace;
 
   --r-1: 4px; --r-2: 6px; --r-3: 9px; --r-4: 13px; --r-5: 18px;
@@ -111,23 +113,23 @@ img { max-width: 100%; display: block; }
   border-bottom: 1px solid var(--border-soft);
 }
 .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 62px; }
-.brand { display: flex; align-items: center; gap: 9px; font-size: 19px; font-weight: 600; letter-spacing: -0.02em; }
-.brand .mark {
-  width: 26px; height: 26px; border-radius: var(--r-2); display: grid; place-items: center;
-  background: var(--accent); color: var(--accent-ink); flex-shrink: 0;
-}
+.brand { display: flex; align-items: center; gap: 5px; font-size: 21px; font-weight: 600; letter-spacing: -0.02em; font-family: var(--font-display); }
+.brand .wm { font-family: var(--font-display); font-weight: 600; color: var(--text-1); letter-spacing: -0.02em; }
+.brand .mark { display: inline-grid; place-items: center; color: var(--accent); flex-shrink: 0; }
+.brand .mark svg { width: 24px; height: 24px; display: block; }
 .brand .ver { font-family: var(--font-mono); font-size: 10px; color: var(--text-4); font-weight: 500;
-  border: 1px solid var(--border); padding: 2px 6px; border-radius: 999px; margin-left: 2px; }
+  border: 1px solid var(--border); padding: 2px 6px; border-radius: 999px; margin-left: 6px; letter-spacing: 0; }
 .brand .dotmark {
-  display: inline-block; width: 0.32em; height: 0.32em; border-radius: 50%;
-  background: var(--accent); margin-left: 0.12em; vertical-align: baseline;
+  display: inline-block; width: 0.16em; height: 0.16em; border-radius: 50%;
+  background: var(--accent); margin-left: 0.05em; vertical-align: baseline;
   overflow: hidden; color: transparent; text-indent: -999px;
 }
-.navlinks { display: flex; gap: 28px; }
-.navlinks a { font-size: 14.5px; color: var(--text-3); transition: color .15s; }
+.navlinks { display: flex; gap: 20px; }
+.navlinks a { font-size: 14px; color: var(--text-3); transition: color .15s; white-space: nowrap; }
 .navlinks a:hover, .navlinks a.active { color: var(--text-1); }
-.navactions { display: flex; align-items: center; gap: 12px; }
-.menu-toggle { display: none; color: var(--text-2); }
+.navactions { display: flex; align-items: center; gap: 10px; }
+.menu-toggle { display: none; width: 34px; height: 34px; border-radius: var(--r-2); align-items: center; justify-content: center; color: var(--text-2); border: 1px solid var(--border); background: var(--surface-2); transition: all .15s; }
+.menu-toggle:hover { color: var(--text-1); border-color: var(--border-bright); }
 
 /* ── BUTTONS ───────────────────────────────────────────── */
 .btn {
@@ -158,8 +160,10 @@ img { max-width: 100%; display: block; }
   border-radius: 999px; padding: 6px 13px;
 }
 .pill .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--ok); box-shadow: 0 0 8px var(--ok); flex-shrink: 0; }
-.pill.accent { color: var(--accent-2); background: var(--accent-soft); border-color: rgba(255,110,54,0.28); }
+.pill.accent { color: var(--accent-2); background: var(--accent-soft); border-color: var(--accent-line); }
 .pill.accent .dot { background: var(--accent); box-shadow: 0 0 8px var(--accent); }
+.pill.solid { color: #fff; background: var(--accent); border-color: var(--accent); font-weight: 600; }
+.pill.solid .dot { background: #fff; box-shadow: 0 0 8px rgba(255,255,255,0.5); }
 .chip {
   font-size: 12.5px; color: var(--text-3); background: var(--surface-1); white-space: nowrap;
   border: 1px solid var(--border); border-radius: 999px; padding: 6px 13px;
@@ -337,7 +341,7 @@ footer { border-top: 1px solid var(--border-soft); padding: 60px 0 40px; positio
 html { transition: background-color .3s var(--ease-out); }
 
 /* ── ACCENTS — picker sets [data-accent] on <html>; derived tokens follow ── */
-[data-accent="orange"]  { --accent: #ff6e36; --accent-ink: #1a0b04; }
+[data-accent="orange"]  { --accent: #ff7a45; --accent-ink: #1a0b04; }
 [data-accent="blue"]    { --accent: #3d8bff; --accent-ink: #ffffff; }
 [data-accent="green"]   { --accent: #2fb574; --accent-ink: #04140d; }
 [data-accent="magenta"] { --accent: #e0529c; --accent-ink: #ffffff; }
@@ -350,31 +354,33 @@ html { transition: background-color .3s var(--ease-out); }
    APPEARANCE PANEL — compact Theme + Accent picker (mirrors the app)
    ────────────────────────────────────────────────────────────── */
 .ap-trigger { width: 34px; height: 34px; border-radius: var(--r-2); display: grid; place-items: center;
-  color: var(--text-3); border: 1px solid transparent; transition: all .15s; }
-.ap-trigger:hover { color: var(--text-1); background: var(--surface-2); }
+  color: var(--text-3); border: 1px solid var(--border); background: var(--surface-2); transition: all .15s; }
+.ap-trigger:hover { color: var(--accent); background: var(--surface-3); border-color: var(--border-bright); }
 .ap-trigger svg { width: 18px; height: 18px; }
 
 .ap-scrim { position: fixed; inset: 0; z-index: 200; background: transparent; display: none; }
 .ap-scrim.open { display: block; }
 .ap-panel {
-  position: fixed; top: 64px; right: 18px; z-index: 201; width: 312px;
+  position: fixed; top: 64px; right: 18px; z-index: 201; width: 236px;
   background: var(--surface-1); border: 1px solid var(--border-strong); border-radius: var(--r-4);
-  box-shadow: var(--shadow-pop); padding: 18px; display: none;
+  box-shadow: var(--shadow-pop); padding: 14px; display: none;
   transform-origin: top right;
 }
 .ap-panel.open { display: block; animation: ap-in .18s var(--ease-out); }
 @keyframes ap-in { from { opacity: 0; transform: scale(0.96) translateY(-6px); } to { opacity: 1; transform: none; } }
-.ap-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+.ap-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+.ap-label { font-family: var(--font-mono); font-size: 9.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-4); margin: 4px 0 8px; }
+.ap-divider { height: 1px; background: var(--border-soft); margin: 14px 0 11px; }
 .ap-head h4 { font-size: 15px; font-weight: 600; letter-spacing: -0.01em; }
 .ap-head .x { color: var(--text-4); width: 26px; height: 26px; border-radius: var(--r-1); display: grid; place-items: center; }
 .ap-head .x:hover { color: var(--text-1); background: var(--surface-2); }
 .ap-label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-4); margin: 4px 0 10px; }
-.ap-themes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.ap-themes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
 .ap-theme { cursor: pointer; }
-.ap-sw { aspect-ratio: 4/2.5; border-radius: var(--r-2); border: 1px solid var(--border); position: relative; overflow: hidden; display: grid; place-items: center; transition: box-shadow .15s; }
+.ap-sw { aspect-ratio: 16/7; border-radius: var(--r-1); border: 1px solid var(--border); position: relative; overflow: hidden; display: grid; place-items: center; transition: box-shadow .15s; }
 .ap-theme.on .ap-sw { box-shadow: 0 0 0 2px var(--accent); border-color: var(--accent); }
-.ap-sw .dot { width: 14px; height: 14px; border-radius: 50%; background: var(--accent); }
-.ap-tname { display: block; text-align: center; font-size: 11.5px; color: var(--text-3); margin-top: 6px; }
+.ap-sw .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--accent); }
+.ap-tname { display: block; text-align: center; font-size: 10px; color: var(--text-3); margin-top: 4px; }
 .ap-theme.on .ap-tname { color: var(--text-1); font-weight: 500; }
 .ap-divider { height: 1px; background: var(--border-soft); margin: 18px 0 14px; }
 .ap-accents { display: flex; gap: 9px; flex-wrap: wrap; }
