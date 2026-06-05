@@ -256,6 +256,11 @@ footer { border-top: 1px solid var(--border-soft); padding: 60px 0 40px; positio
   section { padding: 60px 0; }
   .wrap { padding: 0 20px; }
   h2.sec { font-size: 27px; }
+  .foot-grid { grid-template-columns: 1fr; }
+  .foot-col { padding-top: 0; }
+}
+@media (max-width: 480px) {
+  .navactions .btn-ghost { display: none; }
 }
 
 /* ──────────────────────────────────────────────────────────────
