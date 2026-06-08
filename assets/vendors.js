@@ -66,8 +66,9 @@
       function ok() { done = true; }
       img.addEventListener('error', fail);
       img.addEventListener('load',  ok);
-      if (img.complete && img.naturalWidth > 0) ok();
-      setTimeout(function () { if (!done && !(img.complete && img.naturalWidth > 0)) fail(); }, 3000);
+      // SVGs report naturalWidth=0 even on success — treat complete as loaded
+      if (img.complete) ok();
+      setTimeout(function () { if (!done) fail(); }, 5000);
     });
   }
 

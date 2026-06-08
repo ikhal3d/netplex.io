@@ -67,14 +67,14 @@
 
 /* Tiles */
 .vchip {
-  flex: 0 0 auto; width: 64px; height: 64px; display: grid; place-items: center;
+  flex: 0 0 auto; width: 80px; height: 80px; display: grid; place-items: center;
   border-radius: var(--r-3); background: var(--surface-1); border: 1px solid var(--border);
   transition: border-color .18s, background .18s; cursor: default;
 }
 .vchip:hover { border-color: var(--border-bright); background: var(--surface-2); }
-.vchip .vlogo { display: grid; place-items: center; width: 38px; height: 38px; }
+.vchip .vlogo { display: grid; place-items: center; width: 52px; height: 52px; }
 .vchip .vlogo img {
-  height: 30px; width: auto; object-fit: contain;
+  height: 40px; width: auto; object-fit: contain;
   opacity: 1; filter: none;
 }
 
@@ -97,8 +97,8 @@
   .vmq-track { width: auto; flex-wrap: wrap; justify-content: center; }
   .vmq-track [aria-hidden="true"] { display: none; }
 }
-@media (max-width: 768px) { .vchip { width: 52px; height: 52px; } .vchip .vlogo img { height: 24px; } }
-@media (max-width: 480px) { .vchip { width: 48px; height: 48px; } }
+@media (max-width: 768px) { .vchip { width: 64px; height: 64px; } .vchip .vlogo { width: 40px; height: 40px; } .vchip .vlogo img { height: 30px; } }
+@media (max-width: 480px) { .vchip { width: 56px; height: 56px; } }
 
 /* ── ONE-LINER MARQUEE / capability chips ── */
 .cap-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 40px; }
