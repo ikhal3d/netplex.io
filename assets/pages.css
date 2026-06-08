@@ -45,32 +45,61 @@
   background: var(--surface-1); font-size: 14px; color: var(--text-3);
 }
 
-/* ── VENDOR WALL ── */
-.vendor-wall {
-  display: grid; grid-template-columns: repeat(8, 1fr); gap: 12px; margin-top: 40px;
+/* ── VENDOR MARQUEE ── */
+
+/* Clip viewport + edge fade (mask is theme-proof: works on dark, cloud, paper) */
+.vmq {
+  display: flex; flex-direction: column; gap: 14px; margin-top: 40px; overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 9%, #000 91%, transparent 100%);
+          mask-image: linear-gradient(90deg, transparent 0, #000 9%, #000 91%, transparent 100%);
 }
-.vendor {
-  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 11px;
-  aspect-ratio: 1 / 0.78; padding: 16px 8px;
-  background: var(--surface-1); border: 1px solid var(--border); border-radius: var(--r-3);
-  transition: border-color .18s, transform .18s, background .18s;
+.vmq-row { display: flex; overflow: hidden; }
+.vmq-track {
+  display: flex; gap: 12px; width: max-content; flex: 0 0 auto; will-change: transform;
 }
-.vendor:hover { border-color: var(--border-bright); transform: translateY(-3px); background: var(--surface-2); }
-.vendor .vmark {
-  height: 30px; display: grid; place-items: center; padding: 0 4px;
-  font-family: var(--font-display); font-weight: 700; font-size: 19px; letter-spacing: -0.03em;
-  color: #9aa3b2; opacity: 0.82; transition: color .18s, opacity .18s, transform .18s;
+
+/* Animations — track is exactly 2 copies wide, so ±50% is a seamless jump-free loop */
+@keyframes vmq-left  { from { transform: translateX(0);    } to { transform: translateX(-50%); } }
+@keyframes vmq-right { from { transform: translateX(-50%); } to { transform: translateX(0);    } }
+.vmq-row--left  .vmq-track { animation: vmq-left  55s linear infinite; }
+.vmq-row--right .vmq-track { animation: vmq-right 55s linear infinite; }
+.vmq:hover .vmq-track { animation-play-state: paused; }
+
+/* Tiles */
+.vchip {
+  flex: 0 0 auto; width: 64px; height: 64px; display: grid; place-items: center;
+  border-radius: var(--r-3); background: var(--surface-1); border: 1px solid var(--border);
+  transition: border-color .18s, background .18s; cursor: default;
 }
-.vendor:hover .vmark { color: var(--text-1); opacity: 1; transform: scale(1.05); }
-.vendor .vlogo { height: 34px; display: grid; place-items: center; }
-.vendor .vlogo img { height: 30px; width: auto; max-width: 100px; object-fit: contain; opacity: 0.82; filter: grayscale(0.45); transition: opacity .18s, filter .18s, transform .18s; }
-.vendor:hover .vlogo img { opacity: 1; filter: none; transform: scale(1.05); }
-.vendor .vname { font-size: 11.5px; color: var(--text-3); font-weight: 500; text-align: center; line-height: 1.2; }
-.vendor:hover .vname { color: var(--text-1); }
+.vchip:hover { border-color: var(--border-bright); background: var(--surface-2); }
+.vchip .vlogo { display: grid; place-items: center; width: 38px; height: 38px; }
+.vchip .vlogo img {
+  height: 30px; width: auto; object-fit: contain;
+  opacity: .82; filter: grayscale(.35); transition: opacity .18s, filter .18s;
+}
+.vchip:hover .vlogo img { opacity: 1; filter: none; }
+
+/* Monogram fallback */
+.vchip .vmark {
+  display: flex; align-items: center; justify-content: center;
+  width: 30px; height: 30px; border-radius: var(--r-1);
+  background: var(--surface-2); border: 1px solid var(--border);
+  color: var(--text-3); font-family: var(--font-mono);
+  font-size: .62rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase;
+}
 .vendor-note { margin-top: 18px; font-size: 13.5px; color: var(--text-4); text-align: center; }
 .vendor-note .mono { color: var(--accent); }
-@media (max-width: 860px){ .vendor-wall { grid-template-columns: repeat(4, 1fr); } }
-@media (max-width: 460px){ .vendor-wall { grid-template-columns: repeat(3, 1fr); } }
+
+/* Reduced motion — collapse to a static centred grid, hide duplicate tiles */
+@media (prefers-reduced-motion: reduce) {
+  .vmq-track { animation: none; }
+  .vmq { -webkit-mask-image: none; mask-image: none; flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 10px; padding-inline: 24px; }
+  .vmq-row { overflow: visible; display: contents; }
+  .vmq-track { width: auto; flex-wrap: wrap; justify-content: center; }
+  .vmq-track [aria-hidden="true"] { display: none; }
+}
+@media (max-width: 768px) { .vchip { width: 52px; height: 52px; } .vchip .vlogo img { height: 24px; } }
+@media (max-width: 480px) { .vchip { width: 48px; height: 48px; } }
 
 /* ── ONE-LINER MARQUEE / capability chips ── */
 .cap-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 40px; }

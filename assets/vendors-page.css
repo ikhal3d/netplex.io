@@ -1,0 +1,77 @@
+/* Styles specific to vendors.html — static vendor wall */
+
+.vendor-listing-section { padding-bottom: 72px; }
+
+.page-lead {
+  margin-top: 18px;
+  font-size: 1.05rem;
+  color: var(--text-2);
+  max-width: 580px;
+  line-height: 1.65;
+}
+
+.vgroup-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-2);
+  margin-top: 52px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+/* Static vendor grid */
+.vendor-wall {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: 12px;
+}
+
+.vendor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 18px 10px 14px;
+  border-radius: var(--r-3);
+  background: var(--surface-2);
+  border: 1px solid var(--border-soft);
+  text-align: center;
+  transition: border-color .18s, background .18s;
+  cursor: default;
+}
+.vendor:hover {
+  border-color: var(--border-bright);
+  background: var(--surface-3);
+}
+
+.vendor .vlogo {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+}
+
+.vendor .vlogo img {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
+  opacity: .82;
+  filter: grayscale(.3);
+  transition: opacity .18s, filter .18s;
+}
+.vendor:hover .vlogo img { opacity: 1; filter: none; }
+
+.vname {
+  font-size: .7rem;
+  font-weight: 500;
+  color: var(--text-2);
+  line-height: 1.3;
+  word-break: break-word;
+}
+
+/* Monogram fallback (shared .vmark from pages.css) */
+
+@media (max-width: 480px) {
+  .vendor-wall { grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); gap: 10px; }
+}

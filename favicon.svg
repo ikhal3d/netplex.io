@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Orange tile (#ff6e36) with 22% corner radius (7px on 32px tile) -->
+  <rect width="32" height="32" rx="7" fill="#ff6e36"/>
+  <!-- Fan-in mux mark in ink (#1a0b04), ~18% padding on each side -->
+  <!-- Mark spans x: 6..26, y: 7..25 (20×18 area centred in 32×32) -->
+  <g stroke="#1a0b04" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Fan lines: 3 left endpoints converge to hub centre (16,16) -->
+    <path d="M7 9 L16 16 M7 16 L16 16 M7 23 L16 16" stroke-width="1.6"/>
+    <!-- Hub to right endpoint -->
+    <path d="M16 16 L24 16" stroke-width="1.8"/>
+    <!-- Hub ring (open circle, tile-coloured fill so it reads as a ring) -->
+    <circle cx="16" cy="16" r="2.8" fill="#ff6e36" stroke="#1a0b04" stroke-width="1.6"/>
+  </g>
+  <!-- Left endpoint dots -->
+  <circle cx="7" cy="9"  r="1.8" fill="#1a0b04"/>
+  <circle cx="7" cy="16" r="1.8" fill="#1a0b04"/>
+  <circle cx="7" cy="23" r="1.8" fill="#1a0b04"/>
+  <!-- Right endpoint dot -->
+  <circle cx="24" cy="16" r="2" fill="#1a0b04"/>
+</svg>
