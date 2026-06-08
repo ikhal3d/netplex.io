@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>netplex. - the modern network lab. Emulate. Automate. Ship.</title>
+<meta name="description" content="The modern network lab - distributed digital twin, execution and automation. Built in Australia by network engineers for engineers who've outgrown EVE-NG." />
+<meta name="keywords" content="network emulation, network lab, EVE-NG alternative, GNS3 alternative, network automation, QEMU KVM, network digital twin, lab-as-code, netplex" />
+<link rel="icon" href="assets/favicon.svg" />
+<link rel="canonical" href="https://netplex.io/" />
+<meta name="robots" content="index, follow" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="netplex." />
+<meta property="og:title" content="netplex. - the modern network lab" />
+<meta property="og:description" content="Emulate. Automate. Ship. A distributed network digital twin, execution and automation platform, built in Australia for engineers who've outgrown EVE-NG." />
+<meta property="og:image" content="https://netplex.io/assets/og.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:url" content="https://netplex.io/" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="netplex. - the modern network lab" />
+<meta name="twitter:description" content="Emulate. Automate. Ship. The modern network lab, built in Australia by network engineers." />
+<meta name="twitter:image" content="https://netplex.io/assets/og.png" />
+<link rel="stylesheet" href="assets/site.css" />
+<link rel="stylesheet" href="assets/landing.css" />
+<link rel="stylesheet" href="assets/pages.css" />
+<link rel="preload" href="assets/topology.js" as="script" />
+<link rel="preload" href="assets/showcase.js" as="script" />
+<script>/* no-flash: apply saved theme/accent before paint */(function(){try{var t=localStorage.getItem('netplex.theme');var a=localStorage.getItem('netplex.accent');if(t&&t!=='midnight')document.documentElement.dataset.theme=t;if(a&&a!=='orange')document.documentElement.dataset.accent=a;}catch(e){}})();</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://netplex.io/#organization","name":"netplex.","url":"https://netplex.io","logo":{"@type":"ImageObject","url":"https://netplex.io/assets/og.png"},"description":"The modern network lab - distributed network digital twin, execution and automation platform. Built in Australia by network engineers.","foundingLocation":{"@type":"Place","addressCountry":"AU"}},{"@type":"WebSite","@id":"https://netplex.io/#website","url":"https://netplex.io","name":"netplex.","publisher":{"@id":"https://netplex.io/#organization"}},{"@type":"SoftwareApplication","name":"netplex.","applicationCategory":"NetworkingApplication","operatingSystem":"Linux","url":"https://netplex.io","description":"The modern network lab - distributed digital twin, execution and automation. Built in Australia for engineers who've outgrown EVE-NG.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}]}
+</script>
+</head>
+<body>
+<div class="gridbg"></div>
+<div class="content">
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="wrap">
+    <a href="index.html" class="brand"><span class="mark"><svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><g stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 19 L27 32 M14 32 L27 32 M14 45 L27 32"/><path d="M37 32 L52 32"/><circle cx="32" cy="32" r="5"/></g><circle cx="14" cy="19" r="3" fill="currentColor"/><circle cx="14" cy="32" r="3" fill="currentColor"/><circle cx="14" cy="45" r="3" fill="currentColor"/><circle cx="52" cy="32" r="3.4" fill="currentColor"/></svg></span><span class="wm">netplex<span class="dotmark">.</span></span><span class="ver">v1.0</span></a>
+    <div class="navlinks">
+      <a href="product.html">Product</a>
+      <a href="download.html">Download</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="kb.html">Knowledge Base</a>
+      <a href="forums.html">Forums</a>
+      <a href="roadmap.html">Roadmap</a>
+      <a href="support.html">Support</a>
+    </div>
+    <div class="navactions">
+      <a href="#" class="btn btn-ghost" data-ext>Sign in</a>
+      <button class="ap-trigger" data-appearance-trigger aria-label="Appearance" title="Appearance"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996C20.146 15.21 22 13.36 22 11.04 22 6.038 17.5 2 12 2z"/></svg></button>
+      <a href="download.html" class="btn btn-primary">Get netplex.</a>
+      <button class="menu-toggle" aria-label="Menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap"><div class="h-grid">
+    <div>
+      <span class="au-badge h-pill" style="margin-bottom:22px"><span class="cross"><i></i><i></i><i></i><i style="margin-left:1px"></i></span> Designed in Australia · by <b>network engineers</b></span>
+      <h1 class="h-title" id="heroTitle">Emulate. Automate. <span class="accent">Ship.</span></h1>
+      <p class="h-sub" id="heroSub">The modern network lab - a distributed digital twin, execution and automation platform for engineers who've outgrown EVE-NG.</p>
+      <p class="h-stat" id="heroStat">GNS3 + EVE-NG + Terraform + NetBox - <b>rebuilt as one API-first, event-driven platform.</b></p>
+      <div class="h-cta">
+        <a href="download.html" class="btn btn-primary btn-lg">Start free<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="#why" class="btn btn-outline btn-lg">Why switch from EVE-NG?</a>
+      </div>
+      <div class="h-chips">
+        <span class="chip">Community tier free, forever</span>
+        <span class="chip">No client to install</span>
+        <span class="chip">One-click EVE-NG import</span>
+      </div>
+    </div>
+    <div class="topo-frame">
+      <div class="win">
+        <div class="win-bar"><div class="lights"><i></i><i></i><i></i></div><span class="title">ENT-CAMPUS-WAN · topology</span><span class="right"><span class="pill ok" style="font-size:11px;padding:3px 10px"><span class="dot"></span>Running</span></span></div>
+        <div class="topo-wrap"><div id="heroTopo"></div></div>
+      </div>
+    </div>
+  </div></div>
+</header>
+
+<!-- CATCHY PHRASES ROTATOR -->
+<div class="phrase-band">
+  <div class="phrase-rotator" id="phraseRotator"></div>
+</div>
+
+<!-- VENDOR WALL -->
+<section style="padding:54px 0 60px;background:var(--surface-1);border-top:1px solid var(--border-soft);border-bottom:1px solid var(--border-soft)">
+  <div class="wrap center">
+    <span class="eyebrow sec-eyebrow">Real networks. Real vendors.</span>
+    <h2 class="sec" style="font-size:30px">Run the gear you actually ship.</h2>
+    <p class="sec-sub">QEMU/KVM under the hood means <strong style="color:var(--text-2)">real vendor images</strong> - the same IOS-XE, Junos, EOS and PAN-OS you run in production. 140+ device kinds across 70+ vendors, with automatic image fixes on every upload.</p>
+    <div id="vendorWall"></div>
+    <p class="vendor-note">Vendor names and marks are property of their respective owners. netplex. ships device <span class="mono">definitions</span> - you supply the licensed images, and the pipeline does the rest.</p>
+  </div>
+</section>
+
+<!-- STAT BAND -->
+<div class="statband"><div class="wrap">
+  <div class="statcell"><div class="n">$0<span style="font-size:18px;color:var(--text-4)">/forever</span></div><div class="l">Community tier</div></div>
+  <div class="statcell"><div class="n">70<span style="font-size:18px;color:var(--text-4)">+</span></div><div class="l">Vendors supported</div></div>
+  <div class="statcell"><div class="n">6</div><div class="l">Built-in themes</div></div>
+  <div class="statcell"><div class="n"><span class="mono">1-click</span></div><div class="l">EVE / GNS3 import</div></div>
+</div></div>
+
+<!-- WHY / OUTGROWN EVE-NG -->
+<section id="why">
+  <div class="wrap">
+    <span class="eyebrow sec-eyebrow">Built for engineers who've outgrown EVE-NG</span>
+    <h2 class="sec">You don't have to pay.<br/><span class="accent">But here's what you can't buy elsewhere.</span></h2>
+    <p class="sec-sub">EVE-NG Community is free - and was designed in 2007. netplex. Community is also free, with a React canvas, live terminal, packet capture and an API included. This is the honest scorecard - <span style="color:var(--ok)">✓</span> full, <span style="color:var(--warn)">-</span> partial, <span style="color:var(--err)">✗</span> none.</p>
+    <div style="overflow-x:auto">
+    <table class="cmp">
+      <thead>
+        <tr>
+          <th>&nbsp;</th>
+          <th>EVE-NG Community</th>
+          <th>EVE-NG Pro</th>
+          <th>GNS3</th>
+          <th>Containerlab</th>
+          <th class="us">netplex.</th>
+        </tr>
+      </thead>
+      <tbody id="cmpBody"></tbody>
+    </table>
+    </div>
+    <p class="cmp-note">EVE-NG Pro is <span class="mono">~$160/yr</span>, locked to one server MAC, so a reinstall means a relicence call. netplex. Pro is <span class="mono">$199/yr</span>, runs anywhere, and adds snapshots, git auto-backup and a full API. Import your <span class="mono">.unl</span> in 30 seconds. <span class="flag">Beta</span> The multi-host VXLAN stitch is on the roadmap and shown as partial while it's in beta; single-host emulation and the full automation toolbox ship today.</p>
+  </div>
+</section>
+
+<!-- EMULATE / AUTOMATE / SHIP -->
+<section style="background:var(--surface-1);border-top:1px solid var(--border-soft);border-bottom:1px solid var(--border-soft)">
+  <div class="wrap">
+    <span class="eyebrow sec-eyebrow">Emulate · Automate · Ship</span>
+    <h2 class="sec">Stop setting up labs.<br/><span class="accent">Start engineering.</span></h2>
+    <div class="cap-grid">
+      <div class="cap">
+        <div class="cap-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/><path d="M10 6.5h4M6.5 10v4M17.5 10v4M10 17.5h4"/></svg></div>
+        <h3>Emulate</h3>
+        <p>A circuit-board canvas you'll actually want to look at. Drag nodes, draw links in four styles, capture packets live on any wire, and watch real traffic move - not invented Gbps numbers.</p>
+      </div>
+      <div class="cap">
+        <div class="cap-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4l-5.6 5.6a2 2 0 1 0 2.8 2.8l5.6-5.6a4 4 0 0 0 5.4-5.4l-2.3 2.3-2.1-2.1z"/></svg></div>
+        <h3>Automate</h3>
+        <p>Everything the UI does is an API call. Scoped REST + WebSocket keys, a Terraform provider, an Ansible collection and a full tc/netem QoS suite - the automation story EVE-NG never had.</p>
+      </div>
+      <div class="cap">
+        <div class="cap-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l9-9 9 9M5 10v10h14V10M9 20v-6h6v6"/></svg></div>
+        <h3>Ship</h3>
+        <p>Labs become code you keep in your own Git, with automatic backup on every stop. Pipeline a fresh topology on every commit, verify, and catch breakage before production.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DISTRIBUTED STITCH (roadmap-honest) -->
+<section>
+  <div class="wrap">
+    <div class="showcase flip">
+      <div class="sc-text">
+        <span class="eyebrow sec-eyebrow">The stitch - multi-host fabric<span class="flag">Roadmap · beta</span></span>
+        <h2>Half your lab at home.<br/>Half in the cloud.<br/><span class="accent">One canvas. One click.</span></h2>
+        <p>Our headline differentiator - stitch topology segments across physical machines, cloud VMs and office labs into one unified topology over encrypted VXLAN, transparent to the emulated devices. Your BGP adjacency doesn't know - or care - where the iron is.</p>
+        <p style="font-size:14px;color:var(--text-4)">Distributed multi-chassis VXLAN is on the roadmap (in beta) - single-host emulation and automation ship today.</p>
+        <ul class="sc-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Outgrow a single box without buying a bigger server</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Each host gets a colour; nodes glow to show where they live</li>
+        </ul>
+      </div>
+      <div>
+        <div class="win" style="padding:26px 24px;background:var(--surface-1)">
+          <div id="fabric"></div>
+          <p style="text-align:center;font-size:12.5px;color:var(--text-4);margin-top:18px">The link doesn't care which machine a node lives on.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING TEASER -->
+<section style="background:var(--surface-1);border-top:1px solid var(--border-soft);border-bottom:1px solid var(--border-soft)">
+  <div class="wrap center">
+    <span class="eyebrow sec-eyebrow">Pricing</span>
+    <h2 class="sec">Start free. <span class="accent">Pay when you scale.</span></h2>
+    <p class="sec-sub">No artificial cripple-ware - the product is great at every tier. Pro is a single seat with the <strong style="color:var(--text-2)">complete automation toolbox</strong>. Below $10/month is less than Netflix.</p>
+    <div style="display:flex;align-items:center;justify-content:center;gap:0;margin-top:24px">
+      <div class="bill-toggle"><button id="tMonthly" class="on">Monthly</button><button id="tAnnual">Annual</button></div>
+      <span class="bill-save" id="tSave" style="visibility:hidden">2 months free</span>
+    </div>
+    <div class="tiers5" style="text-align:left">
+      <div class="tier">
+        <div class="nm">Community</div>
+        <div class="price">$0</div>
+        <div class="annual">Free, forever</div>
+        <div class="desc">For CCNA study &amp; EVE-NG Community migrants.</div>
+        <div class="tier-spec"><b>20</b> nodes per lab · 1 live lab</div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>React canvas · 6 themes</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Integrated live terminal</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Live packet capture</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>One-click EVE-NG import</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Read-only API · community forums</li>
+        </ul>
+      </div>
+      <div class="tier">
+        <div class="nm">Plus</div>
+        <div class="price"><span class="price-i" data-m="$9.99" data-a="$99">$9.99</span><span class="psuf" data-ms="/mo" data-as="/yr">/mo</span></div>
+        <div class="annual" data-m="or $99/yr · save $20" data-a="Billed yearly · save $20">or $99/yr · save $20</div>
+        <div class="desc">CCNA students who need more headroom.</div>
+        <div class="tier-spec"><b>50</b> nodes per lab · 1 live lab</div>
+        <ul>
+          <li class="grp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Everything in Community, plus:</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Per-node snapshots</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>100 Mbps per link (settable)</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Email support</li>
+        </ul>
+      </div>
+      <div class="tier feat">
+        <div class="tier-badge">Most popular</div>
+        <div class="nm">Pro</div>
+        <div class="price"><span class="price-i" data-m="$19.99" data-a="$199">$19.99</span><span class="psuf" data-ms="/mo" data-as="/yr">/mo</span></div>
+        <div class="annual" data-m="or $199/yr · save $40" data-a="Billed yearly · save $40">or $199/yr · save $40</div>
+        <div class="desc">You're automating. Single seat, full toolbox.</div>
+        <div class="tier-spec"><b>1,000</b> nodes per lab · 1 live lab</div>
+        <ul>
+          <li class="grp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Everything in Plus, plus:</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Scoped API keys · Terraform · Ansible</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Full tc/netem QoS · no cap</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Git auto-backup · cloud templates</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>MicroVM nodes</li>
+        </ul>
+      </div>
+      <div class="tier">
+        <div class="nm">Classroom</div>
+        <div class="price"><span class="price-i" data-m="$49.99" data-a="$449">$49.99</span><span class="psuf" data-ms="/inst." data-as="/yr">/inst.</span></div>
+        <div class="annual" data-m="or $449/yr · $9 per student" data-a="Billed yearly · $9 per student">or $449/yr · $9 per student</div>
+        <div class="desc">You're teaching. One topology, thirty students.</div>
+        <div class="tier-spec"><b>1,000</b> nodes per student pod</div>
+        <ul>
+          <li class="grp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Everything in Pro, plus:</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Isolated student pods</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Roster management</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Freeze · reset · grade</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Priority support</li>
+        </ul>
+      </div>
+      <div class="tier">
+        <div class="nm">Enterprise</div>
+        <div class="price">Talk</div>
+        <div class="annual">Subscription or perpetual</div>
+        <div class="desc">Run it at scale. Flexible licensing, no renewal risk.</div>
+        <div class="tier-spec"><b>∞</b> nodes &amp; labs (soft OOM guard)</div>
+        <ul>
+          <li class="grp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Everything in Classroom, plus:</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>SSO · multi-tenant · audit log</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Compute cluster · S3 / self-hosted git</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>SLA + named contact</li>
+        </ul>
+      </div>
+    </div>
+    <p style="margin-top:26px;font-size:14px;color:var(--text-3)">Students free with a school email · <a href="pricing.html" style="color:var(--accent)">See full pricing &amp; annual savings →</a></p>
+  </div>
+</section>
+
+<!-- AUSTRALIAN STRIP -->
+<section style="padding:70px 0">
+  <div class="wrap center">
+    <span class="au-badge" style="margin-bottom:20px"><span class="cross"><i></i><i></i><i></i><i style="margin-left:1px"></i></span> Proudly Australian</span>
+    <h2 class="sec" style="font-size:30px">Built by network engineers,<br/><span class="accent">for network engineers.</span></h2>
+    <p class="sec-sub" style="max-width:660px">netplex. is designed and built in Australia by people who lived inside EVE-NG, PNETLAB and GNS3 for years - and got tired of SSH-ing in to run <span class="mono">fixpermissions</span>. Every decision is made by engineers who use it daily, not a marketing department.</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="ctaband" style="border-top:1px solid var(--border-soft)">
+  <div class="wrap">
+    <h2>Stop tolerating <span class="accent">the old tools.</span></h2>
+    <p>Import your EVE-NG lab, start on the free Community tier, and never run <span class="mono">fixpermissions</span> again.</p>
+    <div style="display:flex;gap:13px;justify-content:center;flex-wrap:wrap">
+      <a href="download.html" class="btn btn-primary btn-lg">Get netplex. free<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="contact.html" class="btn btn-outline btn-lg">Talk to us</a>
+    </div>
+    <p style="font-size:13px;margin-top:18px;color:var(--text-4)">Community tier free forever · no credit card</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="index.html" class="brand"><span class="mark"><svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><g stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 19 L27 32 M14 32 L27 32 M14 45 L27 32"/><path d="M37 32 L52 32"/><circle cx="32" cy="32" r="5"/></g><circle cx="14" cy="19" r="3" fill="currentColor"/><circle cx="14" cy="32" r="3" fill="currentColor"/><circle cx="14" cy="45" r="3" fill="currentColor"/><circle cx="52" cy="32" r="3.4" fill="currentColor"/></svg></span><span class="wm">netplex<span class="dotmark">.</span></span></a>
+        <p>The modern network lab - a distributed digital twin, execution and automation platform. Emulate. Automate. Ship.</p>
+        <span class="au-badge" style="margin-top:16px"><span class="cross"><i></i><i></i><i></i><i style="margin-left:1px"></i></span> Made in Australia</span>
+      </div>
+      <div class="foot-col"><h4>Product</h4><a href="product.html">Features</a><a href="download.html">Download</a><a href="pricing.html">Pricing</a><a href="roadmap.html">Roadmap</a></div>
+      <div class="foot-col"><h4>Resources</h4><a href="kb.html">Knowledge Base</a><a href="faq.html">FAQ</a><a href="forums.html">Forums</a><a href="support.html">Support</a></div>
+      <div class="foot-col"><h4>Company</h4><a href="about.html">About</a><a href="contact.html">Contact</a><a href="brand.html">Brand kit</a></div>
+      <div class="foot-col"><h4>Legal</h4><a href="legal.html#privacy">Privacy</a><a href="legal.html#terms">Terms</a><a href="legal.html#disclaimer">Disclaimer</a></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 netplex. · Designed &amp; built in Australia.</span>
+      <span class="mono">v1.0 · built for engineers</span>
+
+    </div>
+  </div>
+</footer>
+
+</div>
+
+<script src="assets/topology.js"></script>
+<script src="assets/showcase.js"></script>
+<script src="assets/vendors.js"></script>
+<script src="assets/appearance.js"></script>
+<script src="assets/nav.js"></script>
+<script>
+/* rotating hero - fresh marketing line every reload */
+var HERO = [
+  { t:'Emulate. Automate. <span class="accent">Ship.</span>', s:"The modern network lab - a distributed digital twin, execution and automation platform for engineers who've outgrown EVE-NG.", st:'GNS3 + EVE-NG + Terraform + NetBox - <b>rebuilt as one API-first, event-driven platform.</b>' },
+  { t:'Real Cisco labs. Free.<br/><span class="accent">No limits on what you can build.</span>', s:"A React canvas, live terminal, packet capture and an API - included in a Community tier that's genuinely useful for CCNA and CCNP study.", st:'EVE-NG Community was designed in 2007. <b>This is what free should feel like in 2026.</b>' },
+  { t:'Stop setting up labs.<br/><span class="accent">Start engineering.</span>', s:"Drop an image and walk away - convert, permissions, boot-test, all automatic. No SSH. No fixpermissions. No external terminal.", st:'The experience EVE-NG never had - <b>finally worth paying for.</b>' },
+  { t:'Everything EVE-NG Pro does -<br/><span class="accent">plus the things it can\u2019t sell you.</span>', s:"Snapshots, git auto-backup, Terraform, Ansible, live QoS on every link. $199/year, runs on any machine, no MAC lock.", st:'Import your <b>.unl topologies in 30 seconds.</b>' }
+];
+(function(){ var v=HERO[Math.floor(Math.random()*HERO.length)];
+  document.getElementById('heroTitle').innerHTML=v.t;
+  document.getElementById('heroSub').textContent=v.s;
+  document.getElementById('heroStat').innerHTML=v.st;
+})();
+
+/* comparison rows: '' = miss(✗), 'mid' = partial, 'ck' = has it
+   cols: EVE-NG Community · EVE-NG Pro · GNS3 · Containerlab */
+var ICO_X='<span class="ico x"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M18 6L6 18M6 6l12 12"/></svg></span>';
+var ICO_CK='<span class="ico ck"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg></span>';
+var ICO_MID='<span class="ico mid"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14"/></svg></span>';
+function cell(v){ return v==='ck'?ICO_CK : v==='mid'?ICO_MID : ICO_X; }
+var ROWS = [
+  ['Modern, React-based web UI',                 '',    '',    'mid', 'mid'],
+  ['Per-node snapshots',                         '',    '',    'mid', ''   ],
+  ['Git auto-backup on every lab stop',          '',    '',    '',    'mid'],
+  ['REST + WebSocket API',                       '',    'mid', 'mid', 'ck' ],
+  ['Scoped API keys (read / write)',             '',    '',    '',    ''   ],
+  ['Terraform provider + Ansible collection',    '',    '',    '',    'mid'],
+  ['Full tc/netem QoS on every link',            '',    '',    '',    'mid'],
+  ['Live packet capture (Wireshark)',            '',    'ck',  '',    'mid'],
+  ['Animated live link-flow on the canvas',      '',    '',    '',    ''   ],
+  ['Cloud topology templates (AWS / SD-WAN)',    '',    '',    '',    ''   ],
+  ['MicroVM nodes (Kata / Firecracker)',         '',    '',    '',    'mid'],
+  ['One-click EVE-NG / GNS3 import',             '',    '',    '',    ''   ],
+  ['Multi-host topology stitch over VXLAN',      '',    '',    '',    ''   ],
+  ['Licence runs anywhere (no MAC lock)',        'ck',  '',    'ck',  'ck' ]
+];
+(function(){
+  var b=document.getElementById('cmpBody');
+  b.innerHTML = ROWS.map(function(r){
+    return '<tr><td>'+r[0]+'</td>'+
+      '<td>'+cell(r[1])+'</td>'+
+      '<td>'+cell(r[2])+'</td>'+
+      '<td>'+cell(r[3])+'</td>'+
+      '<td>'+cell(r[4])+'</td>'+
+      '<td class="col-us">'+(r[0].indexOf('stitch')>-1?ICO_MID:ICO_CK)+'</td></tr>';
+  }).join('');
+})();
+
+buildTopology(document.getElementById('heroTopo'));
+buildFabric(document.getElementById('fabric'));
+buildVendors(document.getElementById('vendorWall'));
+
+/* catchy-phrase rotator */
+var PHRASES = [
+  'Emulate. Automate. <span class="accent">Ship.</span>',
+  'Stop setting up labs. <span class="accent">Start engineering.</span>',
+  'Two machines, <span class="accent">one topology.</span>',
+  'Tap any link, live. <span class="accent">Wireshark on the wire.</span>',
+  'Declare your topology. <span class="accent">Watch it provision itself.</span>',
+  'One instructor. <span class="accent">Every pod.</span>',
+  'Half your lab at home. <span class="accent">Half in the cloud.</span>',
+  'Leaf-spine, fully meshed. <span class="accent">A Clos fabric in one canvas.</span>',
+  'Build. Deploy. <span class="accent">Verify.</span>',
+  'Real packets. <span class="accent">Real vendors.</span>'
+];
+(function(){
+  var el = document.getElementById('phraseRotator');
+  if (!el) return;
+  var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  /* shuffle */
+  var arr = PHRASES.slice();
+  for (var i = arr.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = arr[i]; arr[i] = arr[j]; arr[j] = t; }
+  var idx = 0;
+  function show(i) {
+    el.classList.remove('is-shown');
+    if (reduced) {
+      el.innerHTML = arr[i];
+      el.classList.add('is-shown');
+    } else {
+      setTimeout(function() { el.innerHTML = arr[i]; el.classList.add('is-shown'); }, 200);
+    }
+  }
+  show(0);
+  var timer = setInterval(function() {
+    if (document.hidden) return;
+    idx = (idx + 1) % arr.length;
+    show(idx);
+  }, 3500);
+})();
+
+/* pricing teaser: Monthly / Annual toggle (mirrors the pricing page) */
+(function(){
+  var tm=document.getElementById('tMonthly'), ta=document.getElementById('tAnnual'), ts=document.getElementById('tSave');
+  if(!tm) return;
+  function setBill(annual){
+    tm.classList.toggle('on',!annual); ta.classList.toggle('on',annual);
+    ts.style.visibility = annual ? 'visible' : 'hidden';
+    document.querySelectorAll('.price-i').forEach(function(el){ el.textContent = annual ? el.dataset.a : el.dataset.m; });
+    document.querySelectorAll('.psuf').forEach(function(el){ el.textContent = annual ? el.dataset.as : el.dataset.ms; });
+    document.querySelectorAll('.annual[data-a]').forEach(function(el){
+      el.textContent = annual ? el.dataset.a : el.dataset.m;
+      el.style.color = annual ? 'var(--accent)' : 'var(--ok)';
+    });
+  }
+  tm.addEventListener('click',function(){setBill(false);});
+  ta.addEventListener('click',function(){setBill(true);});
+})();
+</script>
+</body>
+</html>

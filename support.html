@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Support - netplex.</title>
+<meta name="description" content="Open a support ticket with the netplex. team. Track status, set priority, and get help from network engineers - routed to support@netplex.io." />
+<meta name="keywords" content="netplex support, network lab help, technical support ticket, network emulation support, open ticket" />
+<link rel="icon" href="assets/favicon.svg" />
+<link rel="canonical" href="https://netplex.io/support.html" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="netplex." />
+<meta property="og:title" content="Support - netplex. open a ticket" />
+<meta property="og:description" content="Open a support ticket with the netplex. team. Track status, set priority, and get help from network engineers." />
+<meta property="og:image" content="https://netplex.io/assets/og.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="robots" content="index, follow" />
+<meta property="og:url" content="https://netplex.io/support.html" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Support - netplex. open a ticket" />
+<meta name="twitter:description" content="Open a ticket, track status and get help from network engineers." />
+<meta name="twitter:image" content="https://netplex.io/assets/og.png" />
+<link rel="stylesheet" href="assets/site.css" />
+<link rel="stylesheet" href="assets/landing.css" />
+<link rel="stylesheet" href="assets/pages.css" />
+<script>(function(){try{var t=localStorage.getItem('netplex.theme');var a=localStorage.getItem('netplex.accent');if(t&&t!=='midnight')document.documentElement.dataset.theme=t;if(a&&a!=='orange')document.documentElement.dataset.accent=a;}catch(e){}})();</script>
+<style>
+  .prio-seg { display: flex; flex-wrap: wrap; gap: 8px; }
+  .prio-seg label { cursor: pointer; margin: 0; }
+  .prio-seg input { position: absolute; opacity: 0; pointer-events: none; }
+  .prio-seg .opt { display: inline-flex; align-items: center; gap: 7px; font-size: 13px; color: var(--text-3); background: var(--surface-0); border: 1px solid var(--border); border-radius: 999px; padding: 8px 14px; transition: all .15s; }
+  .prio-seg .opt .pd { width: 8px; height: 8px; border-radius: 50%; }
+  .prio-seg input:checked + .opt { color: var(--text-1); border-color: var(--border-bright); background: var(--surface-2); }
+  .tk-list { display: flex; flex-direction: column; gap: 10px; }
+  .tk { display: grid; grid-template-columns: auto 1fr auto; gap: 14px; align-items: center; background: var(--surface-1); border: 1px solid var(--border); border-radius: var(--r-3); padding: 14px 18px; }
+  .tk .id { font-family: var(--font-mono); font-size: 12px; color: var(--text-4); }
+  .tk .ts { font-size: 14.5px; color: var(--text-1); font-weight: 500; }
+  .tk .tsub { font-size: 12px; color: var(--text-4); margin-top: 2px; }
+  .tk .st { font-family: var(--font-mono); font-size: 11px; padding: 3px 10px; border-radius: 999px; font-weight: 600; color: #fff; }
+  .st-open { background: var(--info); }
+  .st-prog { background: var(--accent); }
+  .st-solved { background: var(--ok); }
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ContactPage","name":"Support - netplex.","url":"https://netplex.io/support.html","description":"Open a support ticket with the netplex. team. Track status and get help from network engineers.","publisher":{"@type":"Organization","@id":"https://netplex.io/#organization","name":"netplex."},"contactPoint":{"@type":"ContactPoint","contactType":"technical support","email":"support@netplex.io","areaServed":"Worldwide"}}
+</script>
+</head>
+<body>
+<div class="gridbg"></div>
+<div class="content">
+
+<nav class="nav">
+  <div class="wrap">
+    <a href="index.html" class="brand"><span class="mark"><svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><g stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 19 L27 32 M14 32 L27 32 M14 45 L27 32"/><path d="M37 32 L52 32"/><circle cx="32" cy="32" r="5"/></g><circle cx="14" cy="19" r="3" fill="currentColor"/><circle cx="14" cy="32" r="3" fill="currentColor"/><circle cx="14" cy="45" r="3" fill="currentColor"/><circle cx="52" cy="32" r="3.4" fill="currentColor"/></svg></span><span class="wm">netplex<span class="dotmark">.</span></span><span class="ver">v1.0</span></a>
+    <div class="navlinks">
+      <a href="product.html">Product</a>
+      <a href="download.html">Download</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="kb.html">Knowledge Base</a>
+      <a href="forums.html">Forums</a>
+      <a href="roadmap.html">Roadmap</a>
+      <a href="support.html" class="active">Support</a>
+    </div>
+    <div class="navactions">
+      <a href="#" class="btn btn-ghost" data-ext>Sign in</a>
+      <button class="ap-trigger" data-appearance-trigger aria-label="Appearance" title="Appearance"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996C20.146 15.21 22 13.36 22 11.04 22 6.038 17.5 2 12 2z"/></svg></button>
+      <a href="download.html" class="btn btn-primary">Get netplex.</a>
+      <button class="menu-toggle" aria-label="Menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    </div>
+  </div>
+</nav>
+
+<div class="page-head wrap">
+  <span class="eyebrow" style="display:block;margin-bottom:14px">Support</span>
+  <h1>Open a ticket. <span class="accent">Track it to done.</span></h1>
+  <p class="lede">Real support from the engineers who build netplex. Tickets are private, tracked, and routed to <a href="#" data-ext style="color:var(--accent)">support@netplex.io</a>. Check the <a href="kb.html" style="color:var(--accent)">Knowledge Base</a> first - it may already be solved.</p>
+</div>
+
+<section style="padding-top:40px">
+  <div class="wrap contact-layout">
+    <!-- LEFT -->
+    <div class="contact-intro">
+      <h2>Your tickets</h2>
+      <p class="lede">Sign in to see and reply to your tickets. Here's what the queue looks like.</p>
+      <div class="tk-list">
+        <div class="tk"><span class="id">#4192</span><div><div class="ts">CSR1000v boot loop after import</div><div class="tsub">Technical · opened 2h ago</div></div><span class="st st-prog">In progress</span></div>
+        <div class="tk"><span class="id">#4188</span><div><div class="ts">Terraform provider auth scope</div><div class="tsub">Automation · opened 1d ago</div></div><span class="st st-open">Open</span></div>
+        <div class="tk"><span class="id">#4175</span><div><div class="ts">Classroom pod reset timing</div><div class="tsub">Classroom · 3d ago</div></div><span class="st st-solved">Solved</span></div>
+      </div>
+      <div class="card" style="margin-top:18px">
+        <h3 style="font-size:15px;margin-bottom:8px">How it works</h3>
+        <p style="font-size:13.5px;color:var(--text-3);line-height:1.6;margin:0">Submit a ticket, get a tracking number, and reply by email or in-app. Pro gets email support; Classroom is priority; Enterprise is SLA-backed with a named contact. Your labs and data stay private - we never see lab contents.</p>
+      </div>
+    </div>
+
+    <!-- RIGHT: ticket form -->
+    <div class="contact-form">
+      <form id="ticketForm">
+        <div class="field">
+          <label>Category <span class="req">*</span></label>
+          <select name="category" required>
+            <option value="">Choose one…</option>
+            <option>Install / setup</option>
+            <option>Images &amp; pipeline</option>
+            <option>Canvas / consoles</option>
+            <option>Automation &amp; API</option>
+            <option>Classroom</option>
+            <option>Licensing</option>
+            <option>Billing</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Priority <span class="req">*</span></label>
+          <div class="prio-seg">
+            <label><input type="radio" name="priority" value="Low" /><span class="opt"><span class="pd" style="background:var(--text-4)"></span>Low</span></label>
+            <label><input type="radio" name="priority" value="Normal" checked /><span class="opt"><span class="pd" style="background:var(--info)"></span>Normal</span></label>
+            <label><input type="radio" name="priority" value="High" /><span class="opt"><span class="pd" style="background:var(--warn)"></span>High</span></label>
+            <label><input type="radio" name="priority" value="Urgent" /><span class="opt"><span class="pd" style="background:var(--err)"></span>Urgent</span></label>
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field"><label>Email <span class="req">*</span></label><input type="email" name="email" placeholder="you@company.com" required /></div>
+          <div class="field"><label>Tier</label>
+            <select name="tier"><option value="">Choose…</option><option>Community</option><option>Plus</option><option>Pro</option><option>Classroom</option><option>Enterprise</option></select>
+          </div>
+        </div>
+        <div class="field"><label>Subject <span class="req">*</span></label><input type="text" name="subject" placeholder="Short summary of the issue" required /></div>
+        <div class="field"><label>Describe the issue <span class="req">*</span></label><textarea name="body" placeholder="What happened, what you expected, steps to reproduce, and any error text netplex. showed you." required></textarea></div>
+        <button type="submit" class="btn btn-primary btn-lg">Submit ticket<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg></button>
+        <p class="form-note">Routed to support@netplex.io · you'll get a ticket number by email.</p>
+      </form>
+      <div class="form-ok" id="ticketOk">
+        <div class="ok-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <h3>Ticket created.</h3>
+        <p id="ticketMsg">Thanks - your ticket is in the queue.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ctaband" style="border-top:1px solid var(--border-soft)">
+  <div class="wrap">
+    <h2>Prefer to <span class="accent">ask the community?</span></h2>
+    <p>The forums are fast, friendly, and the answer is often already posted.</p>
+    <div style="display:flex;gap:13px;justify-content:center;flex-wrap:wrap">
+      <a href="forums.html" class="btn btn-primary btn-lg">Go to the forums</a>
+      <a href="kb.html" class="btn btn-outline btn-lg">Search the docs</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="index.html" class="brand"><span class="mark"><svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><g stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 19 L27 32 M14 32 L27 32 M14 45 L27 32"/><path d="M37 32 L52 32"/><circle cx="32" cy="32" r="5"/></g><circle cx="14" cy="19" r="3" fill="currentColor"/><circle cx="14" cy="32" r="3" fill="currentColor"/><circle cx="14" cy="45" r="3" fill="currentColor"/><circle cx="52" cy="32" r="3.4" fill="currentColor"/></svg></span><span class="wm">netplex<span class="dotmark">.</span></span></a>
+        <p>The modern network lab - a distributed digital twin, execution and automation platform. Emulate. Automate. Ship.</p>
+        <span class="au-badge" style="margin-top:16px"><span class="cross"><i></i><i></i><i></i><i style="margin-left:1px"></i></span> Made in Australia</span>
+      </div>
+      <div class="foot-col"><h4>Product</h4><a href="product.html">Features</a><a href="download.html">Download</a><a href="pricing.html">Pricing</a><a href="roadmap.html">Roadmap</a></div>
+      <div class="foot-col"><h4>Resources</h4><a href="kb.html">Knowledge Base</a><a href="faq.html">FAQ</a><a href="forums.html">Forums</a><a href="support.html">Support</a></div>
+      <div class="foot-col"><h4>Company</h4><a href="about.html">About</a><a href="contact.html">Contact</a><a href="brand.html">Brand kit</a></div>
+      <div class="foot-col"><h4>Legal</h4><a href="legal.html#privacy">Privacy</a><a href="legal.html#terms">Terms</a><a href="legal.html#disclaimer">Disclaimer</a></div>
+    </div>
+    <div class="foot-bottom"><span>© 2026 netplex. · Designed &amp; built in Australia.</span><span class="mono">v1.0 · built for engineers</span></div>
+  </div>
+</footer>
+
+</div>
+<script src="assets/appearance.js"></script>
+<script src="assets/nav.js"></script>
+<script>
+document.getElementById('ticketForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  var num = '#'+(4193+Math.floor(Math.random()*40));
+  var pr=(document.querySelector('input[name=priority]:checked')||{}).value||'Normal';
+  document.getElementById('ticketMsg').textContent='Your ticket '+num+' ('+pr+' priority) is in the queue and routed to support@netplex.io. We\u2019ll email you the moment an engineer picks it up.';
+  this.style.display='none';
+  document.getElementById('ticketOk').classList.add('show');
+});
+</script>
+</body>
+</html>

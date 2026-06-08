@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>netplex - Brand Kit</title>
+<meta name="description" content="The complete visual system for netplex.: fan-in multiplexer mark, clearspace, colours, typography and the round-dot wordmark." />
+<meta name="keywords" content="netplex brand, network lab logo, design system, brand kit, wordmark, brand guidelines" />
+<link rel="icon" href="assets/favicon.svg" />
+<link rel="canonical" href="https://netplex.io/brand.html" />
+<meta name="robots" content="index, follow" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="netplex." />
+<meta property="og:title" content="Brand Kit - netplex." />
+<meta property="og:description" content="The complete visual system for netplex.: fan-in multiplexer mark, clearspace, colours, typography and the round-dot wordmark." />
+<meta property="og:image" content="https://netplex.io/assets/og.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:url" content="https://netplex.io/brand.html" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Brand Kit - netplex." />
+<meta name="twitter:description" content="Logos, colours, typography and the round-dot wordmark - the complete netplex. visual system." />
+<meta name="twitter:image" content="https://netplex.io/assets/og.png" />
+
+  <script>/* no-flash: apply saved theme/accent before paint */(function(){try{var t=localStorage.getItem('netplex.theme');var a=localStorage.getItem('netplex.accent');if(t&&t!=='midnight')document.documentElement.dataset.theme=t;if(a&&a!=='orange')document.documentElement.dataset.accent=a;}catch(e){}})();</script>
+  <style>
+    :root{
+      --bg:#0a0b0e; --s1:#101116; --s2:#16181f; --s3:#1c1f27; --border:#262932; --border2:#343845;
+      --t1:#f1f2f5; --t2:#c4c7cf; --t3:#868a93; --t4:#595d66; --tdim:#3a3d45;
+      --accent:#ff7a45; --accent2:#ffa178; --ink:#1a0b04; --light:#e7e5de;
+      --ui:"Geist","Inter",system-ui,sans-serif; --mono:"JetBrains Mono",ui-monospace,monospace; --wordmark:"Quicksand","Geist",sans-serif;
+    }
+    *{box-sizing:border-box;} html,body{margin:0;}
+    body{background:var(--bg); color:var(--t1); font-family:var(--ui); -webkit-font-smoothing:antialiased; padding:54px 48px 80px;
+      background-image:radial-gradient(circle at 1px 1px, rgba(255,255,255,0.04) 1px, transparent 0); background-size:26px 26px;}
+    .wrap{max-width:1040px; margin:0 auto;}
+    .kick{font-family:var(--mono); font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:var(--t4); display:flex; align-items:center; gap:9px; margin-bottom:16px;}
+    .kick .d{width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 9px var(--accent);}
+    h1{font-size:40px; font-weight:700; letter-spacing:-0.04em; margin:0 0 11px;}
+    .lede{font-size:15px; line-height:1.6; color:var(--t3); margin:0 0 14px; max-width:640px;}
+
+    h2{font-size:11.5px; font-family:var(--mono); text-transform:uppercase; letter-spacing:0.16em; color:var(--t3); margin:52px 0 18px; padding-bottom:10px; border-bottom:1px solid var(--border); display:flex; gap:10px;}
+    h2 .n{color:var(--accent);}
+    .note{font-size:12.5px; color:var(--t4); line-height:1.55; margin:-8px 0 18px; max-width:640px;}
+
+    /* round-dot wordmark - the fix */
+    .wm{font-family:var(--wordmark); font-weight:600; letter-spacing:-0.02em; color:var(--t1); display:inline-flex; align-items:baseline;}
+    .wm .dot{display:inline-block; width:0.16em; height:0.16em; border-radius:50%; background:var(--accent); margin-left:0.05em;}
+    .lite .wm{color:#141821;}
+
+    .panel{background:var(--s1); border:1px solid var(--border); border-radius:14px;}
+    .hero{display:flex; align-items:center; gap:32px; padding:36px 38px;}
+    .hero .big{width:132px; height:132px; border-radius:20px; background:var(--s2); border:1px solid var(--border); display:grid; place-items:center; flex-shrink:0;}
+    .hero .nm{font-size:30px;} .hero .ds{font-size:13px; color:var(--t3); line-height:1.55; margin-top:8px; max-width:420px;}
+
+    .row{display:grid; grid-template-columns:repeat(auto-fill,minmax(228px,1fr)); gap:16px;}
+    .cell{background:var(--s1); border:1px solid var(--border); border-radius:13px; min-height:128px; display:flex; align-items:center; justify-content:center; gap:13px; padding:24px; position:relative;}
+    .cell .lab{position:absolute; top:10px; left:13px; font-family:var(--mono); font-size:9.5px; text-transform:uppercase; letter-spacing:0.1em; color:var(--t4);}
+    .cell.lite{background:var(--light);}
+    .cell.stacked{flex-direction:column; gap:12px;}
+
+    /* don'ts */
+    .dont .cell{min-height:118px;}
+    .x{position:absolute; top:9px; right:10px; width:20px;height:20px;border-radius:50%;background:rgba(238,90,85,0.15);border:1px solid rgba(238,90,85,0.4);color:#ee5a55;display:grid;place-items:center;font-size:12px;font-weight:700;}
+    .dlabel{font-size:11px;color:var(--t3);margin-top:8px;text-align:center;}
+
+    /* color */
+    .sw{border-radius:12px; overflow:hidden; border:1px solid var(--border);}
+    .sw .chip{height:74px;}
+    .sw .meta{padding:9px 11px; background:var(--s1); display:flex; flex-direction:column; gap:1px;}
+    .sw .nm{font-size:12px; font-weight:600; color:var(--t1);}
+    .sw .hx{font-family:var(--mono); font-size:10.5px; color:var(--t4); text-transform:uppercase;}
+
+    /* type */
+    .type-row{display:flex; align-items:baseline; gap:18px; padding:15px 0; border-bottom:1px solid var(--border);}
+    .type-row:last-child{border-bottom:0;}
+    .type-row .tag{font-family:var(--mono); font-size:10px; color:var(--t4); width:130px; flex-shrink:0; letter-spacing:0.04em;}
+    .mono{font-family:var(--mono);}
+
+    .dotdemo{display:flex; gap:16px; flex-wrap:wrap;}
+    .dotdemo .cell{flex:1; min-width:240px;}
+
+    footer{margin-top:46px; font-size:12px; color:var(--t4); line-height:1.6; border-top:1px solid var(--border); padding-top:20px; max-width:680px;} footer b{color:var(--t3);}
+    code{font-family:var(--mono); font-size:11px; color:var(--t2); background:var(--s3); padding:1px 5px; border-radius:4px;}
+  </style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"Brand Kit - netplex.","url":"https://netplex.io/brand.html","description":"The complete visual system for netplex.: fan-in multiplexer mark, clearspace, colours, typography and the round-dot wordmark.","publisher":{"@type":"Organization","@id":"https://netplex.io/#organization","name":"netplex."}}
+</script>
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+    <symbol id="mux" viewBox="0 0 64 64">
+      <g fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 19 L27 32 M14 32 L27 32 M14 45 L27 32" /><path d="M37 32 L52 32" /><circle cx="32" cy="32" r="5" /></g>
+      <circle cx="14" cy="19" r="3" fill="currentColor" /><circle cx="14" cy="32" r="3" fill="currentColor" /><circle cx="14" cy="45" r="3" fill="currentColor" /><circle cx="52" cy="32" r="3.4" fill="currentColor" />
+    </symbol>
+  </defs></svg>
+
+  <div class="wrap">
+    <div class="kick"><span class="d"></span> netplex · brand kit v1</div>
+    <h1>Brand kit</h1>
+    <p class="lede">The complete visual system for <span class="wm" style="font-size:15px">netplex<span class="dot"></span></span> - built from the fan-in multiplexer mark. Logo, clearspace, colour, type and the round-dot wordmark, all on the product's own tokens.</p>
+
+    <!-- LOGO -->
+    <h2><span class="n">01</span> Logo</h2>
+    <div class="panel hero">
+      <div class="big"><span style="color:var(--accent)"><svg width="106" height="106"><use href="#mux" /></svg></span></div>
+      <div>
+        <span class="wm nm">netplex<span class="dot"></span></span>
+        <div class="ds">Network multiplexing, drawn literally: three streams converge through a node into one channel. Two colours max - netplex orange on ink, or knocked out of orange. Never re-drawn.</div>
+      </div>
+    </div>
+    <div class="row" style="margin-top:16px">
+      <div class="cell"><span class="lab">Horizontal · dark</span><span style="color:var(--accent)"><svg width="34" height="34"><use href="#mux" /></svg></span><span class="wm" style="font-size:26px">netplex<span class="dot"></span></span></div>
+      <div class="cell lite"><span class="lab" style="color:#69707e">Horizontal · light</span><span style="color:#ff6e36"><svg width="34" height="34"><use href="#mux" /></svg></span><span class="wm" style="font-size:26px">netplex<span class="dot"></span></span></div>
+      <div class="cell stacked"><span class="lab">Stacked</span><span style="color:var(--accent)"><svg width="44" height="44"><use href="#mux" /></svg></span><span class="wm" style="font-size:21px">netplex<span class="dot"></span></span></div>
+      <div class="cell"><span class="lab">Icon only</span><span style="color:var(--accent)"><svg width="54" height="54"><use href="#mux" /></svg></span></div>
+    </div>
+
+    <!-- CLEARSPACE / MINSIZE -->
+    <h2><span class="n">02</span> Clearspace &amp; minimum size</h2>
+    <div class="row">
+      <div class="cell" style="min-height:150px"><span class="lab">Clearspace = mark height</span>
+        <span style="position:relative;display:inline-grid;place-items:center;padding:26px;border:1px dashed var(--border2);border-radius:8px"><span style="color:var(--accent)"><svg width="46" height="46"><use href="#mux" /></svg></span></span>
+      </div>
+      <div class="cell" style="gap:22px"><span class="lab">Minimum size</span>
+        <span style="color:var(--accent)"><svg width="20" height="20"><use href="#mux" /></svg></span>
+        <span class="mono" style="font-size:11px;color:var(--t3)">20px mark / 16px icon-tile floor</span>
+      </div>
+    </div>
+
+    <!-- DON'TS -->
+    <h2><span class="n">03</span> Don't</h2>
+    <div class="row dont">
+      <div class="cell"><span class="x">✕</span><span class="lab">recolour</span><span style="color:#10b981"><svg width="42" height="42"><use href="#mux" /></svg></span></div>
+      <div class="cell"><span class="x">✕</span><span class="lab">rotate</span><span style="color:var(--accent);transform:rotate(28deg)"><svg width="42" height="42"><use href="#mux" /></svg></span></div>
+      <div class="cell"><span class="x">✕</span><span class="lab">stretch</span><span style="color:var(--accent);display:inline-block;transform:scaleX(1.7)"><svg width="42" height="42"><use href="#mux" /></svg></span></div>
+      <div class="cell"><span class="x">✕</span><span class="lab">add effects</span><span style="color:var(--accent);filter:drop-shadow(0 0 7px var(--accent))"><svg width="42" height="42"><use href="#mux" /></svg></span></div>
+    </div>
+
+    <!-- APP ICON -->
+    <h2><span class="n">04</span> App icon &amp; favicon</h2>
+    <div class="row" style="margin-bottom:16px">
+      <div class="cell"><span class="lab">Tile · orange</span><span style="color:#1a0b04"><span style="width:70px;height:70px;padding:13px;border-radius:22%;background:var(--accent);display:inline-grid;place-items:center"><svg width="44" height="44"><use href="#mux" /></svg></span></span></div>
+      <div class="cell"><span class="lab">Tile · dark</span><span style="color:#ff6e36"><span style="width:70px;height:70px;padding:13px;border-radius:22%;background:#16181f;border:1px solid #343845;display:inline-grid;place-items:center"><svg width="44" height="44"><use href="#mux" /></svg></span></span></div>
+      <div class="cell" style="gap:20px"><span class="lab">Favicon ramp</span>
+        <span style="color:#1a0b04;display:inline-flex;align-items:flex-end;gap:16px">
+          <span style="width:48px;height:48px;padding:8px;border-radius:22%;background:var(--accent);display:inline-grid;place-items:center"><svg width="32" height="32"><use href="#mux" /></svg></span>
+          <span style="width:32px;height:32px;padding:5px;border-radius:22%;background:var(--accent);display:inline-grid;place-items:center"><svg width="22" height="22"><use href="#mux" /></svg></span>
+          <span style="width:24px;height:24px;padding:4px;border-radius:22%;background:var(--accent);display:inline-grid;place-items:center"><svg width="16" height="16"><use href="#mux" /></svg></span>
+          <span style="width:16px;height:16px;padding:2.5px;border-radius:22%;background:var(--accent);display:inline-grid;place-items:center"><svg width="11" height="11"><use href="#mux" /></svg></span>
+        </span>
+      </div>
+    </div>
+
+    <!-- COLOR -->
+    <h2><span class="n">05</span> Colour</h2>
+    <p class="note">Orange is brand + primary action only - never decoration. Ink &amp; the neutral ramp carry the UI; status and data hues are functional.</p>
+    <div class="row" style="grid-template-columns:repeat(auto-fill,minmax(150px,1fr))">
+      <div class="sw"><div class="chip" style="background:#ff6e36"></div><div class="meta"><span class="nm">Accent</span><span class="hx">#ff6e36</span></div></div>
+      <div class="sw"><div class="chip" style="background:#ff885a"></div><div class="meta"><span class="nm">Accent hover</span><span class="hx">#ff885a</span></div></div>
+      <div class="sw"><div class="chip" style="background:#0a0b0e"></div><div class="meta"><span class="nm">Ink / bg</span><span class="hx">#0a0b0e</span></div></div>
+      <div class="sw"><div class="chip" style="background:#16181f"></div><div class="meta"><span class="nm">Surface</span><span class="hx">#16181f</span></div></div>
+      <div class="sw"><div class="chip" style="background:#f1f2f5"></div><div class="meta"><span class="nm">Text hi</span><span class="hx">#f1f2f5</span></div></div>
+      <div class="sw"><div class="chip" style="background:#868a93"></div><div class="meta"><span class="nm">Text mute</span><span class="hx">#868a93</span></div></div>
+      <div class="sw"><div class="chip" style="background:#41c178"></div><div class="meta"><span class="nm">OK</span><span class="hx">#41c178</span></div></div>
+      <div class="sw"><div class="chip" style="background:#e8b24a"></div><div class="meta"><span class="nm">Warn</span><span class="hx">#e8b24a</span></div></div>
+      <div class="sw"><div class="chip" style="background:#ee5a55"></div><div class="meta"><span class="nm">Error</span><span class="hx">#ee5a55</span></div></div>
+      <div class="sw"><div class="chip" style="background:#5fb7ff"></div><div class="meta"><span class="nm">Info</span><span class="hx">#5fb7ff</span></div></div>
+    </div>
+    <p class="note" style="margin-top:16px">Topology / data hues (node roles &amp; link tiers in the product):</p>
+    <div class="row" style="grid-template-columns:repeat(auto-fill,minmax(120px,1fr))">
+      <div class="sw"><div class="chip" style="background:#3b82f6;height:54px"></div><div class="meta"><span class="hx">#3b82f6</span></div></div>
+      <div class="sw"><div class="chip" style="background:#10b981;height:54px"></div><div class="meta"><span class="hx">#10b981</span></div></div>
+      <div class="sw"><div class="chip" style="background:#f59e0b;height:54px"></div><div class="meta"><span class="hx">#f59e0b</span></div></div>
+      <div class="sw"><div class="chip" style="background:#8b5cf6;height:54px"></div><div class="meta"><span class="hx">#8b5cf6</span></div></div>
+      <div class="sw"><div class="chip" style="background:#06b6d4;height:54px"></div><div class="meta"><span class="hx">#06b6d4</span></div></div>
+      <div class="sw"><div class="chip" style="background:#ec4899;height:54px"></div><div class="meta"><span class="hx">#ec4899</span></div></div>
+    </div>
+
+    <!-- TYPE -->
+    <h2><span class="n">06</span> Typography</h2>
+    <p class="note"><b style="color:var(--t2)">Font policy:</b> <b style="color:var(--t2)">Geist</b> for all UI &amp; chrome, <b style="color:var(--t2)">JetBrains Mono</b> for technical/data, and <b style="color:var(--t2)">Quicksand</b> for the <b style="color:var(--t2)">logo wordmark only</b> - never for body or UI.</p>
+    <div class="panel" style="padding:8px 24px 18px">
+      <div class="type-row"><span class="tag">Quicksand · Wordmark</span><span class="wm" style="font-size:30px">netplex<span class="dot"></span></span></div>
+      <div class="type-row"><span class="tag">Geist · Display 700</span><span style="font-size:30px;font-weight:700;letter-spacing:-0.035em">Spin up real networks</span></div>
+      <div class="type-row"><span class="tag">Geist · Heading 600</span><span style="font-size:20px;font-weight:600;letter-spacing:-0.02em">Topology as code</span></div>
+      <div class="type-row"><span class="tag">Geist · Body 400</span><span style="font-size:14px;color:var(--t2)">Bridge any device into one fabric - virtual and physical, seamlessly unified.</span></div>
+      <div class="type-row"><span class="tag">JetBrains Mono</span><span class="mono" style="font-size:13px;color:var(--t2)">sudo netplex user reset-admin</span></div>
+      <div class="type-row"><span class="tag">Mono · Kicker</span><span class="mono" style="font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--t4)">Network Emulation Platform</span></div>
+    </div>
+
+    <!-- THE DOT -->
+    <h2><span class="n">07</span> The dot - round, never square</h2>
+    <p class="note">Geist's period glyph is squarish. So the wordmark's dot is <b style="color:var(--t2)">not the text character</b> - it's a real circle element, baseline-aligned, sized in <code>em</code> so it scales with the type. In code: <code>&lt;span class="wm"&gt;netplex&lt;span class="dot"&gt;&lt;/span&gt;&lt;/span&gt;</code> with <code>.dot{border-radius:50%}</code>.</p>
+    <div class="dotdemo">
+      <div class="cell"><span class="x">✕</span><span class="lab">text "." (Geist = square)</span><span style="font-size:34px;font-weight:700;letter-spacing:-0.03em">netplex<span style="color:var(--accent)">.</span></span></div>
+      <div class="cell"><span class="lab" style="color:#41c178">round element ✓</span><span class="wm" style="font-size:34px">netplex<span class="dot"></span></span></div>
+    </div>
+
+    <footer>Built from the canonical mark in <b>netplex Logo.html</b> / <code>login-app.jsx</code>. Tokens mirror <b>styles.css</b> so the kit and product never drift. Next: export the mark to <b>SVG / PNG / ICO</b> at all sizes and apply the round-dot wordmark across the login + recovery pages.</footer>
+  </div>
+</body>
+</html>
