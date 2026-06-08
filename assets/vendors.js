@@ -8,34 +8,56 @@
 
   // nm = display label · slug = local icons/{slug}/logo.svg · mg = monogram fallback
   var VENDORS = [
+    // ── Network & Security ──
     { nm: 'Cisco',        slug: 'cisco',            mg: 'CI' },
-    { nm: 'Ubuntu',       slug: 'ubuntu',           mg: 'UB' },
-    { nm: 'Fortinet',     slug: 'fortinet',         mg: 'FT' },
-    { nm: 'Debian',       slug: 'debian',           mg: 'DB' },
-    { nm: 'Palo Alto',    slug: 'paloaltonetworks', mg: 'PA' },
-    { nm: 'Fedora',       slug: 'fedora',           mg: 'FD' },
-    { nm: 'Arista',       slug: 'arista',           mg: 'AR' },
-    { nm: 'Red Hat',      slug: 'redhat',           mg: 'RH' },
-    { nm: 'Nokia',        slug: 'nokia',            mg: 'NK' },
-    { nm: 'Alpine Linux', slug: 'alpinelinux',      mg: 'AL' },
     { nm: 'Juniper',      slug: 'junipernetworks',  mg: 'JN' },
-    { nm: 'Arch Linux',   slug: 'archlinux',        mg: 'AC' },
+    { nm: 'Fortinet',     slug: 'fortinet',         mg: 'FT' },
+    { nm: 'Palo Alto',    slug: 'paloaltonetworks', mg: 'PA' },
+    { nm: 'Arista',       slug: 'arista',           mg: 'AR' },
+    { nm: 'Nokia',        slug: 'nokia',            mg: 'NK' },
     { nm: 'Huawei',       slug: 'huawei',           mg: 'HW' },
-    { nm: 'Kali Linux',   slug: 'kalilinux',        mg: 'KL' },
     { nm: 'MikroTik',     slug: 'mikrotik',         mg: 'MT' },
-    { nm: 'Rocky Linux',  slug: 'rockylinux',       mg: 'RL' },
     { nm: 'Aruba',        slug: 'aruba',            mg: 'AU' },
-    { nm: 'AlmaLinux',    slug: 'almalinux',        mg: 'AM' },
     { nm: 'Check Point',  slug: 'checkpoint',       mg: 'CP' },
-    { nm: 'NixOS',        slug: 'nixos',            mg: 'NX' },
     { nm: 'F5',           slug: 'f5',               mg: 'F5' },
-    { nm: 'Manjaro',      slug: 'manjaro',          mg: 'MJ' },
     { nm: 'VyOS',         slug: 'vyos',             mg: 'VY' },
-    { nm: 'openSUSE',     slug: 'opensuse',         mg: 'OS' },
     { nm: 'OPNsense',     slug: 'opnsense',         mg: 'OP' },
+    // ── Linux Distributions ──
+    { nm: 'Ubuntu',       slug: 'ubuntu',           mg: 'UB' },
+    { nm: 'Debian',       slug: 'debian',           mg: 'DB' },
+    { nm: 'Fedora',       slug: 'fedora',           mg: 'FD' },
+    { nm: 'Red Hat',      slug: 'redhat',           mg: 'RH' },
+    { nm: 'Alpine Linux', slug: 'alpinelinux',      mg: 'AL' },
+    { nm: 'Arch Linux',   slug: 'archlinux',        mg: 'AC' },
     { nm: 'CentOS',       slug: 'centos',           mg: 'CE' },
+    { nm: 'Kali Linux',   slug: 'kalilinux',        mg: 'KL' },
+    { nm: 'Rocky Linux',  slug: 'rockylinux',       mg: 'RL' },
+    { nm: 'AlmaLinux',    slug: 'almalinux',        mg: 'AM' },
+    { nm: 'NixOS',        slug: 'nixos',            mg: 'NX' },
+    { nm: 'Manjaro',      slug: 'manjaro',          mg: 'MJ' },
+    { nm: 'openSUSE',     slug: 'opensuse',         mg: 'OS' },
     { nm: 'Linux Mint',   slug: 'linuxmint',        mg: 'LM' },
     { nm: 'Gentoo',       slug: 'gentoo',           mg: 'GT' },
+    // ── DevOps & Automation ──
+    { nm: 'Docker',       slug: 'docker',           mg: 'DO' },
+    { nm: 'Kubernetes',   slug: 'kubernetes',       mg: 'K8' },
+    { nm: 'Ansible',      slug: 'ansible',          mg: 'AN' },
+    { nm: 'Terraform',    slug: 'terraform',        mg: 'TF' },
+    { nm: 'Helm',         slug: 'helm',             mg: 'HM' },
+    { nm: 'Prometheus',   slug: 'prometheus',       mg: 'PR' },
+    { nm: 'Grafana',      slug: 'grafana',          mg: 'GR' },
+    { nm: 'Git',          slug: 'git',              mg: 'GT' },
+    { nm: 'Nginx',        slug: 'nginx',            mg: 'NX' },
+    { nm: 'Proxmox',      slug: 'proxmox',          mg: 'PX' },
+    // ── Languages & Databases ──
+    { nm: 'Python',       slug: 'python',           mg: 'PY' },
+    { nm: 'Ruby',         slug: 'ruby',             mg: 'RB' },
+    { nm: 'Go',           slug: 'go',               mg: 'GO' },
+    { nm: 'JavaScript',   slug: 'javascript',       mg: 'JS' },
+    { nm: 'TypeScript',   slug: 'typescript',       mg: 'TS' },
+    { nm: 'PostgreSQL',   slug: 'postgresql',       mg: 'PG' },
+    { nm: 'MySQL',        slug: 'mysql',            mg: 'MY' },
+    { nm: 'Redis',        slug: 'redis',            mg: 'RD' },
   ];
 
   function _monogram(v) {
@@ -46,7 +68,7 @@
     return '<div class="vchip" title="' + v.nm + '"' +
       (ariaHidden ? ' aria-hidden="true"' : '') + '>' +
       '<span class="vlogo" data-i="' + idx + '">' +
-        '<img src="icons/' + v.slug + '/logo.svg" alt="' + v.nm + '" loading="lazy">' +
+        '<img src="icons/' + v.slug + '/logo.svg" alt="' + v.nm + '">' +
       '</span>' +
     '</div>';
   }
@@ -66,9 +88,10 @@
       function ok() { done = true; }
       img.addEventListener('error', fail);
       img.addEventListener('load',  ok);
-      // SVGs report naturalWidth=0 even on success — treat complete as loaded
+      // SVGs without explicit width/height always report naturalWidth=0;
+      // treat img.complete as successful load (error handler covers failures).
       if (img.complete) ok();
-      setTimeout(function () { if (!done) fail(); }, 5000);
+      setTimeout(function () { if (!done) fail(); }, 6000);
     });
   }
 
@@ -80,7 +103,7 @@
     var top = list.filter(function (_, i) { return i % 2 === 0; });
     var bot = list.filter(function (_, i) { return i % 2 !== 0; });
 
-    // Render each set twice for seamless CSS loop (track is 2× wide, animation drives -50% → 0)
+    // Render each set twice for seamless CSS loop (track = 2× wide, -50% loops back)
     function buildRow(set) {
       var first  = set.map(function (v) { return _tile(v, list.indexOf(v), false); }).join('');
       var second = set.map(function (v) { return _tile(v, list.indexOf(v), true);  }).join('');

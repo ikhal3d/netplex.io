@@ -1,3 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-  <text x="12" y="16" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="currentColor">A</text>
+  <rect width="24" height="24" rx="3" fill="#FF671F"/>
+  <g fill="#ffffff">
+    <circle cx="12" cy="7" r="2.2"/>
+    <path d="M7.5 17.5c0-2.485 2.015-4.5 4.5-4.5s4.5 2.015 4.5 4.5" stroke="#ffffff" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+    <path d="M5 17.5c0-3.866 3.134-7 7-7s7 3.134 7 7" stroke="#ffffff" stroke-width="1.8" fill="none" stroke-linecap="round" opacity="0.6"/>
+  </g>
 </svg>
