@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Pricing - netplex. · Community free, Pro $199/yr, Enterprise</title>
-<meta name="description" content="Five tiers from free to Enterprise. Community free forever. Pro gives you 1,000 nodes and the full automation toolbox for $9.99/mo - less than EVE-NG Pro." />
+<title>Pricing - netplex. · Free for Australian schools · Community free, Pro $199/yr</title>
+<meta name="description" content="netplex. is completely free for every Australian school — software installed on your server, teachers trained at no cost. Community free forever. Pro from $9.99/mo." />
 <meta name="keywords" content="netplex pricing, network lab cost, free network emulation, EVE-NG pricing comparison, network lab subscription" />
 <link rel="icon" href="assets/favicon.svg" />
 <link rel="canonical" href="https://netplex.io/pricing.html" />
@@ -48,7 +48,7 @@
   @media (max-width: 760px){ .faq { grid-template-columns: 1fr; } .matrix { font-size: 12px; } .matrix th, .matrix td { padding: 9px 6px; } }
 </style>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareApplication","name":"netplex.","applicationCategory":"NetworkingApplication","operatingSystem":"Linux","url":"https://netplex.io","offers":[{"@type":"Offer","name":"Community","price":"0","priceCurrency":"USD","description":"Free forever - 20 nodes per lab"},{"@type":"Offer","name":"Plus","price":"9.99","priceCurrency":"USD","description":"50 nodes, snapshots, bandwidth controls"},{"@type":"Offer","name":"Pro","price":"19.99","priceCurrency":"USD","description":"1,000 nodes, full automation toolbox, API, git backup"},{"@type":"Offer","name":"Classroom","price":"49.99","priceCurrency":"USD","description":"Instructor-led labs, up to 50 student pods per instructor"},{"@type":"Offer","name":"Enterprise","description":"Contact for pricing - subscription or perpetual licence"}]}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"netplex.","applicationCategory":"NetworkingApplication","operatingSystem":"Linux","url":"https://netplex.io","offers":[{"@type":"Offer","name":"Community","price":"0","priceCurrency":"AUD","description":"Free forever - 20 nodes per lab"},{"@type":"Offer","name":"Plus","price":"9.99","priceCurrency":"AUD","description":"50 nodes, snapshots, bandwidth controls"},{"@type":"Offer","name":"Pro","price":"19.99","priceCurrency":"AUD","description":"1,000 nodes, full automation toolbox, API, git backup"},{"@type":"Offer","name":"Australian Schools","price":"0","priceCurrency":"AUD","description":"Completely free for every Australian school — software installed on your server, teachers trained at no cost"},{"@type":"Offer","name":"Enterprise","description":"Contact for pricing - subscription or perpetual licence"}]}
 </script>
 </head>
 <body>
@@ -82,6 +82,10 @@
   <span class="eyebrow" style="display:block;margin-bottom:14px">Pricing</span>
   <h1>Start free. <span class="accent">Pay when you scale.</span></h1>
   <p class="lede">No artificial cripple-ware - the product is great at every tier. Pro is a single seat with the complete automation toolbox. Enterprise adds the organisational layer.</p>
+  <div style="margin-top:22px;display:inline-flex;align-items:center;gap:12px;background:color-mix(in srgb,var(--ok) 10%,var(--surface-1));border:1px solid color-mix(in srgb,var(--ok) 35%,transparent);border-radius:var(--r-4);padding:12px 20px;max-width:600px;text-align:left;flex-wrap:wrap">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--ok)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+    <span style="font-size:14.5px;color:var(--text-2);line-height:1.5"><strong style="color:var(--ok)">Free for every Australian school.</strong> netplex. installs the software on your school's server and trains your teachers — completely at no cost. <a href="edu/" style="color:var(--accent);white-space:nowrap">Learn more →</a></span>
+  </div>
   <div class="bill-toggle">
     <button id="billMonthly" class="on">Monthly</button>
     <button id="billAnnual">Annual</button>
@@ -137,18 +141,20 @@
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>MicroVM (Kata / Firecracker)</li>
         </ul>
       </div>
-      <!-- CLASSROOM -->
-      <div class="tier">
-        <div class="nm">Classroom</div>
-        <div class="pricing-row"><span class="price price-val" data-m="$49.99" data-a="$449">$49.99</span><span class="suf" data-ms="/inst." data-as="/inst.">/inst.</span></div>
-        <div class="save-note" data-m="$9 / student / year at 50" data-a="$449/yr · $9 per student">$9 / student / year at 50</div>
-        <div class="desc">Instructors &amp; training centres.</div>
-        <a href="contact.html" class="btn btn-outline" style="width:100%;justify-content:center;margin-bottom:6px">Talk to us</a>
+      <!-- AUSTRALIAN SCHOOLS -->
+      <div class="tier" style="border-color:color-mix(in srgb,var(--ok) 40%,transparent);background:color-mix(in srgb,var(--ok) 5%,var(--surface-1))">
+        <div class="tier-badge" style="background:var(--ok);color:#fff">Australian Schools</div>
+        <div class="nm">Schools <span style="font-size:11px;color:var(--ok);font-weight:600">AU</span></div>
+        <div class="pricing-row"><span class="price" style="color:var(--ok)">$0</span></div>
+        <div class="save-note" style="color:var(--ok);font-weight:700">Free for every school, forever</div>
+        <div class="desc">Every Australian school — primary, secondary, TAFE.</div>
+        <a href="edu/" class="btn btn-outline" style="width:100%;justify-content:center;margin-bottom:6px;border-color:var(--ok);color:var(--ok)">Get started free</a>
         <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Everything in Pro</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>1 lab per student pod (isolated)</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Roster management</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Freeze · reset · grade</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--ok)" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Full classroom platform included</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--ok)" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>We install on your school's server</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--ok)" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>We train your teachers</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--ok)" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Isolated student pods · grade &amp; freeze</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--ok)" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Priority school support</li>
         </ul>
       </div>
       <!-- ENTERPRISE -->
@@ -167,17 +173,25 @@
       </div>
     </div>
 
-    <div class="card" style="margin-top:22px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;border-color:var(--accent-line);background:var(--accent-soft)">
+    <div class="card" style="margin-top:22px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;border-color:color-mix(in srgb,var(--ok) 40%,transparent);background:color-mix(in srgb,var(--ok) 6%,var(--surface-1))">
+      <div style="flex:1;min-width:280px">
+        <h3 style="font-size:18px;margin-bottom:6px;color:var(--ok)">Free for every Australian school.</h3>
+        <p style="color:var(--text-3);font-size:14.5px;margin:0">netplex. is <strong style="color:var(--text-1)">proud to give every school in Australia the full platform at no cost</strong>. We install the software on your school's server and train your teachers — free of charge. Email us or <a href="edu/" style="color:var(--accent)">visit the EDU page</a> to get started.</p>
+      </div>
+      <a href="mailto:edu@netplex.io" class="btn btn-primary" style="background:var(--ok);border-color:var(--ok)">Contact our schools team</a>
+    </div>
+
+    <div class="card" style="margin-top:14px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;border-color:var(--accent-line);background:var(--accent-soft)">
       <div style="flex:1;min-width:280px">
         <h3 style="font-size:18px;margin-bottom:6px">Switching from EVE-NG, PNETLAB or GNS3?</h3>
-        <p style="color:var(--text-3);font-size:14.5px;margin:0">EVE-NG Pro is <strong style="color:var(--text-1)">~$160/year, MAC-locked, no snapshots, no git backup, no API</strong>. netplex. Pro is $199/year, runs anywhere, and has all of it. Import your <span class="mono" style="color:var(--text-1)">.unl</span> in 30 seconds. Students are <strong style="color:var(--text-1)">free</strong> with a verified school email.</p>
+        <p style="color:var(--text-3);font-size:14.5px;margin:0">EVE-NG Pro is <strong style="color:var(--text-1)">~$160/year, MAC-locked, no snapshots, no git backup, no API</strong>. netplex. Pro is $199/year, runs anywhere, and has all of it. Import your <span class="mono" style="color:var(--text-1)">.unl</span> in 30 seconds.</p>
       </div>
       <a href="download.html" class="btn btn-primary">Import your lab</a>
     </div>
 
     <div class="au-strip" style="margin-top:18px">
       <span class="au-badge"><span class="cross"><i></i><i></i><i></i><i style="margin-left:1px"></i></span> Proudly Australian</span>
-      <span>Enterprise anchors: <strong style="color:var(--text-2)">$4,999</strong> (≤ 5 instructors / 50 users) · <strong style="color:var(--text-2)">$9,999</strong> (≤ 20 / 200) · custom above.</span>
+      <span>Australian schools: <strong style="color:var(--ok)">100% free</strong> — install + teacher training included · Enterprise anchors: <strong style="color:var(--text-2)">$4,999</strong> (≤ 5 instructors / 50 users) · <strong style="color:var(--text-2)">$9,999</strong> (≤ 20 / 200) · custom above.</span>
     </div>
   </div>
 </section>
@@ -188,7 +202,7 @@
     <h2 class="sec" style="font-size:30px">Every feature, side by side.</h2>
     <div style="overflow-x:auto">
     <table class="matrix">
-      <thead><tr><th>&nbsp;</th><th>Community</th><th>Plus</th><th>Pro</th><th>Classroom</th><th class="us">Enterprise</th></tr></thead>
+      <thead><tr><th>&nbsp;</th><th>Community</th><th>Plus</th><th>Pro</th><th style="color:var(--ok)">Schools AU</th><th class="us">Enterprise</th></tr></thead>
       <tbody>
         <tr class="grp"><td colspan="6">Scale</td></tr>
         <tr><td>Nodes per lab</td><td class="mono">20</td><td class="mono">50</td><td class="mono">1,000</td><td class="mono">1,000</td><td class="mono col-us">∞</td></tr>
@@ -207,8 +221,8 @@
         <tr><td>SSO · multi-tenant · audit log</td><td class="x">-</td><td class="x">-</td><td class="x">-</td><td class="x">-</td><td class="ck col-us">✓</td></tr>
         <tr><td>Compute cluster</td><td class="x">-</td><td class="x">-</td><td class="x">-</td><td class="x">-</td><td class="ck col-us">✓</td></tr>
         <tr class="grp"><td colspan="6">Licence &amp; support</td></tr>
-        <tr><td>Licence model</td><td class="mono">Free</td><td class="mono">Sub</td><td class="mono">Sub</td><td class="mono">Sub</td><td class="mono col-us">Sub or perpetual</td></tr>
-        <tr><td>Support channel</td><td class="mono">Forums</td><td class="mono">Forums</td><td class="mono">Email</td><td class="mono">Priority</td><td class="mono col-us">SLA + contact</td></tr>
+        <tr><td>Licence model</td><td class="mono">Free</td><td class="mono">Sub</td><td class="mono">Sub</td><td class="mono" style="color:var(--ok);font-weight:700">Free (AU schools)</td><td class="mono col-us">Sub or perpetual</td></tr>
+        <tr><td>Support channel</td><td class="mono">Forums</td><td class="mono">Forums</td><td class="mono">Email</td><td class="mono">Priority schools</td><td class="mono col-us">SLA + contact</td></tr>
       </tbody>
     </table>
     </div>
@@ -221,11 +235,11 @@
     <span class="eyebrow sec-eyebrow">Questions</span>
     <h2 class="sec" style="font-size:30px">Pricing, answered.</h2>
     <div class="faq">
+      <div><h3 style="color:var(--ok)">Is it really free for Australian schools?</h3><p>Yes — completely. netplex. is free for every school across Australia: primary, secondary, and TAFE. We install the software on your school's server and personally train your teachers, all at no cost. Email <a href="mailto:edu@netplex.io" style="color:var(--accent)">edu@netplex.io</a> to get started.</p></div>
       <div><h3>Why pay when EVE-NG has a free Community?</h3><p>You don't have to - netplex. Community is also free, and already better. You pay for what EVE-NG can't sell you: snapshots, git auto-backup, Terraform, Ansible, QoS simulation and cloud templates.</p></div>
       <div><h3>Is the Community tier time-limited?</h3><p>No - free is free forever. 20 nodes and a live lab is a genuinely useful ceiling for routing &amp; switching certification study.</p></div>
       <div><h3>What does Pro hold back?</h3><p>Nothing. Pro is a single-seat licence, so there's no reason to cripple it - you get the complete automation toolbox. Enterprise adds the organisational layer (SSO, multi-tenant, audit, cluster).</p></div>
       <div><h3>Why is there a 10 Mbps cap on Community?</h3><p>It's intentional, gentle friction. Routing and switching study doesn't need throughput; serious QoS or WAN simulation does - and that's a Plus/Pro conversation.</p></div>
-      <div><h3>How does Classroom maths work?</h3><p>$449/year ÷ 50 students = $9/student/year - one training-budget line item, cheaper than a single EVE-NG Pro licence for the whole class.</p></div>
       <div><h3>Will a licence blip lock my running lab?</h3><p>No. Enterprise uses MAC + TPM fingerprinting with a 30-day grace period on hardware migration. Reliability beats DRM zeal.</p></div>
     </div>
   </div>
