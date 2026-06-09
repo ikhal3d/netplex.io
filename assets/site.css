@@ -210,24 +210,24 @@
   position: fixed;
   top: 0;
   right: 0;
-  width: 160px;
-  height: 112px;
+  width: 200px;
+  height: 200px;
   overflow: hidden;
   z-index: 9999;
   pointer-events: none;
   user-select: none;
-  font-size: 0; /* hide the text node; content comes from ::before */
+  font-size: 0;
 }
 .beta-ribbon::before {
   content: 'BETA';
   position: absolute;
-  top: 24px;
-  right: -42px;
-  width: 190px;
+  top: 79px;
+  right: -30px;
+  width: 260px;
   background: var(--accent);
   color: var(--accent-ink);
   font-family: var(--font-mono);
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 800;
   letter-spacing: 0.32em;
   text-align: center;
