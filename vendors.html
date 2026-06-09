@@ -1,96 +1,86 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Supported Vendors — netplex.</title>
-  <meta name="description" content="Full list of network vendors, appliances, and Linux distributions supported by netplex.">
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="assets/pages.css">
-  <link rel="stylesheet" href="assets/vendors-page.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Supported Vendors - netplex.</title>
+<meta name="description" content="Full list of network vendors, appliances, and Linux distributions supported by netplex." />
+<link rel="icon" href="assets/favicon.svg" />
+<link rel="canonical" href="https://netplex.io/vendors.html" />
+<meta name="robots" content="index, follow" />
+<link rel="stylesheet" href="assets/site.css?v=2" />
+<link rel="stylesheet" href="assets/landing.css" />
+<link rel="stylesheet" href="assets/pages.css" />
+<link rel="stylesheet" href="assets/vendors-page.css" />
+<script>(function(){try{var t=localStorage.getItem('netplex.theme');var a=localStorage.getItem('netplex.accent');if(t&&t!=='midnight')document.documentElement.dataset.theme=t;if(a&&a!=='orange')document.documentElement.dataset.accent=a;}catch(e){}})();</script>
 </head>
 <body>
+<div class="gridbg"></div>
+<div class="beta-ribbon">BETA</div>
+<div class="content">
 
-<header class="site-header">
-  <nav class="nav container">
-    <a class="nav-brand" href="/">
-      <img src="favicon.svg" alt="" width="28" height="28" aria-hidden="true">
-      <span class="nav-wordmark">netplex<span class="accent-dot">.</span></span>
-    </a>
-    <div class="nav-links">
-      <a href="/">Home</a>
-      <a href="/#features">Features</a>
-      <a href="https://docs.netplex.io">Docs</a>
+<nav class="nav">
+  <div class="wrap">
+    <a href="index.html" class="brand"><span class="mark"><svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><g stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 19 L27 32 M14 32 L27 32 M14 45 L27 32"/><path d="M37 32 L52 32"/><circle cx="32" cy="32" r="5"/></g><circle cx="14" cy="19" r="3" fill="currentColor"/><circle cx="14" cy="32" r="3" fill="currentColor"/><circle cx="14" cy="45" r="3" fill="currentColor"/><circle cx="52" cy="32" r="3.4" fill="currentColor"/></svg></span><span class="wm">netplex<span class="dotmark">.</span></span><span class="ver">v1.0</span></a>
+    <div class="navlinks">
+      <a href="product.html">Product</a>
+      <a href="download.html">Download</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="kb.html">Knowledge Base</a>
+      <a href="forums.html">Forums</a>
+      <a href="roadmap.html">Roadmap</a>
+      <a href="edu/">Education</a>
+      <a href="support.html">Support</a>
     </div>
-    <div class="nav-actions">
-      <div class="theme-switcher" role="group" aria-label="Color theme">
-        <button class="theme-btn" data-theme-val="dark"  title="Dark theme">&#9679;</button>
-        <button class="theme-btn" data-theme-val="cloud" title="Cloud theme">&#9681;</button>
-        <button class="theme-btn" data-theme-val="paper" title="Paper theme">&#9675;</button>
+    <div class="navactions">
+      <a href="#" class="btn btn-ghost" data-ext>Sign in</a>
+      <button class="ap-trigger" data-appearance-trigger aria-label="Appearance" title="Appearance"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996C20.146 15.21 22 13.36 22 11.04 22 6.038 17.5 2 12 2z"/></svg></button>
+      <a href="download.html" class="btn btn-primary">Get netplex.</a>
+      <button class="menu-toggle" aria-label="Menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    </div>
+  </div>
+</nav>
+
+<div class="page-shell">
+  <div class="wrap">
+    <p class="eyebrow">Ecosystem</p>
+    <h1>Supported vendors <span class="accent">&amp; platforms</span></h1>
+    <p class="page-lead" style="max-width:600px;color:var(--text-2);margin-bottom:48px">Run real vendor NOS images in your browser. netplex. handles image conversion, permission fixing, and boot verification automatically.</p>
+
+    <h2 class="section-label" style="font-size:13px;font-family:var(--font-mono);letter-spacing:0.08em;text-transform:uppercase;color:var(--text-4);margin-bottom:20px">Network &amp; Security</h2>
+    <div class="vendor-wall" id="vendorWallNetwork" aria-label="Network and security vendors"></div>
+
+    <h2 class="section-label" style="font-size:13px;font-family:var(--font-mono);letter-spacing:0.08em;text-transform:uppercase;color:var(--text-4);margin:40px 0 20px">Linux Distributions</h2>
+    <div class="vendor-wall" id="vendorWallLinux" aria-label="Linux distributions"></div>
+
+    <p style="font-size:13px;color:var(--text-4);margin-top:32px;max-width:600px">Bring your own licensed NOS images — netplex. handles format conversion, permission fixes, and boot verification automatically. Supports .qcow2, .vmdk, .ova, .raw, .iso and Docker images.</p>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="index.html" class="brand"><span class="mark"><svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><g stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 19 L27 32 M14 32 L27 32 M14 45 L27 32"/><path d="M37 32 L52 32"/><circle cx="32" cy="32" r="5"/></g><circle cx="14" cy="19" r="3" fill="currentColor"/><circle cx="14" cy="32" r="3" fill="currentColor"/><circle cx="14" cy="45" r="3" fill="currentColor"/><circle cx="52" cy="32" r="3.4" fill="currentColor"/></svg></span><span class="wm">netplex<span class="dotmark">.</span></span></a>
+        <p>The modern network lab - a distributed digital twin, execution and automation platform. Emulate. Automate. Ship.</p>
+        <span class="au-badge" style="margin-top:16px"><span class="cross"><i></i><i></i><i></i><i style="margin-left:1px"></i></span> Made in Australia</span>
       </div>
-      <a class="btn btn--primary" href="https://netplex.io">Get started</a>
+      <div class="foot-col"><h4>Product</h4><a href="product.html">Features</a><a href="download.html">Download</a><a href="pricing.html">Pricing</a><a href="roadmap.html">Roadmap</a><a href="edu/">Education</a></div>
+      <div class="foot-col"><h4>Resources</h4><a href="kb.html">Knowledge Base</a><a href="faq.html">FAQ</a><a href="forums.html">Forums</a><a href="support.html">Support</a></div>
+      <div class="foot-col"><h4>Company</h4><a href="about.html">About</a><a href="contact.html">Contact</a><a href="brand.html">Brand kit</a></div>
+      <div class="foot-col"><h4>Legal</h4><a href="legal.html#privacy">Privacy</a><a href="legal.html#terms">Terms</a><a href="legal.html#disclaimer">Disclaimer</a></div>
     </div>
-  </nav>
-</header>
-
-<main>
-  <section class="section vendor-listing-section">
-    <div class="container">
-      <p class="eyebrow">Ecosystem</p>
-      <h1 class="section-title">Supported vendors &amp; platforms</h1>
-      <p class="page-lead">
-        Run real vendor NOS images in your browser. netplex. handles image conversion,
-        permission fixing, and boot verification automatically.
-      </p>
-
-      <h2 class="vgroup-title">Network &amp; Security</h2>
-      <div class="vendor-wall" id="vendorWallNetwork" aria-label="Network and security vendors"></div>
-
-      <h2 class="vgroup-title">Linux Distributions</h2>
-      <div class="vendor-wall" id="vendorWallLinux" aria-label="Linux distributions"></div>
-
-      <p class="vendor-note">
-        Bring your own licensed NOS images — netplex. handles format conversion,
-        permission fixes, and boot verification automatically.
-        Supports .qcow2, .vmdk, .ova, .raw, .iso and Docker images.
-      </p>
-    </div>
-  </section>
-</main>
-
-<footer class="site-footer">
-  <div class="container footer-inner">
-    <div class="footer-brand">
-      <img src="favicon.svg" alt="" width="20" height="20" aria-hidden="true">
-      <span class="nav-wordmark">netplex<span class="accent-dot">.</span></span>
-    </div>
-    <p class="footer-copy">&copy; 2026 netplex. · IONET PTY LTD</p>
-    <div class="footer-links">
-      <a href="/">Home</a>
-      <a href="https://docs.netplex.io">Docs</a>
-      <a href="https://github.com/ikhal3d/netplex">GitHub</a>
+    <div class="foot-bottom">
+      <span>© 2026 netplex. · IONET PTY LTD</span>
+      <span class="mono">v1.0 · built for engineers</span>
     </div>
   </div>
 </footer>
 
+</div>
 <script src="assets/vendors.js"></script>
 <script src="assets/vendors-page.js"></script>
-<script>
-(function () {
-  var root = document.documentElement;
-  var btns = document.querySelectorAll('.theme-btn');
-  function setTheme(t) {
-    root.dataset.theme = t;
-    btns.forEach(function (b) {
-      b.classList.toggle('active', b.dataset.themeVal === t);
-    });
-  }
-  btns.forEach(function (b) {
-    b.addEventListener('click', function () { setTheme(b.dataset.themeVal); });
-  });
-  setTheme(root.dataset.theme || 'dark');
-}());
-</script>
-
+<script src="assets/appearance.js"></script>
+<script src="assets/nav.js" defer></script>
 </body>
 </html>
