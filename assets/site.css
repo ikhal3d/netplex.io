@@ -205,25 +205,36 @@
 }
 
 /* ── BETA RIBBON ───────────────────────────────────────── */
+/* Wrapper clips the stripe to a clean corner triangle     */
 .beta-ribbon {
   position: fixed;
-  top: 54px;
-  right: -52px;
-  width: 210px;
-  background: var(--accent);
-  color: var(--accent-ink);
-  text-align: center;
-  font-family: var(--font-mono);
-  font-size: 15px;
-  font-weight: 800;
-  letter-spacing: 0.32em;
-  padding: 11px 0 10px;
-  transform: rotate(45deg);
+  top: 0;
+  right: 0;
+  width: 160px;
+  height: 160px;
+  overflow: hidden;
   z-index: 9999;
-  box-shadow: 0 3px 16px rgba(0,0,0,0.55), 0 1px 0 rgba(255,255,255,0.08) inset;
   pointer-events: none;
   user-select: none;
+  font-size: 0; /* hide the text node; content comes from ::before */
+}
+.beta-ribbon::before {
+  content: 'BETA';
+  position: absolute;
+  top: 36px;
+  right: -42px;
+  width: 190px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.32em;
+  text-align: center;
   text-transform: uppercase;
+  padding: 11px 0 10px;
+  transform: rotate(45deg);
+  box-shadow: 0 3px 14px rgba(0,0,0,0.55), 0 1px 0 rgba(255,255,255,0.08) inset;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
