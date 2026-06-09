@@ -209,8 +209,8 @@
 /* viewport edges hide them, only the diagonal shows.      */
 .beta-ribbon {
   position: fixed;
-  top: 60px;
-  right: -105px;
+  top: 18px;
+  right: -148px;
   width: 350px;
   background: var(--accent);
   color: var(--accent-ink);
@@ -402,6 +402,7 @@ footer { border-top: 1px solid var(--border-soft); padding: 60px 0 40px; positio
   .menu-toggle { display: inline-flex; }
   h2.sec { font-size: 32px; }
   .foot-grid { grid-template-columns: 1fr 1fr; }
+  .beta-ribbon { width: 220px; font-size: 11px; padding: 10px 0 9px; top: 10px; right: -96px; }
 }
 @media (max-width: 640px) {
   section { padding: 60px 0; }
