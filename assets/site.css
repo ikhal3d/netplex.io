@@ -205,25 +205,13 @@
 }
 
 /* ── BETA RIBBON ───────────────────────────────────────── */
-/* Wrapper clips the stripe to a clean corner triangle     */
+/* Wide enough that all 4 corners fall off-screen —        */
+/* viewport edges hide them, only the diagonal shows.      */
 .beta-ribbon {
   position: fixed;
-  top: 0;
-  right: 0;
-  width: 200px;
-  height: 200px;
-  overflow: hidden;
-  z-index: 9999;
-  pointer-events: none;
-  user-select: none;
-  font-size: 0;
-}
-.beta-ribbon::before {
-  content: 'BETA';
-  position: absolute;
-  top: 79px;
-  right: -30px;
-  width: 260px;
+  top: 60px;
+  right: -105px;
+  width: 350px;
   background: var(--accent);
   color: var(--accent-ink);
   font-family: var(--font-mono);
@@ -232,9 +220,12 @@
   letter-spacing: 0.32em;
   text-align: center;
   text-transform: uppercase;
-  padding: 11px 0 10px;
+  padding: 16px 0 15px;
   transform: rotate(45deg);
-  box-shadow: 0 3px 14px rgba(0,0,0,0.55), 0 1px 0 rgba(255,255,255,0.08) inset;
+  z-index: 9999;
+  pointer-events: none;
+  user-select: none;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.6), 0 1px 0 rgba(255,255,255,0.1) inset;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
