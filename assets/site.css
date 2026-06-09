@@ -310,8 +310,8 @@ img { max-width: 100%; display: block; }
   border-radius: 999px; padding: 6px 13px;
 }
 .pill .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--ok); box-shadow: 0 0 8px var(--ok); flex-shrink: 0; }
-.pill.accent { color: var(--accent-2); background: var(--accent-soft); border-color: var(--accent-line); }
-.pill.accent .dot { background: var(--accent); box-shadow: 0 0 8px var(--accent); }
+.pill.accent { color: #fff; background: var(--accent); border-color: var(--accent); font-weight: 600; }
+.pill.accent .dot { background: #fff; box-shadow: 0 0 8px rgba(255,255,255,0.5); }
 .pill.solid { color: #fff; background: var(--accent); border-color: var(--accent); font-weight: 600; }
 .pill.solid .dot { background: #fff; box-shadow: 0 0 8px rgba(255,255,255,0.5); }
 .pill.ok { color: #fff; background: var(--ok); border-color: var(--ok); font-weight: 600; }
