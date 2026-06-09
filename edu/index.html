@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>netplex. EDU — One platform to teach every digital skill</title>
+<meta name="description" content="Give every student a real engineering sandbox in their browser. Teach networking, coding and web design. Free for schools — 30 student seats per voucher, zero installs." />
+<meta name="keywords" content="network emulation education, coding classroom, netplex education, school network lab, browser-based lab, student sandbox, remote exam, assignment platform" />
+<link rel="icon" href="../assets/favicon.svg" />
+<link rel="canonical" href="https://netplex.io/edu" />
+<meta name="robots" content="index, follow" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="netplex." />
+<meta property="og:title" content="netplex. EDU — One platform to teach every digital skill" />
+<meta property="og:description" content="Real networks, real code, real student projects. Free for schools — 30 seats, 70+ vendors, zero installs." />
+<meta property="og:image" content="https://netplex.io/assets/og.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:url" content="https://netplex.io/edu" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="netplex. EDU — One platform to teach every digital skill" />
+<meta name="twitter:description" content="Real networks, real code, real student projects. Free for schools — 30 seats, 70+ vendors, zero installs." />
+<meta name="twitter:image" content="https://netplex.io/assets/og.png" />
+<link rel="stylesheet" href="../assets/site.css" />
+<link rel="stylesheet" href="../assets/landing.css" />
+<link rel="stylesheet" href="../assets/pages.css" />
+<script>(function(){try{var t=localStorage.getItem('netplex.theme');var a=localStorage.getItem('netplex.accent');if(t&&t!=='midnight')document.documentElement.dataset.theme=t;if(a&&a!=='orange')document.documentElement.dataset.accent=a;}catch(e){}})();</script>
+<style>
+/* ── EDU page-local styles ────────────────────────────────── */
+
+/* Hero badge row */
+.edu-eyebrow {
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  margin-bottom: 22px;
+}
+.edu-pill {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--font-mono); font-size: 10.5px; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 5px 12px; border-radius: 999px;
+}
+.edu-pill.orange { background: var(--accent); color: var(--accent-ink); }
+.edu-pill.ghost  { background: var(--surface-2); border: 1px solid var(--border); color: var(--text-3); }
+
+/* Hero layout */
+.edu-hero { padding: 80px 0 72px; }
+.edu-hero-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center;
+}
+.edu-hero h1 {
+  font-size: 58px; font-weight: 800; line-height: 1.02;
+  letter-spacing: -0.05em; margin-bottom: 22px;
+  font-family: var(--font-display);
+}
+.edu-hero h1 .accent { color: var(--accent); display: block; }
+.edu-hero .lede { font-size: 17px; color: var(--text-3); line-height: 1.6; max-width: 480px; margin-bottom: 28px; }
+.edu-hero .lede strong { color: var(--text-1); }
+.edu-hero-cta { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.edu-chips { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 22px; }
+
+/* Hero illustration — live class diagram */
+.edu-live-box {
+  background: var(--surface-1); border: 1px solid var(--border);
+  border-radius: var(--r-5); overflow: hidden;
+  box-shadow: var(--shadow-pop);
+}
+.edu-lb-bar {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 10px 14px; background: var(--surface-2);
+  border-bottom: 1px solid var(--border);
+}
+.edu-lb-bar .lights { display: flex; gap: 6px; }
+.edu-lb-bar .lights i { width: 10px; height: 10px; border-radius: 50%; background: var(--border-bright); display: block; }
+.edu-lb-bar .lights i:first-child { background: #ee5a55; }
+.edu-lb-bar .lights i:nth-child(2) { background: #e8b24a; }
+.edu-lb-bar .lights i:nth-child(3) { background: #41c178; }
+.edu-lb-bar .title { font-family: var(--font-mono); font-size: 11px; color: var(--text-4); letter-spacing: 0.06em; }
+.edu-lb-body { padding: 18px; }
+
+/* Teacher dashboard mini-mockup */
+.dash-row { display: flex; gap: 10px; margin-bottom: 10px; }
+.dash-row:last-child { margin-bottom: 0; }
+.dash-cell {
+  flex: 1; background: var(--surface-2); border: 1px solid var(--border);
+  border-radius: var(--r-3); padding: 10px 12px;
+}
+.dash-cell .dc-label { font-family: var(--font-mono); font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-4); margin-bottom: 6px; }
+.dash-cell .dc-val { font-size: 22px; font-weight: 700; color: var(--text-1); letter-spacing: -0.03em; }
+.dash-cell .dc-val .unit { font-size: 12px; color: var(--text-4); font-weight: 400; }
+.dash-cell.ok-bg { border-color: color-mix(in srgb, var(--ok) 30%, transparent); }
+.dash-cell.ok-bg .dc-val { color: var(--ok); }
+.dash-cell.warn-bg { border-color: color-mix(in srgb, var(--warn) 30%, transparent); }
+.dash-cell.warn-bg .dc-val { color: var(--warn); }
+.dash-cell.accent-bg { border-color: var(--accent-line); }
+.dash-cell.accent-bg .dc-val { color: var(--accent); }
+
+/* Student grid in the mockup */
+.student-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px; margin-top: 10px; }
+.s-tile {
+  aspect-ratio: 1; border-radius: var(--r-2); background: var(--surface-3);
+  border: 1px solid var(--border); display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 3px; cursor: default;
+  transition: border-color .15s;
+}
+.s-tile:hover { border-color: var(--border-bright); }
+.s-tile .s-dot { width: 8px; height: 8px; border-radius: 50%; }
+.s-tile .s-name { font-family: var(--font-mono); font-size: 7.5px; color: var(--text-4); }
+.s-tile.done { border-color: color-mix(in srgb, var(--ok) 35%, transparent); }
+.s-tile.done .s-dot { background: var(--ok); box-shadow: 0 0 6px var(--ok); }
+.s-tile.active { border-color: color-mix(in srgb, var(--info) 35%, transparent); }
+.s-tile.active .s-dot { background: var(--info); box-shadow: 0 0 6px var(--info); }
+.s-tile.idle { border-color: var(--border-soft); }
+.s-tile.idle .s-dot { background: var(--text-dim); }
+.s-tile.warn { border-color: color-mix(in srgb, var(--warn) 35%, transparent); }
+.s-tile.warn .s-dot { background: var(--warn); box-shadow: 0 0 6px var(--warn); }
+
+/* Phrase divider */
+.edu-divider {
+  text-align: center; padding: 32px 0;
+  font-size: 15px; color: var(--text-4); letter-spacing: 0.04em;
+}
+.edu-divider span { color: var(--accent); font-weight: 600; }
+
+/* Skill cards */
+.skill-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+  margin-top: 40px;
+}
+.skill-card {
+  background: var(--surface-1); border: 1px solid var(--border);
+  border-radius: var(--r-4); padding: 28px 24px;
+  transition: border-color .18s, transform .18s;
+}
+.skill-card:hover { border-color: var(--border-bright); transform: translateY(-2px); }
+.skill-card .sc-icon {
+  width: 44px; height: 44px; border-radius: var(--r-3);
+  background: var(--accent-soft); border: 1px solid var(--accent-line);
+  display: grid; place-items: center; margin-bottom: 16px; color: var(--accent);
+}
+.skill-card .sc-icon svg { width: 22px; height: 22px; }
+.skill-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.skill-card .sc-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
+.skill-card .sc-tags span {
+  font-family: var(--font-mono); font-size: 9.5px; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--text-4); font-weight: 500;
+}
+.skill-card .sc-tags span + span::before { content: "·"; margin-right: 6px; }
+.skill-card p { font-size: 14px; color: var(--text-3); line-height: 1.55; margin-bottom: 16px; }
+.skill-chips { display: flex; gap: 6px; flex-wrap: wrap; }
+.skill-chips .chip { font-size: 11.5px; padding: 4px 10px; }
+
+/* Mini topology inside network card */
+.mini-topo {
+  background: var(--surface-canvas); border: 1px solid var(--border-soft);
+  border-radius: var(--r-3); padding: 14px; margin-top: 14px;
+  position: relative; height: 80px;
+}
+.mt-node {
+  position: absolute; width: 32px; height: 20px;
+  background: var(--surface-3); border: 1px solid var(--border);
+  border-radius: 4px; display: grid; place-items: center;
+  font-family: var(--font-mono); font-size: 8px; color: var(--text-4);
+}
+.mt-node.router { border-color: var(--role-router); color: var(--role-router); }
+.mt-node.core   { border-color: var(--role-switchL3); color: var(--role-switchL3); width: 38px; }
+.mt-node.fw     { border-color: var(--role-firewall); color: var(--role-firewall); }
+.mt-line {
+  position: absolute; background: var(--border-bright);
+  transform-origin: left center;
+}
+
+/* Tool icon strip */
+.tool-strip {
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  margin-top: 14px;
+}
+.tool-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--surface-2); border: 1px solid var(--border);
+  border-radius: var(--r-2); padding: 5px 10px;
+  font-size: 12px; color: var(--text-2); font-weight: 500;
+}
+.tool-badge .td { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
+
+/* Stat band */
+.edu-stats {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  border: 1px solid var(--border); border-radius: var(--r-5);
+  background: var(--surface-1); overflow: hidden; margin-top: 60px;
+}
+.edu-stat {
+  padding: 28px 24px;
+  border-right: 1px solid var(--border);
+}
+.edu-stat:last-child { border-right: none; }
+.edu-stat .n {
+  font-size: 42px; font-weight: 800; letter-spacing: -0.05em;
+  color: var(--accent); line-height: 1; margin-bottom: 4px;
+  font-family: var(--font-display);
+}
+.edu-stat .n .suf { font-size: 20px; color: var(--text-4); font-weight: 400; }
+.edu-stat .l { font-size: 12px; color: var(--text-4); font-family: var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase; }
+
+/* Workflow section */
+.workflow-section { padding: 90px 0; }
+.workflow-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; margin-top: 48px; }
+.workflow-steps { display: flex; flex-direction: column; gap: 0; }
+.w-step {
+  display: flex; gap: 20px; padding: 22px 0;
+  border-bottom: 1px solid var(--border-soft);
+  cursor: pointer; transition: all .18s;
+}
+.w-step:last-child { border-bottom: none; }
+.w-step.active { padding-left: 0; }
+.w-step-num {
+  width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0;
+  background: var(--surface-3); border: 1px solid var(--border);
+  display: grid; place-items: center;
+  font-family: var(--font-mono); font-size: 12px; font-weight: 600; color: var(--text-4);
+  transition: all .18s;
+}
+.w-step.active .w-step-num {
+  background: var(--accent); border-color: var(--accent);
+  color: var(--accent-ink);
+}
+.w-step-body { flex: 1; }
+.w-step-body h3 { font-size: 16px; font-weight: 700; margin-bottom: 4px; color: var(--text-2); transition: color .15s; }
+.w-step.active .w-step-body h3 { color: var(--text-1); }
+.w-step-body p { font-size: 14px; color: var(--text-4); line-height: 1.5; }
+.w-step.active .w-step-body p { color: var(--text-3); }
+
+/* Workflow preview pane */
+.workflow-preview {
+  position: sticky; top: 90px;
+  background: var(--surface-1); border: 1px solid var(--border);
+  border-radius: var(--r-5); overflow: hidden;
+}
+.wp-bar {
+  display: flex; align-items: center; gap: 10px; padding: 10px 14px;
+  background: var(--surface-2); border-bottom: 1px solid var(--border);
+}
+.wp-bar .lights { display: flex; gap: 6px; }
+.wp-bar .lights i { width: 10px; height: 10px; border-radius: 50%; background: var(--border-bright); display: block; }
+.wp-bar .lights i:first-child { background: #ee5a55; }
+.wp-bar .lights i:nth-child(2) { background: #e8b24a; }
+.wp-bar .lights i:nth-child(3) { background: #41c178; }
+.wp-bar .tab-title { font-family: var(--font-mono); font-size: 10.5px; color: var(--text-3); letter-spacing: 0.05em; }
+.wp-body { padding: 20px; min-height: 360px; }
+
+/* Exam builder panel */
+.exam-builder { }
+.eb-field { margin-bottom: 14px; }
+.eb-label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-4); margin-bottom: 6px; }
+.eb-input {
+  width: 100%; background: var(--surface-2); border: 1px solid var(--border);
+  border-radius: var(--r-2); padding: 9px 12px;
+  font-family: var(--font-mono); font-size: 12.5px; color: var(--text-2);
+}
+.eb-row { display: flex; gap: 10px; }
+.eb-row .eb-field { flex: 1; }
+.eb-tag-row { display: flex; gap: 6px; flex-wrap: wrap; }
+.eb-tag {
+  font-size: 11.5px; padding: 3px 10px; border-radius: 999px;
+  background: var(--surface-3); border: 1px solid var(--border); color: var(--text-3);
+}
+.eb-tag.sel { background: var(--accent-soft); border-color: var(--accent-line); color: var(--accent); }
+.eb-actions { display: flex; gap: 8px; margin-top: 16px; }
+
+/* Monitor panel */
+.monitor-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+.m-student {
+  background: var(--surface-2); border: 1px solid var(--border);
+  border-radius: var(--r-3); padding: 10px 8px; text-align: center;
+}
+.m-student .ms-name { font-family: var(--font-mono); font-size: 9px; color: var(--text-4); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 6px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.m-student .ms-pct { font-size: 18px; font-weight: 700; letter-spacing: -0.03em; }
+.m-student .ms-bar { height: 3px; border-radius: 999px; background: var(--border); margin-top: 6px; }
+.m-student .ms-fill { height: 100%; border-radius: 999px; }
+.m-student.ms-done { border-color: color-mix(in srgb, var(--ok) 30%, transparent); }
+.m-student.ms-done .ms-pct { color: var(--ok); }
+.m-student.ms-done .ms-fill { background: var(--ok); }
+.m-student.ms-active { border-color: color-mix(in srgb, var(--info) 30%, transparent); }
+.m-student.ms-active .ms-pct { color: var(--info); }
+.m-student.ms-active .ms-fill { background: var(--info); }
+.m-student.ms-warn { border-color: color-mix(in srgb, var(--warn) 30%, transparent); }
+.m-student.ms-warn .ms-pct { color: var(--warn); }
+.m-student.ms-warn .ms-fill { background: var(--warn); }
+
+/* Marking panel */
+.mark-item {
+  display: flex; align-items: flex-start; gap: 12px;
+  padding: 12px; background: var(--surface-2); border: 1px solid var(--border);
+  border-radius: var(--r-3); margin-bottom: 8px;
+}
+.mark-avatar {
+  width: 32px; height: 32px; border-radius: 50%; flex-shrink: 0;
+  background: var(--surface-3); border: 1px solid var(--border);
+  display: grid; place-items: center;
+  font-family: var(--font-mono); font-size: 10px; font-weight: 600; color: var(--text-3);
+}
+.mark-body { flex: 1; }
+.mark-body .mb-name { font-size: 13px; font-weight: 600; color: var(--text-1); }
+.mark-body .mb-task { font-size: 11.5px; color: var(--text-4); font-family: var(--font-mono); }
+.mark-score {
+  display: flex; align-items: center; gap: 6px;
+  font-family: var(--font-mono); font-size: 12px; color: var(--text-3);
+}
+.mark-score input[type=range] { width: 70px; accent-color: var(--accent); }
+.mark-score strong { color: var(--accent); }
+
+/* How it works diagram */
+.how-section { padding: 80px 0; background: var(--surface-1); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.how-diagram { margin-top: 48px; }
+.how-row {
+  display: flex; align-items: center; justify-content: center; gap: 0;
+  flex-wrap: wrap; gap: 8px;
+}
+.how-node {
+  background: var(--surface-2); border: 1px solid var(--border);
+  border-radius: var(--r-4); padding: 18px 20px; text-align: center;
+  min-width: 140px;
+}
+.how-node .hn-icon {
+  width: 42px; height: 42px; border-radius: var(--r-3);
+  background: var(--accent-soft); border: 1px solid var(--accent-line);
+  display: grid; place-items: center; margin: 0 auto 10px;
+  color: var(--accent);
+}
+.how-node .hn-icon svg { width: 20px; height: 20px; }
+.how-node .hn-label { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-4); margin-bottom: 4px; }
+.how-node .hn-name { font-size: 13.5px; font-weight: 700; color: var(--text-1); }
+.how-arrow { display: flex; flex-direction: column; align-items: center; gap: 2px; min-width: 60px; }
+.how-arrow .ha-label { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); }
+.how-arrow svg { color: var(--text-dim); }
+.how-fan { display: flex; flex-direction: column; gap: 6px; }
+.how-student {
+  background: var(--surface-2); border: 1px solid var(--border);
+  border-radius: var(--r-3); padding: 10px 14px;
+  display: flex; align-items: center; gap: 10px; min-width: 150px;
+}
+.how-student .hs-icon { color: var(--text-4); }
+.how-student .hs-icon svg { width: 16px; height: 16px; }
+.how-student .hs-info { font-family: var(--font-mono); font-size: 10px; color: var(--text-3); }
+.how-student .hs-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--ok); box-shadow: 0 0 6px var(--ok); margin-left: auto; }
+
+/* Thin client banner */
+.thin-banner {
+  background: var(--surface-2); border: 1px solid var(--border);
+  border-radius: var(--r-4); padding: 24px 28px;
+  display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+  margin-top: 36px;
+}
+.thin-banner .tb-icon { color: var(--accent); }
+.thin-banner .tb-icon svg { width: 36px; height: 36px; }
+.thin-banner .tb-text h3 { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+.thin-banner .tb-text p { font-size: 14px; color: var(--text-3); line-height: 1.5; }
+
+/* Student login section */
+.login-section { padding: 80px 0; }
+.login-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; margin-top: 48px; }
+.login-ui {
+  background: var(--surface-1); border: 1px solid var(--border);
+  border-radius: var(--r-5); overflow: hidden; box-shadow: var(--shadow-pop);
+}
+.lui-bar {
+  display: flex; align-items: center; gap: 10px; padding: 10px 14px;
+  background: var(--surface-2); border-bottom: 1px solid var(--border);
+}
+.lui-bar .lights { display: flex; gap: 6px; }
+.lui-bar .lights i { width: 10px; height: 10px; border-radius: 50%; background: var(--border-bright); display: block; }
+.lui-bar .lights i:first-child { background: #ee5a55; }
+.lui-bar .lights i:nth-child(2) { background: #e8b24a; }
+.lui-bar .lights i:nth-child(3) { background: #41c178; }
+.lui-bar .url-bar { flex: 1; background: var(--surface-3); border: 1px solid var(--border); border-radius: var(--r-2); padding: 4px 10px; font-family: var(--font-mono); font-size: 11px; color: var(--text-4); }
+.lui-body { padding: 32px 28px; }
+.lui-logo { text-align: center; margin-bottom: 24px; }
+.lui-logo span { font-family: var(--font-display); font-size: 22px; font-weight: 700; color: var(--text-1); }
+.lui-logo .dotmark { display: inline-block; width: 0.16em; height: 0.16em; border-radius: 50%; background: var(--accent); margin-left: 0.05em; vertical-align: baseline; overflow: hidden; color: transparent; }
+.lui-logo .edu-tag { font-family: var(--font-mono); font-size: 10px; background: var(--accent); color: var(--accent-ink); padding: 2px 7px; border-radius: 4px; margin-left: 8px; font-weight: 700; letter-spacing: 0.08em; }
+.lui-subtitle { text-align: center; font-size: 13px; color: var(--text-4); margin-bottom: 24px; }
+.lui-field { margin-bottom: 14px; }
+.lui-label { font-size: 12px; color: var(--text-3); margin-bottom: 6px; font-weight: 500; }
+.lui-input {
+  width: 100%; background: var(--surface-2); border: 1px solid var(--border);
+  border-radius: var(--r-2); padding: 10px 13px;
+  font-size: 14px; color: var(--text-2); display: flex; align-items: center; gap: 8px;
+}
+.lui-input svg { width: 15px; height: 15px; color: var(--text-4); flex-shrink: 0; }
+.lui-input .fake-text { font-family: var(--font-mono); font-size: 13px; color: var(--text-2); }
+.lui-input .fake-pass { letter-spacing: 0.2em; font-size: 16px; color: var(--text-3); }
+.lui-btn { width: 100%; margin-top: 8px; justify-content: center; }
+.lui-note { text-align: center; font-size: 11.5px; color: var(--text-4); margin-top: 14px; font-family: var(--font-mono); }
+.lui-exam-badge {
+  display: flex; align-items: center; gap: 10px; padding: 10px 14px;
+  background: color-mix(in srgb, var(--warn) 10%, transparent);
+  border: 1px solid color-mix(in srgb, var(--warn) 30%, transparent);
+  border-radius: var(--r-3); margin-top: 14px;
+}
+.lui-exam-badge svg { width: 16px; height: 16px; color: var(--warn); flex-shrink: 0; }
+.lui-exam-badge span { font-size: 12.5px; color: var(--warn); font-weight: 500; }
+
+.login-features { }
+.lf-item { display: flex; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--border-soft); }
+.lf-item:last-child { border-bottom: none; }
+.lf-icon {
+  width: 40px; height: 40px; border-radius: var(--r-3); flex-shrink: 0;
+  background: var(--surface-2); border: 1px solid var(--border);
+  display: grid; place-items: center; color: var(--accent);
+}
+.lf-icon svg { width: 19px; height: 19px; }
+.lf-text h4 { font-size: 15px; font-weight: 700; margin-bottom: 3px; }
+.lf-text p { font-size: 14px; color: var(--text-3); line-height: 1.5; }
+
+/* Voucher section */
+.voucher-section { padding: 80px 0; }
+.voucher-card {
+  background: var(--surface-1); border: 1px solid var(--border);
+  border-radius: var(--r-5); padding: 48px 44px;
+  display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: center;
+}
+.vc-left .vc-eyebrow { margin-bottom: 14px; }
+.vc-left h2 { font-size: 36px; font-weight: 800; letter-spacing: -0.04em; margin-bottom: 14px; font-family: var(--font-display); }
+.vc-left p { font-size: 15.5px; color: var(--text-3); line-height: 1.55; margin-bottom: 24px; max-width: 520px; }
+.vc-meta { display: flex; gap: 28px; flex-wrap: wrap; margin-bottom: 28px; }
+.vc-meta-item { }
+.vc-meta-item .vm-val { font-size: 28px; font-weight: 800; letter-spacing: -0.04em; color: var(--accent); font-family: var(--font-display); }
+.vc-meta-item .vm-label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-4); }
+.vc-code-box {
+  background: var(--surface-0); border: 1px solid var(--border);
+  border-radius: var(--r-4); padding: 28px 32px; text-align: center; min-width: 240px;
+}
+.vc-code-label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-4); margin-bottom: 12px; }
+.vc-code {
+  font-family: var(--font-mono); font-size: 22px; font-weight: 700;
+  color: var(--accent); letter-spacing: 0.1em; background: var(--accent-soft);
+  border: 1px solid var(--accent-line); border-radius: var(--r-3);
+  padding: 10px 18px; margin-bottom: 14px; display: block;
+}
+.vc-code-note { font-size: 11.5px; color: var(--text-4); line-height: 1.5; }
+
+/* CTA strip */
+.edu-cta-strip {
+  padding: 70px 0;
+  background: linear-gradient(180deg, var(--surface-0) 0%, color-mix(in srgb, var(--accent) 4%, var(--surface-0)) 100%);
+  border-top: 1px solid var(--border-soft);
+  text-align: center;
+}
+.edu-cta-strip h2 { font-size: 38px; font-weight: 800; letter-spacing: -0.04em; margin-bottom: 14px; font-family: var(--font-display); }
+.edu-cta-strip p { font-size: 16px; color: var(--text-3); max-width: 520px; margin: 0 auto 28px; }
+.edu-cta-strip .cta-row { display: flex; justify-content: center; align-items: center; gap: 12px; flex-wrap: wrap; }
+
+/* Tech icons row */
+.tech-icon-row {
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  margin-top: 36px;
+}
+.ti {
+  width: 52px; height: 52px; border-radius: var(--r-3);
+  background: var(--surface-1); border: 1px solid var(--border);
+  display: grid; place-items: center;
+  transition: border-color .15s; cursor: default; font-size: 22px;
+}
+.ti:hover { border-color: var(--border-bright); }
+
+/* Responsive */
+@media (max-width: 960px) {
+  .edu-hero-grid { grid-template-columns: 1fr; gap: 36px; }
+  .edu-hero h1 { font-size: 40px; }
+  .skill-grid { grid-template-columns: 1fr; }
+  .workflow-grid { grid-template-columns: 1fr; }
+  .workflow-preview { position: static; }
+  .login-grid { grid-template-columns: 1fr; }
+  .voucher-card { grid-template-columns: 1fr; }
+  .how-row { flex-direction: column; align-items: flex-start; }
+  .how-arrow { transform: rotate(90deg); }
+}
+@media (max-width: 640px) {
+  .edu-stats { grid-template-columns: 1fr 1fr; }
+  .edu-stat { border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .edu-stat:nth-child(2n) { border-right: none; }
+  .edu-stat:nth-last-child(-n+2) { border-bottom: none; }
+  .monitor-grid { grid-template-columns: repeat(3, 1fr); }
+  .student-grid { grid-template-columns: repeat(4, 1fr); }
+}
+</style>
+</head>
+<body>
+<div class="gridbg"></div>
+<div class="content">
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="wrap">
+    <a href="../index.html" class="brand">
+      <span class="mark"><svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><g stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 19 L27 32 M14 32 L27 32 M14 45 L27 32"/><path d="M37 32 L52 32"/><circle cx="32" cy="32" r="5"/></g><circle cx="14" cy="19" r="3" fill="currentColor"/><circle cx="14" cy="32" r="3" fill="currentColor"/><circle cx="14" cy="45" r="3" fill="currentColor"/><circle cx="52" cy="32" r="3.4" fill="currentColor"/></svg></span>
+      <span class="wm">netplex<span class="dotmark">.</span></span>
+      <span class="ver" style="background:var(--accent);border-color:var(--accent);color:var(--accent-ink);font-weight:700;letter-spacing:0.05em">EDU</span>
+    </a>
+    <div class="navlinks">
+      <a href="../product.html">Product</a>
+      <a href="../pricing.html">Pricing</a>
+      <a href="../kb.html">Knowledge Base</a>
+      <a href="../forums.html">Forums</a>
+      <a href="../roadmap.html">Roadmap</a>
+      <a href="index.html" class="active" style="color:var(--accent)">Education</a>
+      <a href="../support.html">Support</a>
+    </div>
+    <div class="navactions">
+      <a href="#" class="btn btn-ghost" data-ext>Sign in</a>
+      <button class="ap-trigger" data-appearance-trigger aria-label="Appearance" title="Appearance"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996C20.146 15.21 22 13.36 22 11.04 22 6.038 17.5 2 12 2z"/></svg></button>
+      <a href="#voucher" class="btn btn-primary">Get free access</a>
+      <button class="menu-toggle" aria-label="Menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="edu-hero">
+  <div class="wrap">
+    <div class="edu-hero-grid">
+      <div>
+        <div class="edu-eyebrow">
+          <span class="edu-pill orange">Education Edition</span>
+          <span class="edu-pill ghost">For Schools</span>
+          <span class="edu-pill ghost">Classrooms</span>
+          <span class="edu-pill ghost">Student Labs</span>
+        </div>
+        <h1>One platform to teach<span class="accent">every digital skill.</span></h1>
+        <p class="lede">
+          Give every student a <strong>real engineering sandbox</strong> — right in their browser.
+          They design and run live computer networks, write and automate <strong>real code</strong>,
+          and build for <strong>the web</strong>. No hardware lab, no installs, nothing to break.
+          Just the in-demand skills employers hire for — and it's <strong>free for your school.</strong>
+        </p>
+        <div class="edu-hero-cta">
+          <a href="#voucher" class="btn btn-primary btn-lg">Claim your free school access<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a href="#how-it-works" class="btn btn-outline btn-lg">See how it works</a>
+        </div>
+        <div class="edu-chips">
+          <span class="chip">AU$0 per school</span>
+          <span class="chip">30 student seats</span>
+          <span class="chip">Works on thin PCs &amp; Chromebooks</span>
+          <span class="chip">Zero installs</span>
+        </div>
+      </div>
+
+      <!-- Teacher dashboard mockup -->
+      <div class="edu-live-box">
+        <div class="edu-lb-bar">
+          <div class="lights"><i></i><i></i><i></i></div>
+          <span class="title">TEACHER DASHBOARD · Live Class Monitor</span>
+          <span class="pill ok" style="font-size:10px;padding:2px 9px"><span class="dot"></span>28 online</span>
+        </div>
+        <div class="edu-lb-body">
+          <div class="dash-row">
+            <div class="dash-cell accent-bg">
+              <div class="dc-label">Active Exam</div>
+              <div class="dc-val" style="font-size:14px;letter-spacing:-0.01em">CCNA Lab 3 — VLANs<span class="unit"> · 38 min left</span></div>
+            </div>
+          </div>
+          <div class="dash-row">
+            <div class="dash-cell ok-bg">
+              <div class="dc-label">Submitted</div>
+              <div class="dc-val">14<span class="unit">/30</span></div>
+            </div>
+            <div class="dash-cell">
+              <div class="dc-label">In progress</div>
+              <div class="dc-val">12<span class="unit">/30</span></div>
+            </div>
+            <div class="dash-cell warn-bg">
+              <div class="dc-label">Needs help</div>
+              <div class="dc-val">2<span class="unit">/30</span></div>
+            </div>
+          </div>
+          <div style="font-family:var(--font-mono);font-size:9.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-4);margin:12px 0 8px">Student workstations</div>
+          <div class="student-grid">
+            <div class="s-tile done"><div class="s-dot"></div><div class="s-name">ALEX</div></div>
+            <div class="s-tile done"><div class="s-dot"></div><div class="s-name">PRIYA</div></div>
+            <div class="s-tile active"><div class="s-dot"></div><div class="s-name">JAMES</div></div>
+            <div class="s-tile active"><div class="s-dot"></div><div class="s-name">SARA</div></div>
+            <div class="s-tile done"><div class="s-dot"></div><div class="s-name">OMAR</div></div>
+            <div class="s-tile active"><div class="s-dot"></div><div class="s-name">MIA</div></div>
+            <div class="s-tile warn"><div class="s-dot"></div><div class="s-name">JAKE</div></div>
+            <div class="s-tile active"><div class="s-dot"></div><div class="s-name">LILY</div></div>
+            <div class="s-tile done"><div class="s-dot"></div><div class="s-name">NOAH</div></div>
+            <div class="s-tile active"><div class="s-dot"></div><div class="s-name">CHLOE</div></div>
+            <div class="s-tile active"><div class="s-dot"></div><div class="s-name">ETHAN</div></div>
+            <div class="s-tile warn"><div class="s-dot"></div><div class="s-name">ZOE</div></div>
+          </div>
+          <div style="display:flex;gap:12px;margin-top:12px;font-size:11px;color:var(--text-4);font-family:var(--font-mono)">
+            <span style="color:var(--ok)">■</span> Submitted &nbsp;
+            <span style="color:var(--info)">■</span> In progress &nbsp;
+            <span style="color:var(--warn)">■</span> Needs help
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="edu-stats">
+      <div class="edu-stat">
+        <div class="n">AU$0<span class="suf">/school</span></div>
+        <div class="l">Total Cost</div>
+      </div>
+      <div class="edu-stat">
+        <div class="n">30<span class="suf"> seats</span></div>
+        <div class="l">Per classroom voucher</div>
+      </div>
+      <div class="edu-stat">
+        <div class="n">70+<span class="suf"></span></div>
+        <div class="l">Real network vendors</div>
+      </div>
+      <div class="edu-stat">
+        <div class="n">0<span class="suf"></span></div>
+        <div class="l">Installs · browser only</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT STUDENTS LEARN -->
+<section style="padding:80px 0;border-top:1px solid var(--border-soft)">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow sec-eyebrow">Curriculum-ready disciplines</span>
+      <h2 class="sec">Real networks. Real code.<span class="accent"> Real student projects.</span></h2>
+      <p class="sec-sub" style="max-width:600px;margin:0 auto">Three disciplines — one unified platform. Students switch between configuring live routers, writing Python scripts, and deploying web apps without leaving the browser.</p>
+    </div>
+    <div class="skill-grid">
+
+      <!-- Network Emulation -->
+      <div class="skill-card">
+        <div class="sc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="12" r="2"/><circle cx="19" cy="5" r="2"/><circle cx="19" cy="19" r="2"/><path d="M11 12h6m-6-5l6-2m-6 7l6 2"/></svg>
+        </div>
+        <h3>Network Emulation</h3>
+        <div class="sc-tags"><span>CCNA</span><span>Cyber</span><span>Infrastructure</span></div>
+        <p>Students drag real routers, switches and firewalls onto a canvas, cable them up and watch live packets move — the same vendor gear used in industry. Every device gets a real CLI terminal.</p>
+        <div class="mini-topo">
+          <div class="mt-node router" style="left:12px;top:10px">R1</div>
+          <div class="mt-node core"   style="left:50%;transform:translateX(-50%);top:28px">CORE</div>
+          <div class="mt-node"        style="left:12px;top:46px">PC</div>
+          <div class="mt-node router" style="right:12px;top:10px">SW</div>
+          <div class="mt-node fw"     style="right:12px;top:46px">FW</div>
+        </div>
+        <div class="skill-chips" style="margin-top:14px">
+          <span class="chip">Cisco IOS-XE</span>
+          <span class="chip">Junos</span>
+          <span class="chip">pfSense</span>
+          <span class="chip">Arista EOS</span>
+        </div>
+      </div>
+
+      <!-- Programming -->
+      <div class="skill-card">
+        <div class="sc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        </div>
+        <h3>Programming</h3>
+        <div class="sc-tags"><span>Python</span><span>Bash</span><span>APIs</span></div>
+        <p>Every lab is scriptable. Students write Python, automate tasks over real REST APIs and live terminals, and learn version control with Git — against systems that actually respond.</p>
+        <div class="tool-strip">
+          <div class="tool-badge"><div class="td" style="background:#3572a5"></div>Python</div>
+          <div class="tool-badge"><div class="td" style="background:#89e051"></div>Bash</div>
+          <div class="tool-badge"><div class="td" style="background:#f34b7d"></div>REST API</div>
+          <div class="tool-badge"><div class="td" style="background:#f05133"></div>Git</div>
+          <div class="tool-badge"><div class="td" style="background:#384d54"></div>Docker</div>
+          <div class="tool-badge"><div class="td" style="background:#89e051"></div>Linux CLI</div>
+          <div class="tool-badge"><div class="td" style="background:#cbcb41"></div>JSON</div>
+        </div>
+      </div>
+
+      <!-- Web Design -->
+      <div class="skill-card">
+        <div class="sc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><polyline points="8 21 12 17 16 21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <h3>Web Design</h3>
+        <div class="sc-tags"><span>HTML</span><span>CSS</span><span>JS</span></div>
+        <p>Students build and host their own sites, then trace exactly how each page travels the network — connecting front-end craft to the infrastructure beneath it.</p>
+        <div class="skill-chips" style="margin-top:14px">
+          <span class="chip">HTML5</span>
+          <span class="chip">CSS3</span>
+          <span class="chip">JavaScript</span>
+          <span class="chip">Responsive</span>
+          <span class="chip">Hosting</span>
+          <span class="chip">DNS</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Tech stack icons -->
+    <div style="margin-top:52px">
+      <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-4);text-align:center;margin-bottom:20px">Languages &amp; tools your students will use</div>
+      <div class="tech-icon-row" style="justify-content:center">
+        <div class="ti" title="HTML5" style="font-size:28px">🌐</div>
+        <div class="ti" title="CSS3" style="font-size:24px;color:#264de4;font-weight:700;font-family:var(--font-mono);font-size:14px">CSS</div>
+        <div class="ti" title="JavaScript" style="background:#f7df1e;border-color:#f7df1e;color:#000;font-family:var(--font-mono);font-size:12px;font-weight:700">JS</div>
+        <div class="ti" title="Python" style="font-size:22px">🐍</div>
+        <div class="ti" title="React" style="color:#61dafb;font-family:var(--font-mono);font-size:11px;font-weight:700">⚛ R</div>
+        <div class="ti" title="Node.js" style="color:#339933;font-family:var(--font-mono);font-size:11px;font-weight:700">Node</div>
+        <div class="ti" title="TypeScript" style="background:#3178c6;border-color:#3178c6;color:#fff;font-family:var(--font-mono);font-size:12px;font-weight:700">TS</div>
+        <div class="ti" title="Git" style="color:#f05133;font-size:20px">⎇</div>
+        <div class="ti" title="Docker" style="color:#2496ed;font-family:var(--font-mono);font-size:10px;font-weight:700">🐳</div>
+        <div class="ti" title="Linux" style="font-size:22px">🐧</div>
+        <div class="ti" title="PostgreSQL" style="color:#336791;font-family:var(--font-mono);font-size:10px;font-weight:700">PG</div>
+        <div class="ti" title="Ansible" style="color:#ee2e2e;font-family:var(--font-mono);font-size:10px;font-weight:700">⚙</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS FOR TEACHERS -->
+<section class="workflow-section" id="workflow">
+  <div class="wrap">
+    <span class="eyebrow sec-eyebrow">Teacher workflow</span>
+    <h2 class="sec">Create. Assign. Monitor.<span class="accent"> Mark.</span></h2>
+    <p class="sec-sub">From writing the exam to handing back grades — entirely in the browser. No printing, no USB drives, no emailing zip files. One shared lab, pushed to every student at once.</p>
+
+    <div class="workflow-grid">
+      <div class="workflow-steps">
+        <div class="w-step active" data-step="create">
+          <div class="w-step-num">1</div>
+          <div class="w-step-body">
+            <h3>Create the assignment or exam</h3>
+            <p>Build a task in minutes — pick a lab template, set questions, define a time limit and choose which tools students have access to. Labs can be network topologies, coding challenges or web projects.</p>
+          </div>
+        </div>
+        <div class="w-step" data-step="assign">
+          <div class="w-step-num">2</div>
+          <div class="w-step-body">
+            <h3>Push to the class — one click</h3>
+            <p>Select a class, hit deploy. Every student's workstation is provisioned instantly with an isolated clone of the lab. Students receive a notification and log in with their school credentials from any device.</p>
+          </div>
+        </div>
+        <div class="w-step" data-step="monitor">
+          <div class="w-step-num">3</div>
+          <div class="w-step-body">
+            <h3>Monitor the room live</h3>
+            <p>Watch every student's progress in real time. See who's connected, how far through the task they are, and flag anyone who needs help. Drop into any workstation to observe — without interrupting the student.</p>
+          </div>
+        </div>
+        <div class="w-step" data-step="mark">
+          <div class="w-step-num">4</div>
+          <div class="w-step-body">
+            <h3>Mark remotely — anytime</h3>
+            <p>Once submitted, review each student's lab state, terminal history and output logs. Add scores and annotations from anywhere. Grades sync back to the student portal automatically.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contextual preview -->
+      <div class="workflow-preview" id="workflowPreview">
+        <div class="wp-bar">
+          <div class="lights"><i></i><i></i><i></i></div>
+          <span class="tab-title" id="previewTitle">netplex · Exam Builder</span>
+        </div>
+        <div class="wp-body" id="previewBody">
+
+          <!-- Step 1: Exam Builder -->
+          <div id="pane-create" class="exam-builder">
+            <div class="eb-row">
+              <div class="eb-field">
+                <div class="eb-label">Assignment title</div>
+                <div class="eb-input">CCNA Lab 3 — VLANs &amp; Inter-VLAN Routing</div>
+              </div>
+            </div>
+            <div class="eb-row">
+              <div class="eb-field">
+                <div class="eb-label">Type</div>
+                <div class="eb-tag-row">
+                  <span class="eb-tag sel">Exam</span>
+                  <span class="eb-tag">Assignment</span>
+                  <span class="eb-tag">Task</span>
+                  <span class="eb-tag">Lab</span>
+                </div>
+              </div>
+              <div class="eb-field">
+                <div class="eb-label">Time limit</div>
+                <div class="eb-input" style="width:100px">60 min</div>
+              </div>
+            </div>
+            <div class="eb-field">
+              <div class="eb-label">Lab template</div>
+              <div class="eb-input">🗂 CCNA-VLAN-starter · 4 routers, 2 switches, 6 PCs</div>
+            </div>
+            <div class="eb-field">
+              <div class="eb-label">Discipline</div>
+              <div class="eb-tag-row">
+                <span class="eb-tag sel">Network</span>
+                <span class="eb-tag">Programming</span>
+                <span class="eb-tag">Web</span>
+              </div>
+            </div>
+            <div class="eb-field">
+              <div class="eb-label">Student tools</div>
+              <div class="eb-tag-row">
+                <span class="eb-tag sel">CLI Terminal</span>
+                <span class="eb-tag sel">Topology canvas</span>
+                <span class="eb-tag">Python console</span>
+                <span class="eb-tag">Internet access</span>
+              </div>
+            </div>
+            <div class="eb-actions">
+              <span class="btn btn-primary" style="font-size:13px;padding:8px 14px">Save &amp; Preview</span>
+              <span class="btn btn-outline" style="font-size:13px;padding:8px 14px">Add questions</span>
+            </div>
+          </div>
+
+          <!-- Step 2: Assign (hidden by default) -->
+          <div id="pane-assign" style="display:none">
+            <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-4);margin-bottom:12px">Deploy to class</div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <div style="background:var(--surface-2);border:1px solid var(--accent-line);border-radius:var(--r-3);padding:12px 14px;display:flex;align-items:center;gap:10px">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+                <div>
+                  <div style="font-size:13px;font-weight:600">Year 11 · Network Infrastructure</div>
+                  <div style="font-family:var(--font-mono);font-size:10px;color:var(--text-4)">30 students · all credentials active</div>
+                </div>
+                <span class="pill ok" style="margin-left:auto;font-size:10px;padding:2px 8px"><span class="dot"></span>Online</span>
+              </div>
+              <div style="background:var(--surface-2);border:1px solid var(--border);border-radius:var(--r-3);padding:12px 14px;display:flex;align-items:center;gap:10px">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--text-4)" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+                <div>
+                  <div style="font-size:13px;font-weight:600;color:var(--text-2)">Year 10 · Digital Technology</div>
+                  <div style="font-family:var(--font-mono);font-size:10px;color:var(--text-4)">28 students</div>
+                </div>
+              </div>
+            </div>
+            <div style="margin-top:18px;padding:14px;background:var(--surface-2);border:1px solid var(--border);border-radius:var(--r-3)">
+              <div style="font-family:var(--font-mono);font-size:10px;color:var(--text-4);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px">Deploy settings</div>
+              <div style="display:flex;gap:18px;font-size:13px;color:var(--text-3)">
+                <span>⏰ Opens: now</span>
+                <span>⌛ Closes: 60 min</span>
+                <span>🔒 Isolated labs</span>
+              </div>
+            </div>
+            <div style="margin-top:14px">
+              <span class="btn btn-primary" style="font-size:13px;padding:10px 18px;width:100%;justify-content:center">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13"/><path d="M22 2L15 22l-4-9-9-4 20-7z"/></svg>
+                Push exam to class
+              </span>
+            </div>
+          </div>
+
+          <!-- Step 3: Monitor (hidden) -->
+          <div id="pane-monitor" style="display:none">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
+              <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-4)">Live — Year 11 · 30 students</div>
+              <span class="pill ok" style="font-size:10px;padding:2px 8px"><span class="dot"></span>28 online</span>
+            </div>
+            <div class="monitor-grid">
+              <div class="m-student ms-done"><div class="ms-name">ALEX B.</div><div class="ms-pct">100%</div><div class="ms-bar"><div class="ms-fill" style="width:100%"></div></div></div>
+              <div class="m-student ms-done"><div class="ms-name">PRIYA M.</div><div class="ms-pct">100%</div><div class="ms-bar"><div class="ms-fill" style="width:100%"></div></div></div>
+              <div class="m-student ms-active"><div class="ms-name">JAMES L.</div><div class="ms-pct">74%</div><div class="ms-bar"><div class="ms-fill" style="width:74%"></div></div></div>
+              <div class="m-student ms-active"><div class="ms-name">SARA K.</div><div class="ms-pct">61%</div><div class="ms-bar"><div class="ms-fill" style="width:61%"></div></div></div>
+              <div class="m-student ms-active"><div class="ms-name">OMAR N.</div><div class="ms-pct">55%</div><div class="ms-bar"><div class="ms-fill" style="width:55%"></div></div></div>
+              <div class="m-student ms-warn"><div class="ms-name">JAKE T.</div><div class="ms-pct">12%</div><div class="ms-bar"><div class="ms-fill" style="width:12%"></div></div></div>
+              <div class="m-student ms-active"><div class="ms-name">MIA R.</div><div class="ms-pct">48%</div><div class="ms-bar"><div class="ms-fill" style="width:48%"></div></div></div>
+              <div class="m-student ms-active"><div class="ms-name">LILY D.</div><div class="ms-pct">33%</div><div class="ms-bar"><div class="ms-fill" style="width:33%"></div></div></div>
+              <div class="m-student ms-done"><div class="ms-name">NOAH W.</div><div class="ms-pct">100%</div><div class="ms-bar"><div class="ms-fill" style="width:100%"></div></div></div>
+              <div class="m-student ms-warn"><div class="ms-name">ZOE P.</div><div class="ms-pct">8%</div><div class="ms-bar"><div class="ms-fill" style="width:8%"></div></div></div>
+            </div>
+            <div style="margin-top:12px;padding:10px 12px;background:color-mix(in srgb,var(--warn) 10%,transparent);border:1px solid color-mix(in srgb,var(--warn) 30%,transparent);border-radius:var(--r-3);font-size:12px;color:var(--warn)">
+              ⚠ Jake T. and Zoe P. appear stuck — click to open their workstation
+            </div>
+          </div>
+
+          <!-- Step 4: Mark (hidden) -->
+          <div id="pane-mark" style="display:none">
+            <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-4);margin-bottom:12px">Marking queue · CCNA Lab 3</div>
+            <div class="mark-item">
+              <div class="mark-avatar">AB</div>
+              <div class="mark-body">
+                <div class="mb-name">Alex B. <span style="color:var(--ok);font-size:11px">✓ Submitted</span></div>
+                <div class="mb-task">CCNA Lab 3 · submitted 12 min ago</div>
+                <div style="font-size:11.5px;color:var(--text-3);margin-top:4px">VLAN trunking ✓ · Inter-VLAN routing ✓ · ACL task ✓</div>
+              </div>
+              <div class="mark-score">
+                <strong>48</strong><span>/50</span>
+              </div>
+            </div>
+            <div class="mark-item">
+              <div class="mark-avatar">PM</div>
+              <div class="mark-body">
+                <div class="mb-name">Priya M. <span style="color:var(--ok);font-size:11px">✓ Submitted</span></div>
+                <div class="mb-task">CCNA Lab 3 · submitted 18 min ago</div>
+                <div style="font-size:11.5px;color:var(--text-3);margin-top:4px">VLAN trunking ✓ · Inter-VLAN routing ✓ · ACL task —</div>
+              </div>
+              <div class="mark-score">
+                <strong>43</strong><span>/50</span>
+              </div>
+            </div>
+            <div class="mark-item" style="border-color:var(--accent-line)">
+              <div class="mark-avatar" style="border-color:var(--accent-line);color:var(--accent)">JL</div>
+              <div class="mark-body">
+                <div class="mb-name">James L. <span style="color:var(--text-4);font-size:11px">· In progress</span></div>
+                <div class="mb-task">CCNA Lab 3 · 26 min remaining</div>
+              </div>
+              <div class="mark-score" style="color:var(--text-4)">—</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS — ARCHITECTURE -->
+<section class="how-section" id="how-it-works">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow sec-eyebrow">Classroom architecture</span>
+      <h2 class="sec">One teacher. The whole class.<span class="accent"> One shared lab.</span></h2>
+      <p class="sec-sub" style="max-width:580px;margin:0 auto">From a single teaching station, the teacher builds a network or coding lab and pushes it to every student at once. Each student works in their own safe, browser sandbox while the teacher watches the room live.</p>
+    </div>
+
+    <div class="how-diagram">
+      <div class="how-row">
+        <div class="how-node">
+          <div class="hn-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><path d="M8 21h8M12 17v4"/></svg>
+          </div>
+          <div class="hn-label">Teacher</div>
+          <div class="hn-name">Teaching Station</div>
+        </div>
+
+        <div class="how-arrow">
+          <div class="ha-label">Push lab</div>
+          <svg width="32" height="16" viewBox="0 0 32 16" fill="none"><path d="M0 8h28M20 2l10 6-10 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div class="ha-label" style="color:var(--text-4)">Live view</div>
+        </div>
+
+        <div class="how-node" style="border-color:var(--accent-line);background:color-mix(in srgb,var(--accent) 6%,var(--surface-2))">
+          <div class="hn-icon">
+            <svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><g stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 19 L27 32 M14 32 L27 32 M14 45 L27 32"/><path d="M37 32 L52 32"/><circle cx="32" cy="32" r="5"/></g><circle cx="14" cy="19" r="3" fill="currentColor"/><circle cx="14" cy="32" r="3" fill="currentColor"/><circle cx="14" cy="45" r="3" fill="currentColor"/><circle cx="52" cy="32" r="3.4" fill="currentColor"/></svg>
+          </div>
+          <div class="hn-label" style="color:var(--accent)">netplex</div>
+          <div class="hn-name">Shared Lab</div>
+        </div>
+
+        <div class="how-arrow">
+          <div class="ha-label">Isolated sandbox</div>
+          <svg width="32" height="16" viewBox="0 0 32 16" fill="none"><path d="M0 8h28M20 2l10 6-10 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div class="ha-label" style="color:var(--text-4)">× 30 students</div>
+        </div>
+
+        <div class="how-fan">
+          <div class="how-student"><span class="hs-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><polyline points="8 21 12 17 16 21"/></svg></span><div class="hs-info">Workstation 1<br/>Alex B. · 74%</div><div class="hs-dot"></div></div>
+          <div class="how-student"><span class="hs-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><polyline points="8 21 12 17 16 21"/></svg></span><div class="hs-info">Workstation 2<br/>Priya M. · 100%</div><div class="hs-dot"></div></div>
+          <div class="how-student"><span class="hs-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><polyline points="8 21 12 17 16 21"/></svg></span><div class="hs-info">Workstation 3<br/>James L. · 61%</div><div class="hs-dot"></div></div>
+          <div style="font-family:var(--font-mono);font-size:10px;color:var(--text-4);padding:4px 14px;letter-spacing:0.05em">+ 27 more workstations</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Thin PC banner -->
+    <div class="thin-banner">
+      <span class="tb-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><polyline points="8 21 12 17 16 21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+      </span>
+      <div class="tb-text">
+        <h3>Works on every device — including thin PCs and Chromebooks</h3>
+        <p>Students need nothing more than a modern browser and an internet connection. No GPU, no RAM minimum, no admin rights. Even aging thin clients and Chromebooks that can't run traditional software connect and participate at full speed. The compute lives in the lab — not on the student's desk.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STUDENT LOGIN & REMOTE ACCESS -->
+<section class="login-section">
+  <div class="wrap">
+    <div class="login-grid">
+      <!-- Login mockup -->
+      <div class="login-ui">
+        <div class="lui-bar">
+          <div class="lights"><i></i><i></i><i></i></div>
+          <div class="url-bar">netplex.io/student · 🔒 secure</div>
+        </div>
+        <div class="lui-body">
+          <div class="lui-logo">
+            <span>netplex<span class="dotmark">.</span><span class="edu-tag">EDU</span></span>
+          </div>
+          <div class="lui-subtitle">Student portal — sign in to access your lab</div>
+          <div class="lui-field">
+            <div class="lui-label">School email</div>
+            <div class="lui-input">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <span class="fake-text">j.smith@school.edu.au</span>
+            </div>
+          </div>
+          <div class="lui-field">
+            <div class="lui-label">Password</div>
+            <div class="lui-input">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              <span class="fake-pass">••••••••••</span>
+            </div>
+          </div>
+          <a href="#" class="btn btn-primary lui-btn">Sign in to my lab</a>
+          <div class="lui-exam-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            <span>Active exam: CCNA Lab 3 — 38 minutes remaining</span>
+          </div>
+          <div class="lui-note">Managed by your school · IOCLEAN PTY LTD</div>
+        </div>
+      </div>
+
+      <!-- Feature list -->
+      <div class="login-features">
+        <div style="margin-bottom:32px">
+          <span class="eyebrow sec-eyebrow">Secure student access</span>
+          <h2 class="sec" style="font-size:34px;margin-top:10px">Students log in.<br/>You stay in control.</h2>
+          <p style="font-size:15px;color:var(--text-3);margin-top:12px;line-height:1.6">Each student gets their own credentials issued by the school. They log in from home, from school, from any thin PC or Chromebook — and land directly in their isolated sandbox. No setup, no confusion.</p>
+        </div>
+        <div class="lf-item">
+          <div class="lf-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div class="lf-text">
+            <h4>School-issued credentials</h4>
+            <p>Each student gets a unique username and password provisioned by the teacher. No personal accounts, no third-party sign-in — fully under school control.</p>
+          </div>
+        </div>
+        <div class="lf-item">
+          <div class="lf-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          </div>
+          <div class="lf-text">
+            <h4>Access from any device, anywhere</h4>
+            <p>Students work from school, home, the library — any browser, any OS. Thin PCs and Chromebooks connect at full speed because compute runs in the cloud lab, not on the device.</p>
+          </div>
+        </div>
+        <div class="lf-item">
+          <div class="lf-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </div>
+          <div class="lf-text">
+            <h4>Exam lockdown mode</h4>
+            <p>During a timed exam, each student's sandbox is isolated — no access to other students' labs, restricted external internet, and all actions are logged for the marking record.</p>
+          </div>
+        </div>
+        <div class="lf-item">
+          <div class="lf-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <div class="lf-text">
+            <h4>Teacher observes at any time</h4>
+            <p>Drop into any student's workstation silently to see exactly what they're doing, without interrupting their session. Jump in to assist or simply observe for integrity.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VOUCHER / FREE ACCESS -->
+<section class="voucher-section" id="voucher">
+  <div class="wrap">
+    <div class="voucher-card">
+      <div class="vc-left">
+        <div class="vc-eyebrow">
+          <span class="eyebrow">Classroom licence · Education voucher</span>
+        </div>
+        <h2>30 student seats,<br/>on the house.</h2>
+        <p>Every school gets a free classroom voucher — 30 student seats for 12 months. Redeem at <strong style="color:var(--text-1)">netplex.io/schools</strong> with the code below, or email <strong style="color:var(--text-1)">edu@netplex.io</strong> from your school domain to activate.</p>
+        <div class="vc-meta">
+          <div class="vc-meta-item">
+            <div class="vm-val">AU$0</div>
+            <div class="vm-label">Total cost</div>
+          </div>
+          <div class="vc-meta-item">
+            <div class="vm-val">30</div>
+            <div class="vm-label">Seats</div>
+          </div>
+          <div class="vc-meta-item">
+            <div class="vm-val">12 mo</div>
+            <div class="vm-label">Term</div>
+          </div>
+          <div class="vc-meta-item">
+            <div class="vm-val">1-click</div>
+            <div class="vm-label">EVE / GNS3 import</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a href="mailto:edu@netplex.io" class="btn btn-primary btn-lg">Email edu@netplex.io</a>
+          <a href="../contact.html" class="btn btn-outline btn-lg">Contact us</a>
+        </div>
+      </div>
+      <div class="vc-code-box">
+        <div class="vc-code-label">Voucher code</div>
+        <span class="vc-code">NPX·EDU·2026</span>
+        <div class="vc-code-note">One voucher per school.<br/>Non-transferable.<br/>Redeem at netplex.io/schools</div>
+      </div>
+    </div>
+
+    <div class="au-strip" style="margin-top:24px">
+      <span class="cross"><i></i><i></i><i></i><i style="margin-left:1px"></i></span>
+      <span>Proudly designed &amp; built in Australia</span>
+      <span style="color:var(--text-4)">·</span>
+      <span>By network engineers · for the next generation</span>
+      <span style="color:var(--text-4)">·</span>
+      <span>netplex is a product of <strong style="color:var(--text-1)">IOCLEAN PTY LTD</strong></span>
+      <span style="color:var(--text-4)">·</span>
+      <span style="font-family:var(--font-mono);font-size:12px;color:var(--text-4)">ABN 94 698 818 012 · ACN 698 818 012</span>
+    </div>
+  </div>
+</section>
+
+<!-- CTA STRIP -->
+<section class="edu-cta-strip">
+  <div class="wrap">
+    <span class="eyebrow" style="display:block;margin-bottom:16px">Ready to bring netplex. to your school?</span>
+    <h2>Your lab is waiting.<br/><span class="accent">No budget needed.</span></h2>
+    <p>Send the link to your IT coordinator or department head — setup takes under 10 minutes. Free for schools, always.</p>
+    <div class="cta-row">
+      <a href="mailto:edu@netplex.io" class="btn btn-primary btn-lg">Get in touch — edu@netplex.io</a>
+      <a href="../pricing.html" class="btn btn-outline btn-lg">See all plans</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="../index.html" class="brand"><span class="mark"><svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><g stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 19 L27 32 M14 32 L27 32 M14 45 L27 32"/><path d="M37 32 L52 32"/><circle cx="32" cy="32" r="5"/></g><circle cx="14" cy="19" r="3" fill="currentColor"/><circle cx="14" cy="32" r="3" fill="currentColor"/><circle cx="14" cy="45" r="3" fill="currentColor"/><circle cx="52" cy="32" r="3.4" fill="currentColor"/></svg></span><span class="wm">netplex<span class="dotmark">.</span></span></a>
+        <p>The modern network lab — giving students a real engineering sandbox. Free for every school.</p>
+        <span class="au-badge" style="margin-top:16px"><span class="cross"><i></i><i></i><i></i><i style="margin-left:1px"></i></span> Made in Australia</span>
+      </div>
+      <div class="foot-col"><h4>Product</h4><a href="../product.html">Features</a><a href="../download.html">Download</a><a href="../pricing.html">Pricing</a><a href="../roadmap.html">Roadmap</a></div>
+      <div class="foot-col"><h4>Education</h4><a href="index.html">Overview</a><a href="mailto:edu@netplex.io">Email edu team</a><a href="../contact.html">Contact</a></div>
+      <div class="foot-col"><h4>Resources</h4><a href="../kb.html">Knowledge Base</a><a href="../faq.html">FAQ</a><a href="../forums.html">Forums</a><a href="../support.html">Support</a></div>
+      <div class="foot-col"><h4>Legal</h4><a href="../legal.html#privacy">Privacy</a><a href="../legal.html#terms">Terms</a><a href="../legal.html#disclaimer">Disclaimer</a></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 netplex. · IOCLEAN PTY LTD · ABN 94&#8239;698&#8239;818&#8239;012 · ACN 698&#8239;818&#8239;012</span>
+      <span class="mono">EDU Edition · free for schools</span>
+    </div>
+  </div>
+</footer>
+
+</div>
+
+<script src="../assets/appearance.js"></script>
+<script src="../assets/nav.js"></script>
+<script>
+/* Workflow step switcher */
+(function () {
+  const steps = document.querySelectorAll('.w-step');
+  const panes = {
+    create:  document.getElementById('pane-create'),
+    assign:  document.getElementById('pane-assign'),
+    monitor: document.getElementById('pane-monitor'),
+    mark:    document.getElementById('pane-mark'),
+  };
+  const titles = {
+    create:  'netplex · Exam Builder',
+    assign:  'netplex · Deploy to Class',
+    monitor: 'netplex · Live Monitor',
+    mark:    'netplex · Marking',
+  };
+  const previewTitle = document.getElementById('previewTitle');
+
+  function activate(key) {
+    steps.forEach(s => s.classList.toggle('active', s.dataset.step === key));
+    Object.entries(panes).forEach(([k, el]) => { if (el) el.style.display = k === key ? '' : 'none'; });
+    if (previewTitle) previewTitle.textContent = titles[key] || '';
+  }
+
+  steps.forEach(step => {
+    step.addEventListener('click', () => activate(step.dataset.step));
+  });
+
+  /* Auto-cycle every 4 s */
+  const keys = ['create', 'assign', 'monitor', 'mark'];
+  let idx = 0;
+  setInterval(() => { idx = (idx + 1) % keys.length; activate(keys[idx]); }, 4000);
+})();
+</script>
+</body>
+</html>
