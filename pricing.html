@@ -46,10 +46,10 @@
   .faq h3 { font-size: 16px; margin-bottom: 6px; }
   .faq p { font-size: 14.5px; color: var(--text-3); line-height: 1.55; }
   @media (max-width: 760px){ .faq { grid-template-columns: 1fr; } .matrix { font-size: 12px; } .matrix th, .matrix td { padding: 9px 6px; } }
-  .perp-toggle { display: inline-flex; align-items: center; gap: 3px; background: var(--surface-2); border: 1px solid var(--border); border-radius: 999px; padding: 3px; margin: 10px 0 2px; }
+  .perp-toggle { display: flex; width: fit-content; align-items: center; gap: 3px; background: var(--surface-2); border: 1px solid var(--border); border-radius: 999px; padding: 3px; margin: 10px 0 2px; }
   .perp-toggle button { font-size: 12px; font-weight: 500; color: var(--text-3); padding: 5px 14px; border-radius: 999px; transition: all .15s; cursor: pointer; }
   .perp-toggle button.on { background: var(--accent); color: #fff; }
-  .perp-note { font-size: 11.5px; color: var(--text-4); margin-top: 4px; min-height: 15px; }
+  .perp-note { font-size: 11.5px; color: var(--text-4); margin-top: 2px; }
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"SoftwareApplication","name":"netplex.","applicationCategory":"NetworkingApplication","operatingSystem":"Linux","url":"https://netplex.io","offers":[{"@type":"Offer","name":"Associate","price":"0","priceCurrency":"AUD","description":"Free forever - 20 nodes per lab, canvas, live terminal, packet capture"},{"@type":"Offer","name":"Professional","price":"19.99","priceCurrency":"AUD","description":"1,000 nodes, snapshots, fault injection, any Docker image, presentation mode"},{"@type":"Offer","name":"Architect","price":"49.99","priceCurrency":"AUD","description":"Everything in Professional plus the automation toolbox - API, Terraform, Ansible, CI, QoS, metrics dashboard"},{"@type":"Offer","name":"Team","price":"49","priceCurrency":"AUD","description":"Per seat - collaboration on one topology, roles, larger fabric"},{"@type":"Offer","name":"Australian Schools (Class)","price":"0","priceCurrency":"AUD","description":"Completely free for every Australian school — software installed on your server, teachers trained at no cost"},{"@type":"Offer","name":"Enterprise","description":"Contact for pricing - subscription or perpetual licence"}]}
@@ -410,7 +410,7 @@
       <div class="foot-col"><h4>Legal</h4><a href="legal.html#privacy">Privacy</a><a href="legal.html#terms">Terms</a><a href="legal.html#disclaimer">Disclaimer</a></div>
     </div>
     <div class="foot-bottom">
-      <span>© 2026 netplex. · IONET PTY LTD</span>
+      <span>© 2026 netplex. · <a href="https://ionet.com.au" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">IONET PTY LTD</a></span>
       <span class="mono">v1.0 · built for engineers</span>
     </div>
   </div>
