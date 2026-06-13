@@ -143,7 +143,7 @@
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>any-Docker (Hub / GHCR / marketplace)</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Snapshots &amp; freeze</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Git backup</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Fault injection (tc/netem, link kill)</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Fault injection (link &amp; node up/down)</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>2-machine VXLAN fabric<span class="rm">roadmap</span></li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Network Git versioning<span class="rm">roadmap</span></li>
           </ul>
@@ -164,7 +164,7 @@
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Pre-merge validation pipelines (pyATS / Batfish)<span class="rm">roadmap</span></li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Ansible automation + scoped API keys + CLI</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Terraform for controllers &amp; cloud (ACI, Meraki, Apstra, NSX)</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>QoS shaping (latency, jitter, packet loss, rate)</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>QoS impairment (delay, latency, jitter, packet loss, rate)</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Network flow animation</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Built-in metrics dashboard + gNMI</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>microVM &amp; LXC/LXD runtimes</li>
@@ -274,7 +274,7 @@
         <tr><td>any-Docker (Hub / GHCR / marketplace)</td><td class="x">-</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck col-us">✓</td></tr>
         <tr><td>Snapshots · freeze · Git backup</td><td class="x">-</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck col-us">✓ + S3</td></tr>
         <tr><td>Network Git versioning <span class="mono" style="color:var(--accent)">· roadmap</span></td><td class="x">-</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck col-us">✓</td></tr>
-        <tr><td>Fault injection (tc/netem, link kill)</td><td class="x">-</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck col-us">✓</td></tr>
+        <tr><td>Fault injection (link &amp; node up/down)</td><td class="x">-</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck col-us">✓</td></tr>
         <tr><td>Presentation mode (laser · draw · annotate)</td><td class="x">-</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck col-us">✓</td></tr>
         <tr><td>microVM · LXC/LXD runtimes</td><td class="x">-</td><td class="x">-</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck col-us">✓</td></tr>
         <tr class="grp"><td colspan="7">Config, validation &amp; observability</td></tr>
@@ -284,7 +284,7 @@
         <tr><td>Scoped API keys + CLI</td><td class="mono">read</td><td class="mono">read</td><td class="mono">read/write</td><td class="mono">read/write</td><td class="mono">read/write</td><td class="mono col-us">+ admin · audit</td></tr>
         <tr><td>Ansible automation</td><td class="x">-</td><td class="x">-</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck col-us">✓</td></tr>
         <tr><td>Terraform for controllers &amp; cloud (ACI, Meraki, Apstra, NSX)</td><td class="x">-</td><td class="x">-</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck col-us">✓</td></tr>
-        <tr><td>Full tc/netem QoS knobs</td><td class="x">-</td><td class="x">-</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck col-us">✓</td></tr>
+        <tr><td>QoS impairment (delay, latency, jitter, packet loss, rate)</td><td class="x">-</td><td class="x">-</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck col-us">✓</td></tr>
         <tr><td>Live link traffic %</td><td class="x">-</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck col-us">✓</td></tr>
         <tr><td>Real-time flow analytics <span class="mono" style="color:var(--accent)">· roadmap</span></td><td class="x">-</td><td class="x">-</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck col-us">✓</td></tr>
         <tr><td>Built-in metrics dashboard · gNMI</td><td class="x">-</td><td class="x">-</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck col-us">✓</td></tr>
@@ -316,7 +316,7 @@
       <div><h3 style="color:var(--ok)">Is it really free for Australian schools?</h3><p>Yes — for every Australian primary and secondary school. We install the software on your school's server and personally train your teachers, all at no cost. TAFEs and universities, please <a href="contact.html" style="color:var(--accent)">contact us</a> for a quote. Email <a href="mailto:edu@netplex.io" style="color:var(--accent)">edu@netplex.io</a> to get started.</p></div>
       <div><h3>Why pay when EVE-NG has a free Community?</h3><p>You don't have to - netplex. Associate is also free, and already better. You pay for what EVE-NG can't sell you: snapshots, fault injection, presentation mode, Terraform, Ansible, QoS and a built-in metrics dashboard.</p></div>
       <div><h3>Is the Associate tier time-limited?</h3><p>No - free is free forever. 20 nodes and a live lab is a genuinely useful ceiling for routing &amp; switching certification study, and the full engine, every console and the built-in tool nodes are all included.</p></div>
-      <div><h3>What's the difference between Professional and Architect?</h3><p>Professional ($199/yr) is the solo "version it, break it, present it" tier - 1,000 nodes, snapshots, fault injection, any-Docker and presentation mode. Architect ($299/yr) adds the automation toolbox (API, Terraform, Ansible, CI), QoS knobs, the built-in metrics dashboard and micro-VM/LXC. Team brings the people layer; Enterprise the org layer.</p></div>
+      <div><h3>What's the difference between Professional and Architect?</h3><p>Professional ($199/yr) is the solo "version it, break it, present it" tier - 1,000 nodes, snapshots, link/node fault injection, any-Docker and presentation mode. Architect ($299/yr) adds config-as-code &amp; intent validation, QoS impairment (delay/jitter/loss), the automation toolbox (API, Terraform, Ansible), the built-in metrics dashboard and micro-VM/LXC. Team brings the people layer; Enterprise the org layer.</p></div>
       <div><h3>Why is there a 1 Mbps cap on Associate?</h3><p>It's intentional, gentle friction. Routing and switching study doesn't need throughput; serious QoS or WAN simulation does - and that's a Professional/Architect conversation.</p></div>
       <div><h3>Will a licence blip lock my running lab?</h3><p>No. Enterprise uses MAC + TPM fingerprinting with a 30-day grace period on hardware migration. Reliability beats DRM zeal.</p></div>
     </div>
