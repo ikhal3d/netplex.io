@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>GNS3 Alternative 2026 — netplex. · no local server, no VMware</title>
+<meta name="description" content="Looking for a GNS3 alternative? netplex. runs entirely in your browser — no GNS3 Local server confusion, no VMware dependency, no memory leaks. Free tier available." />
+<meta name="keywords" content="GNS3 alternative, GNS3 alternative 2026, replace GNS3, GNS3 vs netplex, network lab software, GNS3 without VMware, network simulation software" />
+<link rel="icon" href="assets/favicon.svg" />
+<link rel="canonical" href="https://netplex.io/gns3-alternative.html" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="netplex." />
+<meta property="og:title" content="GNS3 Alternative 2026 — netplex." />
+<meta property="og:description" content="GNS3 reimagined for 2026. Browser-native, no local server, no VMware. Import .gns3project directly. Free tier available." />
+<meta property="og:image" content="https://netplex.io/assets/og.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="robots" content="index, follow" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="GNS3 Alternative 2026 — netplex." />
+<meta name="twitter:description" content="GNS3 reimagined for 2026. Browser-native, no local server, no VMware required. Import .gns3project directly." />
+<meta name="twitter:image" content="https://netplex.io/assets/og.png" />
+<link rel="stylesheet" href="assets/site.css?v=5" />
+<link rel="stylesheet" href="assets/landing.css?v=5" />
+<link rel="stylesheet" href="assets/pages.css?v=5" />
+<script>(function(){try{var t=localStorage.getItem('netplex.theme');var a=localStorage.getItem('netplex.accent');if(t&&t!=='midnight')document.documentElement.dataset.theme=t;if(a&&a!=='orange')document.documentElement.dataset.accent=a;}catch(e){}})();</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"netplex.","applicationCategory":"NetworkingApplication","operatingSystem":"Linux","url":"https://netplex.io","description":"Browser-native network emulation platform. GNS3 alternative — no local server, no VMware dependency, automated image pipeline.","offers":[{"@type":"Offer","name":"Associate","price":"0","priceCurrency":"AUD"},{"@type":"Offer","name":"Professional","price":"19.99","priceCurrency":"AUD"}]}
+</script>
+<style>
+/* ── Comparison page styles ── */
+.cmp-wrap { overflow-x: auto; margin: 36px 0; border-radius: 12px; border: 1px solid var(--border-soft); }
+.cmp { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+.cmp thead tr { border-bottom: 2px solid var(--border-soft); }
+.cmp th { padding: 13px 18px; text-align: left; font-weight: 700; font-size: 11.5px; text-transform: uppercase; letter-spacing: .07em; color: var(--text-3); background: var(--surface-1); white-space: nowrap; }
+.cmp th.hl { color: var(--accent); background: rgba(255,122,69,.1); }
+.cmp td { padding: 11px 18px; border-bottom: 1px solid var(--border-soft); vertical-align: middle; }
+.cmp tbody tr:last-child td { border-bottom: none; }
+.cmp td.hl { background: rgba(255,122,69,.04); }
+.cmp td:first-child { color: var(--text-2); font-weight: 500; font-size: 13px; }
+.cmp-y { color: var(--ok); font-weight: 700; }
+.cmp-n { color: var(--text-4); }
+.cmp-m { color: var(--accent); font-weight: 600; font-size: 12.5px; }
+.pain-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1px; background: var(--border-soft); border: 1px solid var(--border-soft); border-radius: 12px; overflow: hidden; margin: 36px 0; }
+.pain-card { background: var(--surface-0); padding: 26px; }
+.pain-num { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--text-4); margin-bottom: 10px; }
+.pain-card h3 { font-size: 15.5px; font-weight: 700; margin: 0 0 10px; color: var(--text-1); }
+.pain-card p { font-size: 13.5px; color: var(--text-3); margin: 0; line-height: 1.65; }
+.fix-quote { background: var(--surface-1); border-left: 3px solid var(--border); border-radius: 0 8px 8px 0; padding: 12px 16px; margin: 14px 0 0; font-size: 12.5px; color: var(--text-3); font-style: italic; line-height: 1.6; }
+.mig-box { background: var(--surface-1); border: 1px solid var(--border-soft); border-radius: 12px; padding: 32px 36px; display: flex; align-items: center; gap: 40px; flex-wrap: wrap; }
+.mig-box .mig-step { flex: 1; min-width: 160px; }
+.mig-box .mig-step .mig-n { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--text-4); margin-bottom: 6px; }
+.mig-box .mig-step h4 { font-size: 14.5px; font-weight: 700; margin: 0 0 4px; color: var(--text-1); }
+.mig-box .mig-step p { font-size: 13px; color: var(--text-3); margin: 0; }
+.mig-arrow { color: var(--text-4); font-size: 22px; flex-shrink: 0; }
+.truth-band { background: var(--surface-1); border-top: 1px solid var(--border-soft); border-bottom: 1px solid var(--border-soft); padding: 28px 0; }
+.truth-inner { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+.truth-inner .truth-icon { color: var(--accent); flex-shrink: 0; }
+.truth-inner p { font-size: 14px; color: var(--text-2); margin: 0; line-height: 1.6; }
+@media (max-width: 640px) { .mig-arrow { display: none; } }
+</style>
+</head>
+<body>
+<div class="gridbg"></div>
+<div class="beta-ribbon">BETA</div>
+<div class="content">
+
+<nav class="nav">
+  <div class="wrap">
+    <a href="." class="brand"><span class="mark"><svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><g stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 19 L27 32 M14 32 L27 32 M14 45 L27 32"/><path d="M37 32 L52 32"/><circle cx="32" cy="32" r="5"/></g><circle cx="14" cy="19" r="3" fill="currentColor"/><circle cx="14" cy="32" r="3" fill="currentColor"/><circle cx="14" cy="45" r="3" fill="currentColor"/><circle cx="52" cy="32" r="3.4" fill="currentColor"/></svg></span><span class="wm">netplex<span class="dotmark">.</span></span><span class="ver">v1.0</span></a>
+    <div class="navlinks">
+      <a href="product.html">Product</a>
+      <a href="download.html">Download</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="kb.html">Knowledge Base</a>
+      <a href="forums.html">Forums</a>
+      <a href="roadmap.html">Roadmap</a>
+      <a href="edu/">Education</a>
+      <a href="support.html">Support</a>
+    </div>
+    <div class="navactions">
+      <a href="#" class="btn btn-ghost" data-ext>Sign in</a>
+      <button class="ap-trigger" data-appearance-trigger aria-label="Appearance" title="Appearance"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996C20.146 15.21 22 13.36 22 11.04 22 6.038 17.5 2 12 2z"/></svg></button>
+      <a href="download.html" class="btn btn-primary">Get netplex.</a>
+      <button class="menu-toggle" aria-label="Menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="page-head center wrap">
+  <div style="margin-bottom:18px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap">
+    <span class="chip">GNS3 alternative</span>
+    <span class="chip">No local server</span>
+    <span class="chip">No VMware required</span>
+    <span class="chip">Import .gns3project directly</span>
+  </div>
+  <h1>GNS3. Rebuilt for 2026.<br/><span class="accent">Browser-native. No local server.</span></h1>
+  <p class="lede">GNS3 has been the standard for 15 years. netplex. is what GNS3 would be if it were designed today — same power, browser-native, no local server confusion, no VMware dependency, no memory leaks after 14 hours.</p>
+  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:28px">
+    <a href="download.html" class="btn btn-primary btn-lg">Get netplex. free<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:18px;height:18px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a href="#compare" class="btn btn-outline btn-lg">See the comparison</a>
+  </div>
+</div>
+
+<!-- PINNED FACT -->
+<div class="truth-band">
+  <div class="wrap">
+    <div class="truth-inner">
+      <div class="truth-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></div>
+      <p><strong style="color:var(--text-1)">"90% of the problems that users experience on Windows comes down to one thing: the GNS3 Local server."</strong> — GNS3 GitHub pinned issue. The local server vs GNS3 VM question is the most-searched GNS3 topic. netplex. has no local server. There is nothing to configure.</p>
+    </div>
+  </div>
+</div>
+
+<!-- PAIN POINTS -->
+<section style="padding-top:48px">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow sec-eyebrow">Why engineers move on from GNS3</span>
+      <h2 class="sec">Fifteen years of technical debt.<br/><span class="accent">You've hit all of it.</span></h2>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <div class="pain-num">Pain 01</div>
+        <h3>The local server vs GNS3 VM decision</h3>
+        <p>GNS3 can run as a local server, a remote server, or inside a dedicated GNS3 VM. "These different options are confusing to people, which results in frustration." The recommended answer is always the GNS3 VM, which brings you back to VMware dependency.</p>
+        <div class="fix-quote">"You have to be a developer just to understand it." — GNS3 community forum</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-num">Pain 02</div>
+        <h3>VMware / VirtualBox required</h3>
+        <p>To avoid the local server mess, most users end up inside a GNS3 VM running in VMware Workstation, VMware Player or VirtualBox. That means an extra hypervisor to install, configure and maintain on your laptop before your first node even boots.</p>
+        <div class="fix-quote">"Even when I tried remote server, the fact that you need local VMware is pretty annoying." — GNS3 forum</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-num">Pain 03</div>
+        <h3>Memory leak after long sessions</h3>
+        <p>GNS3 starts at ~200 MB RAM and climbs to ~540 MB after 14 hours with devices <em>paused</em> — not even running. Long cert-study sessions eventually require a full restart to reclaim memory. This is a tracked, open issue (GitHub #2213) that has existed for years.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-num">Pain 04</div>
+        <h3>Client ≠ server version → lab won't open</h3>
+        <p>GNS3 requires the client and server to be exactly the same version. Update the client and forget to update the server? Your lab file refuses to open until both match. In a team, keeping every machine in sync is its own maintenance job.</p>
+        <div class="fix-quote">"Client 2.2.55 ≠ server 2.2.56 → rollback or fresh VM" — documented community workaround</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-num">Pain 05</div>
+        <h3>No collaboration or sharing</h3>
+        <p>Sharing a GNS3 lab means exporting a <span class="mono">.gns3project</span> file and sending it over email or Slack. The recipient must have matching images, the same GNS3 version, and the same VM setup. There is no shared link, no clone, no real-time co-edit.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-num">Pain 06</div>
+        <h3>Classroom delivery is manual</h3>
+        <p>GNS3 has no built-in multi-user or classroom model. Running 25 students on GNS3 labs means 25 separate installations, 25 separate images, 25 separate VMware setups — and a support queue on the first day of class.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON TABLE -->
+<section id="compare" style="background:var(--surface-1);border-top:1px solid var(--border-soft);border-bottom:1px solid var(--border-soft)">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow sec-eyebrow">Feature comparison</span>
+      <h2 class="sec">GNS3 vs netplex.<br/><span class="accent">Both free. Very different experience.</span></h2>
+    </div>
+    <div class="cmp-wrap">
+      <table class="cmp">
+        <thead>
+          <tr>
+            <th style="width:36%">Feature</th>
+            <th>GNS3<br/><span style="font-weight:400;text-transform:none;letter-spacing:0;font-size:12px">Free / open source</span></th>
+            <th class="hl">netplex. Associate<br/><span style="font-weight:400;text-transform:none;letter-spacing:0;font-size:12px">Free forever</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Runs in browser</td>
+            <td><span class="cmp-n">No — native desktop app + local server</span></td>
+            <td class="hl"><span class="cmp-y">Yes — full UI in browser</span></td>
+          </tr>
+          <tr>
+            <td>Requires local software install</td>
+            <td><span class="cmp-n">Yes — GNS3 + VMware or VirtualBox</span></td>
+            <td class="hl"><span class="cmp-y">No — nothing on client machines</span></td>
+          </tr>
+          <tr>
+            <td>Console access method</td>
+            <td><span class="cmp-n">Native Telnet / VNC (external app)</span></td>
+            <td class="hl"><span class="cmp-y">Browser-native terminal</span></td>
+          </tr>
+          <tr>
+            <td>Multi-user / collaboration</td>
+            <td><span class="cmp-n">Not supported</span></td>
+            <td class="hl"><span class="cmp-m">Team / Class / Enterprise tiers</span></td>
+          </tr>
+          <tr>
+            <td>Topology sharing</td>
+            <td><span class="cmp-n">Export .gns3project file</span></td>
+            <td class="hl"><span class="cmp-y">Share a link · clone to your account</span></td>
+          </tr>
+          <tr>
+            <td>Image pipeline</td>
+            <td><span class="cmp-n">Manual — download, place, configure</span></td>
+            <td class="hl"><span class="cmp-y">8-stage automated pipeline</span></td>
+          </tr>
+          <tr>
+            <td>Packet capture</td>
+            <td>Via native Wireshark app</td>
+            <td class="hl"><span class="cmp-y">Browser-native · no install</span></td>
+          </tr>
+          <tr>
+            <td>REST API</td>
+            <td>Basic — limited endpoints</td>
+            <td class="hl"><span class="cmp-m">Full REST + WebSocket (Professional+)</span></td>
+          </tr>
+          <tr>
+            <td>Terraform provider</td>
+            <td><span class="cmp-n">No</span></td>
+            <td class="hl"><span class="cmp-m">Professional+</span></td>
+          </tr>
+          <tr>
+            <td>Link QoS (delay / jitter / loss)</td>
+            <td>Via OS-level config</td>
+            <td class="hl"><span class="cmp-y">Built-in per-link panel · all tiers</span></td>
+          </tr>
+          <tr>
+            <td>Memory use over time</td>
+            <td><span class="cmp-n">200 MB → 540 MB (14 hrs paused, known leak)</span></td>
+            <td class="hl"><span class="cmp-y">Fixed overhead per node — no growth</span></td>
+          </tr>
+          <tr>
+            <td>Client / server version sync</td>
+            <td><span class="cmp-n">Must match exactly — mismatch = no open</span></td>
+            <td class="hl"><span class="cmp-y">One deployment — nothing to sync</span></td>
+          </tr>
+          <tr>
+            <td>Classroom / student mode</td>
+            <td><span class="cmp-n">Not built in</span></td>
+            <td class="hl"><span class="cmp-m">Class tier — isolated pods, grading</span></td>
+          </tr>
+          <tr>
+            <td>IPv6 first-class</td>
+            <td>Requires manual setup</td>
+            <td class="hl"><span class="cmp-y">OSPFv3, BGP4+, SLAAC, SRv6, NAT64 built in</span></td>
+          </tr>
+          <tr>
+            <td>GNS3 .gns3project import</td>
+            <td>—</td>
+            <td class="hl"><span class="cmp-y">Yes — same workflow as .unl import</span></td>
+          </tr>
+          <tr>
+            <td>Setup time (first lab running)</td>
+            <td><span class="cmp-n">VMware + GNS3 + VM setup = 2+ hours</span></td>
+            <td class="hl"><span class="cmp-y">Under 5 minutes</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:13px;color:var(--text-4);text-align:center;margin:0">GNS3 figures sourced from GitHub Issues, community documentation and netpilot.io comparison (June 2026). Memory figures from GitHub Issue #2213.</p>
+  </div>
+</section>
+
+<!-- HOW IT'S DIFFERENT -->
+<section>
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow sec-eyebrow">The architecture is different</span>
+      <h2 class="sec">No local process. <span class="accent">No local anything.</span></h2>
+      <p class="sec-sub">GNS3's local server model was designed for a world where everyone ran a local desktop app. netplex. is server-side by design — the whole platform runs on one host, and every user reaches it from a browser.</p>
+    </div>
+    <div class="bento" style="margin-top:36px">
+      <div class="feat">
+        <h3>One server, any browser</h3>
+        <p>Install netplex. once on a dedicated host. Every engineer, student or teammate reaches it from any browser — laptop, tablet, borrowed machine. No installs. No version sync. No VMware.</p>
+      </div>
+      <div class="feat">
+        <h3>Memory use is predictable</h3>
+        <p>Each QEMU node gets a fixed RAM allocation. The platform's own overhead doesn't grow with session length. Run a 20-node lab for 72 hours and check back — it'll use exactly what you allocated.</p>
+      </div>
+      <div class="feat">
+        <h3>Share labs with a link</h3>
+        <p>Every lab has a shareable URL. Non-users can view the topology live in their browser. Account holders can clone the lab to their own workspace with one click — no file exports, no image matching.</p>
+      </div>
+      <div class="feat">
+        <h3>Image pipeline — drop and walk away</h3>
+        <p>Upload an image and the automated pipeline classifies, converts, sets permissions and boot-tests it. The result is a human-readable device name in the palette, not a raw file path.</p>
+      </div>
+      <div class="feat">
+        <h3>GNS3 project import</h3>
+        <p>Your <span class="mono">.gns3project</span> files import directly — the same workflow as EVE-NG <span class="mono">.unl</span> and containerlab YAML. Nodes, links and saved configs all carry across.</p>
+      </div>
+      <div class="feat">
+        <h3>Classroom built in</h3>
+        <p>The Class tier gives each student an isolated pod with their own live lab. The teacher can freeze the room, reset all pods to a clean topology, or grade from a snapshot — all from one screen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MIGRATION -->
+<section style="background:var(--surface-1);border-top:1px solid var(--border-soft);border-bottom:1px solid var(--border-soft)">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow sec-eyebrow">Migration</span>
+      <h2 class="sec">Your GNS3 projects come with you.<br/><span class="accent">Same 30-second import as EVE-NG.</span></h2>
+    </div>
+    <div class="mig-box" style="margin-top:36px">
+      <div class="mig-step">
+        <div class="mig-n">Step 01</div>
+        <h4>Export from GNS3</h4>
+        <p>File → Export portable project. This bundles the topology and any saved configs into a <span class="mono">.gns3project</span> file.</p>
+      </div>
+      <div class="mig-arrow">→</div>
+      <div class="mig-step">
+        <div class="mig-n">Step 02</div>
+        <h4>Import in netplex.</h4>
+        <p>Labs → Import → GNS3 (.gns3project) and drop the file. Device kind mapping is automatic for common types.</p>
+      </div>
+      <div class="mig-arrow">→</div>
+      <div class="mig-step">
+        <div class="mig-n">Step 03</div>
+        <h4>Start your lab</h4>
+        <p>Select all nodes, press Start. Double-click any node to console in. No Telnet client, no SecureCRT — just your browser.</p>
+      </div>
+    </div>
+    <div class="bento" style="grid-template-columns:repeat(3,1fr);margin-top:24px">
+      <div class="feat"><h3>Topology preserved</h3><p>All node positions, interface assignments and link types carry across from the GNS3 project file.</p></div>
+      <div class="feat"><h3>Configs carry too</h3><p>Saved startup configurations embedded in the project come across automatically.</p></div>
+      <div class="feat"><h3>EVE-NG and containerlab</h3><p>Same importer handles <span class="mono">.unl</span> and containerlab YAML. Consolidate everything into one platform.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- STUDENT / STUDY PITCH -->
+<section>
+  <div class="wrap">
+    <div class="showcase">
+      <div class="sc-text">
+        <span class="eyebrow sec-eyebrow">For cert study</span>
+        <h2>Stop fighting your lab tool.<br/><span class="accent">Focus on the exam.</span></h2>
+        <p>GNS3 is genuinely powerful — but half the study-guide threads on Reddit are troubleshooting the tool, not the protocol. netplex. gets out of your way: open a browser, build the topology, console in.</p>
+        <ul class="sc-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Pre-built lab templates for CCNA, CCNP, CCIE — import and study immediately</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Knowledge Base with 35 step-by-step lab guides built in</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Share your topology with a study group — one link, zero file exports</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Browser-native packet capture — click the link, see the traffic</li>
+        </ul>
+      </div>
+      <div class="topo-frame">
+        <div class="win term-win">
+          <div class="term-tabs"><span class="term-tab on">R1</span><span class="term-tab">R2</span><span class="term-tab">R3</span><span class="term-tab">+2</span></div>
+          <div class="body">
+<span class="pr">R1#</span> show ip ospf neighbor
+<span class="dim">Neighbor ID     Pri   State      Interface</span>
+10.0.0.2        1     <span class="ok">FULL/DR</span>    Gi0/0
+10.0.0.3        1     <span class="ok">FULL/BDR</span>   Gi0/1
+<span class="pr">R1#</span> show bgp ipv4 unicast summary
+<span class="dim">Neighbor        AS    MsgRcvd  Up/Down    State</span>
+10.0.0.2        65001    147   00:12:33   <span class="ok">Established</span>
+<span class="pr">R1#</span> <span style="opacity:.6">▍</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="ctaband">
+  <div class="wrap">
+    <h2>Ready to leave the<br/><span class="accent">local server behind?</span></h2>
+    <p>Start on the free Associate tier. Import your first <span class="mono">.gns3project</span>. Open a console in your browser. No VMware, no local server, no version sync.</p>
+    <div style="display:flex;gap:13px;justify-content:center;flex-wrap:wrap">
+      <a href="download.html" class="btn btn-primary btn-lg">Get netplex. free<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:18px;height:18px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="product.html" class="btn btn-outline btn-lg">See the full product</a>
+    </div>
+    <p style="margin-top:18px;font-size:13.5px;color:var(--ok);font-weight:600">Australian schools get the full platform free — install and teacher training included. <a href="edu/" style="color:var(--accent)">Learn more →</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="." class="brand"><span class="mark"><svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><g stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 19 L27 32 M14 32 L27 32 M14 45 L27 32"/><path d="M37 32 L52 32"/><circle cx="32" cy="32" r="5"/></g><circle cx="14" cy="19" r="3" fill="currentColor"/><circle cx="14" cy="32" r="3" fill="currentColor"/><circle cx="14" cy="45" r="3" fill="currentColor"/><circle cx="52" cy="32" r="3.4" fill="currentColor"/></svg></span><span class="wm">netplex<span class="dotmark">.</span></span></a>
+        <p>The modern network lab — a distributed digital twin, execution and automation platform. Emulate. Automate. Ship.</p>
+        <span class="au-badge" style="margin-top:16px"><span class="cross"><i></i><i></i><i></i><i style="margin-left:1px"></i></span> Made in Australia</span>
+      </div>
+      <div class="foot-col"><h4>Product</h4><a href="product.html">Features</a><a href="download.html">Download</a><a href="pricing.html">Pricing</a><a href="roadmap.html">Roadmap</a><a href="edu/">Education</a></div>
+      <div class="foot-col"><h4>Compare</h4><a href="eve-ng-alternative.html">vs EVE-NG</a><a href="gns3-alternative.html">vs GNS3</a></div>
+      <div class="foot-col"><h4>Resources</h4><a href="kb.html">Knowledge Base</a><a href="faq.html">FAQ</a><a href="forums.html">Forums</a><a href="support.html">Support</a></div>
+      <div class="foot-col"><h4>Company</h4><a href="about.html">About</a><a href="contact.html">Contact</a><a href="brand.html">Brand kit</a><a href="legal.html">Legal</a></div>
+    </div>
+    <div class="donate-strip">
+      <a href="https://buymeacoffee.com/netplex" target="_blank" rel="noopener" class="donate-btn">☕ Buy us a coffee · $5</a>
+      <span class="donate-sub">netplex. is free for students and schools. If it helped you pass a cert or land a job, a coffee keeps it going.</span>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 netplex. · <a href="https://ionet.com.au" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">IONET PTY LTD</a></span>
+      <span class="mono">v1.0 · built for engineers</span>
+    </div>
+  </div>
+</footer>
+
+</div>
+<script src="assets/appearance.js"></script>
+<script src="assets/nav.js"></script>
+</body>
+</html>
