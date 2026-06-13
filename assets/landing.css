@@ -200,11 +200,14 @@
 .tier-anim { animation: fadeUp .3s ease both; }
 @keyframes fadeUp { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
 
-/* IONET logo: white on dark themes, inverted to black on light themes */
-.ionet-logo { display:block; height:20px; }
-[data-theme="cloud"] .ionet-logo,
-[data-theme="paper"] .ionet-logo,
-[data-theme="sand"]  .ionet-logo { filter: brightness(0); opacity: 0.6; }
+/* IONET logo: icon always coloured, text turns black on light themes */
+.ionet-link { display:flex; align-items:center; gap:7px; margin-top:14px; opacity:0.55; transition:opacity .2s; }
+.ionet-link:hover { opacity:.9; }
+.ionet-icon { height:22px; display:block; flex-shrink:0; }
+.ionet-text { height:13px; display:block; }
+[data-theme="cloud"] .ionet-text,
+[data-theme="paper"] .ionet-text,
+[data-theme="sand"]  .ionet-text { filter: brightness(0); }
 
 /* ── CTA BAND ── */
 .ctaband { text-align: center; position: relative; }
