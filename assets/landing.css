@@ -200,6 +200,12 @@
 .tier-anim { animation: fadeUp .3s ease both; }
 @keyframes fadeUp { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
 
+/* IONET logo: white on dark themes, inverted to black on light themes */
+.ionet-logo { display:block; height:20px; }
+[data-theme="cloud"] .ionet-logo,
+[data-theme="paper"] .ionet-logo,
+[data-theme="sand"]  .ionet-logo { filter: brightness(0); opacity: 0.6; }
+
 /* ── CTA BAND ── */
 .ctaband { text-align: center; position: relative; }
 .ctaband h2 { font-size: 46px; letter-spacing: -0.03em; margin-bottom: 16px; }
