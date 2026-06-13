@@ -169,18 +169,22 @@
 .api-logos .chip { font-family: var(--font-mono); font-size: 12px; }
 
 /* ── PRICING TEASER ── */
-.tiers { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 44px; align-items: start; }
+.tiers3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 44px; align-items: start; }
+.tiers4, .tiers { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 44px; align-items: start; }
 .tier { background: var(--surface-1); border: 1px solid var(--border); border-radius: var(--r-4); padding: 24px 22px; }
 .tier.feat { border-color: var(--accent); position: relative; }
 .tier-badge { position: absolute; top: -11px; left: 50%; transform: translateX(-50%); background: var(--accent); color: #fff; font-size: 11px; font-weight: 600; padding: 3px 12px; border-radius: 999px; white-space: nowrap; }
 .tier .nm { font-family: var(--font-ui); font-size: 23px; font-weight: 700; letter-spacing: -0.015em; text-transform: none; color: var(--text-1); margin-bottom: 9px; line-height: 1.1; }
-.tier .price { font-size: 34px; font-weight: 600; letter-spacing: -0.02em; }
-.tier .price span { font-size: 14px; color: var(--text-4); font-weight: 400; }
+/* price-row: flex wrapper used in shared cards partial */
+.tier .price-row { display: flex; align-items: baseline; gap: 2px; }
+.tier .price, .tier .price-val { font-size: 34px; font-weight: 600; letter-spacing: -0.02em; color: var(--text-1); }
+.tier .price span, .tier .suf, .tier .psuf { font-size: 14px; color: var(--text-4); font-weight: 400; }
 .tier .price .price-i { font-size: 34px; color: var(--text-1); font-weight: 600; }
 .tier .desc { font-size: 13px; color: var(--text-3); margin: 6px 0 18px; min-height: 34px; }
-.tier .annual { font-size: 12px; color: var(--ok); font-weight: 600; margin-top: 4px; font-family: var(--font-mono); }
+.tier .save-note, .tier .annual { font-size: 12px; color: var(--ok); font-weight: 600; margin-top: 4px; font-family: var(--font-mono); min-height: 16px; }
 .tier .tier-spec { display: flex; align-items: baseline; gap: 6px; font-size: 12.5px; color: var(--text-2); margin: 0 0 16px; padding: 9px 11px; background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--r-2); }
 .tier .tier-spec b { color: var(--text-1); font-family: var(--font-mono); font-size: 14px; }
+.tier .cta-row { margin-top: 20px; }
 .tier li.grp { color: var(--text-1); font-weight: 600; }
 .tier li.grp svg { color: var(--accent); }
 .tier ul { list-style: none; display: flex; flex-direction: column; gap: 9px; margin-top: 16px; }
@@ -188,6 +192,13 @@
    stay aligned under the text (not pushed back under the tick) */
 .tier li { font-size: 13px; color: var(--text-2); font-weight: 400; position: relative; padding-left: 23px; line-height: 1.45; }
 .tier li svg { width: 15px; height: 15px; color: var(--ok); position: absolute; left: 0; top: 3px; }
+/* perpetual toggle — shared across pricing.html and index.html */
+.perp-toggle { display: flex; width: fit-content; align-items: center; gap: 3px; background: var(--surface-2); border: 1px solid var(--border); border-radius: 999px; padding: 3px; margin: 10px 0 2px; }
+.perp-toggle button { font-size: 12px; font-weight: 500; color: var(--text-3); padding: 5px 14px; border-radius: 999px; transition: all .15s; cursor: pointer; }
+.perp-toggle button.on { background: var(--accent); color: #fff; }
+.perp-note { font-size: 11.5px; color: var(--text-4); margin-top: 2px; }
+.tier-anim { animation: fadeUp .3s ease both; }
+@keyframes fadeUp { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
 
 /* ── CTA BAND ── */
 .ctaband { text-align: center; position: relative; }

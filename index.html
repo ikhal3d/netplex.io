@@ -271,84 +271,97 @@
       <div class="bill-toggle"><button id="tMonthly" class="on">Monthly</button><button id="tAnnual">Annual</button></div>
       <span class="bill-save" id="tSave" style="visibility:hidden">2 months free</span>
     </div>
-    <div class="tiers4" style="text-align:left">
-      <div class="tier">
-        <div class="nm">Associate</div>
-        <div style="margin:-2px 0 12px"><span class="pill ok">Free forever</span></div>
-        <div class="price">$0</div>
-        <div class="annual">Free, forever</div>
-        <div class="desc">The Swiss-army-knife free tier - beats EVE-NG Community in every way.</div>
-        <div class="tier-spec"><b>1,000</b> nodes · 1 live lab</div>
-        <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Full engine (KVM/QEMU, Docker, namespaces)</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>In-browser SSH &amp; serial consoles</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Integrated packet capture (browser-native)</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Licence-free nodes - instant FRR/VyOS CLI</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Import &amp; export labs (EVE / GNS3 / .netplex)</li>
-        </ul>
-      </div>
-      <div class="tier">
-        <div class="nm">Professional</div>
-        <div style="margin:-2px 0 12px"><span class="pill">Build · generate · analyse</span></div>
-        <div class="price"><span class="price-i" data-m="$19.99" data-a="$199">$19.99</span><span class="psuf" data-ms="/mo" data-as="/yr">/mo</span></div>
-        <div class="annual" data-m="or $199/yr · save $40" data-a="Billed yearly · save $40">or $199/yr · save $40</div>
-        <div class="desc">The hands-on lab - generate, analyse, capture, present &amp; version.</div>
-        <div class="tier-spec"><b>1,000</b> nodes · ∞ live labs</div>
-        <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>GUI traffic generator + analyser</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>GUI multicast generator + receiver</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>One-click app nodes (Wireshark, Kali)</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Built-in VNC &amp; RDP consoles</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>6 themes + terminal syntax highlighting</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Presentation mode</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Any Docker image (Hub / GHCR)</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Snapshots, freeze &amp; Git backup</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>2-machine VXLAN fabric<span class="rm">roadmap</span></li>
-        </ul>
-      </div>
-      <div class="tier feat">
-        <div class="tier-badge">Most popular</div>
-        <div class="nm">Architect</div>
-        <div style="margin:-2px 0 12px"><span class="pill accent">Validate before you deploy</span></div>
-        <div class="perp-toggle"><button id="lPerpSub" class="on">Subscribe</button><button id="lPerpOnce">Buy once</button></div>
-        <div class="price"><span class="price-i" id="lArchPrice" data-m="$49.99" data-a="$499">$49.99</span><span class="psuf" id="lArchSuf" data-ms="/mo" data-as="/yr">/mo</span></div>
-        <div class="annual" id="lArchSave" data-m="or $499/yr · save $100" data-a="Billed yearly · save $100">or $499/yr · save $100</div>
-        <div class="perp-note" id="lArchNote"></div>
-        <div class="desc">Config-as-code &amp; intent validation - catch the policy mistake before the change window.</div>
-        <div class="tier-spec"><b>1,000</b> nodes · ∞ live labs</div>
-        <ul>
-          <li class="grp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Everything in Professional, plus:</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Config management as code</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Network Git versioning<span class="rm">roadmap</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Intent &amp; policy validation<span class="rm">roadmap</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Terraform for controllers &amp; cloud</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Ansible automation + scoped API keys</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>QoS impairment (latency, jitter, packet loss)</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Fault injection (link &amp; node up/down)</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Network flow animation</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Built-in metrics dashboard + gNMI</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>microVM &amp; LXC/LXD</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>4-machine VXLAN fabric<span class="rm">roadmap</span></li>
-        </ul>
-      </div>
-      <div class="tier">
-        <div class="nm">Enterprise</div>
-        <div style="margin:-2px 0 12px"><span class="pill">Org-scale</span></div>
-        <div class="price">Talk</div>
-        <div class="annual">Subscription or perpetual</div>
-        <div class="desc">Run it at scale. Flexible licensing, no renewal risk.</div>
-        <div class="tier-spec"><b>∞</b> nodes &amp; labs (soft OOM guard)</div>
-        <ul>
-          <li class="grp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Everything in Team, plus:</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>SSO / AD</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Multi-tenant namespaces</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Audit log</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Compute cluster</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>S3 / self-hosted git</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>SLA + named contact</li>
-        </ul>
-      </div>
-    </div>
+<!-- PRICING-CARDS-START -->
+<div class="tiers4" style="text-align:left">
+  <!-- ASSOCIATE -->
+  <div class="tier">
+    <div class="nm">Associate</div>
+    <div style="margin:-2px 0 14px"><span class="pill ok">Free forever</span></div>
+    <div class="price-row"><span class="price">$0</span><span class="suf">/forever</span></div>
+    <div class="save-note">No card required</div>
+    <div class="desc">The Swiss-army-knife free tier - built to beat EVE-NG Community in every way.</div>
+    <ul>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>1,000 nodes per lab</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>1 live lab</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Full engine (KVM/QEMU, Docker, namespaces, Dynamips)</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>In-browser SSH &amp; serial consoles</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Integrated packet capture (browser-native)</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Licence-free nodes that boot on install</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Instant device CLI — FRR &amp; VyOS, no image upload</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Import &amp; export labs (EVE / GNS3 / .netplex)</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>1 Mbps per link</li>
+    </ul>
+    <div class="cta-row"><a href="download.html" class="btn btn-outline" style="width:100%;justify-content:center">Get started free</a></div>
+  </div>
+  <!-- PROFESSIONAL -->
+  <div class="tier">
+    <div class="nm">Professional</div>
+    <div style="margin:-2px 0 14px"><span class="pill">Build · generate · analyse</span></div>
+    <div class="price-row"><span class="price price-val" data-m="$19.99" data-a="$199">$19.99</span><span class="suf" data-ms="/mo" data-as="/yr">/mo</span></div>
+    <div class="save-note" data-m="or $199/yr · save $40" data-a="Billed yearly · save $40">or $199/yr · save $40</div>
+    <div class="desc">The hands-on lab — generate traffic, analyse it, capture, present &amp; version.</div>
+    <ul>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>1,000 nodes · unlimited live labs</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Uncapped link speed</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>GUI traffic generator + analyser</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>GUI multicast generator + receiver</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>One-click app nodes (Wireshark, Kali, desktops)</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Built-in VNC &amp; RDP consoles</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Presentation mode (laser, draw, annotate)</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Any Docker image (Hub / GHCR)</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Snapshots · freeze · Git backup</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>2-machine VXLAN fabric<span class="rm">roadmap</span></li>
+    </ul>
+    <div class="cta-row"><a href="download.html" class="btn btn-outline" style="width:100%;justify-content:center">Get Professional</a></div>
+  </div>
+  <!-- ARCHITECT -->
+  <div class="tier feat">
+    <span class="tier-badge">Most popular</span>
+    <div class="nm">Architect</div>
+    <div style="margin:-2px 0 14px"><span class="pill accent">Validate before you deploy</span></div>
+    <div class="perp-toggle"><button id="perpSub" class="on">Subscribe</button><button id="perpOnce">Buy once</button></div>
+    <div class="price-row"><span class="price price-val" id="archPrice" data-m="$49.99" data-a="$499">$49.99</span><span class="suf" id="archSuf" data-ms="/mo" data-as="/yr">/mo</span></div>
+    <div class="save-note" id="archSave" data-m="or $499/yr · save $100" data-a="Billed yearly · save $100">or $499/yr · save $100</div>
+    <div class="perp-note" id="archPerpNote"></div>
+    <div class="desc">Config-as-code &amp; intent validation — catch the policy mistake before the change window.</div>
+    <ul>
+      <li class="grp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Everything in Professional, plus:</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Config management as code (templates + drift)</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Network Git versioning — diff, branch, rollback<span class="rm">roadmap</span></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Intent &amp; policy validation<span class="rm">roadmap</span></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Pre-merge validation pipelines (pyATS / Batfish)<span class="rm">roadmap</span></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Ansible automation + scoped API keys + CLI</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Terraform for controllers &amp; cloud (ACI, Meraki, Apstra, NSX)</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>QoS impairment (latency, jitter, packet loss, rate)</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Fault injection (link &amp; node up/down)</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Network flow animation</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Built-in metrics dashboard + gNMI</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>microVM &amp; LXC/LXD runtimes</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>4-machine VXLAN fabric<span class="rm">roadmap</span></li>
+    </ul>
+    <div class="cta-row"><a href="download.html" class="btn btn-primary" id="archCta" style="width:100%;justify-content:center"><span id="archCtaText">Get Architect</span></a></div>
+  </div>
+  <!-- ENTERPRISE -->
+  <div class="tier">
+    <div class="nm">Enterprise</div>
+    <div style="margin:-2px 0 14px"><span class="pill">Org-scale</span></div>
+    <div class="price-row"><span class="price">Talk</span></div>
+    <div class="save-note">Subscription or perpetual</div>
+    <div class="desc">Run it at scale. Flexible licensing, no renewal risk.</div>
+    <ul>
+      <li class="grp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Everything in Team, plus:</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Unlimited nodes &amp; labs</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>SSO / AD</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Multi-tenant namespaces · audit log</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Offline / HW-bound licensing</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Compute cluster · ∞ VXLAN fabric<span class="rm">roadmap</span></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>S3 / self-hosted git</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>SLA + named contact</li>
+    </ul>
+    <div class="cta-row"><a href="contact.html" class="btn btn-outline" style="width:100%;justify-content:center">Contact sales</a></div>
+  </div>
+</div>
+<!-- PRICING-CARDS-END -->
     <p style="margin-top:22px;font-size:14px;color:var(--text-3)"><strong style="color:var(--text-2)">Team</strong> (~$49/seat) adds collaboration &amp; roles · <strong style="color:var(--ok)">Class</strong> is free for every Australian school — install + teacher training included · <a href="pricing.html" style="color:var(--accent)">See full pricing →</a></p>
   </div>
 </section>
@@ -497,21 +510,21 @@ var PHRASES = [
 (function(){
   var tm=document.getElementById('tMonthly'), ta=document.getElementById('tAnnual'), ts=document.getElementById('tSave');
   if(!tm) return;
-  var lPerpMode=false;
+  var perpMode=false;
   function setBill(annual){
     tm.classList.toggle('on',!annual); ta.classList.toggle('on',annual);
     ts.style.visibility = annual ? 'visible' : 'hidden';
-    document.querySelectorAll('.price-i').forEach(function(el){
-      if(lPerpMode && el.id==='lArchPrice') return;
+    document.querySelectorAll('.price-val').forEach(function(el){
+      if(perpMode && el.id==='archPrice') return;
       el.textContent = annual ? el.dataset.a : el.dataset.m;
     });
-    document.querySelectorAll('.psuf').forEach(function(el){
-      if(lPerpMode && el.id==='lArchSuf') return;
+    document.querySelectorAll('.suf').forEach(function(el){
+      if(perpMode && el.id==='archSuf') return;
       el.textContent = annual ? el.dataset.as : el.dataset.ms;
     });
-    document.querySelectorAll('.annual[data-a]').forEach(function(el){
-      if(lPerpMode && el.id==='lArchSave') return;
-      el.textContent = annual ? el.dataset.a : el.dataset.m;
+    document.querySelectorAll('.save-note[data-a]').forEach(function(el){
+      if(perpMode && el.id==='archSave') return;
+      el.innerHTML = annual ? el.dataset.a : el.dataset.m;
       el.style.color = annual ? 'var(--accent)' : 'var(--ok)';
     });
   }
@@ -519,21 +532,21 @@ var PHRASES = [
   ta.addEventListener('click',function(){setBill(true);});
 
   /* Architect perpetual toggle */
-  var ps=document.getElementById('lPerpSub'), po=document.getElementById('lPerpOnce');
-  var ap=document.getElementById('lArchPrice'), as_=document.getElementById('lArchSuf');
-  var av=document.getElementById('lArchSave'), an=document.getElementById('lArchNote');
+  var ps=document.getElementById('perpSub'), po=document.getElementById('perpOnce');
+  var ap=document.getElementById('archPrice'), as_=document.getElementById('archSuf');
+  var av=document.getElementById('archSave'), an=document.getElementById('archPerpNote');
   if(!ps) return;
   function setPerp(once){
-    lPerpMode=once;
+    perpMode=once;
     ps.classList.toggle('on',!once); po.classList.toggle('on',once);
     if(once){
       ap.textContent='$1,499'; as_.textContent='';
-      av.textContent='One-time purchase'; av.style.color='var(--accent)';
+      av.innerHTML='One-time purchase'; av.style.color='var(--accent)';
       an.textContent='1 yr of updates · renew for $99/yr';
     } else {
       var annual=ta.classList.contains('on');
       ap.textContent=annual?'$499':'$49.99'; as_.textContent=annual?'/yr':'/mo';
-      av.textContent=annual?'Billed yearly · save $100':'or $499/yr · save $100';
+      av.innerHTML=annual?'Billed yearly · save $100':'or $499/yr · save $100';
       av.style.color=annual?'var(--accent)':'var(--ok)';
       an.textContent='';
     }

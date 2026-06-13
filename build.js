@@ -23,10 +23,11 @@ function findHtml(dir, out = []) {
 }
 
 const tmpl = {
-  nav:       readTmpl('nav.html'),
-  navEdu:    readTmpl('nav-edu.html'),
-  footer:    readTmpl('footer.html'),
-  footerEdu: readTmpl('footer-edu.html'),
+  nav:          readTmpl('nav.html'),
+  navEdu:       readTmpl('nav-edu.html'),
+  footer:       readTmpl('footer.html'),
+  footerEdu:    readTmpl('footer-edu.html'),
+  pricingCards: readTmpl('pricing-cards.html'),
 };
 
 const files = findHtml('.');
@@ -48,6 +49,8 @@ for (const file of files) {
 
   content = content.replace(/<nav class="nav">[\s\S]*?<\/nav>/, nav);
   content = content.replace(/<footer>[\s\S]*?<\/footer>/, footer);
+  const cards = tmpl.pricingCards.replace(/\{\{BASE\}\}/g, base);
+  content = content.replace(/<!-- PRICING-CARDS-START -->[\s\S]*?<!-- PRICING-CARDS-END -->/, `<!-- PRICING-CARDS-START -->\n${cards}<!-- PRICING-CARDS-END -->`);
 
   if (content !== orig) {
     fs.writeFileSync(file, content);
