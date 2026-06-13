@@ -158,76 +158,106 @@
           <tr>
             <th style="width:34%">Feature</th>
             <th>EVE-NG Community<br/><span style="font-weight:400;text-transform:none;letter-spacing:0;font-size:12px">Free</span></th>
-            <th>EVE-NG Pro<br/><span style="font-weight:400;text-transform:none;letter-spacing:0;font-size:12px">~$160 / yr / session</span></th>
-            <th class="hl">netplex. Associate<br/><span style="font-weight:400;text-transform:none;letter-spacing:0;font-size:12px">Free forever</span></th>
+            <th>EVE-NG Pro<br/><span style="font-weight:400;text-transform:none;letter-spacing:0;font-size:12px">~€150 / yr · MAC-locked</span></th>
+            <th class="hl">netplex.<br/><span style="font-weight:400;text-transform:none;letter-spacing:0;font-size:12px">tier shown per row</span></th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td>Max nodes per lab</td>
-            <td><span class="cmp-n">63 nodes</span></td>
-            <td>1,024 nodes</td>
-            <td class="hl"><span class="cmp-m">15 nodes free · unlimited on Pro+</span></td>
+            <td><span class="cmp-n">63</span></td>
+            <td>1,024</td>
+            <td class="hl"><span class="cmp-y">20</span> free · <span class="cmp-m">1,000</span> Professional</td>
           </tr>
           <tr>
-            <td>Browser console (no client install)</td>
-            <td><span class="cmp-n">No — client pack required</span></td>
-            <td><span class="cmp-y">Yes</span></td>
-            <td class="hl"><span class="cmp-y">Yes — always free</span></td>
+            <td>Modern browser UI (React canvas)</td>
+            <td><span class="cmp-n">No — dated Flash-era UI</span></td>
+            <td><span class="cmp-n">No — same UI</span></td>
+            <td class="hl"><span class="cmp-y">Yes — all tiers</span></td>
           </tr>
           <tr>
-            <td>Docker / container nodes</td>
-            <td><span class="cmp-n">No</span></td>
-            <td><span class="cmp-y">Yes</span></td>
-            <td class="hl"><span class="cmp-y">Yes</span></td>
+            <td>In-browser consoles (SSH · serial)</td>
+            <td>HTML5 console</td>
+            <td>HTML5 console</td>
+            <td class="hl"><span class="cmp-y">Integrated · all tiers</span></td>
           </tr>
           <tr>
-            <td>Multi-user / RBAC</td>
-            <td><span class="cmp-n">No (2 admin accounts)</span></td>
-            <td><span class="cmp-y">Yes</span></td>
-            <td class="hl"><span class="cmp-m">Team / Class / Enterprise</span></td>
-          </tr>
-          <tr>
-            <td>REST API + WebSocket</td>
-            <td><span class="cmp-n">No</span></td>
-            <td><span class="cmp-y">Yes</span></td>
-            <td class="hl"><span class="cmp-m">Professional+</span></td>
-          </tr>
-          <tr>
-            <td>Terraform provider</td>
-            <td><span class="cmp-n">No</span></td>
-            <td><span class="cmp-n">No</span></td>
-            <td class="hl"><span class="cmp-m">Professional+</span></td>
-          </tr>
-          <tr>
-            <td>Image pipeline (auto-convert, boot-test)</td>
-            <td><span class="cmp-n">Manual — SSH + fixpermissions</span></td>
-            <td><span class="cmp-n">Manual — SSH + fixpermissions</span></td>
-            <td class="hl"><span class="cmp-y">8-stage automated pipeline</span></td>
-          </tr>
-          <tr>
-            <td>Topology sharing</td>
-            <td><span class="cmp-n">Export .unl file</span></td>
-            <td><span class="cmp-n">Export .unl file</span></td>
-            <td class="hl"><span class="cmp-y">Share a link · clone-able</span></td>
-          </tr>
-          <tr>
-            <td>Packet capture</td>
-            <td><span class="cmp-n">Via native Wireshark client pack</span></td>
+            <td>Integrated packet capture</td>
+            <td><span class="cmp-n">Local client pack only</span></td>
             <td>Integrated (Pro pack)</td>
-            <td class="hl"><span class="cmp-y">Browser-native · no install</span></td>
+            <td class="hl"><span class="cmp-y">Browser-native · all tiers</span></td>
           </tr>
           <tr>
-            <td>RADIUS / LDAP / SSO</td>
+            <td>Licence-free nodes (FRR · VyOS)</td>
             <td><span class="cmp-n">No</span></td>
-            <td><span class="cmp-y">Yes</span></td>
-            <td class="hl"><span class="cmp-m">Enterprise</span></td>
+            <td><span class="cmp-n">No</span></td>
+            <td class="hl"><span class="cmp-y">Yes — all tiers</span></td>
           </tr>
           <tr>
-            <td>Link QoS (delay / jitter / loss)</td>
+            <td>EVE-NG .unl · GNS3 import</td>
+            <td>—</td>
+            <td>—</td>
+            <td class="hl"><span class="cmp-y">Yes — all tiers</span></td>
+          </tr>
+          <tr>
+            <td>Link speed cap</td>
+            <td><span class="cmp-n">None (good)</span></td>
+            <td><span class="cmp-n">None (good)</span></td>
+            <td class="hl">1 Mbps (Associate) · <span class="cmp-y">None (Professional+)</span></td>
+          </tr>
+          <tr>
+            <td>Image pipeline (auto-convert · boot-test)</td>
+            <td><span class="cmp-n">Manual — SSH + fixpermissions</span></td>
+            <td><span class="cmp-n">Manual — SSH + fixpermissions</span></td>
+            <td class="hl"><span class="cmp-y">8-stage automated · all tiers</span></td>
+          </tr>
+          <tr>
+            <td>One-click app nodes (Wireshark · Kali)</td>
+            <td><span class="cmp-n">No</span></td>
+            <td><span class="cmp-n">No</span></td>
+            <td class="hl"><span class="cmp-m">Professional</span></td>
+          </tr>
+          <tr>
+            <td>Snapshots · Git backup</td>
+            <td><span class="cmp-n">No</span></td>
+            <td><span class="cmp-n">No</span></td>
+            <td class="hl"><span class="cmp-m">Professional</span></td>
+          </tr>
+          <tr>
+            <td>Fault injection (link · node up/down)</td>
+            <td><span class="cmp-n">No</span></td>
+            <td><span class="cmp-n">No</span></td>
+            <td class="hl"><span class="cmp-m">Professional</span></td>
+          </tr>
+          <tr>
+            <td>REST API</td>
+            <td><span class="cmp-n">No</span></td>
+            <td><span class="cmp-n">No</span></td>
+            <td class="hl">Read (Associate) · <span class="cmp-m">Read/write (Architect)</span></td>
+          </tr>
+          <tr>
+            <td>Ansible + Terraform</td>
+            <td><span class="cmp-n">No</span></td>
+            <td><span class="cmp-n">No</span></td>
+            <td class="hl"><span class="cmp-m">Architect</span></td>
+          </tr>
+          <tr>
+            <td>QoS impairment (delay · jitter · loss)</td>
             <td><span class="cmp-n">No</span></td>
             <td><span class="cmp-y">Yes</span></td>
-            <td class="hl"><span class="cmp-y">All tiers</span></td>
+            <td class="hl"><span class="cmp-m">Architect</span></td>
+          </tr>
+          <tr>
+            <td>Multi-user · roles</td>
+            <td><span class="cmp-n">No (2 admin accounts only)</span></td>
+            <td><span class="cmp-y">Yes</span></td>
+            <td class="hl"><span class="cmp-m">Team</span></td>
+          </tr>
+          <tr>
+            <td>SSO / AD</td>
+            <td><span class="cmp-n">No</span></td>
+            <td><span class="cmp-y">Yes</span></td>
+            <td class="hl"><span class="cmp-m">Class / Enterprise</span></td>
           </tr>
           <tr>
             <td>AMD CPU support</td>
@@ -239,13 +269,7 @@
             <td>Licence portability</td>
             <td>N/A</td>
             <td><span class="cmp-n">MAC-locked to one server</span></td>
-            <td class="hl"><span class="cmp-y">Runs on any host — no rekey</span></td>
-          </tr>
-          <tr>
-            <td>EVE-NG .unl import</td>
-            <td>—</td>
-            <td>—</td>
-            <td class="hl"><span class="cmp-y">Yes — 30 seconds</span></td>
+            <td class="hl"><span class="cmp-y">No MAC-lock — all tiers</span></td>
           </tr>
           <tr>
             <td>Setup time (first lab running)</td>
@@ -256,7 +280,7 @@
         </tbody>
       </table>
     </div>
-    <p style="font-size:13px;color:var(--text-4);text-align:center;margin:0">All EVE-NG figures sourced from eve-ng.net official features page and community documentation (June 2026).</p>
+    <p style="font-size:13px;color:var(--text-4);text-align:center;margin:0">EVE-NG figures from the official <a href="https://www.eve-ng.net/index.php/features-compare/" style="color:var(--accent)" target="_blank" rel="noopener">features-compare</a> page (June 2026). netplex. figures from <a href="pricing.html" style="color:var(--accent)">pricing.html</a>.</p>
   </div>
 </section>
 
@@ -350,13 +374,15 @@
     <div class="foot-grid">
       <div class="foot-brand">
         <a href="." class="brand"><span class="mark"><svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><g stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 19 L27 32 M14 32 L27 32 M14 45 L27 32"/><path d="M37 32 L52 32"/><circle cx="32" cy="32" r="5"/></g><circle cx="14" cy="19" r="3" fill="currentColor"/><circle cx="14" cy="32" r="3" fill="currentColor"/><circle cx="14" cy="45" r="3" fill="currentColor"/><circle cx="52" cy="32" r="3.4" fill="currentColor"/></svg></span><span class="wm">netplex<span class="dotmark">.</span></span></a>
-        <p>The modern network lab — a distributed digital twin, execution and automation platform. Emulate. Automate. Ship.</p>
+        <p>The modern network lab - a distributed digital twin, execution and automation platform. Emulate. Automate. Ship.</p>
         <span class="au-badge" style="margin-top:16px"><span class="cross"><i></i><i></i><i></i><i style="margin-left:1px"></i></span> Made in Australia</span>
+        <a href="https://ionet.com.au" target="_blank" rel="noopener" class="ionet-link"><img src="assets/ionet-icon.png" alt="" class="ionet-icon"><img src="assets/ionet-text.png" alt="IONET PTY LTD" class="ionet-text"></a>
       </div>
       <div class="foot-col"><h4>Product</h4><a href="product.html">Features</a><a href="download.html">Download</a><a href="pricing.html">Pricing</a><a href="roadmap.html">Roadmap</a><a href="edu/">Education</a></div>
-      <div class="foot-col"><h4>Compare</h4><a href="eve-ng-alternative.html">vs EVE-NG</a><a href="gns3-alternative.html">vs GNS3</a></div>
       <div class="foot-col"><h4>Resources</h4><a href="kb.html">Knowledge Base</a><a href="faq.html">FAQ</a><a href="forums.html">Forums</a><a href="support.html">Support</a></div>
-      <div class="foot-col"><h4>Company</h4><a href="about.html">About</a><a href="contact.html">Contact</a><a href="brand.html">Brand kit</a><a href="legal.html">Legal</a></div>
+      <div class="foot-col"><h4>Company</h4><a href="about.html">About</a><a href="contact.html">Contact</a><a href="brand.html">Brand kit</a></div>
+      <div class="foot-col"><h4>Compare</h4><a href="eve-ng-alternative.html">vs EVE-NG</a><a href="gns3-alternative.html">vs GNS3</a></div>
+      <div class="foot-col"><h4>Legal</h4><a href="legal.html#privacy">Privacy</a><a href="legal.html#terms">Terms</a><a href="legal.html#disclaimer">Disclaimer</a></div>
     </div>
     <div class="donate-strip">
       <a href="https://buymeacoffee.com/netplex" target="_blank" rel="noopener" class="donate-btn">☕ Buy us a coffee · $5</a>
