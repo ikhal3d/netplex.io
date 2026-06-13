@@ -104,7 +104,7 @@
 .cap-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 40px; }
 .cap { background: var(--surface-1); border: 1px solid var(--border); border-radius: var(--r-4); padding: 24px; transition: border-color .18s, transform .18s; }
 .cap:hover { border-color: var(--border-bright); transform: translateY(-3px); }
-.cap-ic { width: 42px; height: 42px; border-radius: var(--r-3); display: grid; place-items: center; background: var(--accent-soft); border: 1px solid var(--accent-line); color: var(--accent); margin-bottom: 16px; }
+.cap-ic { width: 42px; height: 42px; border-radius: var(--r-3); display: grid; place-items: center; background: var(--accent); color: #fff; margin-bottom: 16px; }
 .cap-ic svg { width: 21px; height: 21px; }
 .cap h3 { font-size: 17px; margin-bottom: 7px; letter-spacing: -0.01em; }
 .cap p { font-size: 14px; color: var(--text-3); line-height: 1.55; }
