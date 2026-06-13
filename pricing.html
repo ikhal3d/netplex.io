@@ -122,9 +122,10 @@
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>In-browser SSH &amp; serial consoles</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Built-in VNC console</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Built-in RDP console</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Auto-reconnecting, multi-tab consoles + boot-log replay</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Integrated packet capture (browser-native, no client)</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>In-browser terminal - themes &amp; syntax colours</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>6 UI &amp; lab themes</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Canvas: minimap, auto-layout, annotations, 4 link styles</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>3,400+ vendor node icons</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Licence-free nodes that boot on install</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Instant device CLI - FRR &amp; VyOS, no image upload</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>One-click EVE-NG / GNS3 import</li>
@@ -150,6 +151,7 @@
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><strong style="color:var(--text-1);font-weight:600">GUI traffic analyser</strong></li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>GUI multicast generator + receiver</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>One-click app nodes (Wireshark, Kali, desktops)</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>6 UI &amp; lab themes + terminal syntax highlighting</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><strong style="color:var(--text-1);font-weight:600">Presentation mode</strong> (laser, draw, annotate)</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>any-Docker (Hub / GHCR / marketplace)</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Snapshots · freeze · Git backup</li>
@@ -289,6 +291,7 @@
         <tr><td>Snapshots · freeze · Git backup</td><td class="x">-</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck col-us">✓ + S3</td></tr>
         <tr><td>Network Git versioning <span class="mono" style="color:var(--accent)">· roadmap</span></td><td class="x">-</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck col-us">✓</td></tr>
         <tr><td>Presentation mode (laser · draw · annotate)</td><td class="x">-</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck col-us">✓</td></tr>
+        <tr><td>UI &amp; terminal theming · syntax highlighting</td><td class="x">-</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck col-us">✓</td></tr>
         <tr><td>microVM · LXC/LXD runtimes</td><td class="x">-</td><td class="x">-</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck col-us">✓</td></tr>
         <tr class="grp"><td colspan="7">Config, validation &amp; observability</td></tr>
         <tr><td>Config management as code</td><td class="x">-</td><td class="x">-</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck col-us">✓</td></tr>
@@ -334,7 +337,6 @@
         <tr><td>Price</td><td class="mono col-us" style="color:var(--ok);font-weight:700">Free</td><td class="mono">Free</td><td class="mono">€150 / yr</td></tr>
         <tr><td>Max nodes per lab</td><td class="mono col-us">1,000</td><td class="mono">63</td><td class="mono">1,024</td></tr>
         <tr><td>Modern browser UI (React canvas)</td><td class="ck col-us">✓</td><td class="x">✗</td><td class="x">✗</td></tr>
-        <tr><td>UI &amp; lab themes (6)</td><td class="ck col-us">✓</td><td class="x">✗</td><td class="x">✗</td></tr>
         <tr><td>Integrated consoles (SSH · serial · VNC · RDP)</td><td class="mono col-us" style="color:var(--ok)">✓ integrated</td><td class="mono">HTML5</td><td class="mono">HTML5</td></tr>
         <tr><td>Integrated packet capture</td><td class="mono col-us" style="color:var(--ok)">✓ integrated</td><td class="mono">local only</td><td class="mono">integrated</td></tr>
         <tr><td>Licence-free nodes that boot on install</td><td class="ck col-us">✓</td><td class="x">✗</td><td class="x">✗</td></tr>
