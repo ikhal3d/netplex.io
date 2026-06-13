@@ -17,10 +17,10 @@
 .h-chips { display: flex; gap: 8px; flex-wrap: wrap; }
 
 .topo-frame { position: relative; }
-.topo-wrap { display: flex; justify-content: flex-start; }
+.topo-wrap { display: flex; }
 .topo svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; z-index: 0; }
 .topo {
-  position: relative; width: 660px; height: 380px; max-width: 100%;
+  position: relative; width: 100%; height: 380px;
   background:
     radial-gradient(circle at 1px 1px, var(--canvas-circuit-dot, rgba(255,255,255,0.06)) 1px, transparent 0) 0 0 / 22px 22px,
     var(--surface-canvas);
