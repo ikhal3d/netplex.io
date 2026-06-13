@@ -153,22 +153,22 @@
         <div class="tier feat">
           <span class="tier-badge">Most popular</span>
           <div class="nm">Architect</div>
-          <div style="margin:-2px 0 14px"><span class="pill accent">For power engineers</span></div>
+          <div style="margin:-2px 0 14px"><span class="pill accent">Config &amp; intent validation</span></div>
           <div class="price-row"><span class="price price-val" data-m="$29.99" data-a="$299">$29.99</span><span class="suf" data-ms="/mo" data-as="/yr">/mo</span></div>
           <div class="save-note" data-m="or $299/yr · save $60" data-a="Billed yearly · save $60">or $299/yr · save $60</div>
-          <div class="desc">The automation tier. Single seat, full toolbox.</div>
+          <div class="desc">Config-as-code &amp; intent validation - catch the policy mistake before the change window.</div>
           <ul>
             <li class="grp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Everything in Professional, plus:</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Scoped API keys</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Terraform &amp; Ansible</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>CI pipelines</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Config management as code (templates + drift)</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Intent &amp; policy validation - reachability, routing, ACLs<span class="rm">roadmap</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Pre-merge validation pipelines (pyATS / Batfish)<span class="rm">roadmap</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Ansible automation + scoped API keys + CLI</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Terraform for controllers &amp; cloud (ACI, Meraki, Apstra, NSX)</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>QoS shaping (latency, jitter, packet loss, rate)</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Network flow animation</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Built-in metrics dashboard</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>gNMI streaming</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Built-in metrics dashboard + gNMI</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>microVM &amp; LXC/LXD runtimes</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>4-machine VXLAN fabric<span class="rm">roadmap</span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Validation pipelines<span class="rm">roadmap</span></li>
           </ul>
           <div class="cta-row"><a href="download.html" class="btn btn-primary" style="width:100%;justify-content:center">Get Architect</a></div>
         </div>
@@ -277,10 +277,13 @@
         <tr><td>Fault injection (tc/netem, link kill)</td><td class="x">-</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck col-us">✓</td></tr>
         <tr><td>Presentation mode (laser · draw · annotate)</td><td class="x">-</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck col-us">✓</td></tr>
         <tr><td>microVM · LXC/LXD runtimes</td><td class="x">-</td><td class="x">-</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck col-us">✓</td></tr>
-        <tr class="grp"><td colspan="7">Automation &amp; observability</td></tr>
-        <tr><td>Scoped API keys</td><td class="mono">read</td><td class="mono">read</td><td class="mono">read/write</td><td class="mono">read/write</td><td class="mono">read/write</td><td class="mono col-us">+ admin · audit</td></tr>
-        <tr><td>Terraform · Ansible · CI</td><td class="x">-</td><td class="x">-</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck col-us">✓</td></tr>
-        <tr><td>Validation pipelines <span class="mono" style="color:var(--accent)">· roadmap</span></td><td class="x">-</td><td class="x">-</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck col-us">✓</td></tr>
+        <tr class="grp"><td colspan="7">Config, validation &amp; observability</td></tr>
+        <tr><td>Config management as code</td><td class="x">-</td><td class="x">-</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck col-us">✓</td></tr>
+        <tr><td>Intent &amp; policy validation <span class="mono" style="color:var(--accent)">· roadmap</span></td><td class="x">-</td><td class="x">-</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck col-us">✓</td></tr>
+        <tr><td>Pre-merge validation pipelines (pyATS / Batfish) <span class="mono" style="color:var(--accent)">· roadmap</span></td><td class="x">-</td><td class="x">-</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck col-us">✓</td></tr>
+        <tr><td>Scoped API keys + CLI</td><td class="mono">read</td><td class="mono">read</td><td class="mono">read/write</td><td class="mono">read/write</td><td class="mono">read/write</td><td class="mono col-us">+ admin · audit</td></tr>
+        <tr><td>Ansible automation</td><td class="x">-</td><td class="x">-</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck col-us">✓</td></tr>
+        <tr><td>Terraform for controllers &amp; cloud (ACI, Meraki, Apstra, NSX)</td><td class="x">-</td><td class="x">-</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck col-us">✓</td></tr>
         <tr><td>Full tc/netem QoS knobs</td><td class="x">-</td><td class="x">-</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck col-us">✓</td></tr>
         <tr><td>Live link traffic %</td><td class="x">-</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck col-us">✓</td></tr>
         <tr><td>Real-time flow analytics <span class="mono" style="color:var(--accent)">· roadmap</span></td><td class="x">-</td><td class="x">-</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck col-us">✓</td></tr>
