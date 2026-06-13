@@ -147,6 +147,10 @@
       <div class="foot-col"><h4>Company</h4><a href="about.html">About</a><a href="contact.html">Contact</a><a href="brand.html">Brand kit</a></div>
       <div class="foot-col"><h4>Legal</h4><a href="legal.html#privacy">Privacy</a><a href="legal.html#terms">Terms</a><a href="legal.html#disclaimer">Disclaimer</a></div>
     </div>
+    <div class="donate-strip">
+      <a href="https://buymeacoffee.com/netplex" target="_blank" rel="noopener" class="donate-btn">☕ Buy us a coffee · $5</a>
+      <span class="donate-sub">netplex. is free for students and schools. If it helped you pass a cert or land a job, a coffee keeps it going.</span>
+    </div>
     <div class="foot-bottom">
       <span>© 2026 netplex. · <a href="https://ionet.com.au" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">IONET PTY LTD</a></span>
       <span class="mono">v1.0 · built for engineers</span>
@@ -168,16 +172,18 @@ var ITEMS = {
   ],
   next: [
     { t:'Cross-platform hosts', s:'Run the netplex compute agent on Windows & macOS, not just Linux - same fabric, any machine. Target: end of 2026.', st:'building', v:289 },
-    { t:'Terraform + Ansible providers', s:'First-class IaC for topology-as-code.', st:'building', v:233 },
-    { t:'Classroom mode', s:'Instructor/student, grading, seat management.', st:'building', v:198 },
+    { t:'Terraform + Ansible providers', s:'First-class IaC for topology-as-code.', st:'beta', v:233 },
+    { t:'Classroom mode', s:'Instructor/student, grading, seat management.', st:'beta', v:198 },
+    { t:'IPv6 first-class support', s:'OSPFv3, BGP4+, SLAAC/DHCPv6, SRv6 — built-in IPv6 lab templates, dual-stack canvas labels, IPv6 NAT gateway. No extra config.', st:'building', v:241 },
     { t:'Signed image marketplace', s:'Share and pull community device images.', st:'planned', v:176 },
     { t:'Guacamole GUI consoles', s:'RDP/VNC desktops for GUI appliances.', st:'planned', v:142 },
     { t:'Larger clusters + mobile polish', s:'10+ hosts, tablet-friendly canvas.', st:'planned', v:119 }
   ],
   later: [
+    { t:'AI MCP server + natural language topology', s:'Type "build a leaf-spine with BGP underlay" and watch it appear on the canvas. Also publishes a netplex. MCP server so Claude / other AI agents can manage your labs directly.', st:'planned', v:247 },
     { t:'Kubernetes Operator', s:'Run labs as native k8s resources.', st:'planned', v:164 },
     { t:'Full GitOps', s:'PR-driven topology changes, drift detection.', st:'planned', v:131 },
-    { t:'AI assist', s:'Topology suggestions and troubleshooting.', st:'planned', v:208 },
+    { t:'AI troubleshooting assist', s:'AI reads your console output and tells you what is wrong - MTU mismatch, missing route, wrong OSPF area.', st:'planned', v:208 },
     { t:'Advanced QoS labs', s:'Live delay/jitter/loss study tooling.', st:'planned', v:97 },
     { t:'Managed cloud offering', s:'Hosted netplex with one-click clusters.', st:'planned', v:188 }
   ]
@@ -206,11 +212,16 @@ document.querySelectorAll('[data-ext]').forEach(function(a){ a.addEventListener(
 /* ── Community feature-request demand board ── */
 (function(){
   var SEED = [
-    { id:'ipv6-templates', t:'IPv6-first lab templates', v:147 },
+    { id:'ai-mcp', t:'AI / MCP server — natural language lab generation', v:198 },
+    { id:'ipv6-templates', t:'IPv6-first lab templates (OSPFv3, BGP4+, SRv6, NAT64)', v:183 },
+    { id:'link-suspend', t:'Link suspend / resume (admin-down without delete)', v:154 },
+    { id:'multi-startup', t:'Multiple named startup configs per lab', v:142 },
     { id:'netconf', t:'NETCONF / YANG model support', v:131 },
     { id:'route-leak', t:'BGP route-leak troubleshooting lab', v:118 },
+    { id:'custom-mac', t:'Custom MAC address for QEMU nodes', v:107 },
     { id:'srv6', t:'SRv6 / segment routing nodes', v:96 },
     { id:'macos-agent', t:'macOS compute agent', v:88 },
+    { id:'lab-instructions', t:'Attach PDF / URL instructions to any lab', v:76 },
     { id:'dark-export', t:'Export topology to dark-mode PDF', v:54 }
   ];
   var KEY='netplex.requests';

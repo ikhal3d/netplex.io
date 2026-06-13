@@ -124,7 +124,7 @@
     <div class="save-note">No card required</div>
     <div class="desc">The Swiss-army-knife free tier - built to beat EVE-NG Community in every way.</div>
     <ul>
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>1,000 nodes per lab</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>20 nodes per lab</li>
       <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>1 live lab</li>
       <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Full engine (KVM/QEMU, Docker, namespaces, Dynamips)</li>
       <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>In-browser SSH &amp; serial consoles</li>
@@ -156,6 +156,7 @@
       <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Presentation mode (laser, draw, annotate)</li>
       <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Any Docker image (Hub / GHCR)</li>
       <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Snapshots · freeze · Git backup</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Fault injection (link &amp; node up/down)</li>
       <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>2-machine VXLAN fabric<span class="rm">roadmap</span></li>
     </ul>
     <div class="cta-row"><a href="download.html" class="btn btn-outline" style="width:100%;justify-content:center">Get Professional</a></div>
@@ -179,9 +180,9 @@
       <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Network Git versioning - diff, branch, rollback<span class="rm">roadmap</span></li>
       <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Intent validation · pre-merge pipelines (pyATS / Batfish)<span class="rm">roadmap</span></li>
       <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Ansible + Terraform (ACI, Meraki, Apstra, NSX · scoped API keys)</li>
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>QoS impairment · fault injection</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>QoS impairment (delay · jitter · loss)</li>
       <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Flow animation · metrics dashboard + gNMI</li>
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>microVM &amp; LXC/LXD runtimes</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>microVM &amp; LXC/LXD runtimes<span class="rm">roadmap</span></li>
       <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>4-machine VXLAN fabric<span class="rm">roadmap</span></li>
     </ul>
     <div class="cta-row"><a href="download.html" class="btn btn-primary" id="archCta" style="width:100%;justify-content:center"><span id="archCtaText">Get Architect</span></a></div>
@@ -308,7 +309,7 @@
       <thead><tr><th>&nbsp;</th><th>Associate</th><th>Professional</th><th>Architect</th><th>Team</th><th style="color:var(--ok)">Class · AU</th><th class="us">Enterprise</th></tr></thead>
       <tbody>
         <tr class="grp"><td colspan="7">Scale</td></tr>
-        <tr><td>Nodes per lab</td><td class="mono">1,000</td><td class="mono">1,000</td><td class="mono">1,000</td><td class="mono">1,000</td><td class="mono">1,000</td><td class="mono col-us">∞</td></tr>
+        <tr><td>Nodes per lab</td><td class="mono">20</td><td class="mono">1,000</td><td class="mono">1,000</td><td class="mono">1,000</td><td class="mono">1,000</td><td class="mono col-us">∞</td></tr>
         <tr><td>Live labs</td><td class="mono">1</td><td class="mono">∞</td><td class="mono">∞</td><td class="mono">∞</td><td class="mono">per pod</td><td class="mono col-us">∞ *</td></tr>
         <tr><td>Link speed cap</td><td class="mono">1 Mbps</td><td class="mono">None</td><td class="mono">None</td><td class="mono">None</td><td class="mono">None</td><td class="mono col-us">None</td></tr>
         <tr class="grp"><td colspan="7">Engine &amp; content (free at every tier)</td></tr>
@@ -327,7 +328,7 @@
         <tr><td>Network Git versioning <span class="mono" style="color:var(--accent)">· roadmap</span></td><td class="x">-</td><td class="x">-</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck col-us">✓</td></tr>
         <tr><td>Presentation mode (laser · draw · annotate)</td><td class="x">-</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck col-us">✓</td></tr>
         <tr><td>UI &amp; terminal theming · syntax highlighting</td><td class="x">-</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck col-us">✓</td></tr>
-        <tr><td>microVM · LXC/LXD runtimes</td><td class="x">-</td><td class="x">-</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck col-us">✓</td></tr>
+        <tr><td>microVM · LXC/LXD runtimes <span class="mono" style="color:var(--accent)">· roadmap</span></td><td class="x">-</td><td class="x">-</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck col-us">✓</td></tr>
         <tr class="grp"><td colspan="7">Config, validation &amp; observability</td></tr>
         <tr><td>Config management as code</td><td class="x">-</td><td class="x">-</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck col-us">✓</td></tr>
         <tr><td>Intent &amp; policy validation <span class="mono" style="color:var(--accent)">· roadmap</span></td><td class="x">-</td><td class="x">-</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck col-us">✓</td></tr>
@@ -336,7 +337,7 @@
         <tr><td>Ansible automation</td><td class="x">-</td><td class="x">-</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck col-us">✓</td></tr>
         <tr><td>Terraform for controllers &amp; cloud (ACI, Meraki, Apstra, NSX)</td><td class="x">-</td><td class="x">-</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck col-us">✓</td></tr>
         <tr><td>QoS impairment (latency, jitter, packet loss, rate)</td><td class="x">-</td><td class="x">-</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck col-us">✓</td></tr>
-        <tr><td>Fault injection (link &amp; node up/down)</td><td class="x">-</td><td class="x">-</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck col-us">✓</td></tr>
+        <tr><td>Fault injection (link &amp; node up/down)</td><td class="x">-</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck col-us">✓</td></tr>
         <tr><td>Live link traffic %</td><td class="x">-</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck col-us">✓</td></tr>
         <tr><td>Real-time flow analytics <span class="mono" style="color:var(--accent)">· roadmap</span></td><td class="x">-</td><td class="x">-</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck col-us">✓</td></tr>
         <tr><td>Built-in metrics dashboard · gNMI</td><td class="x">-</td><td class="x">-</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck col-us">✓</td></tr>
@@ -370,7 +371,7 @@
       <thead><tr><th>&nbsp;</th><th class="us">netplex. Associate</th><th>EVE-NG Community</th><th>EVE-NG Pro</th></tr></thead>
       <tbody>
         <tr><td>Price</td><td class="mono col-us" style="color:var(--ok);font-weight:700">Free</td><td class="mono">Free</td><td class="mono">€150 / yr</td></tr>
-        <tr><td>Max nodes per lab</td><td class="mono col-us">1,000</td><td class="mono">63</td><td class="mono">1,024</td></tr>
+        <tr><td>Max nodes per lab</td><td class="mono col-us">20</td><td class="mono">63</td><td class="mono">1,024</td></tr>
         <tr><td>Modern browser UI (React canvas)</td><td class="ck col-us">✓</td><td class="x">✗</td><td class="x">✗</td></tr>
         <tr><td>Integrated consoles (SSH · serial)</td><td class="mono col-us" style="color:var(--ok)">✓ integrated</td><td class="mono">HTML5</td><td class="mono">HTML5</td></tr>
         <tr><td>Integrated packet capture</td><td class="mono col-us" style="color:var(--ok)">✓ integrated</td><td class="mono">local only</td><td class="mono">integrated</td></tr>
@@ -428,6 +429,10 @@
       <div class="foot-col"><h4>Resources</h4><a href="kb.html">Knowledge Base</a><a href="faq.html">FAQ</a><a href="forums.html">Forums</a><a href="support.html">Support</a></div>
       <div class="foot-col"><h4>Company</h4><a href="about.html">About</a><a href="contact.html">Contact</a><a href="brand.html">Brand kit</a></div>
       <div class="foot-col"><h4>Legal</h4><a href="legal.html#privacy">Privacy</a><a href="legal.html#terms">Terms</a><a href="legal.html#disclaimer">Disclaimer</a></div>
+    </div>
+    <div class="donate-strip">
+      <a href="https://buymeacoffee.com/netplex" target="_blank" rel="noopener" class="donate-btn">☕ Buy us a coffee · $5</a>
+      <span class="donate-sub">netplex. is free for students and schools. If it helped you pass a cert or land a job, a coffee keeps it going.</span>
     </div>
     <div class="foot-bottom">
       <span>© 2026 netplex. · <a href="https://ionet.com.au" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">IONET PTY LTD</a></span>
