@@ -46,6 +46,10 @@
   .faq h3 { font-size: 16px; margin-bottom: 6px; }
   .faq p { font-size: 14.5px; color: var(--text-3); line-height: 1.55; }
   @media (max-width: 760px){ .faq { grid-template-columns: 1fr; } .matrix { font-size: 12px; } .matrix th, .matrix td { padding: 9px 6px; } }
+  .perp-toggle { display: inline-flex; align-items: center; gap: 3px; background: var(--surface-2); border: 1px solid var(--border); border-radius: 999px; padding: 3px; margin: 10px 0 2px; }
+  .perp-toggle button { font-size: 12px; font-weight: 500; color: var(--text-3); padding: 5px 14px; border-radius: 999px; transition: all .15s; cursor: pointer; }
+  .perp-toggle button.on { background: var(--accent); color: #fff; }
+  .perp-note { font-size: 11.5px; color: var(--text-4); margin-top: 4px; min-height: 15px; }
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"SoftwareApplication","name":"netplex.","applicationCategory":"NetworkingApplication","operatingSystem":"Linux","url":"https://netplex.io","offers":[{"@type":"Offer","name":"Associate","price":"0","priceCurrency":"AUD","description":"Free forever - 20 nodes per lab, canvas, live terminal, packet capture"},{"@type":"Offer","name":"Professional","price":"19.99","priceCurrency":"AUD","description":"1,000 nodes, snapshots, fault injection, any Docker image, presentation mode"},{"@type":"Offer","name":"Architect","price":"49.99","priceCurrency":"AUD","description":"Everything in Professional plus the automation toolbox - API, Terraform, Ansible, CI, QoS, metrics dashboard"},{"@type":"Offer","name":"Team","price":"49","priceCurrency":"AUD","description":"Per seat - collaboration on one topology, roles, larger fabric"},{"@type":"Offer","name":"Australian Schools (Class)","price":"0","priceCurrency":"AUD","description":"Completely free for every Australian school — software installed on your server, teachers trained at no cost"},{"@type":"Offer","name":"Enterprise","description":"Contact for pricing - subscription or perpetual licence"}]}
@@ -164,8 +168,10 @@
           <span class="tier-badge">Most popular</span>
           <div class="nm">Architect</div>
           <div style="margin:-2px 0 14px"><span class="pill accent">Validate before you deploy</span></div>
-          <div class="price-row"><span class="price price-val" data-m="$49.99" data-a="$499">$49.99</span><span class="suf" data-ms="/mo" data-as="/yr">/mo</span></div>
-          <div class="save-note" data-m="or $499/yr · save $100" data-a="Billed yearly · save $100">or $499/yr · save $100</div>
+          <div class="perp-toggle"><button id="perpSub" class="on">Subscribe</button><button id="perpOnce">Buy once</button></div>
+          <div class="price-row"><span class="price price-val" id="archPrice" data-m="$49.99" data-a="$499">$49.99</span><span class="suf" id="archSuf" data-ms="/mo" data-as="/yr">/mo</span></div>
+          <div class="save-note" id="archSave" data-m="or $499/yr · save $100" data-a="Billed yearly · save $100">or $499/yr · save $100</div>
+          <div class="perp-note" id="archPerpNote"></div>
           <div class="desc">Config-as-code &amp; intent validation - catch the policy mistake before the change window.</div>
           <ul>
             <li class="grp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Everything in Professional, plus:</li>
@@ -182,7 +188,7 @@
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>microVM &amp; LXC/LXD runtimes</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>4-machine VXLAN fabric - stitch 4 hosts into one lab<span class="rm">roadmap</span></li>
           </ul>
-          <div class="cta-row"><a href="download.html" class="btn btn-primary" style="width:100%;justify-content:center">Get Architect</a></div>
+          <div class="cta-row"><a href="download.html" class="btn btn-primary" id="archCta" style="width:100%;justify-content:center"><span id="archCtaText">Get Architect</span></a></div>
         </div>
       </div>
     </div>
@@ -326,7 +332,7 @@
         <tr><td>Multi-tenant namespaces · audit log</td><td class="x">-</td><td class="x">-</td><td class="x">-</td><td class="x">-</td><td class="x">-</td><td class="ck col-us">✓</td></tr>
         <tr><td>Compute cluster · offline / HW-bound</td><td class="x">-</td><td class="x">-</td><td class="x">-</td><td class="x">-</td><td class="x">-</td><td class="ck col-us">✓</td></tr>
         <tr class="grp"><td colspan="7">Licence &amp; support</td></tr>
-        <tr><td>Licence model</td><td class="mono">Free</td><td class="mono">Sub</td><td class="mono">Sub</td><td class="mono">Sub / seat</td><td class="mono" style="color:var(--ok);font-weight:700">Free K-12 (AU)</td><td class="mono col-us">Sub or perpetual</td></tr>
+        <tr><td>Licence model</td><td class="mono">Free</td><td class="mono">Sub</td><td class="mono">Sub or perpetual</td><td class="mono">Sub / seat</td><td class="mono" style="color:var(--ok);font-weight:700">Free K-12 (AU)</td><td class="mono col-us">Sub or perpetual</td></tr>
         <tr><td>Support channel</td><td class="mono">Forums</td><td class="mono">Email</td><td class="mono">Priority</td><td class="mono">Priority</td><td class="mono">Priority schools</td><td class="mono col-us">SLA + contact</td></tr>
       </tbody>
     </table>
@@ -415,23 +421,53 @@
 <script src="assets/nav.js"></script>
 <script>
 var bm=document.getElementById('billMonthly'), ba=document.getElementById('billAnnual'), bs=document.getElementById('billSave');
+var archPerpMode = false;
 function setBill(annual){
   bm.classList.toggle('on',!annual); ba.classList.toggle('on',annual);
   bs.style.visibility = annual ? 'visible' : 'hidden';
   document.querySelectorAll('.price-val').forEach(function(el){
+    if(archPerpMode && el.id==='archPrice') return;
     el.textContent = annual ? el.dataset.a : el.dataset.m;
   });
   document.querySelectorAll('.save-note[data-a]').forEach(function(el){
+    if(archPerpMode && el.id==='archSave') return;
     el.innerHTML = annual ? el.dataset.a : el.dataset.m;
     el.style.color = annual ? 'var(--accent)' : 'var(--ok)';
     el.style.fontWeight = annual ? '700' : '600';
   });
   document.querySelectorAll('.suf').forEach(function(el){
+    if(archPerpMode && el.id==='archSuf') return;
     el.textContent = annual ? el.dataset.as : el.dataset.ms;
   });
 }
 bm.addEventListener('click',function(){setBill(false);});
 ba.addEventListener('click',function(){setBill(true);});
+
+/* ── Architect perpetual toggle ── */
+(function(){
+  var psub=document.getElementById('perpSub'), ponce=document.getElementById('perpOnce');
+  var aPrice=document.getElementById('archPrice'), aSuf=document.getElementById('archSuf');
+  var aSave=document.getElementById('archSave'), aNote=document.getElementById('archPerpNote');
+  var aCtaText=document.getElementById('archCtaText');
+  function setPerp(once){
+    archPerpMode=once;
+    psub.classList.toggle('on',!once); ponce.classList.toggle('on',once);
+    if(once){
+      aPrice.textContent='$1,499'; aSuf.textContent='';
+      aSave.innerHTML='One-time purchase'; aSave.style.color='var(--accent)'; aSave.style.fontWeight='700';
+      aNote.textContent='1 yr of updates included · renew for $99/yr';
+      aCtaText.textContent='Buy Architect';
+    } else {
+      var annual=ba.classList.contains('on');
+      aPrice.textContent=annual?'$499':'$49.99'; aSuf.textContent=annual?'/yr':'/mo';
+      aSave.innerHTML=annual?'Billed yearly · save $100':'or $499/yr · save $100';
+      aSave.style.color=annual?'var(--accent)':'var(--ok)'; aSave.style.fontWeight=annual?'700':'600';
+      aNote.textContent=''; aCtaText.textContent='Get Architect';
+    }
+  }
+  psub.addEventListener('click',function(){setPerp(false);});
+  ponce.addEventListener('click',function(){setPerp(true);});
+})();
 
 /* ── Pricing tabs: Individual / Teams & Collaboration ── */
 (function(){
