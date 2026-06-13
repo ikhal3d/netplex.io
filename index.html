@@ -181,6 +181,10 @@
 </section>
 <style>
 @media (max-width:960px){#education .wrap > div{grid-template-columns:1fr !important}}
+.perp-toggle { display: inline-flex; align-items: center; gap: 3px; background: var(--surface-2); border: 1px solid var(--border); border-radius: 999px; padding: 3px; margin: 8px 0 2px; }
+.perp-toggle button { font-size: 12px; font-weight: 500; color: var(--text-3); padding: 5px 14px; border-radius: 999px; transition: all .15s; cursor: pointer; }
+.perp-toggle button.on { background: var(--accent); color: #fff; }
+.perp-note { font-size: 11.5px; color: var(--text-4); margin-top: 3px; min-height: 15px; }
 </style>
 
 <!-- WHY / OUTGROWN EVE-NG -->
@@ -306,8 +310,10 @@
         <div class="tier-badge">Most popular</div>
         <div class="nm">Architect</div>
         <div style="margin:-2px 0 12px"><span class="pill accent">Validate before you deploy</span></div>
-        <div class="price"><span class="price-i" data-m="$49.99" data-a="$499">$49.99</span><span class="psuf" data-ms="/mo" data-as="/yr">/mo</span></div>
-        <div class="annual" data-m="or $499/yr · save $100" data-a="Billed yearly · save $100">or $499/yr · save $100</div>
+        <div class="perp-toggle"><button id="lPerpSub" class="on">Subscribe</button><button id="lPerpOnce">Buy once</button></div>
+        <div class="price"><span class="price-i" id="lArchPrice" data-m="$49.99" data-a="$499">$49.99</span><span class="psuf" id="lArchSuf" data-ms="/mo" data-as="/yr">/mo</span></div>
+        <div class="annual" id="lArchSave" data-m="or $499/yr · save $100" data-a="Billed yearly · save $100">or $499/yr · save $100</div>
+        <div class="perp-note" id="lArchNote"></div>
         <div class="desc">Config-as-code &amp; intent validation - catch the policy mistake before the change window.</div>
         <div class="tier-spec"><b>1,000</b> nodes · ∞ live labs</div>
         <ul>
@@ -491,18 +497,49 @@ var PHRASES = [
 (function(){
   var tm=document.getElementById('tMonthly'), ta=document.getElementById('tAnnual'), ts=document.getElementById('tSave');
   if(!tm) return;
+  var lPerpMode=false;
   function setBill(annual){
     tm.classList.toggle('on',!annual); ta.classList.toggle('on',annual);
     ts.style.visibility = annual ? 'visible' : 'hidden';
-    document.querySelectorAll('.price-i').forEach(function(el){ el.textContent = annual ? el.dataset.a : el.dataset.m; });
-    document.querySelectorAll('.psuf').forEach(function(el){ el.textContent = annual ? el.dataset.as : el.dataset.ms; });
+    document.querySelectorAll('.price-i').forEach(function(el){
+      if(lPerpMode && el.id==='lArchPrice') return;
+      el.textContent = annual ? el.dataset.a : el.dataset.m;
+    });
+    document.querySelectorAll('.psuf').forEach(function(el){
+      if(lPerpMode && el.id==='lArchSuf') return;
+      el.textContent = annual ? el.dataset.as : el.dataset.ms;
+    });
     document.querySelectorAll('.annual[data-a]').forEach(function(el){
+      if(lPerpMode && el.id==='lArchSave') return;
       el.textContent = annual ? el.dataset.a : el.dataset.m;
       el.style.color = annual ? 'var(--accent)' : 'var(--ok)';
     });
   }
   tm.addEventListener('click',function(){setBill(false);});
   ta.addEventListener('click',function(){setBill(true);});
+
+  /* Architect perpetual toggle */
+  var ps=document.getElementById('lPerpSub'), po=document.getElementById('lPerpOnce');
+  var ap=document.getElementById('lArchPrice'), as_=document.getElementById('lArchSuf');
+  var av=document.getElementById('lArchSave'), an=document.getElementById('lArchNote');
+  if(!ps) return;
+  function setPerp(once){
+    lPerpMode=once;
+    ps.classList.toggle('on',!once); po.classList.toggle('on',once);
+    if(once){
+      ap.textContent='$1,499'; as_.textContent='';
+      av.textContent='One-time purchase'; av.style.color='var(--accent)';
+      an.textContent='1 yr of updates · renew for $99/yr';
+    } else {
+      var annual=ta.classList.contains('on');
+      ap.textContent=annual?'$499':'$49.99'; as_.textContent=annual?'/yr':'/mo';
+      av.textContent=annual?'Billed yearly · save $100':'or $499/yr · save $100';
+      av.style.color=annual?'var(--accent)':'var(--ok)';
+      an.textContent='';
+    }
+  }
+  ps.addEventListener('click',function(){setPerp(false);});
+  po.addEventListener('click',function(){setPerp(true);});
 })();
 </script>
 </body>
