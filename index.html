@@ -28,7 +28,7 @@
 <link rel="preload" href="assets/showcase.js" as="script" />
 <script>/* no-flash: apply saved theme/accent before paint */(function(){try{var t=localStorage.getItem('netplex.theme');var a=localStorage.getItem('netplex.accent');if(t&&t!=='midnight')document.documentElement.dataset.theme=t;if(a&&a!=='orange')document.documentElement.dataset.accent=a;}catch(e){}})();</script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://netplex.io/#organization","name":"netplex.","url":"https://netplex.io","logo":{"@type":"ImageObject","url":"https://netplex.io/assets/og.png"},"description":"The modern network lab - distributed network digital twin, execution and automation platform. Built in Australia by network engineers.","foundingLocation":{"@type":"Place","addressCountry":"AU"},"contactPoint":{"@type":"ContactPoint","email":"hello@netplex.io","contactType":"customer support"}},{"@type":"WebSite","@id":"https://netplex.io/#website","url":"https://netplex.io","name":"netplex.","publisher":{"@id":"https://netplex.io/#organization"},"potentialAction":{"@type":"SearchAction","target":"https://netplex.io/kb.html?q={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"SoftwareApplication","@id":"https://netplex.io/#app","name":"netplex.","applicationCategory":"NetworkingApplication","operatingSystem":"Linux","url":"https://netplex.io","description":"The modern network lab - distributed digital twin, execution and automation. Built in Australia for engineers who've outgrown EVE-NG.","offers":[{"@type":"Offer","name":"Community","price":"0","priceCurrency":"AUD","description":"Free forever — 10 nodes per lab, canvas, live terminal, packet capture"},{"@type":"Offer","name":"Plus","price":"9.99","priceCurrency":"AUD","description":"50 nodes, snapshots, bandwidth controls"},{"@type":"Offer","name":"Pro","price":"19.99","priceCurrency":"AUD","description":"1,000 nodes, full automation toolbox, API, git backup"},{"@type":"Offer","name":"Australian Schools","price":"0","priceCurrency":"AUD","description":"Free for every Australian primary and secondary school — software installed, teachers trained"}]}]}
+{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://netplex.io/#organization","name":"netplex.","url":"https://netplex.io","logo":{"@type":"ImageObject","url":"https://netplex.io/assets/og.png"},"description":"The modern network lab - distributed network digital twin, execution and automation platform. Built in Australia by network engineers.","foundingLocation":{"@type":"Place","addressCountry":"AU"},"contactPoint":{"@type":"ContactPoint","email":"hello@netplex.io","contactType":"customer support"}},{"@type":"WebSite","@id":"https://netplex.io/#website","url":"https://netplex.io","name":"netplex.","publisher":{"@id":"https://netplex.io/#organization"},"potentialAction":{"@type":"SearchAction","target":"https://netplex.io/kb.html?q={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"SoftwareApplication","@id":"https://netplex.io/#app","name":"netplex.","applicationCategory":"NetworkingApplication","operatingSystem":"Linux","url":"https://netplex.io","description":"The modern network lab - distributed digital twin, execution and automation. Built in Australia for engineers who've outgrown EVE-NG.","offers":[{"@type":"Offer","name":"Associate","price":"0","priceCurrency":"AUD","description":"Free forever — 20 nodes per lab, canvas, live terminal, packet capture, built-in tool nodes"},{"@type":"Offer","name":"Professional","price":"19.99","priceCurrency":"AUD","description":"1,000 nodes, snapshots, fault injection, any-Docker, presentation mode"},{"@type":"Offer","name":"Architect","price":"29.99","priceCurrency":"AUD","description":"Everything in Professional plus the automation toolbox — API, Terraform, Ansible, CI, QoS, metrics dashboard"},{"@type":"Offer","name":"Australian Schools (Class)","price":"0","priceCurrency":"AUD","description":"Free for every Australian primary and secondary school — software installed, teachers trained"}]}]}
 </script>
 </head>
 <body>
@@ -72,7 +72,7 @@
         <a href="#why" class="btn btn-outline btn-lg">Why switch from EVE-NG?</a>
       </div>
       <div class="h-chips">
-        <span class="chip">Community tier free, forever</span>
+        <span class="chip">Associate tier free, forever</span>
         <span class="chip">No client to install</span>
         <span class="chip">One-click EVE-NG import</span>
       </div>
@@ -103,7 +103,7 @@
 
 <!-- STAT BAND -->
 <div class="statband"><div class="wrap">
-  <div class="statcell"><div class="n">$0<span style="font-size:18px;color:var(--text-4)">/forever</span></div><div class="l">Community tier</div></div>
+  <div class="statcell"><div class="n">$0<span style="font-size:18px;color:var(--text-4)">/forever</span></div><div class="l">Associate tier</div></div>
   <div class="statcell"><div class="n">70<span style="font-size:18px;color:var(--text-4)">+</span></div><div class="l">Vendors supported</div></div>
   <div class="statcell"><div class="n">6</div><div class="l">Built-in themes</div></div>
   <div class="statcell"><div class="n"><span class="mono">1-click</span></div><div class="l">EVE / GNS3 import</div></div>
@@ -203,7 +203,7 @@
       <tbody id="cmpBody"></tbody>
     </table>
     </div>
-    <p class="cmp-note">EVE-NG Pro is <span class="mono">~$160/yr</span>, locked to one server MAC, so a reinstall means a relicence call. netplex. Pro is <span class="mono">$199/yr</span>, runs anywhere, and adds snapshots, git auto-backup and a full API. Import your <span class="mono">.unl</span> in 30 seconds. <span class="flag">Beta</span> The multi-host VXLAN stitch is on the roadmap and shown as partial while it's in beta; single-host emulation and the full automation toolbox ship today.</p>
+    <p class="cmp-note">EVE-NG Pro is <span class="mono">~$160/yr</span>, locked to one server MAC, so a reinstall means a relicence call. netplex. Professional is <span class="mono">$199/yr</span>, runs anywhere, and adds snapshots, fault injection, presentation mode and a full API; Architect (<span class="mono">$299/yr</span>) adds the automation toolbox. Import your <span class="mono">.unl</span> in 30 seconds. <span class="flag">Beta</span> The multi-host VXLAN stitch is on the roadmap and shown as partial while it's in beta; single-host emulation and the full local toolbox ship today.</p>
   </div>
 </section>
 
@@ -266,60 +266,47 @@
       <div class="bill-toggle"><button id="tMonthly" class="on">Monthly</button><button id="tAnnual">Annual</button></div>
       <span class="bill-save" id="tSave" style="visibility:hidden">2 months free</span>
     </div>
-    <div class="tiers5" style="text-align:left">
+    <div class="tiers4" style="text-align:left">
       <div class="tier">
-        <div class="nm">Community</div>
+        <div class="nm">Associate</div>
         <div class="price">$0</div>
         <div class="annual">Free, forever</div>
         <div class="desc">For CCNA study &amp; EVE-NG Community migrants.</div>
-        <div class="tier-spec"><b>10</b> nodes per lab · 1 live lab</div>
+        <div class="tier-spec"><b>20</b> nodes per lab · 1 live lab</div>
         <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>React canvas · 6 themes</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Integrated live terminal</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Full engine · all consoles · licence-free nodes</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Built-in tool nodes: traffic &amp; multicast gen</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Live packet capture</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>One-click EVE-NG import</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Read-only API · community forums</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>One-click EVE-NG / GNS3 import</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Read API · community forums</li>
         </ul>
       </div>
       <div class="tier">
-        <div class="nm">Plus</div>
-        <div class="price"><span class="price-i" data-m="$9.99" data-a="$99">$9.99</span><span class="psuf" data-ms="/mo" data-as="/yr">/mo</span></div>
-        <div class="annual" data-m="or $99/yr · save $20" data-a="Billed yearly · save $20">or $99/yr · save $20</div>
-        <div class="desc">CCNA students who need more headroom.</div>
-        <div class="tier-spec"><b>50</b> nodes per lab · 1 live lab</div>
+        <div class="nm">Professional</div>
+        <div class="price"><span class="price-i" data-m="$19.99" data-a="$199">$19.99</span><span class="psuf" data-ms="/mo" data-as="/yr">/mo</span></div>
+        <div class="annual" data-m="or $199/yr · save $40" data-a="Billed yearly · save $40">or $199/yr · save $40</div>
+        <div class="desc">Solo engineers - version it, break it, present it.</div>
+        <div class="tier-spec"><b>1,000</b> nodes · ∞ live labs</div>
         <ul>
-          <li class="grp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Everything in Community, plus:</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Per-node snapshots</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>100 Mbps per link (settable)</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Email support</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>any-Docker · uncapped links</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Snapshots · freeze · Git backup</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Fault injection (tc/netem)</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Presentation mode (laser · draw)</li>
         </ul>
       </div>
       <div class="tier feat">
         <div class="tier-badge">Most popular</div>
-        <div class="nm">Pro</div>
-        <div class="price"><span class="price-i" data-m="$19.99" data-a="$199">$19.99</span><span class="psuf" data-ms="/mo" data-as="/yr">/mo</span></div>
-        <div class="annual" data-m="or $199/yr · save $40" data-a="Billed yearly · save $40">or $199/yr · save $40</div>
-        <div class="desc">You're automating. Single seat, full toolbox.</div>
-        <div class="tier-spec"><b>1,000</b> nodes per lab · 1 live lab</div>
+        <div class="nm">Architect</div>
+        <div class="price"><span class="price-i" data-m="$29.99" data-a="$299">$29.99</span><span class="psuf" data-ms="/mo" data-as="/yr">/mo</span></div>
+        <div class="annual" data-m="or $299/yr · save $60" data-a="Billed yearly · save $60">or $299/yr · save $60</div>
+        <div class="desc">The automation tier. Single seat, full toolbox.</div>
+        <div class="tier-spec"><b>1,000</b> nodes · ∞ live labs</div>
         <ul>
-          <li class="grp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Everything in Plus, plus:</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Scoped API keys · Terraform · Ansible</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Full tc/netem QoS · no cap</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Git auto-backup · cloud templates</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>MicroVM nodes</li>
-        </ul>
-      </div>
-      <div class="tier" style="border-color:color-mix(in srgb,var(--ok) 40%,transparent);background:color-mix(in srgb,var(--ok) 5%,var(--surface-1))">
-        <div class="nm">Schools <span style="font-size:11px;color:var(--ok);font-weight:600">AU</span></div>
-        <div class="price" style="color:var(--ok)">$0</div>
-        <div class="annual" style="color:var(--ok);font-weight:700">Free for every school, forever</div>
-        <div class="desc">Every Australian primary and secondary school.</div>
-        <div class="tier-spec">Full classroom platform, no limits</div>
-        <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--ok)" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>We install on your server</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--ok)" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>We train your teachers</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--ok)" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Isolated pods · grade &amp; freeze</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--ok)" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Priority school support</li>
+          <li class="grp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Everything in Professional, plus:</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>API keys · Terraform · Ansible · CI</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Full tc/netem QoS knobs</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Built-in metrics dashboard · gNMI</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>microVM · LXC/LXD</li>
         </ul>
       </div>
       <div class="tier">
@@ -329,14 +316,14 @@
         <div class="desc">Run it at scale. Flexible licensing, no renewal risk.</div>
         <div class="tier-spec"><b>∞</b> nodes &amp; labs (soft OOM guard)</div>
         <ul>
-          <li class="grp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Everything in Classroom, plus:</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>SSO · multi-tenant · audit log</li>
+          <li class="grp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Everything in Team, plus:</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>SSO/AD · multi-tenant · audit log</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Compute cluster · S3 / self-hosted git</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>SLA + named contact</li>
         </ul>
       </div>
     </div>
-    <p style="margin-top:26px;font-size:14px;color:var(--text-3)"><strong style="color:var(--ok)">Australian schools get the full platform free</strong> — install + teacher training included · <a href="pricing.html" style="color:var(--accent)">See full pricing →</a></p>
+    <p style="margin-top:22px;font-size:14px;color:var(--text-3)"><strong style="color:var(--text-2)">Team</strong> (~$49/seat) adds collaboration &amp; roles · <strong style="color:var(--ok)">Class</strong> is free for every Australian school — install + teacher training included · <a href="pricing.html" style="color:var(--accent)">See full pricing →</a></p>
   </div>
 </section>
 
@@ -353,12 +340,12 @@
 <section class="ctaband" style="border-top:1px solid var(--border-soft)">
   <div class="wrap">
     <h2>Stop tolerating <span class="accent">the old tools.</span></h2>
-    <p>Import your EVE-NG lab, start on the free Community tier, and never run <span class="mono">fixpermissions</span> again.</p>
+    <p>Import your EVE-NG lab, start on the free Associate tier, and never run <span class="mono">fixpermissions</span> again.</p>
     <div style="display:flex;gap:13px;justify-content:center;flex-wrap:wrap">
       <a href="download.html" class="btn btn-primary btn-lg">Get netplex. free<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       <a href="contact.html" class="btn btn-outline btn-lg">Talk to us</a>
     </div>
-    <p style="font-size:13px;margin-top:18px;color:var(--text-4)">Community tier free forever · no credit card</p>
+    <p style="font-size:13px;margin-top:18px;color:var(--text-4)">Associate tier free forever · no credit card</p>
   </div>
 </section>
 
@@ -394,7 +381,7 @@
 /* rotating hero - fresh marketing line every reload */
 var HERO = [
   { t:'Emulate. Automate. <span class="accent">Ship.</span>', s:"The modern network lab - a distributed digital twin, execution and automation platform for engineers who've outgrown EVE-NG.", st:'GNS3 + EVE-NG + Terraform + NetBox - <b>rebuilt as one API-first, event-driven platform.</b>' },
-  { t:'Real Cisco labs. Free.<br/><span class="accent">No limits on what you can build.</span>', s:"A React canvas, live terminal, packet capture and an API - included in a Community tier that's genuinely useful for CCNA and CCNP study.", st:'EVE-NG Community was designed in 2007. <b>This is what free should feel like in 2026.</b>' },
+  { t:'Real Cisco labs. Free.<br/><span class="accent">No limits on what you can build.</span>', s:"A React canvas, live terminal, packet capture and an API - included in an Associate tier that's genuinely useful for CCNA and CCNP study.", st:'EVE-NG Community was designed in 2007. <b>This is what free should feel like in 2026.</b>' },
   { t:'Stop setting up labs.<br/><span class="accent">Start engineering.</span>', s:"Drop an image and walk away - convert, permissions, boot-test, all automatic. No SSH. No fixpermissions. No external terminal.", st:'The experience EVE-NG never had - <b>finally worth paying for.</b>' },
   { t:'Everything EVE-NG Pro does -<br/><span class="accent">plus the things it can\u2019t sell you.</span>', s:"Snapshots, git auto-backup, Terraform, Ansible, live QoS on every link. $199/year, runs on any machine, no MAC lock.", st:'Import your <b>.unl topologies in 30 seconds.</b>' }
 ];

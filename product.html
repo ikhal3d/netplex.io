@@ -26,7 +26,7 @@
 <link rel="stylesheet" href="assets/pages.css" />
 <script>(function(){try{var t=localStorage.getItem('netplex.theme');var a=localStorage.getItem('netplex.accent');if(t&&t!=='midnight')document.documentElement.dataset.theme=t;if(a&&a!=='orange')document.documentElement.dataset.accent=a;}catch(e){}})();</script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareApplication","name":"netplex.","applicationCategory":"NetworkingApplication","operatingSystem":"Linux","url":"https://netplex.io","description":"Canvas editor, integrated consoles, no-CLI image pipeline, full automation toolbox and multi-host distributed fabric.","featureList":"Canvas topology editor, Integrated terminals, Image pipeline, Automation API, Terraform provider, Ansible collection, Live packet capture, VXLAN distributed fabric (beta)","offers":[{"@type":"Offer","name":"Community","price":"0","priceCurrency":"USD"},{"@type":"Offer","name":"Pro","price":"19.99","priceCurrency":"USD"}]}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"netplex.","applicationCategory":"NetworkingApplication","operatingSystem":"Linux","url":"https://netplex.io","description":"Canvas editor, integrated consoles, no-CLI image pipeline, full automation toolbox and multi-host distributed fabric.","featureList":"Canvas topology editor, Integrated terminals, Image pipeline, Automation API, Terraform provider, Ansible collection, Live packet capture, VXLAN distributed fabric (beta)","offers":[{"@type":"Offer","name":"Associate","price":"0","priceCurrency":"AUD"},{"@type":"Offer","name":"Professional","price":"19.99","priceCurrency":"AUD"},{"@type":"Offer","name":"Architect","price":"29.99","priceCurrency":"AUD"}]}
 </script>
 </head>
 <body>
@@ -75,7 +75,7 @@
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Curve · Arc · Ortho · Straight links; parallel links fan out</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Live link flow - see traffic move, not invented Gbps numbers</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Export to SVG, PNG (2×) or JSON - Visio / draw.io friendly</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Presentation mode - laser, pen, arrows, shapes &amp; spotlight over your live topology <span class="mono" style="color:var(--text-4)">· Pro</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Presentation mode - laser, pen, arrows, shapes &amp; spotlight over your live topology <span class="mono" style="color:var(--text-4)">· Professional+</span></li>
         </ul>
       </div>
       <div class="topo-frame">
@@ -170,9 +170,9 @@ vni 1010  src host-01  dst host-02  <span class="ok">active</span>
 <span class="cm">→ 12 nodes scheduled · git backup armed ✓</span></div>
       </div>
       <div class="sc-text">
-        <span class="eyebrow sec-eyebrow">API-first · full toolbox on Pro</span>
+        <span class="eyebrow sec-eyebrow">API-first · full toolbox on Architect</span>
         <h2>Everything the UI does<br/><span class="accent">is an API call.</span></h2>
-        <p>Drive netplex. from your own tooling. A documented REST + WebSocket API, scoped keys, a CLI, a Terraform provider and an Ansible collection - the complete automation toolbox, on a single Pro seat.</p>
+        <p>Drive netplex. from your own tooling. A documented REST + WebSocket API, scoped keys, a CLI, a Terraform provider and an Ansible collection - the complete automation toolbox, on a single Architect seat.</p>
         <div class="api-logos">
           <span class="chip">CLI</span><span class="chip">Terraform</span><span class="chip">Ansible</span><span class="chip">REST + WS</span><span class="chip">CI / CD</span><span class="chip">Git-as-code</span>
         </div>
@@ -184,9 +184,9 @@ vni 1010  src host-01  dst host-02  <span class="ok">active</span>
 <!-- QoS + automation toolbox -->
 <section>
   <div class="wrap">
-    <span class="eyebrow sec-eyebrow">The Pro toolbox</span>
+    <span class="eyebrow sec-eyebrow">The Architect toolbox</span>
     <h2 class="sec">A single seat. <span class="accent">The whole toolbox.</span></h2>
-    <p class="sec-sub">Pro holds nothing back. There's no reason to cripple a single-seat licence - you get every automation surface we ship.</p>
+    <p class="sec-sub">Architect holds nothing back. There's no reason to cripple a single-seat licence - you get every automation surface we ship.</p>
     <div class="cap-grid" style="margin-top:36px">
       <div class="cap"><div class="cap-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg></div><h3>Full tc/netem QoS</h3><p>Delay, jitter, loss, corruption, duplication and a bandwidth cap on every link. Serious WAN simulation, not a toy.</p></div>
       <div class="cap"><div class="cap-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v6M12 15v6M3 12h6M15 12h6"/><circle cx="12" cy="12" r="3"/></svg></div><h3>Cloud topology templates</h3><p>AWS VPC, SD-WAN multi-site and Hub-and-spoke - netplex.-maintained, built in, ready to spin up.</p></div>
@@ -203,7 +203,7 @@ vni 1010  src host-01  dst host-02  <span class="ok">active</span>
         <span class="eyebrow sec-eyebrow">The stitch - distributed fabric<span class="flag">Roadmap · beta</span></span>
         <h2>Two machines.<br/><span class="accent">One topology.</span></h2>
         <p>The headline differentiator nobody else does. A single lab spans several cheap PCs and cloud VMs - netplex. stitches their virtual switches together with VXLAN tunnels, so a link between nodes on different machines just works.</p>
-        <p style="font-size:14px;color:var(--text-4)">Distributed multi-chassis VXLAN is on the roadmap and currently in beta. Single-host emulation, automation and the full Pro toolbox ship today.</p>
+        <p style="font-size:14px;color:var(--text-4)">Distributed multi-chassis VXLAN is on the roadmap and currently in beta. Single-host emulation, automation and the full Architect toolbox ship today.</p>
         <ul class="sc-list">
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Scheduler places nodes by free CPU / RAM across hosts</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>A host dropping degrades only its nodes - the lab keeps running</li>
@@ -223,7 +223,7 @@ vni 1010  src host-01  dst host-02  <span class="ok">active</span>
 <section class="ctaband">
   <div class="wrap">
     <h2>See it on <span class="accent">your own machine.</span></h2>
-    <p>Start on the free Community tier, import an EVE-NG lab, and explore the whole platform in minutes.</p>
+    <p>Start on the free Associate tier, import an EVE-NG lab, and explore the whole platform in minutes.</p>
     <div style="display:flex;gap:13px;justify-content:center;flex-wrap:wrap">
       <a href="download.html" class="btn btn-primary btn-lg">Get netplex. free<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       <a href="pricing.html" class="btn btn-outline btn-lg">See pricing</a>
