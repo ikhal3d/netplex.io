@@ -312,10 +312,10 @@
 
 /* ── Tier card: equal-height flex, hover lift, staggered entrance ── */
 .tier { display: flex; flex-direction: column; transition: transform .2s var(--ease-out), border-color .2s var(--ease-out), box-shadow .2s var(--ease-out); }
-.tier > ul { flex: 1 1 auto; }
+.tier > ul { flex: 1 1 auto; margin-bottom: 20px; }
 .tier:hover { transform: translateY(-6px); border-color: var(--accent-line); box-shadow: 0 14px 34px rgba(0,0,0,0.30); }
 .tier.feat:hover { border-color: var(--accent); box-shadow: 0 16px 40px color-mix(in srgb, var(--accent) 24%, transparent); }
-.tier .cta-row { margin-top: auto; }
+.tier .cta-row { margin-top: auto; padding-top: 4px; }
 .tier .price-row { display: flex; align-items: baseline; gap: 3px; min-height: 40px; }
 .tier .save-note { min-height: 16px; }
 @keyframes tier-in { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }

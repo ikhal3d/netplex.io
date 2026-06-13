@@ -173,7 +173,7 @@
 .tier { background: var(--surface-1); border: 1px solid var(--border); border-radius: var(--r-4); padding: 24px 22px; }
 .tier.feat { border-color: var(--accent); position: relative; }
 .tier-badge { position: absolute; top: -11px; left: 50%; transform: translateX(-50%); background: var(--accent); color: #fff; font-size: 11px; font-weight: 600; padding: 3px 12px; border-radius: 999px; white-space: nowrap; }
-.tier .nm { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-4); margin-bottom: 12px; }
+.tier .nm { font-family: var(--font-ui); font-size: 23px; font-weight: 700; letter-spacing: -0.015em; text-transform: none; color: var(--text-1); margin-bottom: 9px; line-height: 1.1; }
 .tier .price { font-size: 34px; font-weight: 600; letter-spacing: -0.02em; }
 .tier .price span { font-size: 14px; color: var(--text-4); font-weight: 400; }
 .tier .price .price-i { font-size: 34px; color: var(--text-1); font-weight: 600; }
