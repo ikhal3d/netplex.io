@@ -21,9 +21,9 @@
 <meta name="twitter:title" content="Pricing - netplex. Associate free, Professional from $19.99/mo" />
 <meta name="twitter:description" content="Associate free forever. Professional from $19.99/mo - 1,000 nodes, snapshots, fault injection, presentation mode. Architect adds the automation toolbox." />
 <meta name="twitter:image" content="https://netplex.io/assets/og.png" />
-<link rel="stylesheet" href="assets/site.css?v=4" />
-<link rel="stylesheet" href="assets/landing.css?v=4" />
-<link rel="stylesheet" href="assets/pages.css?v=4" />
+<link rel="stylesheet" href="assets/site.css?v=5" />
+<link rel="stylesheet" href="assets/landing.css?v=5" />
+<link rel="stylesheet" href="assets/pages.css?v=5" />
 <script>(function(){try{var t=localStorage.getItem('netplex.theme');var a=localStorage.getItem('netplex.accent');if(t&&t!=='midnight')document.documentElement.dataset.theme=t;if(a&&a!=='orange')document.documentElement.dataset.accent=a;}catch(e){}})();</script>
 <style>
   .bill-toggle { display: inline-flex; align-items: center; gap: 4px; background: var(--surface-2); border: 1px solid var(--border); border-radius: 999px; padding: 4px; margin-top: 26px; }
@@ -48,7 +48,7 @@
   @media (max-width: 760px){ .faq { grid-template-columns: 1fr; } .matrix { font-size: 12px; } .matrix th, .matrix td { padding: 9px 6px; } }
 </style>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareApplication","name":"netplex.","applicationCategory":"NetworkingApplication","operatingSystem":"Linux","url":"https://netplex.io","offers":[{"@type":"Offer","name":"Associate","price":"0","priceCurrency":"AUD","description":"Free forever - 20 nodes per lab, canvas, live terminal, packet capture"},{"@type":"Offer","name":"Professional","price":"19.99","priceCurrency":"AUD","description":"1,000 nodes, snapshots, fault injection, any-Docker, presentation mode"},{"@type":"Offer","name":"Architect","price":"39.99","priceCurrency":"AUD","description":"Everything in Professional plus the automation toolbox - API, Terraform, Ansible, CI, QoS, metrics dashboard"},{"@type":"Offer","name":"Team","price":"49","priceCurrency":"AUD","description":"Per seat - collaboration on one topology, roles, larger fabric"},{"@type":"Offer","name":"Australian Schools (Class)","price":"0","priceCurrency":"AUD","description":"Completely free for every Australian school — software installed on your server, teachers trained at no cost"},{"@type":"Offer","name":"Enterprise","description":"Contact for pricing - subscription or perpetual licence"}]}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"netplex.","applicationCategory":"NetworkingApplication","operatingSystem":"Linux","url":"https://netplex.io","offers":[{"@type":"Offer","name":"Associate","price":"0","priceCurrency":"AUD","description":"Free forever - 20 nodes per lab, canvas, live terminal, packet capture"},{"@type":"Offer","name":"Professional","price":"19.99","priceCurrency":"AUD","description":"1,000 nodes, snapshots, fault injection, any Docker image, presentation mode"},{"@type":"Offer","name":"Architect","price":"39.99","priceCurrency":"AUD","description":"Everything in Professional plus the automation toolbox - API, Terraform, Ansible, CI, QoS, metrics dashboard"},{"@type":"Offer","name":"Team","price":"49","priceCurrency":"AUD","description":"Per seat - collaboration on one topology, roles, larger fabric"},{"@type":"Offer","name":"Australian Schools (Class)","price":"0","priceCurrency":"AUD","description":"Completely free for every Australian school — software installed on your server, teachers trained at no cost"},{"@type":"Offer","name":"Enterprise","description":"Contact for pricing - subscription or perpetual licence"}]}
 </script>
 </head>
 <body>
@@ -153,7 +153,7 @@
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>One-click app nodes (Wireshark, Kali, desktops)</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>6 UI &amp; lab themes + terminal syntax highlighting</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Presentation mode (laser, draw, annotate)</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>any-Docker (Hub / GHCR / marketplace)</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Any Docker image (Hub / GHCR / marketplace)</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Snapshots &amp; freeze</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Git backup</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>2-machine VXLAN fabric - stitch 2 hosts into one lab<span class="rm">roadmap</span></li>
@@ -176,7 +176,7 @@
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Pre-merge validation pipelines (pyATS / Batfish)<span class="rm">roadmap</span></li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Ansible automation + scoped API keys + CLI</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Terraform for controllers &amp; cloud (ACI, Meraki, Apstra, NSX)</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>QoS impairment (delay, latency, jitter, packet loss, rate)</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>QoS impairment (latency, jitter, packet loss, rate)</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Fault injection (link &amp; node up/down)</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Network flow animation</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Built-in metrics dashboard + gNMI</li>
@@ -288,7 +288,7 @@
         <tr><td>GUI traffic analyser</td><td class="x">-</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck col-us">✓</td></tr>
         <tr><td>GUI multicast generator + receiver</td><td class="x">-</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck col-us">✓</td></tr>
         <tr><td>One-click app nodes (Wireshark, Kali, desktops)</td><td class="x">-</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck col-us">✓</td></tr>
-        <tr><td>any-Docker (Hub / GHCR / marketplace)</td><td class="x">-</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck col-us">✓</td></tr>
+        <tr><td>Any Docker image (Hub / GHCR / marketplace)</td><td class="x">-</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck col-us">✓</td></tr>
         <tr><td>Snapshots · freeze · Git backup</td><td class="x">-</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck col-us">✓ + S3</td></tr>
         <tr><td>Network Git versioning <span class="mono" style="color:var(--accent)">· roadmap</span></td><td class="x">-</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck col-us">✓</td></tr>
         <tr><td>Presentation mode (laser · draw · annotate)</td><td class="x">-</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck col-us">✓</td></tr>
@@ -301,7 +301,7 @@
         <tr><td>Scoped API keys + CLI</td><td class="mono">read</td><td class="mono">read</td><td class="mono">read/write</td><td class="mono">read/write</td><td class="mono">read/write</td><td class="mono col-us">+ admin · audit</td></tr>
         <tr><td>Ansible automation</td><td class="x">-</td><td class="x">-</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck col-us">✓</td></tr>
         <tr><td>Terraform for controllers &amp; cloud (ACI, Meraki, Apstra, NSX)</td><td class="x">-</td><td class="x">-</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck col-us">✓</td></tr>
-        <tr><td>QoS impairment (delay, latency, jitter, packet loss, rate)</td><td class="x">-</td><td class="x">-</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck col-us">✓</td></tr>
+        <tr><td>QoS impairment (latency, jitter, packet loss, rate)</td><td class="x">-</td><td class="x">-</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck col-us">✓</td></tr>
         <tr><td>Fault injection (link &amp; node up/down)</td><td class="x">-</td><td class="x">-</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck col-us">✓</td></tr>
         <tr><td>Live link traffic %</td><td class="x">-</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck col-us">✓</td></tr>
         <tr><td>Real-time flow analytics <span class="mono" style="color:var(--accent)">· roadmap</span></td><td class="x">-</td><td class="x">-</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck col-us">✓</td></tr>
@@ -363,7 +363,7 @@
       <div><h3 style="color:var(--ok)">Is it really free for Australian schools?</h3><p>Yes — for every Australian primary and secondary school. We install the software on your school's server and personally train your teachers, all at no cost. TAFEs and universities, please <a href="contact.html" style="color:var(--accent)">contact us</a> for a quote. Email <a href="mailto:edu@netplex.io" style="color:var(--accent)">edu@netplex.io</a> to get started.</p></div>
       <div><h3>Why pay when EVE-NG has a free Community?</h3><p>You don't have to - netplex. Associate is also free, and already better. You pay for what EVE-NG can't sell you: snapshots, fault injection, presentation mode, Terraform, Ansible, QoS and a built-in metrics dashboard.</p></div>
       <div><h3>Is the Associate tier time-limited?</h3><p>No - free is free forever. 20 nodes and a live lab is a genuinely useful ceiling for routing &amp; switching certification study, and the full engine, every console and the built-in tool nodes are all included.</p></div>
-      <div><h3>What's the difference between Professional and Architect?</h3><p>Professional ($199/yr) is the solo "version it, break it, present it" tier - 1,000 nodes, snapshots, link/node fault injection, any-Docker and presentation mode. Architect ($399/yr) adds config-as-code &amp; intent validation, QoS impairment (delay/jitter/loss), the automation toolbox (API, Terraform, Ansible), the built-in metrics dashboard and micro-VM/LXC. Team brings the people layer; Enterprise the org layer.</p></div>
+      <div><h3>What's the difference between Professional and Architect?</h3><p>Professional ($199/yr) is the solo "version it, break it, present it" tier - 1,000 nodes, snapshots, link/node fault injection, any Docker image and presentation mode. Architect ($399/yr) adds config-as-code &amp; intent validation, QoS impairment (delay/jitter/loss), the automation toolbox (API, Terraform, Ansible), the built-in metrics dashboard and micro-VM/LXC. Team brings the people layer; Enterprise the org layer.</p></div>
       <div><h3>Why is there a 1 Mbps cap on Associate?</h3><p>It's intentional, gentle friction. Routing and switching study doesn't need throughput; serious QoS or WAN simulation does - and that's a Professional/Architect conversation.</p></div>
       <div><h3>Will a licence blip lock my running lab?</h3><p>No. Enterprise uses MAC + TPM fingerprinting with a 30-day grace period on hardware migration. Reliability beats DRM zeal.</p></div>
     </div>
