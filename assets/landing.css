@@ -184,8 +184,10 @@
 .tier li.grp { color: var(--text-1); font-weight: 600; }
 .tier li.grp svg { color: var(--accent); }
 .tier ul { list-style: none; display: flex; flex-direction: column; gap: 9px; margin-top: 16px; }
-.tier li { font-size: 13px; color: var(--text-2); display: flex; gap: 8px; align-items: flex-start; }
-.tier li svg { width: 15px; height: 15px; color: var(--ok); flex-shrink: 0; margin-top: 2px; }
+/* hanging indent: icon absolutely placed in the left gutter so wrapped lines
+   stay aligned under the text (not pushed back under the tick) */
+.tier li { font-size: 13px; color: var(--text-2); font-weight: 400; position: relative; padding-left: 23px; line-height: 1.45; }
+.tier li svg { width: 15px; height: 15px; color: var(--ok); position: absolute; left: 0; top: 3px; }
 
 /* ── CTA BAND ── */
 .ctaband { text-align: center; position: relative; }
