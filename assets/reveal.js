@@ -9,15 +9,40 @@
   // Curated — deliberately NOT every card. Section intros + the
   // marquee card grids (capabilities, pricing tiers, feature cards).
   var SELECTORS = [
+    // section intros (shared across every page)
     '.sec-eyebrow',
     'h2.sec',
     '.sec-sub',
+    // index
     '.cap',
     '.tier',
     '.statcell',
+    '.win',
+    '.cmp tbody tr',
+    // comparison pages (eve-ng / gns3)
     '.pain-card',
     '.mig-step',
-    '.cmp tbody tr'
+    // about
+    '.tmember',
+    '.principle',
+    // contact / support
+    '.ch-row',
+    // download
+    '.dl-card',
+    '.ic-tile',
+    '.run-step',
+    '.dl-spec',
+    // faq
+    '.qa',
+    // forums
+    '.cat-row',
+    // knowledge base
+    '.kb-cat',
+    // legal
+    '.legal-doc',
+    // roadmap
+    '.rm-card',
+    '.reqitem'
   ];
 
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
