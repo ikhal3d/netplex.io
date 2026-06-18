@@ -292,7 +292,7 @@ html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; text-render
 /* ── 3D TILT CARD — Linear-style. Sits on a slight perspective tilt
    with a deep layered shadow; straightens and lifts on hover. ── */
 .card3d {
-  transform: perspective(1700px) rotateX(7deg) rotateY(-11deg) rotateZ(1deg);
+  transform: perspective(1600px) rotateX(10deg) rotateY(-16deg) rotateZ(2deg);
   transform-style: preserve-3d;
   transition: transform .7s var(--ease-out-soft), box-shadow .7s var(--ease-out-soft);
   box-shadow:
