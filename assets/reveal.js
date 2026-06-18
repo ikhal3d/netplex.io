@@ -10,13 +10,13 @@
   // marquee card grids (capabilities, pricing tiers, feature cards).
   var SELECTORS = [
     '.sec-eyebrow',
-    '.sec-title',
+    'h2.sec',
     '.sec-sub',
-    '.cap-card',
+    '.cap',
     '.tier',
-    '.feature-card',
-    '.cmp-card',
-    '.pill-card'
+    '.statcell',
+    '.pain-card',
+    '.mig-step'
   ];
 
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
