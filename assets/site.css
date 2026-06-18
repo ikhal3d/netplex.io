@@ -351,7 +351,9 @@ img { max-width: 100%; display: block; }
   background-size: 64px 64px;
   mask-image: radial-gradient(ellipse 78% 58% at 50% -4%, #000 32%, transparent 76%);
 }
-.content { position: relative; z-index: 1; }
+/* overflow:clip contains transform-based reveal/tilt overflow without
+   adding scrollbars; unlike hidden it doesn't break the sticky nav. */
+.content { position: relative; z-index: 1; overflow: clip; }
 
 /* ── NAV ───────────────────────────────────────────────── */
 .nav {
