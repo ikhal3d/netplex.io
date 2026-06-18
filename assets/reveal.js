@@ -16,7 +16,8 @@
     '.tier',
     '.statcell',
     '.pain-card',
-    '.mig-step'
+    '.mig-step',
+    '.cmp tbody tr'
   ];
 
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
