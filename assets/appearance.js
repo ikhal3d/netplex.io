@@ -9,7 +9,7 @@
     { id: 'cloud',    name: 'Cloud',    bg: 'linear-gradient(135deg,#ffffff 0%,#eef1f6 100%)', bd: '#dde2ea' },
     { id: 'paper',    name: 'Paper',    bg: 'linear-gradient(135deg,#ffffff 0%,#efeee8 100%)', bd: '#e0ded6' },
     { id: 'sand',     name: 'Sand',     bg: 'linear-gradient(135deg,#f5f3ec 0%,#d7d4c7 100%)', bd: '#cac7b8' },
-    { id: 'graphite', name: 'Graphite', bg: 'linear-gradient(135deg,#2d2c33 0%,#1d1c21 100%)', bd: '#43424c' },
+    { id: 'graphite', name: 'Graphite', bg: 'linear-gradient(135deg,#222227 0%,#121214 100%)', bd: '#33333a' },
     { id: 'midnight', name: 'Midnight', bg: 'linear-gradient(135deg,#1c1f27 0%,#0a0b0e 100%)', bd: '#343845' },
     { id: 'obsidian', name: 'Obsidian', bg: 'linear-gradient(135deg,#1a1a1f 0%,#050507 100%)', bd: '#313138' }
   ];

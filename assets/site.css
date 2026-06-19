@@ -600,11 +600,12 @@ footer { border-top: 1px solid var(--border-soft); padding: 60px 0 40px; positio
    (set on <html> by the Appearance picker) so it survives theme swaps.
    ────────────────────────────────────────────────────────────── */
 [data-theme="graphite"] {
-  --surface-0: #17161a;  --surface-1: #1d1c21;  --surface-2: #25242a;
-  --surface-3: #2d2c33;  --surface-4: #393841;  --surface-canvas: #131216;
-  --border-soft: #2a2930; --border: #34333b; --border-strong: #43424c; --border-bright: #565560;
-  --text-1: #f5f5f6; --text-2: #cdccd2; --text-3: #95949c; --text-4: #6a6972; --text-dim: #4a4951;
-  --canvas-circuit-dot: rgba(255,255,255,0.055); --hud-bg: rgba(37,36,42,0.92);
+  /* matched 1:1 to the tool (netplex/frontend/src/studio/studio.css) */
+  --surface-0: #121214;  --surface-1: #17171a;  --surface-2: #1c1c20;
+  --surface-3: #222227;  --surface-4: #2a2a30;  --surface-canvas: #101012;
+  --border-soft: rgba(255,255,255,0.05); --border: rgba(255,255,255,0.08); --border-strong: rgba(255,255,255,0.13); --border-bright: rgba(255,255,255,0.22);
+  --text-1: #ebebef; --text-2: #b4b8c2; --text-3: #787e8c; --text-4: #4c525e; --text-dim: #34343b;
+  --canvas-circuit-dot: rgba(255,255,255,0.05); --hud-bg: rgba(18,18,20,0.88);
 }
 [data-theme="obsidian"] {
   --surface-0: #050507;  --surface-1: #0c0c0f;  --surface-2: #131316;

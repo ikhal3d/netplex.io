@@ -88,7 +88,7 @@
   /* ── 6 LIVE THEME TILES ── */
   var THEMES = [
     { id: 'midnight', name: 'Midnight', tag: 'dark',  bg: '#0a0b0e', s1: '#16181f', s2: '#1c1f27', bd: '#262932', tx: '#f1f2f5', t2: '#868a93' },
-    { id: 'graphite', name: 'Graphite', tag: 'dark',  bg: '#17161a', s1: '#25242a', s2: '#2d2c33', bd: '#34333b', tx: '#f5f5f6', t2: '#95949c' },
+    { id: 'graphite', name: 'Graphite', tag: 'dark',  bg: '#121214', s1: '#17171a', s2: '#1c1c20', bd: '#2b2b30', tx: '#ebebef', t2: '#787e8c' },
     { id: 'obsidian', name: 'Obsidian', tag: 'dark',  bg: '#050507', s1: '#131316', s2: '#1a1a1f', bd: '#222227', tx: '#f6f6f8', t2: '#888890' },
     { id: 'cloud',    name: 'Cloud',    tag: 'light', bg: '#f5f7fa', s1: '#ffffff', s2: '#eef1f6', bd: '#dde2ea', tx: '#141821', t2: '#69707e' },
     { id: 'paper',    name: 'Paper',    tag: 'light', bg: '#f6f5f1', s1: '#ffffff', s2: '#efeee8', bd: '#e0ded6', tx: '#1b1b1e', t2: '#70717a' },
