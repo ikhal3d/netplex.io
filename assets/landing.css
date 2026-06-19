@@ -120,6 +120,12 @@
 /* ── IMAGE PIPELINE ── */
 .pl-row { display: flex; flex-direction: column; gap: 16px; }
 .pl-file { display: flex; align-items: center; gap: 12px; background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--r-3); padding: 12px 14px; }
+.pl-status { margin-left: auto; display: inline-flex; align-items: center; gap: 8px; font-size: 12.5px; color: var(--text-3); padding-left: 14px; border-left: 1px solid var(--border); align-self: stretch; }
+.pl-status i { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 8px var(--accent); flex-shrink: 0; animation: plpulse 1.1s var(--ease-out) infinite; }
+.pl-status.ok { color: var(--ok); }
+.pl-status.ok i { background: var(--ok); box-shadow: 0 0 8px var(--ok); animation: none; }
+@keyframes plpulse { 0%,100% { opacity: 1; } 50% { opacity: .35; } }
+@media (max-width: 640px) { .pl-status { display: none; } }
 .pl-fic { width: 38px; height: 38px; border-radius: 8px; background: var(--accent-soft); border: 1px solid color-mix(in srgb, var(--accent) 28%, transparent); display: grid; place-items: center; color: var(--accent); flex-shrink: 0; }
 .pl-fic svg { width: 20px; height: 20px; }
 .pl-fmeta { display: flex; flex-direction: column; line-height: 1.3; }

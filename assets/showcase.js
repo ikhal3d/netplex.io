@@ -67,10 +67,13 @@
       '<div class="pl-row">' +
         '<div class="pl-file"><span class="pl-fic">' +
           '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg>' +
-        '</span><span class="pl-fmeta"><b>csr1000v.qcow2</b><span class="mono">Cisco · CSR 1000v · 1.4 GB</span></span></div>' +
+        '</span><span class="pl-fmeta"><b>csr1000v.qcow2</b><span class="mono">Cisco · CSR 1000v · 1.4 GB</span></span>' +
+        '<span class="pl-status"><i></i><span class="pl-stxt mono">Queued</span></span></div>' +
         '<div class="pl-steps">' + pills + '</div>' +
       '</div>';
     var steps = host.querySelectorAll('.pl-step');
+    var statusEl = host.querySelector('.pl-status');
+    var stxt = host.querySelector('.pl-stxt');
     var cur = 0;
     function tick() {
       steps.forEach(function (st, i) {
@@ -78,6 +81,13 @@
         if (i < cur) st.classList.add('done');
         else if (i === cur) st.classList.add('active');
       });
+      if (cur < STEPS.length) {
+        statusEl.classList.remove('ok');
+        stxt.textContent = 'Stage ' + (cur + 1) + ' of ' + STEPS.length + ' · ' + STEPS[cur];
+      } else {
+        statusEl.classList.add('ok');
+        stxt.textContent = 'Ready · boot-tested in 41s';
+      }
       cur++;
       if (cur > STEPS.length) { cur = 0; setTimeout(tick, 1400); return; }
       setTimeout(tick, cur === STEPS.length ? 1800 : 720);

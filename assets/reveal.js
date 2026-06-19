@@ -43,7 +43,12 @@
     '.legal-doc',
     // roadmap
     '.rm-card',
-    '.reqitem'
+    '.reqitem',
+    // education
+    '.s-tile',
+    '.m-student',
+    '.w-step',
+    '.eb-field'
   ];
 
   // Map each card type to a reveal animation (first match wins).
@@ -69,6 +74,10 @@
     ['.legal-doc', 'up'],
     ['.rm-card', 'flip'],
     ['.reqitem', 'left'],
+    ['.s-tile', 'pop'],
+    ['.m-student', 'left'],
+    ['.w-step', 'right'],
+    ['.eb-field', 'up'],
     ['.win', 'blur'],
     ['.sec-eyebrow', 'up'],
     ['h2.sec', 'up'],
