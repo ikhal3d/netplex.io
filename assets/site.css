@@ -291,11 +291,26 @@ html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; text-render
 }
 [data-reveal].is-in { opacity: 1; transform: none; }
 
-/* rise UP from below into place (opt-in per element) — safe now that
-   .content clips overflow, so the downward start adds no scrollbar. */
-.card-rise[data-reveal] { transition: opacity .9s var(--ease-out-soft), transform .9s var(--ease-out-soft); }
-.card-rise[data-reveal]:not(.is-in) { opacity: 0; transform: translateY(56px); }
-.card-rise[data-reveal].is-in { opacity: 1; transform: none; }
+/* STAND UP — the card lies flat on the floor (hinged at its bottom
+   edge) then rotates upright as it scrolls into view. Safe from
+   scrollbars thanks to .content overflow:clip. */
+.card-rise[data-reveal] {
+  transform-origin: bottom center;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  transition: opacity 1.1s var(--ease-out-soft), transform 1.2s var(--ease-out-soft);
+}
+.card-rise[data-reveal]:not(.is-in) {
+  opacity: 0;
+  transform: perspective(1300px) rotateX(82deg);
+}
+.card-rise[data-reveal].is-in {
+  opacity: 1;
+  transform: perspective(1300px) rotateX(0deg);
+}
+@media (prefers-reduced-motion: reduce) {
+  .card-rise[data-reveal] { transform: none !important; }
+}
 
 /* ── 3D TILT CARD — Linear-style. Animates from flat (2D) into a
    perspective tilt as it scrolls into view; straightens + lifts on
@@ -304,7 +319,7 @@ html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; text-render
   --card3d: perspective(1600px) rotateX(10deg) rotateY(-16deg) rotateZ(2deg);
   transform: var(--card3d);
   transform-style: preserve-3d;
-  transition: transform 1.4s var(--ease-out-soft), box-shadow 1.4s var(--ease-out-soft);
+  transition: transform 1.8s var(--ease-out-soft), box-shadow 1.8s var(--ease-out-soft);
   box-shadow:
     -34px 44px 70px -28px rgba(0,0,0,.65),
     -10px 14px 30px -14px rgba(0,0,0,.5),
