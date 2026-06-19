@@ -46,6 +46,42 @@
     '.reqitem'
   ];
 
+  // Map each card type to a reveal animation (first match wins).
+  // .card-rise / .card3d keep their own bespoke animation -> '' (no variant).
+  var VARIANTS = [
+    ['.card-rise', ''],
+    ['.card3d', ''],
+    ['.cap', 'zoom'],
+    ['.tier', 'up'],
+    ['.statcell', 'pop'],
+    ['.pain-card', 'left'],
+    ['.mig-step', 'right'],
+    ['.tmember', 'zoom'],
+    ['.principle', 'up'],
+    ['.ch-row', 'left'],
+    ['.dl-card', 'flip'],
+    ['.ic-tile', 'pop'],
+    ['.run-step', 'right'],
+    ['.dl-spec', 'up'],
+    ['.qa', 'right'],
+    ['.cat-row', 'left'],
+    ['.kb-cat', 'zoom'],
+    ['.legal-doc', 'up'],
+    ['.rm-card', 'flip'],
+    ['.reqitem', 'left'],
+    ['.win', 'blur'],
+    ['.sec-eyebrow', 'up'],
+    ['h2.sec', 'up'],
+    ['.sec-sub', 'up']
+  ];
+
+  function variantFor(el) {
+    for (var i = 0; i < VARIANTS.length; i++) {
+      if (el.matches(VARIANTS[i][0])) return VARIANTS[i][1];
+    }
+    return '';
+  }
+
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   function collect() {
@@ -68,7 +104,7 @@
       return;
     }
 
-    els.forEach(function (el) { el.setAttribute('data-reveal', ''); });
+    els.forEach(function (el) { el.setAttribute('data-reveal', variantFor(el)); });
 
     var io = new IntersectionObserver(function (entries) {
       // Stagger items that reveal together (e.g. a grid scrolled into view).

@@ -282,14 +282,25 @@ html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; text-render
    reveal.js adds [data-reveal] to a curated set, then .is-in once seen. ── */
 [data-reveal] {
   opacity: 0;
-  /* shift UP, then settle down into place — a downward start would grow
-     the document and flash a scrollbar until everything reveals. */
-  transform: translateY(-16px);
-  transition: opacity .7s var(--ease-out-soft), transform .7s var(--ease-out-soft);
+  transform: translateY(22px); /* default — rise from below */
+  transition: opacity .75s var(--ease-out-soft), transform .8s var(--ease-out-soft), filter .8s var(--ease-out-soft);
   transition-delay: var(--reveal-delay, 0ms);
   will-change: opacity, transform;
 }
-[data-reveal].is-in { opacity: 1; transform: none; }
+[data-reveal].is-in { opacity: 1; transform: none; filter: none; }
+
+/* ── reveal variants — reveal.js maps each card type to one ── */
+[data-reveal="up"]:not(.is-in)     { transform: translateY(36px); }
+[data-reveal="down"]:not(.is-in)   { transform: translateY(-24px); }
+[data-reveal="left"]:not(.is-in)   { transform: translateX(-48px); }
+[data-reveal="right"]:not(.is-in)  { transform: translateX(48px); }
+[data-reveal="zoom"]:not(.is-in)   { transform: scale(.86); }
+[data-reveal="pop"]:not(.is-in)    { transform: scale(1.08); }
+[data-reveal="flip"]:not(.is-in)   { transform: perspective(1200px) rotateX(38deg); transform-origin: top center; }
+[data-reveal="blur"]:not(.is-in)   { transform: translateY(14px); filter: blur(12px); }
+[data-reveal="skew"]:not(.is-in)   { transform: rotate(-4deg) translateY(28px) scale(.95); }
+/* springy easing for the scale-based ones */
+[data-reveal="zoom"], [data-reveal="pop"] { transition: opacity .6s var(--ease-out-soft), transform .7s var(--ease-spring); }
 
 /* STAND UP — the card lies flat on the floor (hinged at its bottom
    edge) then rotates upright as it scrolls into view. Safe from

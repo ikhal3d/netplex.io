@@ -19,9 +19,7 @@
     { id: 'green',   hex: '#2fb574' },
     { id: 'magenta', hex: '#e0529c' },
     { id: 'amber',   hex: '#e8b24a' },
-    { id: 'teal',    hex: '#1fb8b0' },
-    { id: 'indigo',  hex: '#6c6cf2' },
-    { id: 'rose',    hex: '#ff7a9c' }
+    { id: 'indigo',  hex: '#6c6cf2' }
   ];
   var KT = 'netplex.theme', KA = 'netplex.accent';
   var root = document.documentElement;
