@@ -260,7 +260,7 @@
   right: -148px;
   width: 350px;
   background: var(--accent);
-  color: var(--accent-ink);
+  color: #fff;
   font-family: var(--font-mono);
   font-size: 15px;
   font-weight: 800;
@@ -435,7 +435,7 @@ img { max-width: 100%; display: block; }
   white-space: nowrap;
 }
 .btn svg { width: 17px; height: 17px; }
-.btn-primary { background-color: var(--accent); color: var(--accent-ink); font-weight: 600; }
+.btn-primary { background-color: var(--accent); color: #fff; font-weight: 600; }
 .btn-primary:hover { background-color: var(--accent-2); transform: translateY(-1px); }
 .btn-ghost { background-color: transparent; color: var(--text-2); }
 .btn-ghost:hover { color: var(--text-1); background-color: var(--surface-2); }
