@@ -410,7 +410,9 @@ body {
   line-height: 1.6;
   /* Inter feature set tuned to match Linear (single-story a, etc.) */
   font-feature-settings: "cv02", "cv03", "cv04", "cv11", "ss03";
-  overflow-x: hidden;
+  /* clip (not hidden) — hidden forces overflow-y to auto, which makes
+     body a second scroll container and spawns an extra scrollbar. */
+  overflow-x: clip;
 }
 a { color: inherit; text-decoration: none; }
 .mono { font-family: var(--font-mono); font-feature-settings: "tnum"; }
