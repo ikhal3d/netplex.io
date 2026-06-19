@@ -113,7 +113,7 @@
 /* ── ROADMAP/BETA flag inline ── */
 .flag {
   font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase;
-  color: #1c1303; background: var(--warn); border: 1px solid var(--warn);
+  color: #fff; background: var(--warn); border: 1px solid var(--warn);
   border-radius: 999px; padding: 3px 9px; font-weight: 600; vertical-align: middle; margin-left: 8px;
 }
 
@@ -134,8 +134,10 @@
 .kb-side .grp:first-child { margin-top: 0; }
 .kb-side a { display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--text-3); padding: 7px 11px; border-radius: var(--r-2); transition: all .14s; }
 .kb-side a:hover { color: var(--text-1); background: var(--surface-2); }
-.kb-side a.active { color: var(--accent); background: var(--accent-soft); font-weight: 500; }
+/* selected topic: only the icon turns accent — no highlight block */
+.kb-side a.active { color: var(--text-1); background: transparent; font-weight: 500; }
 .kb-side a .ico { width: 15px; height: 15px; color: currentColor; opacity: 0.8; }
+.kb-side a.active .ico { color: var(--accent); opacity: 1; }
 
 .kb-cats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 8px; }
 .kb-cat { background: var(--surface-1); border: 1px solid var(--border); border-radius: var(--r-4); padding: 24px; transition: border-color .18s, transform .18s; }
@@ -264,11 +266,12 @@
 .field input:focus, .field textarea:focus, .field select:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
 .field textarea { resize: vertical; min-height: 130px; line-height: 1.55; }
 .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-.topic-seg { display: flex; flex-wrap: wrap; gap: 8px; }
-.topic-seg label { cursor: pointer; margin: 0; }
-.topic-seg input { position: absolute; opacity: 0; pointer-events: none; }
-.topic-seg .opt { display: inline-flex; align-items: center; gap: 7px; font-size: 13px; color: var(--text-3); background: var(--surface-0); border: 1px solid var(--border); border-radius: 999px; padding: 8px 14px; transition: all .15s; }
-.topic-seg input:checked + .opt { color: var(--accent); border-color: var(--accent); background: var(--accent-soft); }
+.topic-seg, .prio-seg { display: flex; flex-wrap: wrap; gap: 8px; }
+.topic-seg label, .prio-seg label { cursor: pointer; margin: 0; }
+.topic-seg input, .prio-seg input { position: absolute; opacity: 0; pointer-events: none; }
+.topic-seg .opt, .prio-seg .opt { display: inline-flex; align-items: center; gap: 7px; font-size: 13px; color: var(--text-3); background: var(--surface-0); border: 1px solid var(--border); border-radius: 999px; padding: 8px 14px; transition: all .18s var(--ease-out); }
+/* selected → a full, solid pill with white writing */
+.topic-seg input:checked + .opt, .prio-seg input:checked + .opt { color: #fff; border-color: var(--accent); background: var(--accent); font-weight: 600; }
 .contact-form .btn { width: 100%; justify-content: center; margin-top: 6px; }
 .form-note { font-size: 12.5px; color: var(--text-4); margin-top: 14px; text-align: center; }
 .form-ok { display: none; text-align: center; padding: 30px 10px; }

@@ -73,6 +73,20 @@
             '<h2>Things you stop doing</h2><ul><li>SSH-ing in to run <code>fixpermissions</code></li><li>Juggling image files by hand</li><li>Opening an external terminal to reach a node</li></ul>'+
             '<h2>Things you gain on Pro</h2><ul><li>Per-node snapshots and git auto-backup on every stop</li><li>A Terraform provider and an Ansible collection</li><li>Full tc/netem QoS on every link</li></ul>'+
             warn('EVE-NG Pro is licensed to one server MAC address - a reinstall means a relicence call. netplex. licences run anywhere.')
+        },
+        { id: 'import-gns3', title: 'Import a GNS3 project', tag: 'Migration', read: '3 min',
+          body:
+            '<p>GNS3 stores a lab as a <code>.gns3</code> project folder (topology JSON plus per-node working directories). netplex. reads it directly - choose <strong>Import → GNS3 project</strong> and drop the folder or its zipped export.</p>'+
+            '<h2>What maps across</h2><ul><li>QEMU nodes map straight to netplex. QEMU/KVM kinds</li><li>Docker nodes map to container nodes</li><li>Dynamips IOS routers map to the matching IOS kind once you supply the image</li><li>Links, port assignments and canvas positions are preserved</li></ul>'+
+            note('GNS3 appliance templates (.gns3a) describe where to fetch an image, not the image itself. Upload the binary once and the pipeline classifies it - no per-project re-import.')+
+            '<h2>Things GNS3 did that you can stop doing</h2><ul><li>Running a separate GNS3 VM - netplex. is the appliance</li><li>Installing a local client - everything is in the browser</li><li>Hand-wiring a cloud node for internet - use a built-in NAT/cloud node</li></ul>'
+        },
+        { id: 'migration-checklist', title: 'Pre-migration checklist', tag: 'Migration', read: '2 min',
+          body:
+            '<p>A two-minute pass before you move a lab across saves a re-import.</p>'+
+            '<h2>Before you export</h2><ul><li>Save running configs to startup (<code>write memory</code>) - RAM-only state does not travel</li><li>Note which device kinds each node uses so you can map them on the other side</li><li>Have the licensed vendor binaries ready to upload - labs reference images, they don’t embed them</li></ul>'+
+            '<h2>After you import</h2><ul><li>Resolve any unmatched kinds against your uploaded images</li><li>Boot the lab once and confirm every node reaches Ready</li><li>Take a snapshot so you have a clean baseline to reset to</li></ul>'+
+            warn('Images are never bundled into an exported lab - on EVE-NG, GNS3 or netplex. You always supply your own licensed binaries.')
         }
       ]
     },
@@ -93,6 +107,20 @@
             '<h2>What ships free</h2><p>Alpine MicroVM is a free, built-in image - perfect for hosts, clients and traffic generators in any tier that supports MicroVM nodes.</p>'+
             '<h2>Building your own</h2><p>You can build an Ubuntu MicroVM from the documented process. Vendor images remain user-provided - you supply the licensed binary, netplex. handles packaging.</p>'+
             note('ESXi nested labs are supported technically, but no ESXi images ship - it\u2019s licensed software, so document the requirement and provide your own.')
+        },
+        { id: 'qemu-fixups', title: 'Automatic image fix-ups (no more fixpermissions)', tag: 'Concepts', read: '4 min',
+          body:
+            '<p>On EVE-NG you SSH in and run <code>/opt/unetlab/wrappers/unl_wrapper -a fixpermissions</code> after every image change. netplex. does the equivalent automatically, on upload, as pipeline stages.</p>'+
+            '<h2>What the pipeline fixes for you</h2><ul><li><strong>Convert</strong> - raw, <code>.vmdk</code> or <code>.ova</code> disks are converted to <code>qcow2</code> where needed</li><li><strong>Permissions</strong> - ownership and mode are set so the node can boot; you never touch the filesystem</li><li><strong>Organised</strong> - the image lands in the right kind directory with a human name</li></ul>'+
+            note('Because fix-ups run on upload rather than at boot, the first start of a node is not slowed down by a permissions sweep.')+
+            '<h2>If a fix-up can\u2019t complete</h2><p>The pipeline stops at the failing stage and tells you exactly what happened and what to do - rather than booting a broken node and leaving you to guess.</p>'
+        },
+        { id: 'docker-nodes', title: 'Custom Docker images as nodes', tag: 'Pro', read: '3 min',
+          body:
+            '<p>Any Docker image can be a node - tools, servers, clients or your own app - on tiers that allow custom Docker.</p>'+
+            '<h2>Bring an image</h2><ul><li>Pull or push the image to the host\u2019s container store</li><li>Register it as a node kind with the interfaces it should expose</li><li>Drop it on the canvas and wire it like any other node</li></ul>'+
+            '<div class="kb-pre"><span class="cm"># example: a throwaway tools box on the lab network</span>\nnetplex node add --kind docker --image nicolaka/netshoot --name tools-1</div>'+
+            warn('Containerlab auto-pulls images from public registries; netplex. keeps images local and explicit so an offline lab stays reproducible.')
         }
       ]
     },
@@ -112,6 +140,25 @@
             '<p>Manage labs as code. The provider wires netplex. into your existing pipeline.</p>'+
             '<div class="kb-pre"><span class="kw">resource</span> <span class="st">"netplex_lab"</span> <span class="st">"campus"</span> {\n  name   = <span class="st">"ENT-CAMPUS-WAN"</span>\n  import = <span class="st">"./campus.unl"</span>\n  scope  = [<span class="st">"labs:write"</span>, <span class="st">"images:read"</span>]\n}</div>'+
             '<p>Run <code>netplex apply</code> (or <code>terraform apply</code>) and your topology provisions itself, with git backup armed on every stop. An Ansible collection covers config push across the whole fleet.</p>'
+        },
+        { id: 'rest-quickstart', title: 'REST + WebSocket API quickstart', tag: 'Pro', read: '4 min',
+          body:
+            '<p>The same API drives the UI, so anything you can click you can script. REST for actions, WebSocket for live events (console streams, link-flow, node state).</p>'+
+            '<div class="kb-pre"><span class="cm"># list labs</span>\ncurl -H "Authorization: Bearer $NETPLEX_KEY" https://&lt;host&gt;/api/v1/labs\n\n<span class="cm"># start a node</span>\ncurl -X POST -H "Authorization: Bearer $NETPLEX_KEY" \\\n     https://&lt;host&gt;/api/v1/labs/$LAB/nodes/$NODE/start</div>'+
+            '<h2>Live events over WebSocket</h2><p>Subscribe to <code>/api/v1/events</code> to receive node state changes and per-link traffic as they happen - the same feed the canvas animates from.</p>'+
+            note('EVE-NG Pro has a REST API; GNS3 has one too. netplex. adds scoped keys and a live WebSocket event stream so tooling reacts to the lab instead of polling it.')
+        },
+        { id: 'ansible', title: 'Ansible collection', tag: 'Pro', read: '4 min',
+          body:
+            '<p>The Ansible collection manages both the lab fabric (nodes, links, lifecycle) and pushes device config across the fleet in one play.</p>'+
+            '<div class="kb-pre"><span class="cm"># inventory built from the live lab, then config push</span>\n- hosts: core\n  tasks:\n    - name: configure OSPF\n      cisco.ios.ios_config:\n        lines:\n          - router ospf 1\n          - network 10.0.0.0 0.255.255.255 area 0</div>'+
+            '<p>Pair it with a dynamic inventory sourced from the API so the playbook always targets the nodes that actually exist in the lab.</p>'
+        },
+        { id: 'cicd', title: 'Lab-as-code in CI/CD', tag: 'Pro', read: '4 min',
+          body:
+            '<p>Treat a topology like any other artefact: provision it fresh on every commit, run checks against it, tear it down.</p>'+
+            '<h2>A typical pipeline</h2><ol><li>Terraform/CLI provisions the lab from the repo</li><li>Ansible pushes the candidate config</li><li>Tests assert reachability, routing tables and policy</li><li>The lab is snapshotted on pass, torn down on finish</li></ol>'+
+            note('Because labs are code wired to git, a red pipeline catches breakage before it reaches production - the workflow EVE-NG and GNS3 never shipped out of the box.')
         }
       ]
     },
@@ -124,6 +171,18 @@
             '<p>One instructor seat covers a class. Each student works in an isolated pod - one live lab per pod - sealed off from the others.</p>'+
             '<h2>Run the room</h2><ul><li>Roster management to enrol the class</li><li>Freeze the whole room, reset to a clean topology, or grade from a snapshot</li><li>$449/year ÷ 50 students = $9/student/year</li></ul>'+
             note('Students get individual Community access free with a verified school email - Classroom is for the instructor-run, graded environment.')
+        },
+        { id: 'exams', title: 'Create exams, assignments & labs', tag: 'Classroom', read: '3 min',
+          body:
+            '<p>Build an assessment once and push it to every student in a click. Each student gets their own isolated copy.</p>'+
+            '<h2>Set one up</h2><ol><li>Pick a template topology (or start from a lab you’ve built)</li><li>Set a time limit and a due window</li><li>Choose which tools students may use - terminal, capture, internet</li><li>Publish to the roster; every pod is provisioned from the same baseline</li></ol>'+
+            note('Because every pod starts from the same snapshot, grading is apples-to-apples - no “it worked on my machine.”')
+        },
+        { id: 'monitor-live', title: 'Monitor the room live', tag: 'Classroom', read: '2 min',
+          body:
+            '<p>See the whole class at a glance and drop into any workstation without interrupting the student.</p>'+
+            '<h2>During a session</h2><ul><li>A live grid shows each student’s state - submitted, in progress, needs help</li><li>Open any pod silently to observe or assist</li><li>Freeze the room to get everyone’s attention, then resume</li><li>Reset a single pod or the whole class to a clean baseline</li></ul>'+
+            '<p>When time’s up, grade from each pod’s final snapshot so late changes can’t rewrite history.</p>'
         }
       ]
     },
@@ -136,6 +195,19 @@
             '<p>Enterprise is available as either a subscription or a perpetual licence, hardware-locked to the appliance via MAC + TPM fingerprinting - so there is no renewal risk if you choose perpetual.</p>'+
             '<h2>Moving hardware</h2><p>There\u2019s a 30-day grace period on migration. The CLI command <code>netplex licence rekey</code> opens a support ticket automatically so a move never strands you.</p>'+
             warn('A licensing blip never hard-blocks a running lab. Reliability beats DRM zeal - always.')
+        },
+        { id: 'tiers', title: 'Plans, node limits & what unlocks where', tag: 'Reference', read: '3 min',
+          body:
+            '<p>The product is great at every tier - there is no artificial cripple-ware. Higher tiers add depth, not the basics.</p>'+
+            '<h2>At a glance</h2><ul><li><strong>Associate</strong> - free forever: canvas, live terminal, packet capture, API, 1,000 nodes per lab, one-click EVE/GNS3 import</li><li><strong>Professional</strong> ($19.99/mo) - snapshots, fault injection, any Docker image, presentation mode, colour profiles & syntax highlighting</li><li><strong>Architect</strong> ($49.99/mo) - the complete automation toolbox: API, Terraform, Ansible, CI, QoS, metrics dashboard, on a single seat</li><li><strong>Enterprise / Class</strong> - teams, RBAC, audit; Class is the instructor-run graded environment</li></ul>'+
+            note('Associate’s node ceiling is 1,000 per lab - the practical limit is your host’s RAM and CPU, not the licence.')
+        },
+        { id: 'backups', title: 'Snapshots, git backup & restore', tag: 'Reliability', read: '3 min',
+          body:
+            '<p>Two independent safety nets: point-in-time snapshots and git auto-backup of lab-as-code.</p>'+
+            '<h2>Snapshots</h2><p>Capture a node or a whole lab at a moment in time and roll back to it instantly - ideal before a risky change or for grading baselines.</p>'+
+            '<h2>Git auto-backup</h2><p>On every lab stop, the topology and configs are committed to your own git. Restore is a checkout; history is a diff. Nothing lives only inside the appliance.</p>'+
+            warn('Keep your git remote off the appliance host - a backup that shares fate with the thing it backs up isn’t a backup.')
         }
       ]
     },

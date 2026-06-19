@@ -13,11 +13,10 @@
     { id: 'midnight', name: 'Midnight', bg: 'linear-gradient(135deg,#1c1f27 0%,#0a0b0e 100%)', bd: '#343845' },
     { id: 'obsidian', name: 'Obsidian', bg: 'linear-gradient(135deg,#1a1a1f 0%,#050507 100%)', bd: '#313138' }
   ];
-  /* Minimal Linear-style palette — brand orange plus three restrained hues. */
+  /* Minimal Linear-style palette — brand orange plus two restrained hues. */
   var ACCENTS = [
     { id: 'orange',  hex: '#ff7a45' },
     { id: 'blue',    hex: '#3d8bff' },
-    { id: 'green',   hex: '#2fb574' },
     { id: 'indigo',  hex: '#6c6cf2' }
   ];
   var KT = 'netplex.theme', KA = 'netplex.accent';

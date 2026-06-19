@@ -153,7 +153,7 @@
 .tt-tag { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-4); border: 1px solid var(--border); border-radius: 999px; padding: 2px 8px; }
 
 /* ── CONSOLE SHOWCASE ── */
-.term-win .body { padding: 16px 18px; font-family: var(--font-mono); font-size: 12.5px; line-height: 1.75; background: var(--surface-canvas); }
+.term-win .body { padding: 16px 18px; font-family: var(--font-mono); font-size: 12px; line-height: 1.7; background: var(--surface-canvas); white-space: pre; overflow-x: auto; }
 .term-win .body .pr { color: var(--accent); } .term-win .body .ok { color: var(--ok); }
 .term-win .body .cy { color: var(--info); } .term-win .body .dim { color: var(--text-4); }
 .term-win .body .gs { color: var(--accent); background: var(--accent-soft); border: 1px solid color-mix(in srgb, var(--accent) 28%, transparent); border-radius: 4px; padding: 1px 6px; font-size: 11px; }
