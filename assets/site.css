@@ -291,12 +291,14 @@ html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; text-render
 }
 [data-reveal].is-in { opacity: 1; transform: none; }
 
-/* ── 3D TILT CARD — Linear-style. Sits on a slight perspective tilt
-   with a deep layered shadow; straightens and lifts on hover. ── */
+/* ── 3D TILT CARD — Linear-style. Animates from flat (2D) into a
+   perspective tilt as it scrolls into view; straightens + lifts on
+   hover. The 3D end-state is the default so it still tilts without JS. ── */
 .card3d {
-  transform: perspective(1600px) rotateX(10deg) rotateY(-16deg) rotateZ(2deg);
+  --card3d: perspective(1600px) rotateX(10deg) rotateY(-16deg) rotateZ(2deg);
+  transform: var(--card3d);
   transform-style: preserve-3d;
-  transition: transform .7s var(--ease-out-soft), box-shadow .7s var(--ease-out-soft);
+  transition: transform .9s var(--ease-out-soft), box-shadow .9s var(--ease-out-soft);
   box-shadow:
     -34px 44px 70px -28px rgba(0,0,0,.65),
     -10px 14px 30px -14px rgba(0,0,0,.5),
@@ -311,16 +313,26 @@ html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; text-render
   background: linear-gradient(150deg, rgba(255,255,255,.08), transparent 42%);
   pointer-events: none;
 }
-.card3d:hover {
+/* before reveal: flat, square-on 2D with a soft shadow */
+.card3d[data-reveal]:not(.is-in) {
+  opacity: 0;
+  transform: perspective(1600px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateY(16px) scale(.985);
+  box-shadow: 0 10px 30px -16px rgba(0,0,0,.5), 0 0 0 1px var(--border);
+}
+/* after reveal: settle into the 3D tilt */
+.card3d[data-reveal].is-in {
+  opacity: 1;
+  transform: var(--card3d);
+}
+.card3d:hover,
+.card3d[data-reveal].is-in:hover {
   transform: perspective(1700px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateY(-4px);
   box-shadow:
     0 50px 90px -30px rgba(0,0,0,.7),
     0 0 0 1px var(--border-bright);
 }
-/* don't tilt a [data-reveal] target until it has revealed */
-.card3d[data-reveal]:not(.is-in) { transform: translateY(-16px); }
 @media (max-width: 960px) {
-  .card3d { transform: none; box-shadow: var(--shadow-pop); }
+  .card3d { transform: none !important; box-shadow: var(--shadow-pop); }
 }
 @media (prefers-reduced-motion: reduce) {
   .card3d { transform: none !important; transition: none !important; }

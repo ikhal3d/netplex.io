@@ -14,6 +14,7 @@
     'h2.sec',
     '.sec-sub',
     // index
+    '.card3d',
     '.cap',
     '.tier',
     '.statcell',

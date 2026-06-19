@@ -113,7 +113,7 @@
 /* ── ROADMAP/BETA flag inline ── */
 .flag {
   font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase;
-  color: var(--warn); background: var(--warn-soft); border: 1px solid color-mix(in srgb, var(--warn) 30%, transparent);
+  color: #1c1303; background: var(--warn); border: 1px solid var(--warn);
   border-radius: 999px; padding: 3px 9px; font-weight: 600; vertical-align: middle; margin-left: 8px;
 }
 
