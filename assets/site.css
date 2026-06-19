@@ -327,13 +327,15 @@ html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; text-render
   transform: perspective(1600px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateY(16px) scale(.985);
   box-shadow: 0 10px 30px -16px rgba(0,0,0,.5), 0 0 0 1px var(--border);
 }
-/* after reveal: settle into the 3D tilt */
+/* after reveal: settle into the 3D tilt — start a little later */
 .card3d[data-reveal].is-in {
   opacity: 1;
   transform: var(--card3d);
+  transition-delay: .5s;
 }
 .card3d:hover,
 .card3d[data-reveal].is-in:hover {
+  transition-delay: 0s;
   transform: perspective(1700px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateY(-4px);
   box-shadow:
     0 50px 90px -30px rgba(0,0,0,.7),
