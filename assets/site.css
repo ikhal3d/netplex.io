@@ -291,6 +291,12 @@ html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; text-render
 }
 [data-reveal].is-in { opacity: 1; transform: none; }
 
+/* rise UP from below into place (opt-in per element) — safe now that
+   .content clips overflow, so the downward start adds no scrollbar. */
+.card-rise[data-reveal] { transition: opacity .9s var(--ease-out-soft), transform .9s var(--ease-out-soft); }
+.card-rise[data-reveal]:not(.is-in) { opacity: 0; transform: translateY(56px); }
+.card-rise[data-reveal].is-in { opacity: 1; transform: none; }
+
 /* ── 3D TILT CARD — Linear-style. Animates from flat (2D) into a
    perspective tilt as it scrolls into view; straightens + lifts on
    hover. The 3D end-state is the default so it still tilts without JS. ── */
