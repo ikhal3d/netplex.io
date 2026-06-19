@@ -160,7 +160,7 @@
 .kb-bread .sep { color: var(--text-dim); }
 .kb-article h1 { font-size: 34px; letter-spacing: -0.03em; margin-bottom: 12px; }
 .kb-article .meta { display: flex; gap: 14px; align-items: center; font-size: 13px; color: var(--text-4); margin-bottom: 28px; padding-bottom: 22px; border-bottom: 1px solid var(--border-soft); flex-wrap: wrap; }
-.kb-article .meta .tag { font-family: var(--font-mono); font-size: 11px; color: var(--accent); background: var(--accent-soft); border: 1px solid var(--accent-line); border-radius: 999px; padding: 2px 9px; }
+.kb-article .meta .tag { font-family: var(--font-mono); font-size: 11px; color: #fff; background: var(--accent); border: 1px solid var(--accent); border-radius: 999px; padding: 2px 9px; }
 .kb-body h2 { font-size: 22px; letter-spacing: -0.02em; margin: 34px 0 12px; }
 .kb-body h3 { font-size: 17px; margin: 24px 0 8px; }
 .kb-body p { font-size: 16px; color: var(--text-2); line-height: 1.72; margin-bottom: 16px; }
@@ -302,7 +302,7 @@
 .tiers3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 30px; align-items: stretch; }
 @media (max-width: 860px){ .tiers3 { grid-template-columns: 1fr; max-width: 460px; margin-left: auto; margin-right: auto; } }
 /* roadmap / coming-soon inline tag */
-.rm { font-family: var(--font-mono); font-size: 9.5px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--accent); background: var(--accent-soft); border: 1px solid var(--accent-line); border-radius: 5px; padding: 1px 5px; margin-left: 5px; white-space: nowrap; vertical-align: middle; }
+.rm { font-family: var(--font-mono); font-size: 9.5px; letter-spacing: 0.04em; text-transform: uppercase; color: #fff; background: var(--accent); border: 1px solid var(--accent); border-radius: 5px; padding: 1px 5px; margin-left: 5px; white-space: nowrap; vertical-align: middle; }
 
 /* ── Pricing tabs (Individual / Teams & Collaboration) ── */
 .ptabs { display: inline-flex; gap: 4px; background: var(--surface-2); border: 1px solid var(--border); border-radius: 999px; padding: 5px; margin-top: 26px; }
